@@ -1,6 +1,6 @@
 <div align="center">
 
-# Merhaba, Ben Batu 
+# Merhaba, Ben Batu
 
 **Software Developer** | Backend - AI - Full-Stack
 
