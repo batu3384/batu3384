@@ -81,7 +81,41 @@
 
 ---
 
-## 🏆 Certificates
+## 🏆 GitHub Trophies
+
+<div align="center">
+
+[![trophy](https://github-profile-trophy.vercel.app/?username=batu3384&theme=tokyonight&no-frame=true&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
+
+</div>
+
+---
+
+## 📈 Activity Graph
+
+<div align="center">
+
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=batu3384&theme=tokyo-night&hide_border=true)](https://github.com/batu3384)
+
+</div>
+
+---
+
+## 🐍 Contribution Snake
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg" />
+  <img alt="github contribution snake animation" src="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg" />
+</picture>
+
+</div>
+
+---
+
+## 🏅 Certificates
 
 - 📜 **JavaScript Fundamentals** — 2024
 - 📜 **Web Programming with Node.js** — 2024
