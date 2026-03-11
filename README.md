@@ -1,19 +1,14 @@
 <div align="center">
-
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=26&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=600&lines=Hey%2C+I'm+Batuhan+%F0%9F%91%8B;MIS+Student+%40+Dokuz+Eyl%C3%BCl+University;Backend+%7C+AI+%7C+Full-Stack+Developer;Always+learning+new+things!" alt="Typing SVG" />
 
 **Management Information Systems Student** · Dokuz Eylül University 🎓
-
 **Software Developer** based in Istanbul, Turkey 🇹🇷
-
 *Building things with Backend, AI & Full-Stack technologies*
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/batu3384)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:batu3384@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/batu3384)
-
 ![Profile Views](https://komarev.com/ghpvc/?username=batu3384&color=58A6FF&style=flat-square&label=Profile+Views)
-
 </div>
 
 ---
@@ -47,61 +42,55 @@
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 **Frameworks & Libraries:**
 
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
 ![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)
 
 **Databases & Tools:**
 
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-A22846?style=for-the-badge&logo=raspberry-pi&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-C51A4A?style=for-the-badge&logo=Raspberry-Pi&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
 ---
 
 ## 📊 GitHub Stats
 
 <div align="center">
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=batu3384&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=batu3384&layout=compact&theme=tokyonight&hide_border=true" />
-
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=batu3384&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
-
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=batu3384&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=batu3384&layout=compact&langs_count=7&theme=tokyonight" />
 </div>
+
+[![GitHub Streak](https://streak-stats.demolab.com?user=batu3384&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
 
 ---
 
 ## 🏆 GitHub Trophies
 
-<div align="center">
-
 [![trophy](https://github-profile-trophy.vercel.app/?username=batu3384&theme=tokyonight&no-frame=true&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
-
-</div>
 
 ---
 
 ## 📈 Activity Graph
 
-<div align="center">
-
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=batu3384&theme=tokyo-night&hide_border=true)](https://github.com/batu3384)
-
-</div>
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=batu3384&theme=tokyo-night&hide_border=true)](https://github.com/Ashutosh00710/github-readme-activity-graph)
 
 ---
 
-<div align="center">
+## 🐍 Contribution Snake
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg" />
@@ -109,18 +98,23 @@
   <img alt="github contribution snake animation" src="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg" />
 </picture>
 
-</div>
-
 ---
 
-## 🏅 Certificates
-
-- 📜 **JavaScript Fundamentals** — 2024
-- 📜 **Web Programming with Node.js** — 2024
-- 📜 **Introduction to Algorithms, Programming, and Data Structures** — 2024
-
----
+## 🏅 Licenses & Certifications
 
 <div align="center">
-  <i>⭐ From <a href="https://github.com/batu3384">batu3384</a></i>
+
+| Certificate | Issuer | Year |
+|-------------|--------|------|
+| 🌐 **CCNA: Introduction to Networks** | Cisco Networking Academy | 2025 |
+| 🔒 **Introduction to Cybersecurity** | Cisco Networking Academy | 2025 |
+| 🐧 **NDG Linux Unhatched** | Cisco Networking Academy | 2025 |
+| 📜 JavaScript Fundamentals | Online | 2024 |
+| 📜 Web Programming with Node.js | Online | 2024 |
+| 📜 Intro to Algorithms & Data Structures | Online | 2024 |
+
 </div>
+
+---
+
+<div align="center"><i>⭐ From batu3384</i></div>
