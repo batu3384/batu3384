@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=26&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=600&lines=Hey%2C+I'm+Batuhan+%F0%9F%91%8B;MIS+Student+%40+Dokuz+Eyl%C3%BCl+University;Backend+%7C+AI+%7C+Full-Stack+Developer;Always+learning+new+things!" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=26&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=600&lines=Hey%2C+I'm+Batuhan+%F0%9F%91%8B;MIS+Student+%40+Dokuz+Eyl%C3%BCl+University;Backend+%7C+AI+%7C+Full-Stack+Developer;Swift+%7C+React+%7C+Go+Explorer!" alt="Typing SVG" />
 
 **Management Information Systems Student** · Dokuz Eylül University 🎓
 **Software Developer** based in Istanbul, Turkey 🇹🇷
@@ -17,9 +17,9 @@
 
 - 🎓 Final year **Management Information Systems** student at **Dokuz Eylül University**, Izmir
 - 🔭 Currently working on **AI-powered applications** and **full-stack web projects**
-- 🌱 Passionate about **Machine Learning**, **Artificial Intelligence** & **Data Analysis**
+- 🌱 Exploring **Swift**, **React** & **Go** alongside ML and backend development
 - 🤖 Built autonomous robots and AI-powered systems using Python & Raspberry Pi
-- 💬 Ask me about **Python, Node.js, AI/ML** or anything backend-related
+- 💬 Ask me about **Python, Node.js, React, AI/ML** or anything backend-related
 - 📫 Reach me at **batu3384@gmail.com**
 - 🌍 Based in **Istanbul, Turkey**
 
@@ -32,7 +32,7 @@
 | [🐾 VetVision](https://github.com/batu3384/vetvision) | AI-powered veterinary advisor with dog breed detection | Python, TensorFlow, Gemini API |
 | [📊 Decision Support System](https://github.com/batu3384/decision-support-system) | Cost prediction & inflation analysis platform | Node.js, Express, Flask, MySQL |
 | [☕ Cafe Management System](https://github.com/batu3384/cafe-management-system) | QR-based digital ordering & sales analytics for cafes | HTML, CSS, JavaScript, MySQL |
-| [🤖 Line Following Robot](https://github.com/batu3384) | Autonomous robot with line tracking & obstacle detection | Python, Raspberry Pi |
+| 🤖 Line Following Robot `🔒 Private` | Autonomous robot with line tracking & obstacle detection | Python, Raspberry Pi |
 
 ---
 
