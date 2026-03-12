@@ -1,5 +1,6 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=250&section=header&text=Batuhan%20Y%C3%BCksel&fontSize=50&fontColor=ffffff&desc=Management%20Information%20Systems%20Student%20%7C%20AI%20%26%20Data%20Enthusiast&descSize=22&animation=fadeIn" alt="Batuhan Yüksel Header"/>
+  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&height=250&section=header&text=Batuhan%20Y%C3%BCksel&fontSize=45&fontColor=ffffff&desc=Management%20Information%20Systems%20Student%20%7C%20AI%20%26%20Data%20Enthusiast&descSize=20&descAlign=center&descAlignY=75&animation=fadeIn" alt="Batuhan Yüksel Header"/>
+</div>
 
 ## About Me
 
@@ -71,4 +72,4 @@ To make your contributions come alive, this repository includes a workflow power
   </a>
 </div>
 
-_Last updated: March 2026_
+_Last updated: March 2026_  
