@@ -28,7 +28,6 @@
 
 🧠 Exploring **Computer Vision** & **Deep Learning**
 
-☕ Fun fact: I debug with coffee
 
 </td></tr>
 </table>
