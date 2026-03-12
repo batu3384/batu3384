@@ -1,75 +1,106 @@
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=soft&color=gradient&height=250&section=header&text=Batuhan%20Y%C3%BCksel&fontSize=45&fontColor=ffffff&desc=Management%20Information%20Systems%20Student%20%7C%20AI%20%26%20Data%20Enthusiast&descSize=20&descAlign=center&descAlignY=75&animation=fadeIn" alt="Batuhan Yüksel Header"/>
-</div>
-
-## About Me
-
-I'm Batuhan Yüksel, a Management Information Systems student based in İzmir, Türkiye. I love building AI‑powered applications and full‑stack web platforms. My passions include:
-
-- **Education:** studying MIS at Dokuz Eylul University
-- **Interests:** artificial intelligence, data analysis, distributed systems, and cross‑platform development
-- **Goal:** develop innovative solutions that bridge business and technology
-
-## Tech Toolbox
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:58a6ff&height=220&section=header&text=Batuhan%20Yuksel&fontSize=42&fontColor=58a6ff&animation=fadeIn&fontAlignY=35&desc=Software%20Developer%20%7C%20AI%20%26%20Full-Stack%20Engineer&descSize=18&descColor=8b949e&descAlignY=55" />
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="40" height="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" width="40" height="40" />
+
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=520&height=60&lines=%F0%9F%9A%80+Building+AI-Powered+Applications;%F0%9F%8E%93+MIS+Student+%40+Dokuz+Eylul+University;%F0%9F%92%A1+Turning+Ideas+Into+Code" alt="Typing SVG" /></a>
+
+<br/>
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/batu3384)
+[![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:batu3384@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/batu3384)
+![Profile Views](https://komarev.com/ghpvc/?username=batu3384&color=58a6ff&style=for-the-badge&label=PROFILE+VIEWS)
+
 </div>
 
-## Featured Projects
+<br/>
 
-- **[VetVision](https://github.com/batu3384/vetvision)** – a deep learning model trained on animal radiographs to classify breeds and detect pathologies. I designed and trained CNN architectures and integrated TensorFlow & TensorBoard for model evaluation.
-- **[Decision Support System](https://github.com/batu3384/decision-support-system)** – an AHP‑based ranking platform that uses Flask and Python’s `numpy` and `pandas` to compare alternatives and includes an interactive web dashboard.
-- **[Cafe Management System](https://github.com/batu3384/cafe-management-system)** – a Java/JavaFX full‑stack app for small businesses featuring inventory management, order tracking and role‑based dashboards.
+## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30"> About Me
 
-## GitHub Stats & Trophies
+```yaml
+name: Batuhan Yuksel
+location: Istanbul, Turkey
+education: Management Information Systems @ Dokuz Eylul University
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=batu3384&theme=tokyonight&hide_border=false&include_all_commits=true&show_icons=true" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=batu3384&theme=tokyonight&layout=compact&hide_border=false&langs_count=8" alt="Top Languages" />
-  <img src="https://trophy.ryglcloud.net/?username=batu3384&theme=algolia&no-frame=true&no-bg=true&margin-w=15" alt="GitHub Trophies" />
-</p>
+fields_of_interest:
+  - Artificial Intelligence & Machine Learning
+  - Full-Stack Web Development
+  - Backend Engineering & API Design
+  - Computer Vision & Deep Learning
 
-## Contribution Snake & Streak
+currently_working_on: AI-powered applications with Python & TensorFlow
+fun_fact: I debug with coffee ☕
+```
 
-To make your contributions come alive, this repository includes a workflow powered by [Platane/snk](https://github.com/Platane/snk) that generates a snake animation of my contribution graph. It runs nightly and pushes the resulting SVGs to an `output` branch.
+<br/>
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=batu3384&theme=tokyonight&hide_border=false" alt="GitHub Streak"/>
-</p>
+## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="30"> Tech Stack
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=python,js,go,swift,react,nodejs,flask,tensorflow,docker,git,mysql,linux&perline=6" />
+
+</div>
+
+<br/>
+
+## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Featured Projects
+
+<div align="center">
+
+<a href="https://github.com/batu3384/vetvision">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=batu3384&repo=vetvision&theme=react&bg_color=0d1117&border_color=30363d&icon_color=58a6ff&title_color=58a6ff&text_color=8b949e" />
+</a>
+<a href="https://github.com/batu3384/decision-support-system">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=batu3384&repo=decision-support-system&theme=react&bg_color=0d1117&border_color=30363d&icon_color=58a6ff&title_color=58a6ff&text_color=8b949e" />
+</a>
+<a href="https://github.com/batu3384/cafe-management-system">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=batu3384&repo=cafe-management-system&theme=react&bg_color=0d1117&border_color=30363d&icon_color=58a6ff&title_color=58a6ff&text_color=8b949e" />
+</a>
+
+</div>
+
+<br/>
+
+## <img src="https://media.giphy.com/media/cj87CxfRtrUifF3Riz/giphy.gif" width="30"> GitHub Analytics
+
+<div align="center">
+
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=batu3384&show_icons=true&theme=react&bg_color=0d1117&border_color=30363d&icon_color=58a6ff&title_color=58a6ff&text_color=8b949e&count_private=true&hide_border=false" />
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=batu3384&layout=compact&theme=react&bg_color=0d1117&border_color=30363d&title_color=58a6ff&text_color=8b949e&langs_count=8&hide_border=false" />
+
+<br/><br/>
+
+<img src="https://streak-stats.demolab.com?user=batu3384&theme=react&background=0d1117&border=30363d&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&sideLabels=8b949e&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e" />
+
+<br/><br/>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=batu3384&bg_color=0d1117&color=58a6ff&line=58a6ff&point=c9d1d9&area=true&area_color=58a6ff&hide_border=true" width="95%" />
+
+</div>
+
+<br/>
+
+## 🏆 GitHub Trophies
+
+<div align="center">
+
+<img src="https://github-profile-trophy.vercel.app/?username=batu3384&theme=algolia&no-frame=true&no-bg=true&margin-w=10&column=7" />
+
+</div>
+
+<br/>
+
+## 🐍 Contribution Snake
+
+<div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg">
-  <img alt="Github Contribution Snake" src="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg" />
+  <img alt="snake animation" src="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg" />
 </picture>
 
-## Skyline & Fun
-
-- Explore my contributions in 3D on [GitHub Skyline](https://skyline.github.com/batu3384/2025) — it turns your commit history into a soaring skyline.
-- Check out the [Awesome GitHub Profile README](https://github.com/abhijith-Dudii/awesome-github-profile-readme) for creative widgets and fun games you can embed.
-- Consider adding a coding GIF or terminal animation to make the header more lively; many developers use animated images or typing effects to draw attention.
-
-## Connect with Me
-
-<div align="center">
-  <a href="https://linkedin.com/in/batu3384">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="mailto:batu3384@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
 </div>
 
-_Last updated: March 2026_  
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:58a6ff&height=120&section=footer" />
