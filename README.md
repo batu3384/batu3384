@@ -15,20 +15,7 @@
 
 ## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30"> About Me
 
-```yaml
-name: Batuhan Yuksel
-location: Istanbul, Turkey
-education: Management Information Systems @ Dokuz Eylul University
-
-fields_of_interest:
-  - Artificial Intelligence & Machine Learning
-  - Full-Stack Web Development
-  - Backend Engineering & API Design
-  - Computer Vision & Deep Learning
-
-currently_working_on: AI-powered applications with Python & TensorFlow
-fun_fact: I debug with coffee ☕
-```
+I'm a Software Developer and MIS student at Dokuz Eylul University, passionate about building AI-powered applications and full-stack web platforms. I work with Python, JavaScript, Go, and Swift — focusing on machine learning, computer vision, and backend engineering. Always exploring new technologies and turning ideas into code.
 
 ---
 
@@ -67,36 +54,3 @@ fun_fact: I debug with coffee ☕
 <div align="center">
 
 <img height="180em" src="https://github-readme-stats.vercel.app/api?username=batu3384&show_icons=true&theme=react&bg_color=0d1117&border_color=30363d&icon_color=58a6ff&title_color=58a6ff&text_color=8b949e&count_private=true" />
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=batu3384&layout=compact&theme=react&bg_color=0d1117&border_color=30363d&title_color=58a6ff&text_color=8b949e&langs_count=8" />
-
-<br/><br/>
-
-<img src="https://streak-stats.demolab.com?user=batu3384&theme=react&background=0d1117&border=30363d&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&sideLabels=8b949e&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e" />
-
-<br/><br/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=batu3384&bg_color=0d1117&color=58a6ff&line=58a6ff&point=c9d1d9&area=true&area_color=58a6ff&hide_border=true" width="95%" />
-
-</div>
-
----
-
-## 🐍 Contribution Snake
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg" />
-  <img alt="snake animation" src="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg" />
-</picture>
-
-</div>
-
----
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=58a6ff&height=100&section=footer" width="100%" />
-
-</div>
