@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=wave&color=5FB878&height=250&section=header&text=Batu%20Y%C3%BCksel&fontSize=40&fontColor=ffffff" alt="Batu Yüksel Header"/>
+  <img src="https://capsule-render.vercel.app/api?type=rounded&color=0:FF0099,100:493240&height=250&section=header&text=Batuhan%20Y%C3%BCksel&fontSize=45&fontColor=ffffff&animation=twinkling" alt="Batuhan Yüksel Header"/>
   <h3>MIS Student · AI & Data Enthusiast</h3>
   <p>Building innovative software solutions · Always learning & sharing</p>
 </div>
