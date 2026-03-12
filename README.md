@@ -6,7 +6,7 @@
 
 ## About Me
 
-I'm Batu (Batuhan) Yüksel, a Management Information Systems student based in İzmir, Türkiye. I love building AI‑powered applications and full‑stack web platforms. My passions include:
+I'm Batuhan Yüksel, a Management Information Systems student based in İzmir, Türkiye. I love building AI‑powered applications and full‑stack web platforms. My passions include:
 
 - **Education:** studying MIS at Dokuz Eylul University
 - **Interests:** artificial intelligence, data analysis, distributed systems, and cross‑platform development
