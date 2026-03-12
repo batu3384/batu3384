@@ -1,8 +1,6 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:58a6ff&height=220&section=header&text=Batuhan%20Yuksel&fontSize=42&fontColor=58a6ff&animation=fadeIn&fontAlignY=35&desc=Software%20Developer%20%7C%20AI%20%26%20Full-Stack%20Engineer&descSize=18&descColor=8b949e&descAlignY=55" />
-
 <div align="center">
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=520&height=60&lines=%F0%9F%9A%80+Building+AI-Powered+Applications;%F0%9F%8E%93+MIS+Student+%40+Dokuz+Eylul+University;%F0%9F%92%A1+Turning+Ideas+Into+Code" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=100&lines=%F0%9F%91%8B+Hey%2C+I'm+Batuhan+Yuksel;%F0%9F%9A%80+Building+AI-Powered+Applications;%F0%9F%8E%93+MIS+Student+%40+Dokuz+Eylul+University" alt="Typing SVG" /></a>
 
 <br/>
 
@@ -13,7 +11,7 @@
 
 </div>
 
-<br/>
+---
 
 ## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30"> About Me
 
@@ -32,17 +30,19 @@ currently_working_on: AI-powered applications with Python & TensorFlow
 fun_fact: I debug with coffee ☕
 ```
 
-<br/>
+---
 
 ## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="30"> Tech Stack
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=python,js,go,swift,react,nodejs,flask,tensorflow,docker,git,mysql,linux&perline=6" />
+<img src="https://skillicons.dev/icons?i=python,js,go,swift,react,nodejs&theme=dark" />
+<br/>
+<img src="https://skillicons.dev/icons?i=flask,tensorflow,docker,git,mysql,linux&theme=dark" />
 
 </div>
 
-<br/>
+---
 
 ## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Featured Projects
 
@@ -60,14 +60,14 @@ fun_fact: I debug with coffee ☕
 
 </div>
 
-<br/>
+---
 
 ## <img src="https://media.giphy.com/media/cj87CxfRtrUifF3Riz/giphy.gif" width="30"> GitHub Analytics
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=batu3384&show_icons=true&theme=react&bg_color=0d1117&border_color=30363d&icon_color=58a6ff&title_color=58a6ff&text_color=8b949e&count_private=true&hide_border=false" />
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=batu3384&layout=compact&theme=react&bg_color=0d1117&border_color=30363d&title_color=58a6ff&text_color=8b949e&langs_count=8&hide_border=false" />
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=batu3384&show_icons=true&theme=react&bg_color=0d1117&border_color=30363d&icon_color=58a6ff&title_color=58a6ff&text_color=8b949e&count_private=true" />
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=batu3384&layout=compact&theme=react&bg_color=0d1117&border_color=30363d&title_color=58a6ff&text_color=8b949e&langs_count=8" />
 
 <br/><br/>
 
@@ -79,17 +79,7 @@ fun_fact: I debug with coffee ☕
 
 </div>
 
-<br/>
-
-## 🏆 GitHub Trophies
-
-<div align="center">
-
-<img src="https://github-profile-trophy.vercel.app/?username=batu3384&theme=algolia&no-frame=true&no-bg=true&margin-w=10&column=7" />
-
-</div>
-
-<br/>
+---
 
 ## 🐍 Contribution Snake
 
@@ -103,4 +93,10 @@ fun_fact: I debug with coffee ☕
 
 </div>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:58a6ff&height=120&section=footer" />
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=58a6ff&height=100&section=footer" width="100%" />
+
+</div>
