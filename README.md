@@ -4,15 +4,15 @@
   <p>Building innovative software solutions · Always learning & sharing</p>
 </div>
 
-## 👋 About Me
+## About Me
 
-I'm Batu (Batuhan) Yüksel, a Management Information Systems student based in İzmir, Türkiye. I love building AI-powered applications and full-stack web platforms. My passions include:
+I'm Batu (Batuhan) Yüksel, a Management Information Systems student based in İzmir, Türkiye. I love building AI‑powered applications and full‑stack web platforms. My passions include:
 
 - **Education:** studying MIS at Dokuz Eylul University
-- **Interests:** artificial intelligence, data analysis, distributed systems, and cross-platform development
+- **Interests:** artificial intelligence, data analysis, distributed systems, and cross‑platform development
 - **Goal:** develop innovative solutions that bridge business and technology
 
-## 🧐 Tech Toolbox
+## Tech Toolbox
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="40" height="40" />
@@ -29,21 +29,21 @@ I'm Batu (Batuhan) Yüksel, a Management Information Systems student based in İ
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" width="40" height="40" />
 </div>
 
-## 🚀 Featured Projects
+## Featured Projects
 
 - **[VetVision](https://github.com/batu3384/vetvision)** – a deep learning model trained on animal radiographs to classify breeds and detect pathologies. I designed and trained CNN architectures and integrated TensorFlow & TensorBoard for model evaluation.
-- **[Decision Support System](https://github.com/batu3384/decision-support-system)** – an AHP-based ranking platform that uses Flask and Python’s `numpy` and `pandas` to compare alternatives and includes an interactive web dashboard.
+- **[Decision Support System](https://github.com/batu3384/decision-support-system)** – an AHP‑based ranking platform that uses Flask and Python’s `numpy` and `pandas` to compare alternatives and includes an interactive web dashboard.
 - **[Cafe Management System](https://github.com/batu3384/cafe-management-system)** – a Java/JavaFX full‑stack app for small businesses featuring inventory management, order tracking and role‑based dashboards.
 
-## 📊 GitHub Stats & Trophies
+## GitHub Stats & Trophies
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=batu3384&theme=tokyonight&hide_border=false&include_all_commits=true&show_icons=true" alt="GitHub Stats" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=batu3384&theme=tokyonight&layout=compact&hide_border=false&langs_count=8" alt="Top Languages" />
-  <img src="https://github-profile-trophy.vercel.app/?username=batu3384&theme=algolia&no-frame=true&no-bg=true&margin-w=15" alt="GitHub Trophies" />
+  <img src="https://trophy.ryglcloud.net/?username=batu3384&theme=algolia&no-frame=true&no-bg=true&margin-w=15" alt="GitHub Trophies" />
 </p>
 
-## 🐍 Contribution Snake & Streak
+## Contribution Snake & Streak
 
 To make your contributions come alive, this repository includes a workflow powered by [Platane/snk](https://github.com/Platane/snk) that generates a snake animation of my contribution graph. It runs nightly and pushes the resulting SVGs to an `output` branch.
 
@@ -57,13 +57,13 @@ To make your contributions come alive, this repository includes a workflow power
   <img alt="Github Contribution Snake" src="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg">
 </picture>
 
-## 🎯 Skyline & Fun
+## Skyline & Fun
 
 - Explore my contributions in 3D on [GitHub Skyline](https://skyline.github.com/batu3384/2025) — it turns your commit history into a soaring skyline.
 - Check out the [Awesome GitHub Profile README](https://github.com/abhijith-Dudii/awesome-github-profile-readme) for creative widgets and fun games you can embed.
 - Consider adding a coding GIF or terminal animation to make the header more lively; many developers use animated images or typing effects to draw attention.
 
-## 📩 Connect with Me
+## Connect with Me
 
 <div align="center">
   <a href="https://linkedin.com/in/batu3384">
