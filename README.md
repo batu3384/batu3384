@@ -1,8 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rounded&color=0:FF0099,100:493240&height=250&section=header&text=Batuhan%20Y%C3%BCksel&fontSize=45&fontColor=ffffff&animation=twinkling" alt="Batuhan Yüksel Header"/>
-  <h3>MIS Student · AI & Data Enthusiast</h3>
-  <p>Building innovative software solutions · Always learning & sharing</p>
-</div>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=250&section=header&text=Batuhan%20Y%C3%BCksel&fontSize=50&fontColor=ffffff&desc=Management%20Information%20Systems%20Student%20%7C%20AI%20%26%20Data%20Enthusiast&descSize=22&animation=fadeIn" alt="Batuhan Yüksel Header"/>
 
 ## About Me
 
