@@ -50,7 +50,7 @@
 
 <div align="center">
 
-<a href="[https://github.com/batu3384/vetvision](https://github.com/batu3384/ScreenTextGrab)">
+<a href="https://github.com/batu3384/ScreenTextGrab">
   <img src="https://github-readme-stats.vercel.app/api/pin/?username=batu3384&repo=vetvision&theme=react&bg_color=0d1117&border_color=30363d&icon_color=58a6ff&title_color=58a6ff&text_color=8b949e" />
 </a>
 <a href="https://github.com/batu3384/vetvision">
