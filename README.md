@@ -59,7 +59,7 @@
 </ul>
 
 <p>
-  <sub>Also worth opening: <a href="https://github.com/batu3384/hexloom">Hexloom</a>, <a href="https://github.com/batu3384/decision-support-system">decision-support-system</a>, and <a href="https://github.com/batu3384/cafe-management-system">cafe-management-system</a>.</sub>
+  <sub>Also worth opening: <a href="https://github.com/batu3384/hexloom">Hexloom</a>, <a href="https://github.com/batu3384/fast-express-kds">Fast Express KDS</a>, and <a href="https://github.com/batu3384/sisler-bulvari-cafe-system">Sisler Bulvari Cafe System</a>.</sub>
 </p>
 
 ## Core Stack
