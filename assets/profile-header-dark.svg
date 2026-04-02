@@ -1,72 +1,75 @@
-<svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1280" height="400" viewBox="0 0 1280 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="74" y1="44" x2="1218" y2="386" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#07111D"/>
-      <stop offset="1" stop-color="#0B1B2E"/>
+    <linearGradient id="bg" x1="84" y1="40" x2="1184" y2="362" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06101B"/>
+      <stop offset="1" stop-color="#0A1726"/>
     </linearGradient>
-    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(172 92) rotate(90) scale(188)">
-      <stop stop-color="#22D3EE" stop-opacity="0.26"/>
+    <linearGradient id="panel" x1="782" y1="64" x2="1188" y2="336" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F2033"/>
+      <stop offset="1" stop-color="#13283F"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(206 108) rotate(90) scale(200)">
+      <stop stop-color="#22D3EE" stop-opacity="0.25"/>
       <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1128 316) rotate(90) scale(220)">
-      <stop stop-color="#3B82F6" stop-opacity="0.24"/>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1086 290) rotate(90) scale(240)">
+      <stop stop-color="#3B82F6" stop-opacity="0.22"/>
       <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
     </radialGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0V40" fill="none" stroke="#8FA2BA" stroke-opacity="0.11"/>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#89A1B7" stroke-opacity="0.09"/>
     </pattern>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#020617" flood-opacity="0.35"/>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#020617" flood-opacity="0.30"/>
     </filter>
   </defs>
 
-  <rect width="1280" height="420" rx="32" fill="url(#bg)"/>
-  <rect width="1280" height="420" rx="32" fill="url(#grid)"/>
-  <circle cx="172" cy="92" r="188" fill="url(#glowA)"/>
-  <circle cx="1128" cy="316" r="220" fill="url(#glowB)"/>
-  <rect x="24" y="24" width="1232" height="372" rx="28" stroke="#223247"/>
+  <rect width="1280" height="400" rx="30" fill="url(#bg)"/>
+  <rect width="1280" height="400" rx="30" fill="url(#grid)"/>
+  <circle cx="206" cy="108" r="200" fill="url(#glowA)"/>
+  <circle cx="1086" cy="290" r="240" fill="url(#glowB)"/>
+  <rect x="24" y="24" width="1232" height="352" rx="26" stroke="#1E3348"/>
 
-  <g filter="url(#shadow)">
-    <rect x="764" y="64" width="448" height="292" rx="28" fill="#0C1727" fill-opacity="0.76" stroke="#2B3F58"/>
+  <rect x="68" y="62" width="212" height="34" rx="17" fill="#0A1826" stroke="#27425A"/>
+  <text x="90" y="84" fill="#9DB7CD" font-size="15" font-family="Arial, Helvetica, sans-serif" letter-spacing="0.12em">PRODUCT-ORIENTED ENGINEER</text>
+
+  <text x="68" y="150" fill="#F8FAFC" font-size="58" font-weight="700" font-family="Georgia, 'Times New Roman', serif">Batuhan Yüksel</text>
+  <text x="68" y="198" fill="#D6E0EA" font-size="27" font-weight="600" font-family="Arial, Helvetica, sans-serif">Local-first software for OCR, terminal workflows,</text>
+  <text x="68" y="232" fill="#D6E0EA" font-size="27" font-weight="600" font-family="Arial, Helvetica, sans-serif">and security-focused developer tools.</text>
+
+  <text x="68" y="280" fill="#22D3EE" font-size="22" font-weight="700" font-family="Arial, Helvetica, sans-serif">Swift, Go, and Python</text>
+  <text x="68" y="311" fill="#9BB0C4" font-size="18" font-family="Arial, Helvetica, sans-serif">Building practical products across Apple platforms, AppSec, CLI/TUI, and applied AI.</text>
+
+  <rect x="68" y="334" width="144" height="28" rx="14" fill="#0F2233" stroke="#26455F"/>
+  <rect x="220" y="334" width="214" height="28" rx="14" fill="#0F2233" stroke="#26455F"/>
+  <rect x="442" y="334" width="112" height="28" rx="14" fill="#0F2233" stroke="#26455F"/>
+  <text x="90" y="352" fill="#D8E4EF" font-size="13" font-family="Arial, Helvetica, sans-serif">Istanbul, Turkey</text>
+  <text x="242" y="352" fill="#D8E4EF" font-size="13" font-family="Arial, Helvetica, sans-serif">MIS @ Dokuz Eylul University</text>
+  <text x="474" y="352" fill="#D8E4EF" font-size="13" font-family="Arial, Helvetica, sans-serif">TR / EN</text>
+
+  <g filter="url(#cardShadow)">
+    <rect x="774" y="58" width="438" height="284" rx="26" fill="url(#panel)" stroke="#2B455D"/>
   </g>
 
-  <rect x="72" y="70" width="164" height="34" rx="17" fill="#0D1A2B" stroke="#27425A"/>
-  <text x="94" y="92" fill="#A9BCD0" font-size="16" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0.04em">batu3384 / profile</text>
+  <text x="804" y="92" fill="#90B2CC" font-size="14" font-weight="700" font-family="Arial, Helvetica, sans-serif" letter-spacing="0.10em">CURRENT LANES</text>
 
-  <text x="72" y="160" fill="#F8FAFC" font-size="54" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Batuhan Yüksel</text>
-  <text x="72" y="205" fill="#C9D5E3" font-size="28" font-weight="600" font-family="Segoe UI, Arial, sans-serif">Local-first tools, OCR workflows,</text>
-  <text x="72" y="241" fill="#C9D5E3" font-size="28" font-weight="600" font-family="Segoe UI, Arial, sans-serif">and security-focused developer products.</text>
+  <rect x="804" y="114" width="378" height="56" rx="18" fill="#0D1C2C" stroke="#28445E"/>
+  <rect x="804" y="182" width="378" height="56" rx="18" fill="#0D1C2C" stroke="#28445E"/>
+  <rect x="804" y="250" width="378" height="56" rx="18" fill="#0D1C2C" stroke="#28445E"/>
 
-  <text x="72" y="291" fill="#22D3EE" font-size="21" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Swift + Go + Python</text>
-  <text x="72" y="324" fill="#90A7C0" font-size="18" font-family="Segoe UI, Arial, sans-serif">Building across Apple platforms, AppSec, CLI/TUI, and applied AI.</text>
+  <text x="826" y="138" fill="#F8FAFC" font-size="21" font-weight="700" font-family="Arial, Helvetica, sans-serif">Local-first products</text>
+  <text x="826" y="158" fill="#8FAECB" font-size="14" font-family="Arial, Helvetica, sans-serif">Apple tools, workflow software, privacy-first UX</text>
 
-  <rect x="72" y="348" width="144" height="30" rx="15" fill="#0E2233" stroke="#27425A"/>
-  <rect x="224" y="348" width="258" height="30" rx="15" fill="#0E2233" stroke="#27425A"/>
-  <rect x="490" y="348" width="96" height="30" rx="15" fill="#0E2233" stroke="#27425A"/>
-  <text x="94" y="368" fill="#D9E4EF" font-size="14" font-family="Segoe UI, Arial, sans-serif">Istanbul, Turkey</text>
-  <text x="246" y="368" fill="#D9E4EF" font-size="14" font-family="Segoe UI, Arial, sans-serif">MIS @ Dokuz Eylul University</text>
-  <text x="520" y="368" fill="#D9E4EF" font-size="14" font-family="Segoe UI, Arial, sans-serif">TR / EN</text>
+  <text x="826" y="206" fill="#F8FAFC" font-size="21" font-weight="700" font-family="Arial, Helvetica, sans-serif">Security and terminal tooling</text>
+  <text x="826" y="226" fill="#8FAECB" font-size="14" font-family="Arial, Helvetica, sans-serif">Safer destructive flows, audits, and AppSec automation</text>
 
-  <text x="796" y="96" fill="#8EB0CC" font-size="14" font-weight="700" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0.08em">SELECTED PUBLIC WORK</text>
+  <text x="826" y="274" fill="#F8FAFC" font-size="21" font-weight="700" font-family="Arial, Helvetica, sans-serif">Applied AI workflows</text>
+  <text x="826" y="294" fill="#8FAECB" font-size="14" font-family="Arial, Helvetica, sans-serif">OCR, computer vision, and LLM-backed product features</text>
 
-  <rect x="796" y="118" width="184" height="94" rx="20" fill="#0F2034" stroke="#28445E"/>
-  <rect x="996" y="118" width="184" height="94" rx="20" fill="#0F2034" stroke="#28445E"/>
-  <rect x="796" y="226" width="184" height="94" rx="20" fill="#0F2034" stroke="#28445E"/>
-  <rect x="996" y="226" width="184" height="94" rx="20" fill="#0F2034" stroke="#28445E"/>
-
-  <text x="816" y="152" fill="#F8FAFC" font-size="20" font-weight="700" font-family="Segoe UI, Arial, sans-serif">ScreenTextGrab</text>
-  <text x="816" y="178" fill="#8FB2CC" font-size="14" font-family="Segoe UI, Arial, sans-serif">macOS OCR utility</text>
-
-  <text x="1016" y="152" fill="#F8FAFC" font-size="20" font-weight="700" font-family="Segoe UI, Arial, sans-serif">SIFT</text>
-  <text x="1016" y="178" fill="#8FB2CC" font-size="14" font-family="Segoe UI, Arial, sans-serif">review-first terminal cleaner</text>
-
-  <text x="816" y="260" fill="#F8FAFC" font-size="20" font-weight="700" font-family="Segoe UI, Arial, sans-serif">IronSentinel</text>
-  <text x="816" y="286" fill="#8FB2CC" font-size="14" font-family="Segoe UI, Arial, sans-serif">local-first AppSec CLI</text>
-
-  <text x="1016" y="260" fill="#F8FAFC" font-size="20" font-weight="700" font-family="Segoe UI, Arial, sans-serif">VetVision</text>
-  <text x="1016" y="286" fill="#8FB2CC" font-size="14" font-family="Segoe UI, Arial, sans-serif">computer vision + LLM</text>
-
-  <circle cx="1160" cy="92" r="8" fill="#22D3EE"/>
-  <circle cx="1188" cy="92" r="8" fill="#3B82F6"/>
-  <circle cx="1216" cy="92" r="8" fill="#0EA5A4"/>
+  <rect x="804" y="322" width="120" height="24" rx="12" fill="#12253A" stroke="#294A64"/>
+  <rect x="932" y="322" width="64" height="24" rx="12" fill="#12253A" stroke="#294A64"/>
+  <rect x="1004" y="322" width="106" height="24" rx="12" fill="#12253A" stroke="#294A64"/>
+  <text x="824" y="338" fill="#D7E3EF" font-size="12" font-family="Arial, Helvetica, sans-serif">ScreenTextGrab</text>
+  <text x="952" y="338" fill="#D7E3EF" font-size="12" font-family="Arial, Helvetica, sans-serif">SIFT</text>
+  <text x="1024" y="338" fill="#D7E3EF" font-size="12" font-family="Arial, Helvetica, sans-serif">IronSentinel</text>
 </svg>
