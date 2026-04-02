@@ -2,7 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-header-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-light.svg">
-    <img alt="Batuhan Yüksel profile header" src="./assets/profile-header-dark.svg" width="760">
+    <img alt="Batuhan Yüksel profile header" src="./assets/profile-header-dark.svg" width="680">
   </picture>
 </p>
 
@@ -55,24 +55,24 @@
 
 <ul>
   <li>
-    <a href="https://github.com/batu3384/vetvision">VetVision</a> — desktop AI assistant for dog breed recognition with PDF export and optional Gemini-backed veterinary-style narrative generation.
+    <a href="https://github.com/batu3384/vetvision">VetVision</a> — desktop AI assistant for dog breed recognition, PDF export, and optional Gemini-backed veterinary-style report generation.
     <br>
-    <sub>Python / CustomTkinter / TensorFlow / Gemini API</sub>
+    <sub>YBS 4015 Yapay Zeka · Python / CustomTkinter / TensorFlow / Gemini API</sub>
   </li>
   <li>
-    <a href="https://github.com/batu3384/fast-express-kds">Fast Express KDS</a> — browser-based decision support dashboard for branch analytics, personnel scoring, comparison, reporting, and forecasting in cargo operations.
+    <a href="https://github.com/batu3384/fast-express-kds">Fast Express KDS</a> — browser-based decision support dashboard for cargo operations with branch analytics, personnel scoring, reporting, comparison, and a forecasting sidecar.
     <br>
-    <sub>Node.js / Express / Flask / MySQL / Chart.js</sub>
+    <sub>YBS 3015 Karar Destek Sistemleri · Node.js / Express / Flask / MySQL / Chart.js</sub>
   </li>
   <li>
-    <a href="https://github.com/batu3384/sisler-bulvari-cafe-system">Sisler Bulvarı Cafe System</a> — digital ordering and cafe operations prototype with menu, order tracking, and lightweight sales views.
+    <a href="https://github.com/batu3384/sisler-bulvari-cafe-system">Sisler Bulvarı Cafe System</a> — digital ordering and cafe operations prototype prepared for Sisler Bulvarı Sanat Kafe with menu, order tracking, and lightweight sales views.
     <br>
-    <sub>HTML / CSS / JavaScript / MySQL / Chart.js</sub>
+    <sub>Bilişim Sistemleri Analizi ve Tasarımı · HTML / CSS / JavaScript / MySQL / Chart.js</sub>
   </li>
   <li>
-    <a href="https://github.com/batu3384/autonomous-line-following-robot">Autonomous Line-Following Robot</a> — Raspberry Pi course project built around the original robot control script for line following and obstacle-aware stopping.
+    <a href="https://github.com/batu3384/autonomous-line-following-robot">Autonomous Line-Following Robot</a> — Raspberry Pi course project preserved around the original robot control script for line following, obstacle-aware stopping, and LED/buzzer alerts.
     <br>
-    <sub>Python / Raspberry Pi / gpiozero / embedded control</sub>
+    <sub>YBS 2013 Bilgisayar Donanımı · Python / Raspberry Pi / gpiozero / embedded control</sub>
   </li>
 </ul>
 

@@ -1,15 +1,15 @@
-<svg width="960" height="360" viewBox="0 0 960 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="920" height="280" viewBox="0 0 920 280" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="60" y1="24" x2="912" y2="336" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="52" y1="20" x2="876" y2="260" gradientUnits="userSpaceOnUse">
       <stop stop-color="#07111B"/>
       <stop offset="0.5" stop-color="#0A1624"/>
       <stop offset="1" stop-color="#10243C"/>
     </linearGradient>
-    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(188 92) rotate(90) scale(170 210)">
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(174 78) rotate(90) scale(138 190)">
       <stop stop-color="#22D3EE" stop-opacity="0.18"/>
       <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(792 282) rotate(90) scale(186 220)">
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(758 220) rotate(90) scale(154 198)">
       <stop stop-color="#3B82F6" stop-opacity="0.16"/>
       <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
     </radialGradient>
@@ -18,19 +18,19 @@
     </pattern>
   </defs>
 
-  <rect width="960" height="360" rx="28" fill="url(#bg)"/>
-  <rect width="960" height="360" rx="28" fill="url(#grid)"/>
-  <circle cx="188" cy="92" r="170" fill="url(#glowA)"/>
-  <circle cx="792" cy="282" r="186" fill="url(#glowB)"/>
-  <rect x="20" y="20" width="920" height="320" rx="24" stroke="#20364A"/>
+  <rect width="920" height="280" rx="24" fill="url(#bg)"/>
+  <rect width="920" height="280" rx="24" fill="url(#grid)"/>
+  <circle cx="174" cy="78" r="138" fill="url(#glowA)"/>
+  <circle cx="758" cy="220" r="154" fill="url(#glowB)"/>
+  <rect x="18" y="18" width="884" height="244" rx="20" stroke="#20364A"/>
 
-  <rect x="72" y="58" width="214" height="36" rx="18" fill="#0E1D2D" stroke="#274255"/>
-  <text x="94" y="81" fill="#A9C0D5" font-size="16" font-family="Arial, Helvetica, sans-serif" letter-spacing="0.12em">SWIFT · GO · PYTHON</text>
+  <rect x="58" y="46" width="196" height="32" rx="16" fill="#0E1D2D" stroke="#274255"/>
+  <text x="78" y="67" fill="#A9C0D5" font-size="14" font-family="Arial, Helvetica, sans-serif" letter-spacing="0.12em">SWIFT · GO · PYTHON</text>
 
-  <rect x="72" y="116" width="10" height="156" rx="5" fill="#22D3EE"/>
-  <text x="106" y="154" fill="#F8FAFC" font-size="62" font-weight="700" font-family="Georgia, 'Times New Roman', serif">Batuhan Yüksel</text>
-  <text x="106" y="214" fill="#D8E4EE" font-size="34" font-weight="700" font-family="Arial, Helvetica, sans-serif">OCR, CLI, and developer tools</text>
-  <text x="106" y="252" fill="#D8E4EE" font-size="34" font-weight="700" font-family="Arial, Helvetica, sans-serif">built with Swift, Go, and Python</text>
+  <rect x="58" y="94" width="8" height="112" rx="4" fill="#22D3EE"/>
+  <text x="88" y="126" fill="#F8FAFC" font-size="50" font-weight="700" font-family="Georgia, 'Times New Roman', serif">Batuhan Yüksel</text>
+  <text x="88" y="174" fill="#D8E4EE" font-size="28" font-weight="700" font-family="Arial, Helvetica, sans-serif">OCR, CLI, and developer tools</text>
+  <text x="88" y="206" fill="#D8E4EE" font-size="28" font-weight="700" font-family="Arial, Helvetica, sans-serif">for local-first workflows</text>
 
-  <text x="106" y="304" fill="#28D4F2" font-size="22" font-weight="700" font-family="Arial, Helvetica, sans-serif">Local-first · AppSec · workflow software</text>
+  <text x="88" y="238" fill="#28D4F2" font-size="18" font-weight="700" font-family="Arial, Helvetica, sans-serif">AppSec · workflow software · applied AI</text>
 </svg>
