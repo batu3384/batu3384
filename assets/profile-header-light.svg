@@ -1,36 +1,59 @@
-<svg width="920" height="280" viewBox="0 0 920 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="980" height="300" viewBox="0 0 980 300" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="52" y1="20" x2="876" y2="260" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="52" y1="20" x2="932" y2="280" gradientUnits="userSpaceOnUse">
       <stop stop-color="#F8FBFF"/>
       <stop offset="0.52" stop-color="#EFF5FA"/>
       <stop offset="1" stop-color="#E6EEF7"/>
     </linearGradient>
-    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(174 78) rotate(90) scale(138 190)">
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(180 82) rotate(90) scale(146 198)">
       <stop stop-color="#67E8F9" stop-opacity="0.22"/>
       <stop offset="1" stop-color="#67E8F9" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(758 220) rotate(90) scale(154 198)">
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(818 232) rotate(90) scale(168 210)">
       <stop stop-color="#60A5FA" stop-opacity="0.18"/>
       <stop offset="1" stop-color="#60A5FA" stop-opacity="0"/>
     </radialGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M40 0H0V40" fill="none" stroke="#8AA1B8" stroke-opacity="0.12"/>
     </pattern>
+    <linearGradient id="panel" x1="690" y1="56" x2="910" y2="244" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F5F9FD"/>
+    </linearGradient>
   </defs>
 
-  <rect width="920" height="280" rx="24" fill="url(#bg)"/>
-  <rect width="920" height="280" rx="24" fill="url(#grid)"/>
-  <circle cx="174" cy="78" r="138" fill="url(#glowA)"/>
-  <circle cx="758" cy="220" r="154" fill="url(#glowB)"/>
-  <rect x="18" y="18" width="884" height="244" rx="20" stroke="#D5E0EA"/>
+  <rect width="980" height="300" rx="24" fill="url(#bg)"/>
+  <rect width="980" height="300" rx="24" fill="url(#grid)"/>
+  <circle cx="180" cy="82" r="146" fill="url(#glowA)"/>
+  <circle cx="818" cy="232" r="168" fill="url(#glowB)"/>
+  <rect x="18" y="18" width="944" height="264" rx="20" stroke="#D5E0EA"/>
 
-  <rect x="58" y="46" width="196" height="32" rx="16" fill="#FFFFFF" stroke="#D5E0EA"/>
+  <rect x="56" y="48" width="196" height="32" rx="16" fill="#FFFFFF" stroke="#D5E0EA"/>
   <text x="78" y="67" fill="#5F768D" font-size="14" font-family="Arial, Helvetica, sans-serif" letter-spacing="0.12em">SWIFT · GO · PYTHON</text>
 
-  <rect x="58" y="94" width="8" height="112" rx="4" fill="#0EA5E9"/>
-  <text x="88" y="126" fill="#0F172A" font-size="50" font-weight="700" font-family="Georgia, 'Times New Roman', serif">Batuhan Yüksel</text>
-  <text x="88" y="174" fill="#22364B" font-size="28" font-weight="700" font-family="Arial, Helvetica, sans-serif">OCR, CLI, and developer tools</text>
-  <text x="88" y="206" fill="#22364B" font-size="28" font-weight="700" font-family="Arial, Helvetica, sans-serif">for local-first workflows</text>
+  <rect x="56" y="94" width="8" height="122" rx="4" fill="#0EA5E9"/>
+  <text x="86" y="126" fill="#0F172A" font-size="52" font-weight="700" font-family="Georgia, 'Times New Roman', serif">Batuhan Yüksel</text>
+  <text x="86" y="178" fill="#22364B" font-size="30" font-weight="700" font-family="Arial, Helvetica, sans-serif">OCR, CLI, and developer tools</text>
+  <text x="86" y="212" fill="#22364B" font-size="30" font-weight="700" font-family="Arial, Helvetica, sans-serif">for local-first workflows</text>
 
-  <text x="88" y="238" fill="#0284C7" font-size="18" font-weight="700" font-family="Arial, Helvetica, sans-serif">AppSec · workflow software · applied AI</text>
+  <text x="86" y="252" fill="#0284C7" font-size="19" font-weight="700" font-family="Arial, Helvetica, sans-serif">AppSec · workflow software · applied AI</text>
+
+  <g opacity="0.98">
+    <rect x="690" y="56" width="220" height="188" rx="24" fill="url(#panel)" stroke="#D5E0EA"/>
+    <rect x="716" y="80" width="168" height="42" rx="14" fill="#FFFFFF" stroke="#D8E4EE"/>
+    <circle cx="738" cy="101" r="8" fill="#0EA5E9"/>
+    <rect x="756" y="94" width="92" height="7" rx="3.5" fill="#DCEAF7"/>
+    <rect x="756" y="106" width="76" height="7" rx="3.5" fill="#E6F0F8"/>
+
+    <rect x="716" y="136" width="168" height="66" rx="16" fill="#F8FBFF" stroke="#D7E3ED"/>
+    <circle cx="738" cy="160" r="8" fill="#3B82F6"/>
+    <rect x="756" y="154" width="116" height="7" rx="3.5" fill="#DCEAF7"/>
+    <rect x="756" y="166" width="86" height="7" rx="3.5" fill="#E6F0F8"/>
+    <path d="M736 186H870" stroke="#D0DFEC" stroke-width="6" stroke-linecap="round"/>
+    <path d="M736 186C762 164 791 152 824 152C847 152 868 159 886 170" stroke="#0EA5E9" stroke-width="4" stroke-linecap="round"/>
+
+    <rect x="716" y="216" width="168" height="14" rx="7" fill="#FFFFFF" stroke="#D8E4EE"/>
+    <circle cx="736" cy="223" r="6" fill="#F59E0B"/>
+    <rect x="750" y="220" width="88" height="6" rx="3" fill="#DCEAF7"/>
+  </g>
 </svg>

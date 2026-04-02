@@ -2,7 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-header-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-light.svg">
-    <img alt="Batuhan Yüksel profile header" src="./assets/profile-header-dark.svg" width="680">
+    <img alt="Batuhan Yüksel profile header" src="./assets/profile-header-dark.svg" width="740">
   </picture>
 </p>
 
