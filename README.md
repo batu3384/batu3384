@@ -29,11 +29,15 @@
   <code>applied AI</code>
 </p>
 
+<p align="center">
+  <sub>Privacy-conscious software, reliable terminal UX, and product-ready machine intelligence.</sub>
+</p>
+
 ## Focus
 
-- Local-first products: privacy-respecting tools for Apple platforms and desktop workflows
-- Security and terminal tooling: review-first CLI/TUI products, runtime checks, automation, and safer destructive flows
-- Applied AI: OCR, computer vision, and LLM-assisted workflows built around real product use cases
+- <strong>Local-first products</strong>: privacy-respecting tools for Apple platforms and desktop workflows
+- <strong>Security and terminal tooling</strong>: review-first CLI/TUI products, runtime checks, automation, and safer destructive flows
+- <strong>Applied AI</strong>: OCR, computer vision, and LLM-assisted workflows built around real product use cases
 
 ## Selected Products
 
@@ -74,3 +78,17 @@ Also worth opening: [Hexloom](https://github.com/batu3384/hexloom), [decision-su
 - Building safer CLI/TUI products with explicit review, permissions, and auditability
 - Exploring AppSec tooling that is useful to operators, not just security checklists
 - Combining OCR, computer vision, and LLMs into product-ready experiences
+
+## Activity
+
+<p align="center">
+  <sub>A live contribution snapshot across the repos I actively touch.</sub>
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg">
+    <img alt="GitHub contribution snake" src="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg">
+  </picture>
+</p>
