@@ -2,7 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-header-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-light.svg">
-    <img alt="Batuhan Yuksel profile header" src="./assets/profile-header-dark.svg">
+    <img alt="Batuhan Yüksel profile header" src="./assets/profile-header-dark.svg">
   </picture>
 </p>
 
@@ -39,44 +39,16 @@
 
 ## What I Build
 
-| Lane | What it looks like |
-| --- | --- |
-| Local-first products | Privacy-respecting tools for Apple platforms and desktop workflows |
-| Security and terminal tooling | Review-first CLI/TUI products, runtime checks, automation, and safer destructive flows |
-| Applied AI | OCR, computer vision, and LLM-assisted workflows built around real product use cases |
+- Local-first products: privacy-respecting tools for Apple platforms and desktop workflows
+- Security and terminal tooling: review-first CLI/TUI products, runtime checks, automation, and safer destructive flows
+- Applied AI: OCR, computer vision, and LLM-assisted workflows built around real product use cases
 
 ## Selected Work
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <strong><a href="https://github.com/batu3384/ScreenTextGrab">ScreenTextGrab</a></strong><br/>
-      macOS menu bar OCR app for capturing on-screen text, subtitles, code, tables, and PDFs without leaving the current workflow.
-      <br/><br/>
-      <strong>Built with:</strong> Swift, Vision, macOS
-    </td>
-    <td width="50%" valign="top">
-      <strong><a href="https://github.com/batu3384/sift">SIFT</a></strong><br/>
-      Review-first terminal cleaner for macOS and Windows with a typed Go core, permission preflight, audit history, and a fullscreen TUI.
-      <br/><br/>
-      <strong>Built with:</strong> Go, Bubble Tea, cross-platform CLI/TUI
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <strong><a href="https://github.com/batu3384/ironsentinel">IronSentinel</a></strong><br/>
-      Local-first AppSec command center for scanning source trees, verifying runtime trust, triaging findings, and exporting evidence-rich reports.
-      <br/><br/>
-      <strong>Built with:</strong> Go, AppSec workflows, SARIF and HTML reporting
-    </td>
-    <td width="50%" valign="top">
-      <strong><a href="https://github.com/batu3384/vetvision">VetVision</a></strong><br/>
-      AI-powered veterinary advisor that combines computer vision for breed detection with LLM-guided health insights.
-      <br/><br/>
-      <strong>Built with:</strong> Python, TensorFlow, Gemini API
-    </td>
-  </tr>
-</table>
+- [ScreenTextGrab](https://github.com/batu3384/ScreenTextGrab): macOS menu bar OCR app for capturing on-screen text, subtitles, code, tables, and PDFs without leaving the current workflow. Built with Swift, Vision, and macOS APIs.
+- [SIFT](https://github.com/batu3384/sift): review-first terminal cleaner for macOS and Windows with a typed Go core, permission preflight, audit history, and a fullscreen TUI. Built with Go and Bubble Tea.
+- [IronSentinel](https://github.com/batu3384/ironsentinel): local-first AppSec command center for scanning source trees, verifying runtime trust, triaging findings, and exporting evidence-rich reports. Built with Go and security-focused CLI workflows.
+- [VetVision](https://github.com/batu3384/vetvision): AI-powered veterinary advisor that combines computer vision for breed detection with LLM-guided health insights. Built with Python, TensorFlow, and Gemini API.
 
 Also worth opening: [Hexloom](https://github.com/batu3384/hexloom), [decision-support-system](https://github.com/batu3384/decision-support-system), and [cafe-management-system](https://github.com/batu3384/cafe-management-system).
 
