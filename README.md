@@ -9,7 +9,6 @@
 <p align="center">
   <a href="https://www.linkedin.com/in/batu3384"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"></a>
   <a href="mailto:batu3384@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-111827?style=flat-square&logo=gmail&logoColor=white"></a>
-  <a href="https://github.com/batu3384?tab=repositories"><img alt="Repositories" src="https://img.shields.io/badge/Repositories-0F172A?style=flat-square&logo=github&logoColor=white"></a>
 </p>
 
 <p align="center">
@@ -35,9 +34,9 @@
 
 ## Focus
 
-- <strong>Local-first products</strong>: privacy-respecting tools for Apple platforms and desktop workflows
-- <strong>Security and terminal tooling</strong>: review-first CLI/TUI products, runtime checks, automation, and safer destructive flows
-- <strong>Applied AI</strong>: OCR, computer vision, and LLM-assisted workflows built around real product use cases
+- <strong>Local-first products</strong>: privacy-respecting tools for Apple and desktop workflows
+- <strong>Security and terminal tooling</strong>: review-first CLI/TUI products with explicit permissions and safer destructive flows
+- <strong>Applied AI</strong>: OCR, computer vision, and LLM-assisted workflows built around practical product use cases
 
 ## Selected Products
 
@@ -64,12 +63,14 @@
   </li>
 </ul>
 
-Also worth opening: [Hexloom](https://github.com/batu3384/hexloom), [decision-support-system](https://github.com/batu3384/decision-support-system), and [cafe-management-system](https://github.com/batu3384/cafe-management-system).
+<p>
+  <sub>Also worth opening: <a href="https://github.com/batu3384/hexloom">Hexloom</a>, <a href="https://github.com/batu3384/decision-support-system">decision-support-system</a>, and <a href="https://github.com/batu3384/cafe-management-system">cafe-management-system</a>.</sub>
+</p>
 
 ## Core Stack
 
 <p align="center">
-  <img alt="Core stack" src="https://skillicons.dev/icons?i=swift,go,python,js,nodejs,fastapi,flask,tensorflow,docker,mysql,linux,git">
+  <img alt="Core stack" src="https://skillicons.dev/icons?i=swift,go,python,js,fastapi,tensorflow,docker,linux">
 </p>
 
 ## Currently Shipping
