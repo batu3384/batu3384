@@ -16,8 +16,7 @@
 </p>
 
 <p align="center">
-  I build software that feels practical on day one: local-first products, safe-by-default terminal tooling,
-  and AI-assisted workflows that solve concrete problems.
+  I build local-first software for OCR, terminal workflows, and security-focused developer tooling.
 </p>
 
 <p align="center">
@@ -25,39 +24,35 @@
   <code>OCR workflows</code>
   <code>security tooling</code>
   <code>CLI / TUI</code>
-  <code>applied AI</code>
+  <code>Swift / Go / Python</code>
 </p>
 
-<p align="center">
-  <sub>Privacy-conscious software, reliable terminal UX, and product-ready machine intelligence.</sub>
-</p>
+## Current Focus
 
-## Focus
+- <strong>Local-first apps</strong>: utilities and workflow software for Apple and desktop environments
+- <strong>Terminal and security tooling</strong>: CLI/TUI products with explicit review flows, runtime checks, and safer automation
+- <strong>Applied AI</strong>: OCR, computer vision, and LLM-backed features integrated into user-facing products
 
-- <strong>Local-first products</strong>: privacy-respecting tools for Apple and desktop workflows
-- <strong>Security and terminal tooling</strong>: review-first CLI/TUI products with explicit permissions and safer destructive flows
-- <strong>Applied AI</strong>: OCR, computer vision, and LLM-assisted workflows built around practical product use cases
-
-## Selected Products
+## Selected Work
 
 <ul>
   <li>
-    <a href="https://github.com/batu3384/ScreenTextGrab">ScreenTextGrab</a> — macOS menu bar OCR app for capturing on-screen text, subtitles, code, tables, and PDFs without leaving the current workflow.
+    <a href="https://github.com/batu3384/ScreenTextGrab">ScreenTextGrab</a> — local-first macOS menu bar OCR app for capturing text, subtitles, code, tables, and PDFs.
     <br>
     <sub>Swift / Vision / macOS APIs</sub>
   </li>
   <li>
-    <a href="https://github.com/batu3384/sift">SIFT</a> — review-first terminal cleaner for macOS and Windows with a typed Go core, permission preflight, audit history, and a fullscreen TUI.
+    <a href="https://github.com/batu3384/sift">SIFT</a> — review-first terminal cleaner for macOS and Windows with permission preflight, audit history, and safer destructive flows.
     <br>
     <sub>Go / Bubble Tea / cross-platform CLI-TUI</sub>
   </li>
   <li>
-    <a href="https://github.com/batu3384/ironsentinel">IronSentinel</a> — local-first AppSec command center for scanning source trees, verifying runtime trust, triaging findings, and exporting evidence-rich reports.
+    <a href="https://github.com/batu3384/ironsentinel">IronSentinel</a> — local-first AppSec CLI for guided scans, runtime trust checks, and evidence-rich reporting.
     <br>
     <sub>Go / AppSec workflows / SARIF and HTML reporting</sub>
   </li>
   <li>
-    <a href="https://github.com/batu3384/vetvision">VetVision</a> — AI-powered veterinary advisor that combines computer vision for breed detection with LLM-guided health insights.
+    <a href="https://github.com/batu3384/vetvision">VetVision</a> — veterinary advisor combining dog breed detection with computer vision and LLM guidance.
     <br>
     <sub>Python / TensorFlow / Gemini API</sub>
   </li>
@@ -73,12 +68,12 @@
   <img alt="Core stack" src="https://skillicons.dev/icons?i=swift,go,python,js,fastapi,tensorflow,docker,linux">
 </p>
 
-## Currently Shipping
+## Current Work
 
-- Shipping local-first OCR and productivity workflows on Apple platforms
-- Building safer CLI/TUI products with explicit review, permissions, and auditability
-- Exploring AppSec tooling that is useful to operators, not just security checklists
-- Combining OCR, computer vision, and LLMs into product-ready experiences
+- Shipping local-first OCR and workflow tools on Apple platforms
+- Building CLI/TUI products with explicit review, permissions, and auditability
+- Exploring AppSec tooling that is useful in day-to-day operator workflows
+- Combining OCR, computer vision, and LLMs in product-facing features
 
 ## Activity
 
