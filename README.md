@@ -1,107 +1,104 @@
-<div align="center">
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-header-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-light.svg">
+    <img alt="Batuhan Yuksel profile header" src="./assets/profile-header-dark.svg">
+  </picture>
+</p>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=520&height=60&lines=%F0%9F%9A%80+Building+AI-Powered+Applications;%F0%9F%8E%93+MIS+Student+%40+Dokuz+Eylul+University;%F0%9F%92%A1+Turning+Ideas+Into+Code" alt="Typing SVG" /></a>
+<p align="center">
+  <a href="https://www.linkedin.com/in/batu3384">
+    <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white">
+  </a>
+  <a href="mailto:batu3384@gmail.com">
+    <img alt="Email" src="https://img.shields.io/badge/Email-111827?style=flat-square&logo=gmail&logoColor=white">
+  </a>
+  <a href="https://github.com/batu3384?tab=repositories">
+    <img alt="Repositories" src="https://img.shields.io/badge/Repositories-0F172A?style=flat-square&logo=github&logoColor=white">
+  </a>
+</p>
 
-<br/>
+<p align="center">
+  <img alt="Location Istanbul, Turkey" src="https://img.shields.io/badge/Istanbul-Turkey-1E293B?style=flat-square">
+  <img alt="MIS at Dokuz Eylul University" src="https://img.shields.io/badge/MIS-Dokuz%20Eylul%20University-1E293B?style=flat-square">
+  <img alt="Languages Turkish and English" src="https://img.shields.io/badge/Languages-TR%20%2F%20EN-1E293B?style=flat-square">
+</p>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/batu3384)
-[![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:batu3384@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/batu3384)
-![Profile Views](https://komarev.com/ghpvc/?username=batu3384&color=58a6ff&style=for-the-badge&label=PROFILE+VIEWS)
+<p align="center">
+  I build software that feels practical on day one: local-first apps, safe-by-default terminal tooling,
+  and AI-assisted workflows that solve concrete problems.
+</p>
 
-</div>
+<p align="center">
+  <img alt="Local-first" src="https://img.shields.io/badge/local--first-products-0F766E?style=flat-square">
+  <img alt="OCR workflows" src="https://img.shields.io/badge/OCR-workflows-0369A1?style=flat-square">
+  <img alt="Security tooling" src="https://img.shields.io/badge/security-tooling-1D4ED8?style=flat-square">
+  <img alt="CLI and TUI" src="https://img.shields.io/badge/CLI%20%2F%20TUI-products-334155?style=flat-square">
+  <img alt="Applied AI" src="https://img.shields.io/badge/applied-AI-0891B2?style=flat-square">
+</p>
 
----
+## What I Build
 
-## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30"> About Me
+| Lane | What it looks like |
+| --- | --- |
+| Local-first products | Privacy-respecting tools for Apple platforms and desktop workflows |
+| Security and terminal tooling | Review-first CLI/TUI products, runtime checks, automation, and safer destructive flows |
+| Applied AI | OCR, computer vision, and LLM-assisted workflows built around real product use cases |
+
+## Selected Work
 
 <table>
-<tr><td>
-
-🎓 **MIS Student** @ Dokuz Eylül University
-
-📍 Based in **Istanbul, Turkey**
-
-🤖 Passionate about **AI & Machine Learning**, **Full-Stack Development**, and **Backend Engineering**
-
-🔭 Currently building **AI-powered applications** with Python & TensorFlow
-
-🧠 Exploring **Computer Vision** & **Deep Learning**
-
-
-</td></tr>
+  <tr>
+    <td width="50%" valign="top">
+      <strong><a href="https://github.com/batu3384/ScreenTextGrab">ScreenTextGrab</a></strong><br/>
+      macOS menu bar OCR app for capturing on-screen text, subtitles, code, tables, and PDFs without leaving the current workflow.
+      <br/><br/>
+      <strong>Built with:</strong> Swift, Vision, macOS
+    </td>
+    <td width="50%" valign="top">
+      <strong><a href="https://github.com/batu3384/sift">SIFT</a></strong><br/>
+      Review-first terminal cleaner for macOS and Windows with a typed Go core, permission preflight, audit history, and a fullscreen TUI.
+      <br/><br/>
+      <strong>Built with:</strong> Go, Bubble Tea, cross-platform CLI/TUI
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <strong><a href="https://github.com/batu3384/ironsentinel">IronSentinel</a></strong><br/>
+      Local-first AppSec command center for scanning source trees, verifying runtime trust, triaging findings, and exporting evidence-rich reports.
+      <br/><br/>
+      <strong>Built with:</strong> Go, AppSec workflows, SARIF and HTML reporting
+    </td>
+    <td width="50%" valign="top">
+      <strong><a href="https://github.com/batu3384/vetvision">VetVision</a></strong><br/>
+      AI-powered veterinary advisor that combines computer vision for breed detection with LLM-guided health insights.
+      <br/><br/>
+      <strong>Built with:</strong> Python, TensorFlow, Gemini API
+    </td>
+  </tr>
 </table>
 
----
+Also worth opening: [Hexloom](https://github.com/batu3384/hexloom), [decision-support-system](https://github.com/batu3384/decision-support-system), and [cafe-management-system](https://github.com/batu3384/cafe-management-system).
 
-## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="30"> Tech Stack
+## Core Stack
 
-<div align="center">
+<p align="center">
+  <img alt="Core stack" src="https://skillicons.dev/icons?i=swift,go,python,js,nodejs,fastapi,flask,tensorflow,docker,mysql,linux,git">
+</p>
 
-<img src="https://skillicons.dev/icons?i=python,js,go,swift,react,nodejs&theme=dark" />
-<br/>
-<img src="https://skillicons.dev/icons?i=flask,tensorflow,docker,git,mysql,linux&theme=dark" />
+## Right Now
 
-</div>
+- Shipping local-first OCR and productivity workflows on Apple platforms
+- Building safer CLI/TUI products with explicit review, permissions, and auditability
+- Exploring AppSec tooling that is useful to operators, not just security checklists
+- Combining OCR, computer vision, and LLMs into product-ready experiences
 
----
+## Contribution Graph
 
-## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Featured Projects
-
-<div align="center">
-
-<a href="https://github.com/batu3384/ScreenTextGrab">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=batu3384&repo=ScreenTextGrab&theme=react&bg_color=0d1117&border_color=30363d&icon_color=58a6ff&title_color=58a6ff&text_color=8b949e" />
-</a>
-<a href="https://github.com/batu3384/vetvision">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=batu3384&repo=vetvision&theme=react&bg_color=0d1117&border_color=30363d&icon_color=58a6ff&title_color=58a6ff&text_color=8b949e" />
-</a>
-<a href="https://github.com/batu3384/decision-support-system">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=batu3384&repo=decision-support-system&theme=react&bg_color=0d1117&border_color=30363d&icon_color=58a6ff&title_color=58a6ff&text_color=8b949e" />
-</a>
-<a href="https://github.com/batu3384/cafe-management-system">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=batu3384&repo=cafe-management-system&theme=react&bg_color=0d1117&border_color=30363d&icon_color=58a6ff&title_color=58a6ff&text_color=8b949e" />
-</a>
-
-</div>
-
----
-
-## <img src="https://media.giphy.com/media/cj87CxfRtrUifF3Riz/giphy.gif" width="30"> GitHub Analytics
-
-<div align="center">
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=batu3384&show_icons=true&theme=react&bg_color=0d1117&border_color=30363d&icon_color=58a6ff&title_color=58a6ff&text_color=8b949e&count_private=true" />
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=batu3384&layout=compact&theme=react&bg_color=0d1117&border_color=30363d&title_color=58a6ff&text_color=8b949e&langs_count=8" />
-
-<br/><br/>
-
-<img src="https://streak-stats.demolab.com?user=batu3384&theme=react&background=0d1117&border=30363d&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&sideLabels=8b949e&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e" />
-
-<br/><br/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=batu3384&bg_color=0d1117&color=58a6ff&line=58a6ff&point=c9d1d9&area=true&area_color=58a6ff&hide_border=true" width="95%" />
-
-</div>
-
----
-
-## 🐍 Contribution Snake
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg" />
-  <img alt="snake animation" src="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg" />
-</picture>
-
-</div>
-
----
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=58a6ff&height=100&section=footer" width="100%" />
-
-</div>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg">
+    <img alt="GitHub contribution snake" src="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg">
+  </picture>
+</p>

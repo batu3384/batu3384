@@ -1,0 +1,72 @@
+<svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="74" y1="44" x2="1218" y2="386" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111D"/>
+      <stop offset="1" stop-color="#0B1B2E"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(172 92) rotate(90) scale(188)">
+      <stop stop-color="#22D3EE" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1128 316) rotate(90) scale(220)">
+      <stop stop-color="#3B82F6" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#8FA2BA" stroke-opacity="0.11"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#020617" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="420" rx="32" fill="url(#bg)"/>
+  <rect width="1280" height="420" rx="32" fill="url(#grid)"/>
+  <circle cx="172" cy="92" r="188" fill="url(#glowA)"/>
+  <circle cx="1128" cy="316" r="220" fill="url(#glowB)"/>
+  <rect x="24" y="24" width="1232" height="372" rx="28" stroke="#223247"/>
+
+  <g filter="url(#shadow)">
+    <rect x="764" y="64" width="448" height="292" rx="28" fill="#0C1727" fill-opacity="0.76" stroke="#2B3F58"/>
+  </g>
+
+  <rect x="72" y="70" width="164" height="34" rx="17" fill="#0D1A2B" stroke="#27425A"/>
+  <text x="94" y="92" fill="#A9BCD0" font-size="16" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0.04em">batu3384 / profile</text>
+
+  <text x="72" y="160" fill="#F8FAFC" font-size="54" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Batuhan Yuksel</text>
+  <text x="72" y="205" fill="#C9D5E3" font-size="28" font-weight="600" font-family="Segoe UI, Arial, sans-serif">Local-first tools, OCR workflows,</text>
+  <text x="72" y="241" fill="#C9D5E3" font-size="28" font-weight="600" font-family="Segoe UI, Arial, sans-serif">and security-focused developer products.</text>
+
+  <text x="72" y="291" fill="#22D3EE" font-size="21" font-weight="700" font-family="Segoe UI, Arial, sans-serif">Swift + Go + Python</text>
+  <text x="72" y="324" fill="#90A7C0" font-size="18" font-family="Segoe UI, Arial, sans-serif">Building across Apple platforms, AppSec, CLI/TUI, and applied AI.</text>
+
+  <rect x="72" y="348" width="144" height="30" rx="15" fill="#0E2233" stroke="#27425A"/>
+  <rect x="224" y="348" width="258" height="30" rx="15" fill="#0E2233" stroke="#27425A"/>
+  <rect x="490" y="348" width="96" height="30" rx="15" fill="#0E2233" stroke="#27425A"/>
+  <text x="94" y="368" fill="#D9E4EF" font-size="14" font-family="Segoe UI, Arial, sans-serif">Istanbul, Turkey</text>
+  <text x="246" y="368" fill="#D9E4EF" font-size="14" font-family="Segoe UI, Arial, sans-serif">MIS @ Dokuz Eylul University</text>
+  <text x="520" y="368" fill="#D9E4EF" font-size="14" font-family="Segoe UI, Arial, sans-serif">TR / EN</text>
+
+  <text x="796" y="96" fill="#8EB0CC" font-size="14" font-weight="700" font-family="Segoe UI, Arial, sans-serif" letter-spacing="0.08em">SELECTED PUBLIC WORK</text>
+
+  <rect x="796" y="118" width="184" height="94" rx="20" fill="#0F2034" stroke="#28445E"/>
+  <rect x="996" y="118" width="184" height="94" rx="20" fill="#0F2034" stroke="#28445E"/>
+  <rect x="796" y="226" width="184" height="94" rx="20" fill="#0F2034" stroke="#28445E"/>
+  <rect x="996" y="226" width="184" height="94" rx="20" fill="#0F2034" stroke="#28445E"/>
+
+  <text x="816" y="152" fill="#F8FAFC" font-size="20" font-weight="700" font-family="Segoe UI, Arial, sans-serif">ScreenTextGrab</text>
+  <text x="816" y="178" fill="#8FB2CC" font-size="14" font-family="Segoe UI, Arial, sans-serif">macOS OCR utility</text>
+
+  <text x="1016" y="152" fill="#F8FAFC" font-size="20" font-weight="700" font-family="Segoe UI, Arial, sans-serif">SIFT</text>
+  <text x="1016" y="178" fill="#8FB2CC" font-size="14" font-family="Segoe UI, Arial, sans-serif">review-first terminal cleaner</text>
+
+  <text x="816" y="260" fill="#F8FAFC" font-size="20" font-weight="700" font-family="Segoe UI, Arial, sans-serif">IronSentinel</text>
+  <text x="816" y="286" fill="#8FB2CC" font-size="14" font-family="Segoe UI, Arial, sans-serif">local-first AppSec CLI</text>
+
+  <text x="1016" y="260" fill="#F8FAFC" font-size="20" font-weight="700" font-family="Segoe UI, Arial, sans-serif">VetVision</text>
+  <text x="1016" y="286" fill="#8FB2CC" font-size="14" font-family="Segoe UI, Arial, sans-serif">computer vision + LLM</text>
+
+  <circle cx="1160" cy="92" r="8" fill="#22D3EE"/>
+  <circle cx="1188" cy="92" r="8" fill="#3B82F6"/>
+  <circle cx="1216" cy="92" r="8" fill="#0EA5A4"/>
+</svg>
