@@ -29,12 +29,6 @@
 
 ## Product Projects
 
-<p align="center">
-  <a href="https://github.com/batu3384/calder">
-    <img alt="Calder" src="./assets/calder-mark.png" width="96">
-  </a>
-</p>
-
 <ul>
   <li>
     <a href="https://github.com/batu3384/calder">Calder</a> — terminal-centric Electron IDE for multi-session AI coding CLI workflows with live browser/terminal surfaces, session telemetry, governance, and encrypted P2P sharing.
