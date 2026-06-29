@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <strong>MIS student building local-first OCR, terminal, and developer tooling with Swift, Go, and Python.</strong>
+  <strong>MIS student building local-first OCR, terminal, AI coding workspaces, and developer tooling with Swift, Go, TypeScript, and Python.</strong>
 </p>
 
 <p align="center">
@@ -21,6 +21,7 @@
 
 <p align="center">
   <code>local-first products</code>
+  <code>AI coding CLIs</code>
   <code>OCR workflows</code>
   <code>CLI / TUI</code>
   <code>AppSec</code>
@@ -28,7 +29,18 @@
 
 ## Product Projects
 
+<p align="center">
+  <a href="https://github.com/batu3384/calder">
+    <img alt="Calder" src="./assets/calder-mark.png" width="96">
+  </a>
+</p>
+
 <ul>
+  <li>
+    <a href="https://github.com/batu3384/calder">Calder</a> — terminal-centric Electron IDE for multi-session AI coding CLI workflows with live browser/terminal surfaces, session telemetry, governance, and encrypted P2P sharing.
+    <br>
+    <sub>TypeScript / Electron / PTY / Claude · Codex · Copilot · Antigravity · Qwen</sub>
+  </li>
   <li>
     <a href="https://github.com/batu3384/ScreenTextGrab">ScreenTextGrab</a> — local-first macOS menu bar OCR app with capture modes for text, subtitles, code, tables, clipboard images, and PDFs.
     <br>
@@ -78,13 +90,14 @@
 
 ## What I Build
 
-- Local-first desktop software for OCR and workflow automation
+- Local-first desktop software for OCR, AI coding workspaces, and workflow automation
 - CLI/TUI and AppSec tools with explicit review, permissions, and auditable operator flows
 - Browser and desktop systems that combine analytics, AI features, and practical user workflows
 - Academic systems work spanning decision support, ordering flows, and embedded hardware control
 
 ## Current Work
 
+- Shipping <a href="https://github.com/batu3384/calder">Calder</a> — a multi-session desktop workspace for modern AI coding CLIs
 - Shipping OCR and workflow software on Apple and desktop platforms
 - Building terminal tools with safer destructive flows, clearer review steps, and better operator feedback
 - Exploring practical AppSec and AI-assisted workflows that fit into day-to-day product use
@@ -92,7 +105,7 @@
 ## Core Stack
 
 <p align="center">
-  <img alt="Core stack" src="https://skillicons.dev/icons?i=swift,go,python,js,fastapi,tensorflow,docker,linux">
+  <img alt="Core stack" src="https://skillicons.dev/icons?i=swift,go,ts,python,js,electron,fastapi,tensorflow,docker,linux">
 </p>
 
 ## Activity
