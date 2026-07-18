@@ -1,0 +1,56 @@
+name: Build Profile README
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - profile.yaml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v4
+
+      - name: Check out profile-control-plane
+        uses: actions/checkout@v4
+        with:
+          repository: majiayu000/profile-control-plane
+          path: profile-control-plane
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: profile-control-plane/package-lock.json
+
+      - name: Build profile assets
+        run: |
+          cd profile-control-plane
+          npm ci
+          npm run build
+          node dist/cli.js check --config ../profile.yaml
+          node dist/cli.js build --config ../profile.yaml --out ../.profile-output --force
+
+      - name: Stage generated profile files
+        run: |
+          cp .profile-output/README.md README.md
+          mkdir -p assets
+          cp .profile-output/assets/* assets/
+
+      - name: Commit profile rebuild
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets/
+          git diff --staged --quiet || git commit -m "chore: rebuild profile from profile.yaml"
+          git push

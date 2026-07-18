@@ -1,0 +1,91 @@
+version: 1
+github:
+  username: batu3384
+identity:
+  name: Batuhan Yüksel
+  headline: LOCAL-FIRST DEVELOPER TOOLS
+  tagline: From OCR capture to AI coding workspaces, terminal maintenance, and AppSec — built with Swift, Go, TypeScript, and Python.
+  location: Istanbul, Turkey · MIS Graduate · TR / EN
+theme:
+  preset: command-deck
+  primary: "#22D3EE"
+  secondary: "#3B82F6"
+links:
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/batu3384
+  - label: Email
+    url: mailto:batu3384@gmail.com
+  - label: GitHub
+    url: https://github.com/batu3384
+layers:
+  - name: CAPTURE
+    project: ScreenTextGrab
+    description: Local-first macOS menu bar OCR for text, code, subtitles, tables, and PDFs.
+    tone: primary
+  - name: WORK
+    project: calder
+    description: Multi-session Electron workspace for AI coding CLIs and live terminal surfaces.
+    tone: primary
+  - name: MAINTAIN
+    project: sift
+    description: Review-first terminal cleaner with safer destructive flows on macOS and Windows.
+    tone: primary
+  - name: SECURE
+    project: ironsentinel
+    description: Local-first AppSec scans, runtime trust checks, and evidence-rich reporting.
+    tone: secondary
+  - name: TRANSFORM
+    project: hexloom
+    description: FastAPI text transformation studio for encoding, decoding, and validating payloads.
+    tone: secondary
+flagships:
+  - repo: calder
+    role: WORK
+    description: Terminal-centric Electron IDE for Claude, Codex, Copilot, Antigravity, and Qwen.
+    tone: primary
+  - repo: ScreenTextGrab
+    role: CAPTURE
+    description: macOS menu bar OCR with capture modes for code, subtitles, tables, and PDFs.
+    tone: primary
+  - repo: sift
+    role: MAINTAIN
+    description: Full-screen TUI for cleanup, uninstall, analysis, and permissions review.
+    tone: secondary
+  - repo: ironsentinel
+    role: SECURE
+    description: Guided repo scans with HTML, SARIF, and CSV export for findings review.
+    tone: secondary
+  - repo: agent-atlas
+    role: AGENTS
+    description: Open-web search and research router with installer, doctor, and upstream tooling.
+    tone: secondary
+  - repo: hexloom
+    role: TRANSFORM
+    description: Browser workspace and JSON API for structured payload inspection.
+    tone: secondary
+module_groups:
+  - name: AI and agent tooling
+    projects:
+      - repo: jobcraft
+        description: AI-powered job search workspace for Turkey with Cursor and Claude Code.
+  - name: Platform and infra
+    projects:
+      - repo: FilterGuard
+        description: On-device iOS message filter and call shield.
+      - repo: frostwall-beam
+        description: Encrypted LAN file transfer with Tauri 2, Rust, and React.
+      - repo: pi-gateway
+        description: Raspberry Pi homelab with DNS, Docker, and Tailscale.
+  - name: Academic and course work
+    projects:
+      - repo: vetvision
+        description: Desktop AI assistant for dog breed recognition with PDF export and Gemini reports.
+      - repo: fast-express-kds
+        description: Cargo operations dashboard with branch analytics, scoring, and forecasting.
+      - repo: sisler-bulvari-cafe-system
+        description: Digital ordering prototype for Sisler Bulvarı Sanat Kafe.
+      - repo: autonomous-line-following-robot
+        description: Raspberry Pi line-following robot with obstacle stopping and alert outputs.
+settings:
+  show_stars: true
+  show_badges: true

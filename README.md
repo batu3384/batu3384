@@ -1,117 +1,66 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/profile-header-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-light.svg">
-    <img alt="Batuhan Yüksel profile header" src="./assets/profile-header-dark.svg" width="740">
-  </picture>
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
+  <img alt="Batuhan Yüksel command deck" src="assets/hero-light.svg" width="100%">
+</picture>
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/batu3384"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"></a>
-  <a href="mailto:batu3384@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-111827?style=flat-square&logo=gmail&logoColor=white"></a>
-</p>
+![profile](https://img.shields.io/badge/profile-batu3384-22D3EE?style=flat-square&labelColor=102934) ![layers](https://img.shields.io/badge/layers-5-3B82F6?style=flat-square&labelColor=102934)
 
-<p align="center">
-  <strong>MIS student building local-first OCR, terminal, AI coding workspaces, and developer tooling with Swift, Go, TypeScript, and Python.</strong>
-</p>
+From OCR capture to AI coding workspaces, terminal maintenance, and AppSec — built with Swift, Go, TypeScript, and Python\.
 
-<p align="center">
-  <sub>Istanbul, Turkey · MIS @ Dokuz Eylül University · Turkish / English</sub>
-</p>
+## Mission-critical systems
 
-<p align="center">
-  <code>local-first products</code>
-  <code>AI coding CLIs</code>
-  <code>OCR workflows</code>
-  <code>CLI / TUI</code>
-  <code>AppSec</code>
-</p>
+| Repository | Role | Purpose |
+| --- | --- | --- |
+| [`calder`](https://github.com/batu3384/calder) ![stars](https://img.shields.io/github/stars/batu3384/calder?style=flat-square&label=%E2%98%85) | WORK | Terminal-centric Electron IDE for Claude, Codex, Copilot, Antigravity, and Qwen\. |
+| [`ScreenTextGrab`](https://github.com/batu3384/ScreenTextGrab) ![stars](https://img.shields.io/github/stars/batu3384/ScreenTextGrab?style=flat-square&label=%E2%98%85) | CAPTURE | macOS menu bar OCR with capture modes for code, subtitles, tables, and PDFs\. |
+| [`sift`](https://github.com/batu3384/sift) ![stars](https://img.shields.io/github/stars/batu3384/sift?style=flat-square&label=%E2%98%85) | MAINTAIN | Full-screen TUI for cleanup, uninstall, analysis, and permissions review\. |
+| [`ironsentinel`](https://github.com/batu3384/ironsentinel) ![stars](https://img.shields.io/github/stars/batu3384/ironsentinel?style=flat-square&label=%E2%98%85) | SECURE | Guided repo scans with HTML, SARIF, and CSV export for findings review\. |
+| [`agent-atlas`](https://github.com/batu3384/agent-atlas) ![stars](https://img.shields.io/github/stars/batu3384/agent-atlas?style=flat-square&label=%E2%98%85) | AGENTS | Open-web search and research router with installer, doctor, and upstream tooling\. |
+| [`hexloom`](https://github.com/batu3384/hexloom) ![stars](https://img.shields.io/github/stars/batu3384/hexloom?style=flat-square&label=%E2%98%85) | TRANSFORM | Browser workspace and JSON API for structured payload inspection\. |
 
-## Product Projects
+## Execution deck
 
-<ul>
-  <li>
-    <a href="https://github.com/batu3384/calder">Calder</a> — terminal-centric Electron IDE for multi-session AI coding CLI workflows with live browser/terminal surfaces, session telemetry, governance, and encrypted P2P sharing.
-    <br>
-    <sub>TypeScript / Electron / PTY / Claude · Codex · Copilot · Antigravity · Qwen</sub>
-  </li>
-  <li>
-    <a href="https://github.com/batu3384/ScreenTextGrab">ScreenTextGrab</a> — local-first macOS menu bar OCR app with capture modes for text, subtitles, code, tables, clipboard images, and PDFs.
-    <br>
-    <sub>Swift / Vision / macOS APIs / menu bar workflow</sub>
-  </li>
-  <li>
-    <a href="https://github.com/batu3384/sift">SIFT</a> — review-first terminal cleaner for macOS and Windows that combines cleanup, uninstall, analysis, and permissions review in a full-screen TUI.
-    <br>
-    <sub>Go / Bubble Tea / cross-platform CLI-TUI</sub>
-  </li>
-  <li>
-    <a href="https://github.com/batu3384/ironsentinel">IronSentinel</a> — local-first AppSec command center for guided repo scans, runtime trust checks, findings review, and HTML/SARIF/CSV exports.
-    <br>
-    <sub>Go / AppSec workflows / CLI + TUI / evidence-rich reporting</sub>
-  </li>
-  <li>
-    <a href="https://github.com/batu3384/hexloom">Hexloom</a> — FastAPI-based text transformation studio for encoding, decoding, validating, and inspecting structured payloads through a browser workspace and JSON API.
-    <br>
-    <sub>Python / FastAPI / browser workspace / API tooling</sub>
-  </li>
-</ul>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/closed-loop-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/closed-loop-light.svg">
+  <img alt="Batuhan Yüksel execution deck" src="assets/closed-loop-light.svg" width="100%">
+</picture>
 
-## Applied And Academic Projects
+## Supporting systems
 
-<ul>
-  <li>
-    <a href="https://github.com/batu3384/vetvision">VetVision</a> — desktop AI assistant for dog breed recognition, PDF export, and optional Gemini-backed veterinary-style report generation.
-    <br>
-    <sub>YBS 4015 Yapay Zeka · Python / CustomTkinter / TensorFlow / Gemini API</sub>
-  </li>
-  <li>
-    <a href="https://github.com/batu3384/fast-express-kds">Fast Express KDS</a> — browser-based decision support dashboard for cargo operations with branch analytics, personnel scoring, reporting, comparison, and a forecasting sidecar.
-    <br>
-    <sub>YBS 3015 Karar Destek Sistemleri · Node.js / Express / Flask / MySQL / Chart.js</sub>
-  </li>
-  <li>
-    <a href="https://github.com/batu3384/sisler-bulvari-cafe-system">Sisler Bulvarı Cafe System</a> — digital ordering and cafe operations prototype prepared for Sisler Bulvarı Sanat Kafe with menu, order tracking, and lightweight sales views.
-    <br>
-    <sub>Bilişim Sistemleri Analizi ve Tasarımı · HTML / CSS / JavaScript / MySQL / Chart.js</sub>
-  </li>
-  <li>
-    <a href="https://github.com/batu3384/autonomous-line-following-robot">Autonomous Line-Following Robot</a> — Raspberry Pi course project preserved around the original robot control script for line following, obstacle-aware stopping, and LED/buzzer alerts.
-    <br>
-    <sub>YBS 2013 Bilgisayar Donanımı · Python / Raspberry Pi / gpiozero / embedded control</sub>
-  </li>
-</ul>
+<details>
+<summary><strong>AI and agent tooling</strong> · 1 modules</summary>
 
-## What I Build
+| Module | Purpose |
+| --- | --- |
+| [`jobcraft`](https://github.com/batu3384/jobcraft) | AI-powered job search workspace for Turkey with Cursor and Claude Code\. |
 
-- Local-first desktop software for OCR, AI coding workspaces, and workflow automation
-- CLI/TUI and AppSec tools with explicit review, permissions, and auditable operator flows
-- Browser and desktop systems that combine analytics, AI features, and practical user workflows
-- Academic systems work spanning decision support, ordering flows, and embedded hardware control
+</details>
 
-## Current Work
+<details>
+<summary><strong>Platform and infra</strong> · 3 modules</summary>
 
-- Shipping <a href="https://github.com/batu3384/calder">Calder</a> — a multi-session desktop workspace for modern AI coding CLIs
-- Shipping OCR and workflow software on Apple and desktop platforms
-- Building terminal tools with safer destructive flows, clearer review steps, and better operator feedback
-- Exploring practical AppSec and AI-assisted workflows that fit into day-to-day product use
+| Module | Purpose |
+| --- | --- |
+| [`FilterGuard`](https://github.com/batu3384/FilterGuard) | On-device iOS message filter and call shield\. |
+| [`frostwall-beam`](https://github.com/batu3384/frostwall-beam) | Encrypted LAN file transfer with Tauri 2, Rust, and React\. |
+| [`pi-gateway`](https://github.com/batu3384/pi-gateway) | Raspberry Pi homelab with DNS, Docker, and Tailscale\. |
 
-## Core Stack
+</details>
 
-<p align="center">
-  <img alt="Core stack" src="https://skillicons.dev/icons?i=swift,go,ts,python,js,electron,fastapi,tensorflow,docker,linux">
-</p>
+<details>
+<summary><strong>Academic and course work</strong> · 4 modules</summary>
 
-## Activity
+| Module | Purpose |
+| --- | --- |
+| [`vetvision`](https://github.com/batu3384/vetvision) | Desktop AI assistant for dog breed recognition with PDF export and Gemini reports\. |
+| [`fast-express-kds`](https://github.com/batu3384/fast-express-kds) | Cargo operations dashboard with branch analytics, scoring, and forecasting\. |
+| [`sisler-bulvari-cafe-system`](https://github.com/batu3384/sisler-bulvari-cafe-system) | Digital ordering prototype for Sisler Bulvarı Sanat Kafe\. |
+| [`autonomous-line-following-robot`](https://github.com/batu3384/autonomous-line-following-robot) | Raspberry Pi line-following robot with obstacle stopping and alert outputs\. |
 
-<p align="center">
-  <sub>A live contribution snapshot across the repos I actively touch.</sub>
-</p>
+</details>
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg">
-    <img alt="GitHub contribution snake" src="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg">
-  </picture>
-</p>
+<p align="center"><a href="https://www.linkedin.com/in/batu3384">LinkedIn</a> · <a href="mailto:batu3384@gmail.com">Email</a> · <a href="https://github.com/batu3384">GitHub</a></p>
+
+<!-- Generated by profile-control-plane. Edit profile.yaml, not this file. -->
