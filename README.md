@@ -4,7 +4,7 @@
   <img alt="Batuhan Yüksel command deck" src="assets/hero-light.svg" width="100%">
 </picture>
 
-macOS apps · terminal tools · AppSec · AI coding workspaces
+macOS apps · terminal · AppSec · AI tools
 
 ## Mission-critical systems
 
@@ -27,20 +27,12 @@ macOS apps · terminal tools · AppSec · AI coding workspaces
 ## Supporting systems
 
 <details>
-<summary><strong>AI and agent tooling</strong> · 2 modules</summary>
+<summary><strong>Tools and platforms</strong> · 3 modules</summary>
 
 | Module | Purpose |
 | --- | --- |
 | [`agent-atlas`](https://github.com/batu3384/agent-atlas) | Open-web search and research router for AI agents with installer, doctor, and upstream tooling\. |
 | [`jobcraft`](https://github.com/batu3384/jobcraft) | AI-powered job search workspace for Turkey with Cursor and Claude Code\. |
-
-</details>
-
-<details>
-<summary><strong>Platform tools</strong> · 1 modules</summary>
-
-| Module | Purpose |
-| --- | --- |
 | [`frostwall-beam`](https://github.com/batu3384/frostwall-beam) | Encrypted LAN file transfer built with Tauri 2, Rust, and React\. |
 
 </details>

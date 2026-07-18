@@ -4,8 +4,8 @@ github:
 identity:
   name: Batuhan Yüksel
   headline: SOFTWARE DEVELOPER
-  tagline: macOS apps · terminal tools · AppSec · AI coding workspaces
-  location: Istanbul, Turkey · MIS Graduate
+  tagline: macOS apps · terminal · AppSec · AI tools
+  location: Istanbul · MIS Graduate
 theme:
   preset: command-deck
   primary: "#22D3EE"
@@ -58,14 +58,12 @@ flagships:
     description: Browser workspace and JSON API for structured payload inspection.
     tone: secondary
 module_groups:
-  - name: AI and agent tooling
+  - name: Tools and platforms
     projects:
       - repo: agent-atlas
         description: Open-web search and research router for AI agents with installer, doctor, and upstream tooling.
       - repo: jobcraft
         description: AI-powered job search workspace for Turkey with Cursor and Claude Code.
-  - name: Platform tools
-    projects:
       - repo: frostwall-beam
         description: Encrypted LAN file transfer built with Tauri 2, Rust, and React.
   - name: Academic projects
