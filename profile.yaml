@@ -3,8 +3,8 @@ github:
   username: batu3384
 identity:
   name: Batuhan Yüksel
-  headline: LOCAL-FIRST DEVELOPER TOOLS
-  tagline: OCR · AI coding workspaces · terminal tools · AppSec
+  headline: SOFTWARE DEVELOPER
+  tagline: macOS apps · terminal tools · AppSec · AI coding workspaces
   location: Istanbul, Turkey · MIS Graduate
 theme:
   preset: command-deck
@@ -64,14 +64,10 @@ module_groups:
         description: Open-web search and research router for AI agents with installer, doctor, and upstream tooling.
       - repo: jobcraft
         description: AI-powered job search workspace for Turkey with Cursor and Claude Code.
-  - name: Platform and infrastructure
+  - name: Platform tools
     projects:
-      - repo: FilterGuard
-        description: On-device iOS message filter and call shield.
       - repo: frostwall-beam
         description: Encrypted LAN file transfer built with Tauri 2, Rust, and React.
-      - repo: pi-gateway
-        description: Raspberry Pi 4B homelab for DNS, Docker, and Tailscale.
   - name: Academic projects
     projects:
       - repo: vetvision

@@ -4,7 +4,7 @@
   <img alt="Batuhan Yüksel command deck" src="assets/hero-light.svg" width="100%">
 </picture>
 
-OCR · AI coding workspaces · terminal tools · AppSec
+macOS apps · terminal tools · AppSec · AI coding workspaces
 
 ## Mission-critical systems
 
@@ -37,13 +37,11 @@ OCR · AI coding workspaces · terminal tools · AppSec
 </details>
 
 <details>
-<summary><strong>Platform and infrastructure</strong> · 3 modules</summary>
+<summary><strong>Platform tools</strong> · 1 modules</summary>
 
 | Module | Purpose |
 | --- | --- |
-| [`FilterGuard`](https://github.com/batu3384/FilterGuard) | On-device iOS message filter and call shield\. |
 | [`frostwall-beam`](https://github.com/batu3384/frostwall-beam) | Encrypted LAN file transfer built with Tauri 2, Rust, and React\. |
-| [`pi-gateway`](https://github.com/batu3384/pi-gateway) | Raspberry Pi 4B homelab for DNS, Docker, and Tailscale\. |
 
 </details>
 
