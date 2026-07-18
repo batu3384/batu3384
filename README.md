@@ -4,20 +4,17 @@
   <img alt="Batuhan Yüksel command deck" src="assets/hero-light.svg" width="100%">
 </picture>
 
-![profile](https://img.shields.io/badge/profile-batu3384-22D3EE?style=flat-square&labelColor=102934) ![layers](https://img.shields.io/badge/layers-5-3B82F6?style=flat-square&labelColor=102934)
-
-From OCR capture to AI coding workspaces, terminal maintenance, and AppSec — built with Swift, Go, TypeScript, and Python\.
+OCR · AI coding workspaces · terminal tools · AppSec
 
 ## Mission-critical systems
 
 | Repository | Role | Purpose |
 | --- | --- | --- |
-| [`calder`](https://github.com/batu3384/calder) ![stars](https://img.shields.io/github/stars/batu3384/calder?style=flat-square&label=%E2%98%85) | WORK | Terminal-centric Electron IDE for Claude, Codex, Copilot, Antigravity, and Qwen\. |
-| [`ScreenTextGrab`](https://github.com/batu3384/ScreenTextGrab) ![stars](https://img.shields.io/github/stars/batu3384/ScreenTextGrab?style=flat-square&label=%E2%98%85) | CAPTURE | macOS menu bar OCR with capture modes for code, subtitles, tables, and PDFs\. |
-| [`sift`](https://github.com/batu3384/sift) ![stars](https://img.shields.io/github/stars/batu3384/sift?style=flat-square&label=%E2%98%85) | MAINTAIN | Full-screen TUI for cleanup, uninstall, analysis, and permissions review\. |
-| [`ironsentinel`](https://github.com/batu3384/ironsentinel) ![stars](https://img.shields.io/github/stars/batu3384/ironsentinel?style=flat-square&label=%E2%98%85) | SECURE | Guided repo scans with HTML, SARIF, and CSV export for findings review\. |
-| [`agent-atlas`](https://github.com/batu3384/agent-atlas) ![stars](https://img.shields.io/github/stars/batu3384/agent-atlas?style=flat-square&label=%E2%98%85) | AGENTS | Open-web search and research router with installer, doctor, and upstream tooling\. |
-| [`hexloom`](https://github.com/batu3384/hexloom) ![stars](https://img.shields.io/github/stars/batu3384/hexloom?style=flat-square&label=%E2%98%85) | TRANSFORM | Browser workspace and JSON API for structured payload inspection\. |
+| [`ScreenTextGrab`](https://github.com/batu3384/ScreenTextGrab) | CAPTURE | Local-first macOS OCR with capture modes for text, code, subtitles, tables, and PDFs\. |
+| [`calder`](https://github.com/batu3384/calder) | WORK | Terminal-centric Electron IDE for Claude, Codex, Copilot, Antigravity, and Qwen\. |
+| [`sift`](https://github.com/batu3384/sift) | MAINTAIN | Full-screen TUI for cleanup, uninstall, analysis, and permissions review\. |
+| [`ironsentinel`](https://github.com/batu3384/ironsentinel) | SECURE | Local-first AppSec CLI with HTML, SARIF, and CSV export for findings review\. |
+| [`hexloom`](https://github.com/batu3384/hexloom) | TRANSFORM | Browser workspace and JSON API for structured payload inspection\. |
 
 ## Execution deck
 
@@ -30,37 +27,38 @@ From OCR capture to AI coding workspaces, terminal maintenance, and AppSec — b
 ## Supporting systems
 
 <details>
-<summary><strong>AI and agent tooling</strong> · 1 modules</summary>
+<summary><strong>AI and agent tooling</strong> · 2 modules</summary>
 
 | Module | Purpose |
 | --- | --- |
+| [`agent-atlas`](https://github.com/batu3384/agent-atlas) | Open-web search and research router for AI agents with installer, doctor, and upstream tooling\. |
 | [`jobcraft`](https://github.com/batu3384/jobcraft) | AI-powered job search workspace for Turkey with Cursor and Claude Code\. |
 
 </details>
 
 <details>
-<summary><strong>Platform and infra</strong> · 3 modules</summary>
+<summary><strong>Platform and infrastructure</strong> · 3 modules</summary>
 
 | Module | Purpose |
 | --- | --- |
 | [`FilterGuard`](https://github.com/batu3384/FilterGuard) | On-device iOS message filter and call shield\. |
-| [`frostwall-beam`](https://github.com/batu3384/frostwall-beam) | Encrypted LAN file transfer with Tauri 2, Rust, and React\. |
-| [`pi-gateway`](https://github.com/batu3384/pi-gateway) | Raspberry Pi homelab with DNS, Docker, and Tailscale\. |
+| [`frostwall-beam`](https://github.com/batu3384/frostwall-beam) | Encrypted LAN file transfer built with Tauri 2, Rust, and React\. |
+| [`pi-gateway`](https://github.com/batu3384/pi-gateway) | Raspberry Pi 4B homelab for DNS, Docker, and Tailscale\. |
 
 </details>
 
 <details>
-<summary><strong>Academic and course work</strong> · 4 modules</summary>
+<summary><strong>Academic projects</strong> · 4 modules</summary>
 
 | Module | Purpose |
 | --- | --- |
-| [`vetvision`](https://github.com/batu3384/vetvision) | Desktop AI assistant for dog breed recognition with PDF export and Gemini reports\. |
-| [`fast-express-kds`](https://github.com/batu3384/fast-express-kds) | Cargo operations dashboard with branch analytics, scoring, and forecasting\. |
-| [`sisler-bulvari-cafe-system`](https://github.com/batu3384/sisler-bulvari-cafe-system) | Digital ordering prototype for Sisler Bulvarı Sanat Kafe\. |
-| [`autonomous-line-following-robot`](https://github.com/batu3384/autonomous-line-following-robot) | Raspberry Pi line-following robot with obstacle stopping and alert outputs\. |
+| [`vetvision`](https://github.com/batu3384/vetvision) | Desktop AI assistant for dog breed recognition with PDF export and optional Gemini reports\. |
+| [`fast-express-kds`](https://github.com/batu3384/fast-express-kds) | Decision support dashboard for cargo operations with branch analytics and forecasting\. |
+| [`sisler-bulvari-cafe-system`](https://github.com/batu3384/sisler-bulvari-cafe-system) | Digital ordering prototype for Sisler Bulvarı Sanat Kafe with menu, orders, and sales views\. |
+| [`autonomous-line-following-robot`](https://github.com/batu3384/autonomous-line-following-robot) | Raspberry Pi line-following robot with obstacle stopping, LED, and buzzer alerts\. |
 
 </details>
 
-<p align="center"><a href="https://www.linkedin.com/in/batu3384">LinkedIn</a> · <a href="mailto:batu3384@gmail.com">Email</a> · <a href="https://github.com/batu3384">GitHub</a></p>
+<p align="center"><a href="https://www.linkedin.com/in/batu3384">LinkedIn</a> · <a href="mailto:batu3384@gmail.com">Email</a></p>
 
 <!-- Generated by profile-control-plane. Edit profile.yaml, not this file. -->

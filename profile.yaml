@@ -4,8 +4,8 @@ github:
 identity:
   name: Batuhan Yüksel
   headline: LOCAL-FIRST DEVELOPER TOOLS
-  tagline: From OCR capture to AI coding workspaces, terminal maintenance, and AppSec — built with Swift, Go, TypeScript, and Python.
-  location: Istanbul, Turkey · MIS Graduate · TR / EN
+  tagline: OCR · AI coding workspaces · terminal tools · AppSec
+  location: Istanbul, Turkey · MIS Graduate
 theme:
   preset: command-deck
   primary: "#22D3EE"
@@ -15,12 +15,10 @@ links:
     url: https://www.linkedin.com/in/batu3384
   - label: Email
     url: mailto:batu3384@gmail.com
-  - label: GitHub
-    url: https://github.com/batu3384
 layers:
   - name: CAPTURE
     project: ScreenTextGrab
-    description: Local-first macOS menu bar OCR for text, code, subtitles, tables, and PDFs.
+    description: macOS menu bar OCR for text, code, subtitles, tables, and PDFs.
     tone: primary
   - name: WORK
     project: calder
@@ -32,20 +30,20 @@ layers:
     tone: primary
   - name: SECURE
     project: ironsentinel
-    description: Local-first AppSec scans, runtime trust checks, and evidence-rich reporting.
+    description: Guided AppSec scans, runtime trust checks, and evidence-rich reporting.
     tone: secondary
   - name: TRANSFORM
     project: hexloom
-    description: FastAPI text transformation studio for encoding, decoding, and validating payloads.
+    description: FastAPI studio for encoding, decoding, validating, and inspecting structured payloads.
     tone: secondary
 flagships:
+  - repo: ScreenTextGrab
+    role: CAPTURE
+    description: Local-first macOS OCR with capture modes for text, code, subtitles, tables, and PDFs.
+    tone: primary
   - repo: calder
     role: WORK
     description: Terminal-centric Electron IDE for Claude, Codex, Copilot, Antigravity, and Qwen.
-    tone: primary
-  - repo: ScreenTextGrab
-    role: CAPTURE
-    description: macOS menu bar OCR with capture modes for code, subtitles, tables, and PDFs.
     tone: primary
   - repo: sift
     role: MAINTAIN
@@ -53,11 +51,7 @@ flagships:
     tone: secondary
   - repo: ironsentinel
     role: SECURE
-    description: Guided repo scans with HTML, SARIF, and CSV export for findings review.
-    tone: secondary
-  - repo: agent-atlas
-    role: AGENTS
-    description: Open-web search and research router with installer, doctor, and upstream tooling.
+    description: Local-first AppSec CLI with HTML, SARIF, and CSV export for findings review.
     tone: secondary
   - repo: hexloom
     role: TRANSFORM
@@ -66,26 +60,28 @@ flagships:
 module_groups:
   - name: AI and agent tooling
     projects:
+      - repo: agent-atlas
+        description: Open-web search and research router for AI agents with installer, doctor, and upstream tooling.
       - repo: jobcraft
         description: AI-powered job search workspace for Turkey with Cursor and Claude Code.
-  - name: Platform and infra
+  - name: Platform and infrastructure
     projects:
       - repo: FilterGuard
         description: On-device iOS message filter and call shield.
       - repo: frostwall-beam
-        description: Encrypted LAN file transfer with Tauri 2, Rust, and React.
+        description: Encrypted LAN file transfer built with Tauri 2, Rust, and React.
       - repo: pi-gateway
-        description: Raspberry Pi homelab with DNS, Docker, and Tailscale.
-  - name: Academic and course work
+        description: Raspberry Pi 4B homelab for DNS, Docker, and Tailscale.
+  - name: Academic projects
     projects:
       - repo: vetvision
-        description: Desktop AI assistant for dog breed recognition with PDF export and Gemini reports.
+        description: Desktop AI assistant for dog breed recognition with PDF export and optional Gemini reports.
       - repo: fast-express-kds
-        description: Cargo operations dashboard with branch analytics, scoring, and forecasting.
+        description: Decision support dashboard for cargo operations with branch analytics and forecasting.
       - repo: sisler-bulvari-cafe-system
-        description: Digital ordering prototype for Sisler Bulvarı Sanat Kafe.
+        description: Digital ordering prototype for Sisler Bulvarı Sanat Kafe with menu, orders, and sales views.
       - repo: autonomous-line-following-robot
-        description: Raspberry Pi line-following robot with obstacle stopping and alert outputs.
+        description: Raspberry Pi line-following robot with obstacle stopping, LED, and buzzer alerts.
 settings:
-  show_stars: true
-  show_badges: true
+  show_stars: false
+  show_badges: false
