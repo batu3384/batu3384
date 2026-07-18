@@ -1,0 +1,81 @@
+version: 1
+github:
+  username: batu3384
+identity:
+  name: Batuhan Yüksel
+  headline: SOFTWARE DEVELOPER
+  tagline: macOS apps · terminal · AppSec · AI tools
+  location: Istanbul · MIS Graduate
+theme:
+  preset: command-deck
+  primary: "#22D3EE"
+  secondary: "#3B82F6"
+links:
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/batu3384
+  - label: Email
+    url: mailto:batu3384@gmail.com
+layers:
+  - name: CAPTURE
+    project: ScreenTextGrab
+    description: macOS menu bar OCR for text, code, subtitles, tables, and PDFs.
+    tone: primary
+  - name: WORK
+    project: calder
+    description: Multi-session Electron workspace for AI coding CLIs and live terminal surfaces.
+    tone: primary
+  - name: MAINTAIN
+    project: sift
+    description: Review-first terminal cleaner with safer destructive flows on macOS and Windows.
+    tone: primary
+  - name: SECURE
+    project: ironsentinel
+    description: Guided AppSec scans, runtime trust checks, and evidence-rich reporting.
+    tone: secondary
+  - name: TRANSFORM
+    project: hexloom
+    description: FastAPI studio for encoding, decoding, validating, and inspecting structured payloads.
+    tone: secondary
+flagships:
+  - repo: ScreenTextGrab
+    role: CAPTURE
+    description: Local-first macOS OCR with capture modes for text, code, subtitles, tables, and PDFs.
+    tone: primary
+  - repo: calder
+    role: WORK
+    description: Terminal-centric Electron IDE for Claude, Codex, Copilot, Antigravity, and Qwen.
+    tone: primary
+  - repo: sift
+    role: MAINTAIN
+    description: Full-screen TUI for cleanup, uninstall, analysis, and permissions review.
+    tone: secondary
+  - repo: ironsentinel
+    role: SECURE
+    description: Local-first AppSec CLI with HTML, SARIF, and CSV export for findings review.
+    tone: secondary
+  - repo: hexloom
+    role: TRANSFORM
+    description: Browser workspace and JSON API for structured payload inspection.
+    tone: secondary
+module_groups:
+  - name: Tools and platforms
+    projects:
+      - repo: agent-atlas
+        description: Open-web search and research router for AI agents with installer, doctor, and upstream tooling.
+      - repo: jobcraft
+        description: AI-powered job search workspace for Turkey with Cursor and Claude Code.
+      - repo: frostwall-beam
+        description: Encrypted LAN file transfer built with Tauri 2, Rust, and React.
+  - name: Academic projects
+    projects:
+      - repo: vetvision
+        description: Desktop AI assistant for dog breed recognition with PDF export and optional Gemini reports.
+      - repo: fast-express-kds
+        description: Decision support dashboard for cargo operations with branch analytics and forecasting.
+      - repo: sisler-bulvari-cafe-system
+        description: Digital ordering prototype for Sisler Bulvarı Sanat Kafe with menu, orders, and sales views.
+      - repo: autonomous-line-following-robot
+        description: Raspberry Pi line-following robot with obstacle stopping, LED, and buzzer alerts.
+settings:
+  show_stars: false
+  show_badges: false
