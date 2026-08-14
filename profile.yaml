@@ -4,10 +4,10 @@ github:
 identity:
   name: Batuhan Yüksel
   headline: SOFTWARE DEVELOPER
-  tagline: macOS apps · terminal · AppSec · AI tools
-  location: Istanbul · MIS Graduate
+  tagline: macOS apps, terminal tools, AppSec, and AI workspaces
+  location: Istanbul · MIS
 theme:
-  preset: command-deck
+  preset: bento-grid
   primary: "#22D3EE"
   secondary: "#3B82F6"
 links:
@@ -18,54 +18,56 @@ links:
 layers:
   - name: CAPTURE
     project: ScreenTextGrab
-    description: macOS menu bar OCR for text, code, subtitles, tables, and PDFs.
+    description: On-device macOS OCR for screen, files, and PDFs.
     tone: primary
   - name: WORK
     project: calder
-    description: Multi-session Electron workspace for AI coding CLIs and live terminal surfaces.
+    description: Electron workspace for parallel AI coding CLI sessions.
+    tone: primary
+  - name: TRANSFER
+    project: frostwall-beam
+    description: Encrypted LAN and internet file transfer with receiver approval.
     tone: primary
   - name: MAINTAIN
     project: sift
-    description: Review-first terminal cleaner with safer destructive flows on macOS and Windows.
-    tone: primary
-  - name: SECURE
-    project: ironsentinel
-    description: Guided AppSec scans, runtime trust checks, and evidence-rich reporting.
+    description: Review-first terminal cleaner with safer destructive flows.
     tone: secondary
-  - name: TRANSFORM
-    project: hexloom
-    description: FastAPI studio for encoding, decoding, validating, and inspecting structured payloads.
+  - name: APPSEC
+    project: ironsentinel
+    description: Local-first AppSec CLI with SARIF, HTML, and CSV reports.
     tone: secondary
 flagships:
   - repo: ScreenTextGrab
     role: CAPTURE
-    description: Local-first macOS OCR with capture modes for text, code, subtitles, tables, and PDFs.
+    description: On-device macOS OCR for screen, files, and PDFs.
     tone: primary
   - repo: calder
     role: WORK
-    description: Terminal-centric Electron IDE for Claude, Codex, Copilot, Antigravity, and Qwen.
+    description: Electron workspace for parallel AI coding CLI sessions.
     tone: primary
-  - repo: sift
-    role: MAINTAIN
-    description: Full-screen TUI for cleanup, uninstall, analysis, and permissions review.
-    tone: secondary
-  - repo: ironsentinel
-    role: SECURE
-    description: Local-first AppSec CLI with HTML, SARIF, and CSV export for findings review.
-    tone: secondary
-  - repo: hexloom
-    role: TRANSFORM
-    description: Browser workspace and JSON API for structured payload inspection.
-    tone: secondary
+  - repo: frostwall-beam
+    role: TRANSFER
+    description: Encrypted LAN/internet transfer with receiver approval.
+    tone: primary
 module_groups:
+  - name: CLI and AppSec
+    projects:
+      - repo: sift
+        description: Review-first terminal cleaner with safer destructive flows on macOS and Windows.
+      - repo: ironsentinel
+        description: Local-first AppSec CLI with HTML, SARIF, and CSV export for findings review.
+      - repo: hexloom
+        description: FastAPI studio for encoding, decoding, and validating structured payloads.
   - name: Tools and platforms
     projects:
+      - repo: falcon-dm
+        description: Local-only macOS download manager for HTTP, HLS, and YouTube.
+      - repo: deskward
+        description: Self-hosted remote desktop with a Rust core, Flutter client, and E2EE sessions.
       - repo: agent-atlas
         description: Open-web search and research router for AI agents with installer, doctor, and upstream tooling.
       - repo: jobcraft
         description: AI-powered job search workspace for Turkey with Cursor and Claude Code.
-      - repo: frostwall-beam
-        description: Encrypted LAN file transfer built with Tauri 2, Rust, and React.
   - name: Academic projects
     projects:
       - repo: vetvision

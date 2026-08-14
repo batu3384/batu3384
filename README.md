@@ -1,39 +1,49 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-  <img alt="Batuhan Yüksel command deck" src="assets/hero-light.svg" width="100%">
+  <img alt="Batuhan Yüksel bento portfolio" src="assets/hero-light.svg" width="100%">
 </picture>
 
-macOS apps · terminal · AppSec · AI tools
+macOS apps, terminal tools, AppSec, and AI workspaces
 
-## Mission-critical systems
+## Featured builds
 
 | Repository | Role | Purpose |
 | --- | --- | --- |
-| [`ScreenTextGrab`](https://github.com/batu3384/ScreenTextGrab) | CAPTURE | Local-first macOS OCR with capture modes for text, code, subtitles, tables, and PDFs\. |
-| [`calder`](https://github.com/batu3384/calder) | WORK | Terminal-centric Electron IDE for Claude, Codex, Copilot, Antigravity, and Qwen\. |
-| [`sift`](https://github.com/batu3384/sift) | MAINTAIN | Full-screen TUI for cleanup, uninstall, analysis, and permissions review\. |
-| [`ironsentinel`](https://github.com/batu3384/ironsentinel) | SECURE | Local-first AppSec CLI with HTML, SARIF, and CSV export for findings review\. |
-| [`hexloom`](https://github.com/batu3384/hexloom) | TRANSFORM | Browser workspace and JSON API for structured payload inspection\. |
+| [`ScreenTextGrab`](https://github.com/batu3384/ScreenTextGrab) | CAPTURE | On-device macOS OCR for screen, files, and PDFs\. |
+| [`calder`](https://github.com/batu3384/calder) | WORK | Electron workspace for parallel AI coding CLI sessions\. |
+| [`frostwall-beam`](https://github.com/batu3384/frostwall-beam) | TRANSFER | Encrypted LAN/internet transfer with receiver approval\. |
 
-## Execution deck
+## Build map
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/closed-loop-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/closed-loop-light.svg">
-  <img alt="Batuhan Yüksel execution deck" src="assets/closed-loop-light.svg" width="100%">
+  <img alt="Batuhan Yüksel modular build map" src="assets/closed-loop-light.svg" width="100%">
 </picture>
 
-## Supporting systems
+## More from the workshop
 
 <details>
-<summary><strong>Tools and platforms</strong> · 3 modules</summary>
+<summary><strong>CLI and AppSec</strong> · 3 modules</summary>
 
 | Module | Purpose |
 | --- | --- |
+| [`sift`](https://github.com/batu3384/sift) | Review-first terminal cleaner with safer destructive flows on macOS and Windows\. |
+| [`ironsentinel`](https://github.com/batu3384/ironsentinel) | Local-first AppSec CLI with HTML, SARIF, and CSV export for findings review\. |
+| [`hexloom`](https://github.com/batu3384/hexloom) | FastAPI studio for encoding, decoding, and validating structured payloads\. |
+
+</details>
+
+<details>
+<summary><strong>Tools and platforms</strong> · 4 modules</summary>
+
+| Module | Purpose |
+| --- | --- |
+| [`falcon-dm`](https://github.com/batu3384/falcon-dm) | Local-only macOS download manager for HTTP, HLS, and YouTube\. |
+| [`deskward`](https://github.com/batu3384/deskward) | Self-hosted remote desktop with a Rust core, Flutter client, and E2EE sessions\. |
 | [`agent-atlas`](https://github.com/batu3384/agent-atlas) | Open-web search and research router for AI agents with installer, doctor, and upstream tooling\. |
 | [`jobcraft`](https://github.com/batu3384/jobcraft) | AI-powered job search workspace for Turkey with Cursor and Claude Code\. |
-| [`frostwall-beam`](https://github.com/batu3384/frostwall-beam) | Encrypted LAN file transfer built with Tauri 2, Rust, and React\. |
 
 </details>
 
