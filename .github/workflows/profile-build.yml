@@ -1,11 +1,7 @@
 name: Build Profile README
 
+# Authored README is the live profile. Do not auto-rebuild from profile.yaml.
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - profile.yaml
   workflow_dispatch:
 
 permissions:
