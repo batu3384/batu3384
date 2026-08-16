@@ -1,3 +1,5 @@
+# Archived generator config. Live profile is README.md (authored, mobile-first).
+# Do not publish profilectl output over README.md.
 version: 1
 github:
   username: batu3384
