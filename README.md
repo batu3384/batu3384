@@ -1,19 +1,25 @@
-Local-first macOS apps, terminal tools, and AppSec workflows — Swift, Go, TypeScript, Python, and Rust.
+<picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="assets/hero-mobile-dark.svg">
+  <source media="(max-width: 700px)" srcset="assets/hero-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
+  <img alt="Batuhan Yüksel — software developer. Selected work: ScreenTextGrab, calder, frostwall-beam." src="assets/hero-light.svg" width="100%">
+</picture>
 
-## Selected work
-
-**[ScreenTextGrab](https://github.com/batu3384/ScreenTextGrab)** — On-device macOS OCR for screen, files, and PDFs.
-
-**[calder](https://github.com/batu3384/calder)** — Electron workspace for parallel AI coding CLI sessions.
-
-**[frostwall-beam](https://github.com/batu3384/frostwall-beam)** — Encrypted LAN and internet file transfer with receiver approval.
-
-## Also
-
-- **[sift](https://github.com/batu3384/sift)** — Review-first terminal cleaner for macOS and Windows
-- **[ironsentinel](https://github.com/batu3384/ironsentinel)** — Local-first AppSec CLI with SARIF, HTML, and CSV reports
-- **[falcon-dm](https://github.com/batu3384/falcon-dm)** — Local-only macOS download manager for HTTP, HLS, and YouTube
-- **[deskward](https://github.com/batu3384/deskward)** — Self-hosted remote desktop with a Rust core, Flutter client, and E2EE sessions
+<p align="center">
+  <a href="https://github.com/batu3384/ScreenTextGrab">ScreenTextGrab</a>
+  ·
+  <a href="https://github.com/batu3384/calder">calder</a>
+  ·
+  <a href="https://github.com/batu3384/frostwall-beam">frostwall-beam</a>
+  ·
+  <a href="https://github.com/batu3384/sift">sift</a>
+  ·
+  <a href="https://github.com/batu3384/ironsentinel">ironsentinel</a>
+  ·
+  <a href="https://github.com/batu3384/falcon-dm">falcon-dm</a>
+  ·
+  <a href="https://github.com/batu3384/deskward">deskward</a>
+</p>
 
 <details>
 <summary>Other public work</summary>
@@ -34,4 +40,4 @@ Local-first macOS apps, terminal tools, and AppSec workflows — Swift, Go, Type
 
 </details>
 
-[LinkedIn](https://www.linkedin.com/in/batu3384) · [Email](mailto:batu3384@gmail.com)
+<p align="center"><a href="https://www.linkedin.com/in/batu3384">LinkedIn</a> · <a href="mailto:batu3384@gmail.com">Email</a></p>

@@ -1,4 +1,4 @@
-# Archived generator config. Live profile is README.md (authored, mobile-first).
+# Live profile is authored: README.md + scripts/render-profile.mjs
 # Do not publish profilectl output over README.md.
 version: 1
 github:
