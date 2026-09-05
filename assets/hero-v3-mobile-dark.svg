@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="780" viewBox="0 0 640 780" role="img" aria-label="Batuhan Yüksel, software builder. Selected work: ScreenTextGrab, calder, frostwall-beam." data-mode="mdark">
+  <defs>
+    <pattern id="mdark-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#2C4246" stroke-width=".6" opacity=".45"/>
+    </pattern>
+  </defs>
+  <style>
+    .display{font-family:"Arial Narrow","Avenir Next Condensed",Impact,sans-serif}
+    .body{font-family:"Avenir Next",Avenir,Helvetica,sans-serif}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    .boot{animation:boot .4s ease-out}
+    .scan{stroke-dasharray:5 9;animation:scan 8s linear infinite}
+    @keyframes boot{from{opacity:.25}to{opacity:1}}
+    @keyframes scan{to{stroke-dashoffset:-140}}
+    @media(prefers-reduced-motion:reduce){.boot,.scan{animation:none}}
+  </style>
+  <rect width="640" height="780" fill="#07090B"/>
+  <rect x="12" y="12" width="616" height="756" rx="16" fill="#0E1417" stroke="#2C4246"/>
+  <rect x="12" y="12" width="616" height="756" rx="16" fill="url(#mdark-grid)"/>
+  <g class="boot">
+    <path d="M28 28H596L612 44V196H28Z" fill="#151E22" stroke="#2C4246"/>
+    <rect x="28" y="28" width="8" height="168" fill="#22D3EE"/>
+    <text x="56" y="64" class="mono" font-size="16" letter-spacing="2" fill="#22D3EE">BATUHAN YÜKSEL  ·  ISTANBUL</text>
+    <text x="52" y="114" class="display" font-size="36" font-weight="900" fill="#F2F7F5">SOFTWARE BUILDER</text>
+    <text x="56" y="154" class="body" font-size="16" fill="#8FA3A0">LOCAL-FIRST APPS AND CLI TOOLS</text>
+  </g>
+  <g class="boot">
+        <path d="M28 220H596L612 236V384H28Z" fill="#151E22" stroke="#2C4246"/>
+        <rect x="28" y="220" width="8" height="164" fill="#22D3EE"/>
+        <text x="56" y="262" class="mono" font-size="16" letter-spacing="1.8" fill="#22D3EE">01  CAPTURE  ·  SWIFT</text>
+        <text x="56" y="312" class="body" font-size="30" font-weight="800" fill="#F2F7F5">ScreenTextGrab</text>
+        <text x="56" y="352" class="body" font-size="18" fill="#8FA3A0">Menu bar OCR for screen, code, tables, PDFs.</text>
+      </g><g class="boot">
+        <path d="M28 396H596L612 412V560H28Z" fill="#151E22" stroke="#2C4246"/>
+        <rect x="28" y="396" width="8" height="164" fill="#22D3EE"/>
+        <text x="56" y="438" class="mono" font-size="16" letter-spacing="1.8" fill="#22D3EE">02  WORKSPACE  ·  TYPESCRIPT</text>
+        <text x="56" y="488" class="body" font-size="30" font-weight="800" fill="#F2F7F5">calder</text>
+        <text x="56" y="528" class="body" font-size="18" fill="#8FA3A0">Parallel Claude, Codex, Cursor, Antigravity.</text>
+      </g><g class="boot">
+        <path d="M28 572H596L612 588V736H28Z" fill="#151E22" stroke="#2C4246"/>
+        <rect x="28" y="572" width="8" height="164" fill="#60A5FA"/>
+        <text x="56" y="614" class="mono" font-size="16" letter-spacing="1.8" fill="#60A5FA">03  TRANSFER  ·  RUST</text>
+        <text x="56" y="664" class="body" font-size="30" font-weight="800" fill="#F2F7F5">frostwall-beam</text>
+        <text x="56" y="704" class="body" font-size="18" fill="#8FA3A0">Encrypted transfer with a receiver gate.</text>
+      </g>
+</svg>
