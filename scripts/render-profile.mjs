@@ -10,14 +10,14 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "assets");
 const USER = "batu3384";
 const ASSETS = {
-  desktopDark: "hero-v4-dark.svg",
-  desktopLight: "hero-v4-light.svg",
-  mobileDark: "hero-v4-mobile-dark.svg",
-  mobileLight: "hero-v4-mobile-light.svg",
-  indexDark: "index-v4-dark.svg",
-  indexLight: "index-v4-light.svg",
-  indexMobileDark: "index-v4-mobile-dark.svg",
-  indexMobileLight: "index-v4-mobile-light.svg",
+  desktopDark: "hero-v5-dark.svg",
+  desktopLight: "hero-v5-light.svg",
+  mobileDark: "hero-v5-mobile-dark.svg",
+  mobileLight: "hero-v5-mobile-light.svg",
+  indexDark: "index-v5-dark.svg",
+  indexLight: "index-v5-light.svg",
+  indexMobileDark: "index-v5-mobile-dark.svg",
+  indexMobileLight: "index-v5-mobile-light.svg",
 };
 
 const identity = {
@@ -147,35 +147,43 @@ const academic = [
 
 const palettes = {
   dark: {
-    bg: "#07090B",
-    board: "#0E1417",
-    module: "#151E22",
-    raised: "#1C272C",
-    text: "#F2F7F5",
-    muted: "#8FA3A0",
-    trace: "#2C4246",
-    ink: "#22D3EE",
-    secondary: "#60A5FA",
+    bg: "#12100E",
+    board: "#1A1714",
+    slab: "#F3E6D4",
+    slabText: "#1A1714",
+    slabMuted: "#6B5A4A",
+    module: "#241F1B",
+    raised: "#2A241F",
+    text: "#F6EFE6",
+    muted: "#B7A798",
+    line: "#3D342C",
+    accent: "#C45C26",
+    slabAccent: "#9A3412",
+    mark: "#E8B86D",
   },
   light: {
-    bg: "#D7DDD8",
-    board: "#EEF2ED",
-    module: "#F7FAF6",
+    bg: "#E6DCCF",
+    board: "#F7F1E8",
+    slab: "#1A1714",
+    slabText: "#F7F1E8",
+    slabMuted: "#C4B4A4",
+    module: "#FFFFFF",
     raised: "#FFFFFF",
-    text: "#122024",
-    muted: "#3F534F",
-    trace: "#B7C6C2",
-    ink: "#0E7490",
-    secondary: "#1D4ED8",
+    text: "#1A1714",
+    muted: "#6B5A4A",
+    line: "#D9CBBA",
+    accent: "#C45C26",
+    slabAccent: "#E8B86D",
+    mark: "#9A3412",
   },
 };
 
 const DESKTOP = {
   width: 960,
-  height: 360,
-  board: { x: 12, y: 12, width: 936, height: 336 },
-  identity: { x: 28, y: 28, width: 304, height: 304 },
-  cards: { x: 356, y: 48, width: 576, height: 88, step: 100 },
+  height: 392,
+  board: { x: 12, y: 12, width: 936, height: 368 },
+  identity: { x: 24, y: 24, width: 328, height: 344 },
+  cards: { x: 372, y: 40, width: 556, height: 96, step: 108 },
 };
 
 const MOBILE = {
@@ -213,8 +221,8 @@ function repoUrl(name) {
   return `https://github.com/${USER}/${name}`;
 }
 
-function cut(x, y, w, h) {
-  return `M${x} ${y}H${x + w - 16}L${x + w} ${y + 16}V${y + h}H${x}Z`;
+function rr(x, y, w, h, r, fill) {
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${fill}"/>`;
 }
 
 function projects() {
@@ -252,21 +260,14 @@ function assertLayout() {
   }
 }
 
-function defs(p, id) {
-  return `<defs>
-    <pattern id="${id}-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M24 0H0V24" fill="none" stroke="${p.trace}" stroke-width=".6" opacity=".45"/>
-    </pattern>
-  </defs>
-  <style>
-    .display{font-family:"Arial Narrow","Avenir Next Condensed",Impact,sans-serif}
+function defs() {
+  return `<style>
+    .display{font-family:Georgia,"Times New Roman",serif}
     .body{font-family:"Avenir Next",Avenir,Helvetica,sans-serif}
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-    .boot{animation:boot .4s ease-out}
-    .scan{stroke-dasharray:5 9;animation:scan 8s linear infinite}
-    @keyframes boot{from{opacity:.25}to{opacity:1}}
-    @keyframes scan{to{stroke-dashoffset:-140}}
-    @media(prefers-reduced-motion:reduce){.boot,.scan{animation:none}}
+    .rise{animation:rise .45s ease-out}
+    @keyframes rise{from{opacity:.2}to{opacity:1}}
+    @media(prefers-reduced-motion:reduce){.rise{animation:none}}
   </style>`;
 }
 
@@ -274,22 +275,14 @@ function desktop(p, id) {
   const cards = flagships
     .map((item, i) => {
       const y = DESKTOP.cards.y + i * DESKTOP.cards.step;
-      const accent = i === 2 ? p.secondary : p.ink;
       const index = String(i + 1).padStart(2, "0");
-      return `<g class="boot">
-        <path d="${cut(DESKTOP.cards.x, y, DESKTOP.cards.width, DESKTOP.cards.height)}" fill="${p.module}" stroke="${p.trace}"/>
-        <rect x="${DESKTOP.cards.x}" y="${y}" width="7" height="${DESKTOP.cards.height}" fill="${accent}"/>
-        <text x="${DESKTOP.cards.x + 24}" y="${y + 28}" class="mono" font-size="12" letter-spacing="1.6" fill="${accent}">${index}  ${xml(item.domain)}  ·  ${xml(item.stack.toUpperCase())}</text>
-        <text x="${DESKTOP.cards.x + 24}" y="${y + 56}" class="body" font-size="22" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
-        <text x="${DESKTOP.cards.x + 24}" y="${y + 76}" class="body" font-size="13" fill="${p.muted}">${xml(item.blurb)}</text>
+      return `<g class="rise">
+        ${rr(DESKTOP.cards.x, y, DESKTOP.cards.width, DESKTOP.cards.height, 16, p.module)}
+        <text x="${DESKTOP.cards.x + DESKTOP.cards.width - 28}" y="${y + 70}" class="display" font-size="64" text-anchor="end" fill="${p.line}" opacity=".55">${index}</text>
+        <text x="${DESKTOP.cards.x + 24}" y="${y + 32}" class="mono" font-size="11" letter-spacing="1.8" fill="${p.mark}">${xml(item.domain)}  ·  ${xml(item.stack.toUpperCase())}</text>
+        <text x="${DESKTOP.cards.x + 24}" y="${y + 60}" class="body" font-size="22" font-weight="700" fill="${p.text}">${xml(item.repo)}</text>
+        <text x="${DESKTOP.cards.x + 24}" y="${y + 82}" class="body" font-size="13" fill="${p.muted}">${xml(item.blurb)}</text>
       </g>`;
-    })
-    .join("");
-
-  const rail = flagships
-    .map((_, i) => {
-      const y = DESKTOP.cards.y + 44 + i * DESKTOP.cards.step;
-      return `M336 ${y}H356`;
     })
     .join("");
 
@@ -298,22 +291,19 @@ function desktop(p, id) {
   );
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${DESKTOP.width}" height="${DESKTOP.height}" viewBox="0 0 ${DESKTOP.width} ${DESKTOP.height}" role="img" aria-label="${alt}" data-mode="${id}">
-  ${defs(p, id)}
+  ${defs()}
   <rect width="${DESKTOP.width}" height="${DESKTOP.height}" fill="${p.bg}"/>
-  <rect x="${DESKTOP.board.x}" y="${DESKTOP.board.y}" width="${DESKTOP.board.width}" height="${DESKTOP.board.height}" rx="12" fill="${p.board}" stroke="${p.trace}"/>
-  <rect x="${DESKTOP.board.x}" y="${DESKTOP.board.y}" width="${DESKTOP.board.width}" height="${DESKTOP.board.height}" rx="12" fill="url(#${id}-grid)"/>
-  <path d="${rail}" fill="none" stroke="${p.trace}" stroke-width="2"/>
-  <path class="scan" d="${rail}" fill="none" stroke="${p.ink}" stroke-width="1.5"/>
-  <g class="boot">
-    <path d="${cut(DESKTOP.identity.x, DESKTOP.identity.y, DESKTOP.identity.width, DESKTOP.identity.height)}" fill="${p.module}" stroke="${p.trace}"/>
-    <rect x="${DESKTOP.identity.x}" y="${DESKTOP.identity.y}" width="7" height="${DESKTOP.identity.height}" fill="${p.ink}"/>
-    <text x="50" y="58" class="mono" font-size="12" letter-spacing="2" fill="${p.ink}">${xml(identity.name.toUpperCase())}</text>
-    <text x="48" y="128" class="display" font-size="42" font-weight="900" letter-spacing="-1" fill="${p.text}">SOFTWARE</text>
-    <text x="48" y="174" class="display" font-size="42" font-weight="900" letter-spacing="-1" fill="${p.text}">BUILDER</text>
-    <text x="50" y="214" class="body" font-size="13" fill="${p.muted}">${xml(identity.tagline)}</text>
-    <path d="M50 232H300" stroke="${p.trace}"/>
-    <text x="50" y="258" class="mono" font-size="11" letter-spacing="1.1" fill="${p.text}">${xml(identity.stack.toUpperCase())}</text>
-    <text x="50" y="302" class="mono" font-size="12" letter-spacing="1.4" fill="${p.ink}">${xml(identity.location.toUpperCase())}</text>
+  ${rr(DESKTOP.board.x, DESKTOP.board.y, DESKTOP.board.width, DESKTOP.board.height, 24, p.board)}
+  <g class="rise">
+    ${rr(DESKTOP.identity.x, DESKTOP.identity.y, DESKTOP.identity.width, DESKTOP.identity.height, 20, p.slab)}
+    <rect x="${DESKTOP.identity.x}" y="${DESKTOP.identity.y + 28}" width="4" height="48" fill="${p.accent}"/>
+    <text x="48" y="64" class="mono" font-size="12" letter-spacing="2.2" fill="${p.slabAccent}">${xml(identity.name.toUpperCase())}</text>
+    <text x="46" y="148" class="display" font-size="46" fill="${p.slabText}">Software</text>
+    <text x="46" y="198" class="display" font-size="46" fill="${p.slabText}">builder</text>
+    <text x="48" y="242" class="body" font-size="13" fill="${p.slabMuted}">${xml(identity.tagline)}</text>
+    <path d="M48 260H316" stroke="${p.accent}" stroke-width="1" opacity=".35"/>
+    <text x="48" y="292" class="mono" font-size="11" letter-spacing="1.2" fill="${p.slabText}">${xml(identity.stack.toUpperCase())}</text>
+    <text x="48" y="336" class="mono" font-size="12" letter-spacing="1.6" fill="${p.slabAccent}">${xml(identity.location.toUpperCase())}</text>
   </g>
   ${cards}
 </svg>`;
@@ -323,14 +313,13 @@ function mobile(p, id) {
   const cards = flagships
     .map((item, i) => {
       const y = MOBILE.cards.y + i * MOBILE.cards.step;
-      const accent = i === 2 ? p.secondary : p.ink;
       const index = String(i + 1).padStart(2, "0");
-      return `<g class="boot">
-        <path d="${cut(MOBILE.cards.x, y, MOBILE.cards.width, MOBILE.cards.height)}" fill="${p.module}" stroke="${p.trace}"/>
-        <rect x="${MOBILE.cards.x}" y="${y}" width="8" height="${MOBILE.cards.height}" fill="${accent}"/>
-        <text x="40" y="${y + 48}" class="mono" font-size="14" letter-spacing="1.2" fill="${accent}">${index}  ${xml(item.domain)}  ·  ${xml(item.stack.toUpperCase())}</text>
-        <text x="40" y="${y + 104}" class="body" font-size="26" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
-        <text x="40" y="${y + 154}" class="body" font-size="16" fill="${p.muted}">${xml(item.blurb)}</text>
+      return `<g class="rise">
+        ${rr(MOBILE.cards.x, y, MOBILE.cards.width, MOBILE.cards.height, 18, p.module)}
+        <text x="${MOBILE.cards.x + MOBILE.cards.width - 18}" y="${y + 150}" class="display" font-size="72" text-anchor="end" fill="${p.line}" opacity=".45">${index}</text>
+        <text x="40" y="${y + 48}" class="mono" font-size="13" letter-spacing="1.4" fill="${p.mark}">${xml(item.domain)}  ·  ${xml(item.stack.toUpperCase())}</text>
+        <text x="40" y="${y + 100}" class="body" font-size="26" font-weight="700" fill="${p.text}">${xml(item.repo)}</text>
+        <text x="40" y="${y + 148}" class="body" font-size="16" fill="${p.muted}">${xml(item.blurb)}</text>
       </g>`;
     })
     .join("");
@@ -340,17 +329,16 @@ function mobile(p, id) {
   );
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${MOBILE.width}" height="${MOBILE.height}" viewBox="0 0 ${MOBILE.width} ${MOBILE.height}" role="img" aria-label="${alt}" data-mode="${id}">
-  ${defs(p, id)}
+  ${defs()}
   <rect width="${MOBILE.width}" height="${MOBILE.height}" fill="${p.bg}"/>
-  <rect x="${MOBILE.board.x}" y="${MOBILE.board.y}" width="${MOBILE.board.width}" height="${MOBILE.board.height}" rx="16" fill="${p.board}" stroke="${p.trace}"/>
-  <rect x="${MOBILE.board.x}" y="${MOBILE.board.y}" width="${MOBILE.board.width}" height="${MOBILE.board.height}" rx="16" fill="url(#${id}-grid)"/>
-  <g class="boot">
-    <path d="${cut(MOBILE.identity.x, MOBILE.identity.y, MOBILE.identity.width, MOBILE.identity.height)}" fill="${p.module}" stroke="${p.trace}"/>
-    <rect x="${MOBILE.identity.x}" y="${MOBILE.identity.y}" width="8" height="${MOBILE.identity.height}" fill="${p.ink}"/>
-    <text x="40" y="52" class="mono" font-size="13" letter-spacing="1.4" fill="${p.ink}">${xml(identity.name.toUpperCase())}</text>
-    <text x="36" y="96" class="display" font-size="28" font-weight="900" fill="${p.text}">SOFTWARE</text>
-    <text x="36" y="128" class="display" font-size="28" font-weight="900" fill="${p.text}">BUILDER</text>
-    <text x="40" y="154" class="body" font-size="12" fill="${p.muted}">${xml(identity.tagline)}</text>
+  ${rr(MOBILE.board.x, MOBILE.board.y, MOBILE.board.width, MOBILE.board.height, 22, p.board)}
+  <g class="rise">
+    ${rr(MOBILE.identity.x, MOBILE.identity.y, MOBILE.identity.width, MOBILE.identity.height, 18, p.slab)}
+    <rect x="${MOBILE.identity.x}" y="${MOBILE.identity.y + 22}" width="4" height="40" fill="${p.accent}"/>
+    <text x="40" y="48" class="mono" font-size="12" letter-spacing="1.6" fill="${p.slabAccent}">${xml(identity.name.toUpperCase())}</text>
+    <text x="38" y="92" class="display" font-size="30" fill="${p.slabText}">Software</text>
+    <text x="38" y="126" class="display" font-size="30" fill="${p.slabText}">builder</text>
+    <text x="40" y="152" class="body" font-size="12" fill="${p.slabMuted}">${xml(identity.tagline)}</text>
   </g>
   ${cards}
 </svg>`;
@@ -360,12 +348,11 @@ function indexDesktop(p, id) {
   const cells = also
     .map((item, i) => {
       const x = INDEX.cell.x + i * INDEX.cell.step;
-      const accent = i % 2 ? p.secondary : p.ink;
-      return `<g class="boot">
-        <path d="${cut(x, INDEX.cell.y, INDEX.cell.width, INDEX.cell.height)}" fill="${p.raised}" stroke="${p.trace}"/>
-        <rect x="${x}" y="${INDEX.cell.y}" width="6" height="${INDEX.cell.height}" fill="${accent}"/>
-        <text x="${x + 18}" y="${INDEX.cell.y + 28}" class="mono" font-size="11" letter-spacing="1.4" fill="${accent}">${xml(item.domain)}  ·  ${xml(item.stack.toUpperCase())}</text>
-        <text x="${x + 18}" y="${INDEX.cell.y + 56}" class="body" font-size="18" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
+      return `<g class="rise">
+        ${rr(x, INDEX.cell.y, INDEX.cell.width, INDEX.cell.height, 14, p.raised)}
+        <rect x="${x + 16}" y="${INDEX.cell.y}" width="${INDEX.cell.width - 32}" height="3" fill="${p.accent}"/>
+        <text x="${x + 16}" y="${INDEX.cell.y + 32}" class="mono" font-size="11" letter-spacing="1.6" fill="${p.mark}">${xml(item.domain)}  ·  ${xml(item.stack.toUpperCase())}</text>
+        <text x="${x + 16}" y="${INDEX.cell.y + 60}" class="body" font-size="18" font-weight="700" fill="${p.text}">${xml(item.repo)}</text>
       </g>`;
     })
     .join("");
@@ -373,10 +360,10 @@ function indexDesktop(p, id) {
   const alt = xml(`Supporting work: ${also.map((item) => item.repo).join(", ")}.`);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${INDEX.width}" height="${INDEX.height}" viewBox="0 0 ${INDEX.width} ${INDEX.height}" role="img" aria-label="${alt}" data-mode="${id}">
-  ${defs(p, id)}
+  ${defs()}
   <rect width="${INDEX.width}" height="${INDEX.height}" fill="${p.bg}"/>
-  <rect x="${INDEX.board.x}" y="${INDEX.board.y}" width="${INDEX.board.width}" height="${INDEX.board.height}" rx="12" fill="${p.board}" stroke="${p.trace}"/>
-  <text x="28" y="34" class="mono" font-size="11" letter-spacing="1.8" fill="${p.muted}">OPERATOR STACK</text>
+  ${rr(INDEX.board.x, INDEX.board.y, INDEX.board.width, INDEX.board.height, 20, p.board)}
+  <text x="28" y="36" class="mono" font-size="11" letter-spacing="2" fill="${p.muted}">OPERATOR STACK</text>
   ${cells}
 </svg>`;
 }
@@ -388,12 +375,11 @@ function indexMobile(p, id) {
       const row = Math.floor(i / 2);
       const x = INDEX_MOBILE.cell.x + col * INDEX_MOBILE.cell.stepX;
       const y = INDEX_MOBILE.cell.y + row * INDEX_MOBILE.cell.stepY;
-      const accent = i % 2 ? p.secondary : p.ink;
-      return `<g class="boot">
-        <path d="${cut(x, y, INDEX_MOBILE.cell.width, INDEX_MOBILE.cell.height)}" fill="${p.raised}" stroke="${p.trace}"/>
-        <rect x="${x}" y="${y}" width="7" height="${INDEX_MOBILE.cell.height}" fill="${accent}"/>
-        <text x="${x + 16}" y="${y + 42}" class="mono" font-size="12" letter-spacing="1" fill="${accent}">${xml(item.domain)}</text>
-        <text x="${x + 16}" y="${y + 86}" class="body" font-size="18" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
+      return `<g class="rise">
+        ${rr(x, y, INDEX_MOBILE.cell.width, INDEX_MOBILE.cell.height, 16, p.raised)}
+        <rect x="${x + 14}" y="${y}" width="${INDEX_MOBILE.cell.width - 28}" height="3" fill="${p.accent}"/>
+        <text x="${x + 14}" y="${y + 44}" class="mono" font-size="12" letter-spacing="1.2" fill="${p.mark}">${xml(item.domain)}</text>
+        <text x="${x + 14}" y="${y + 90}" class="body" font-size="18" font-weight="700" fill="${p.text}">${xml(item.repo)}</text>
       </g>`;
     })
     .join("");
@@ -401,10 +387,10 @@ function indexMobile(p, id) {
   const alt = xml(`Supporting work: ${also.map((item) => item.repo).join(", ")}.`);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${INDEX_MOBILE.width}" height="${INDEX_MOBILE.height}" viewBox="0 0 ${INDEX_MOBILE.width} ${INDEX_MOBILE.height}" role="img" aria-label="${alt}" data-mode="${id}">
-  ${defs(p, id)}
+  ${defs()}
   <rect width="${INDEX_MOBILE.width}" height="${INDEX_MOBILE.height}" fill="${p.bg}"/>
-  <rect x="${INDEX_MOBILE.board.x}" y="${INDEX_MOBILE.board.y}" width="${INDEX_MOBILE.board.width}" height="${INDEX_MOBILE.board.height}" rx="16" fill="${p.board}" stroke="${p.trace}"/>
-  <text x="18" y="34" class="mono" font-size="12" letter-spacing="1.4" fill="${p.muted}">OPERATOR STACK</text>
+  ${rr(INDEX_MOBILE.board.x, INDEX_MOBILE.board.y, INDEX_MOBILE.board.width, INDEX_MOBILE.board.height, 20, p.board)}
+  <text x="18" y="34" class="mono" font-size="12" letter-spacing="1.6" fill="${p.muted}">OPERATOR STACK</text>
   ${cells}
 </svg>`;
 }
@@ -501,7 +487,7 @@ const files = {
 };
 
 for (const [name, svg] of Object.entries(files)) {
-  if (name.startsWith("hero-") && (!svg.includes("SOFTWARE") || !svg.includes("ScreenTextGrab"))) {
+  if (name.startsWith("hero-") && (!svg.includes("Software") || !svg.includes("ScreenTextGrab"))) {
     throw new Error(`${name} missing identity or flagship`);
   }
   if (name.startsWith("index-") && !svg.includes("sift")) {
