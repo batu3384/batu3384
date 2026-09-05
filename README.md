@@ -3,10 +3,17 @@
   <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="assets/hero-mobile-dark.svg">
   <source media="(max-width: 700px)" srcset="assets/hero-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <img alt="Batuhan Yüksel — software developer. Selected work: ScreenTextGrab, calder, frostwall-beam." src="assets/hero-light.svg" width="100%">
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
+  <img alt="Batuhan Yüksel — local-first software developer building macOS apps, terminal tools, and AppSec workflows." src="assets/hero-light.svg" width="100%">
 </picture>
 
-Software developer in Istanbul. I build local-first macOS apps, terminal tools, and AppSec workflows in Swift, Go, TypeScript, Python, and Rust.
+MIS graduate and software developer in Istanbul. I build local-first macOS apps, terminal tools, and AppSec workflows in Swift, Go, TypeScript, Python, and Rust.
+
+## How I build
+
+- **Local-first products** — desktop tools that keep sensitive work close to the device.
+- **Operator tooling** — focused workflows for terminals, AI coding sessions, and daily maintenance.
+- **Security-aware flows** — explicit approval, evidence, and safer defaults where actions have consequences.
 
 ## Selected work
 
@@ -16,7 +23,7 @@ Software developer in Istanbul. I build local-first macOS apps, terminal tools, 
 
 **[frostwall-beam](https://github.com/batu3384/frostwall-beam)** — Encrypted LAN and internet file transfer with receiver approval.
 
-## Also
+## Supporting work
 
 - **[sift](https://github.com/batu3384/sift)** — Review-first terminal cleaner with safer destructive flows on macOS and Windows.
 - **[ironsentinel](https://github.com/batu3384/ironsentinel)** — Local-first AppSec CLI with HTML, SARIF, and CSV export for findings review.
@@ -42,4 +49,6 @@ Software developer in Istanbul. I build local-first macOS apps, terminal tools, 
 
 </details>
 
-<p align="center"><a href="https://www.linkedin.com/in/batu3384">LinkedIn</a> · <a href="mailto:batu3384@gmail.com">Email</a></p>
+## Contact
+
+[LinkedIn](https://www.linkedin.com/in/batu3384) · [Email](mailto:batu3384@gmail.com)

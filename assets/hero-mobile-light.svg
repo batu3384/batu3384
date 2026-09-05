@@ -1,66 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1020" viewBox="0 0 800 1020" role="img" aria-label="Batuhan Yüksel, software developer. ScreenTextGrab, calder, frostwall-beam." data-mode="mlight">
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="900" viewBox="0 0 640 900" role="img" aria-label="Batuhan Yüksel, software developer. ScreenTextGrab, calder, frostwall-beam." data-mode="mlight">
   <defs>
     <pattern id="mlight-perf" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.15" fill="#B5C6C2" opacity=".5"/></pattern>
-    <linearGradient id="mlight-glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#EDF1EC"/><stop offset=".62" stop-color="#EDF1EC"/><stop offset="1" stop-color="#0E7490" stop-opacity=".08"/></linearGradient>
-    <filter id="mlight-shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="3" flood-color="#9AA8A4" flood-opacity=".34"/></filter>
   </defs>
   <style>
     .display{font-family:"Arial Narrow","Avenir Next Condensed",Impact,sans-serif}
     .body{font-family:"Avenir Next",Avenir,Helvetica,sans-serif}
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-    .boot{animation:boot .65s cubic-bezier(.2,.8,.2,1)}
+    .boot{animation:boot .45s cubic-bezier(.2,.8,.2,1)}
     .signal{stroke-dasharray:4 8;animation:signal 7s linear infinite}
     .dial{transform-box:fill-box;transform-origin:center;animation:dial 14s linear infinite}
-    @keyframes boot{from{opacity:.3;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes boot{from{opacity:.3}to{opacity:1}}
     @keyframes signal{to{stroke-dashoffset:-120}}
     @keyframes dial{to{transform:rotate(360deg)}}
     @media(prefers-reduced-motion:reduce){.boot,.signal,.dial{animation:none}}
   </style>
-  <rect width="800" height="1020" fill="#DCE2DE"/>
-  <rect x="12" y="12" width="776" height="996" rx="18" fill="url(#mlight-glow)" stroke="#B5C6C2"/>
-  <rect x="12" y="12" width="776" height="996" rx="18" fill="url(#mlight-perf)"/>
-  <g class="boot" filter="url(#mlight-shadow)">
-    <path d="M28 28H754L772 46V248H28Z" fill="#F8FAF5" stroke="#B5C6C2"/>
-    <rect x="28" y="28" width="10" height="220" fill="#0E7490"/>
-    <text x="58" y="72" class="mono" font-size="18" letter-spacing="2.4" fill="#0E7490">BATUHAN YÜKSEL  ·  ISTANBUL</text>
-    <text x="54" y="128" class="display" font-size="44" font-weight="900" fill="#142022">SOFTWARE DEVELOPER</text>
-    <text x="58" y="176" class="body" font-size="20" fill="#4B5C59">macOS apps · terminal · AppSec · AI tools</text>
-    <text x="58" y="214" class="mono" font-size="16" fill="#142022">SWIFT · GO · TS · PYTHON · RUST</text>
+  <rect width="640" height="900" fill="#DCE2DE"/>
+  <rect x="12" y="12" width="616" height="876" rx="18" fill="#EDF1EC" stroke="#B5C6C2"/>
+  <rect x="12" y="12" width="616" height="876" rx="18" fill="url(#mlight-perf)"/>
+  <g class="boot">
+    <path d="M28 28H594L612 46V220H28Z" fill="#F8FAF5" stroke="#B5C6C2"/>
+    <rect x="28" y="28" width="9" height="192" fill="#0E7490"/>
+    <text x="58" y="66" class="mono" font-size="16" letter-spacing="2.2" fill="#0E7490">BATUHAN YÜKSEL  ·  ISTANBUL</text>
+    <text x="54" y="116" class="display" font-size="38" font-weight="900" fill="#142022">SOFTWARE</text>
+    <text x="54" y="156" class="display" font-size="38" font-weight="900" fill="#142022">BUILDER</text>
+    <text x="58" y="190" class="body" font-size="13" fill="#4B5C59">LOCAL-FIRST SOFTWARE · PRIVACY-AWARE TOOLS</text>
   </g>
-  <g class="boot" style="animation-delay:80ms" filter="url(#mlight-shadow)">
-        <path d="M28 268H754L772 286V420H28Z" fill="#F8FAF5" stroke="#B5C6C2"/>
-        <rect x="28" y="268" width="8" height="152" fill="#0E7490"/>
-        <text x="56" y="310" class="mono" font-size="20" letter-spacing="2" fill="#0E7490">01  /  MACOS OCR</text>
-        <text x="56" y="354" class="body" font-size="32" font-weight="800" fill="#142022">ScreenTextGrab</text>
-        <text x="56" y="392" class="body" font-size="20" fill="#4B5C59">On-device OCR for screen, files, and PDFs.</text>
-      </g><g class="boot" style="animation-delay:150ms" filter="url(#mlight-shadow)">
-        <path d="M28 436H754L772 454V588H28Z" fill="#F8FAF5" stroke="#B5C6C2"/>
-        <rect x="28" y="436" width="8" height="152" fill="#0E7490"/>
-        <text x="56" y="478" class="mono" font-size="20" letter-spacing="2" fill="#0E7490">02  /  AI WORKSPACE</text>
-        <text x="56" y="522" class="body" font-size="32" font-weight="800" fill="#142022">calder</text>
-        <text x="56" y="560" class="body" font-size="20" fill="#4B5C59">Parallel AI coding CLIs in one Electron shell.</text>
-      </g><g class="boot" style="animation-delay:220ms" filter="url(#mlight-shadow)">
-        <path d="M28 604H754L772 622V756H28Z" fill="#F8FAF5" stroke="#B5C6C2"/>
-        <rect x="28" y="604" width="8" height="152" fill="#1D4ED8"/>
-        <text x="56" y="646" class="mono" font-size="20" letter-spacing="2" fill="#1D4ED8">03  /  FILE TRANSFER</text>
-        <text x="56" y="690" class="body" font-size="32" font-weight="800" fill="#142022">frostwall-beam</text>
-        <text x="56" y="728" class="body" font-size="20" fill="#4B5C59">Encrypted LAN/internet transfer, receiver approval.</text>
+  <text x="28" y="232" class="mono" font-size="11" letter-spacing="1.8" fill="#4B5C59">SELECTED SYSTEMS  /  03</text>
+  <g class="boot" style="animation-delay:80ms">
+        <path d="M28 244H594L612 262V376H28Z" fill="#F8FAF5" stroke="#B5C6C2"/>
+        <rect x="28" y="244" width="8" height="132" fill="#0E7490"/>
+        <text x="56" y="279" class="mono" font-size="14" letter-spacing="1.8" fill="#0E7490">01  /  macOS · OCR</text>
+        <text x="56" y="324" class="body" font-size="28" font-weight="800" fill="#142022">ScreenTextGrab</text>
+        <text x="56" y="356" class="body" font-size="16" fill="#4B5C59">Capture anything visual as usable text.</text>
+      </g><g class="boot" style="animation-delay:150ms">
+        <path d="M28 394H594L612 412V526H28Z" fill="#F8FAF5" stroke="#B5C6C2"/>
+        <rect x="28" y="394" width="8" height="132" fill="#0E7490"/>
+        <text x="56" y="429" class="mono" font-size="14" letter-spacing="1.8" fill="#0E7490">02  /  AI · WORKSPACE</text>
+        <text x="56" y="474" class="body" font-size="28" font-weight="800" fill="#142022">calder</text>
+        <text x="56" y="506" class="body" font-size="16" fill="#4B5C59">Run parallel coding CLIs in one workspace.</text>
+      </g><g class="boot" style="animation-delay:220ms">
+        <path d="M28 544H594L612 562V676H28Z" fill="#F8FAF5" stroke="#B5C6C2"/>
+        <rect x="28" y="544" width="8" height="132" fill="#1D4ED8"/>
+        <text x="56" y="579" class="mono" font-size="14" letter-spacing="1.8" fill="#1D4ED8">03  /  SECURE · TRANSFER</text>
+        <text x="56" y="624" class="body" font-size="28" font-weight="800" fill="#142022">frostwall-beam</text>
+        <text x="56" y="656" class="body" font-size="16" fill="#4B5C59">Encrypted transfer with receiver approval.</text>
       </g>
-  <g class="boot" filter="url(#mlight-shadow)">
-        <path d="M28 788H370L388 806V884H28Z" fill="#FFFFFF" stroke="#B5C6C2"/>
-        <text x="52" y="830" class="body" font-size="24" font-weight="800" fill="#142022">sift</text>
-        <text x="52" y="860" class="mono" font-size="16" fill="#4B5C59">TERMINAL CLEANER</text>
-      </g><g class="boot" filter="url(#mlight-shadow)">
-        <path d="M400 788H742L760 806V884H400Z" fill="#FFFFFF" stroke="#B5C6C2"/>
-        <text x="424" y="830" class="body" font-size="24" font-weight="800" fill="#142022">ironsentinel</text>
-        <text x="424" y="860" class="mono" font-size="16" fill="#4B5C59">APPSEC CLI</text>
-      </g><g class="boot" filter="url(#mlight-shadow)">
-        <path d="M28 900H370L388 918V996H28Z" fill="#FFFFFF" stroke="#B5C6C2"/>
-        <text x="52" y="942" class="body" font-size="24" font-weight="800" fill="#142022">falcon-dm</text>
-        <text x="52" y="972" class="mono" font-size="16" fill="#4B5C59">DOWNLOAD MANAGER</text>
-      </g><g class="boot" filter="url(#mlight-shadow)">
-        <path d="M400 900H742L760 918V996H400Z" fill="#FFFFFF" stroke="#B5C6C2"/>
-        <text x="424" y="942" class="body" font-size="24" font-weight="800" fill="#142022">deskward</text>
-        <text x="424" y="972" class="mono" font-size="16" fill="#4B5C59">REMOTE DESKTOP</text>
+  <text x="28" y="698" class="mono" font-size="11" letter-spacing="1.8" fill="#4B5C59">MORE IN THE STACK  /  04</text>
+  <g class="boot">
+        <path d="M28 710H294L312 728V762H28Z" fill="#FFFFFF" stroke="#B5C6C2"/>
+        <text x="48" y="734" class="body" font-size="16" font-weight="800" fill="#142022">sift</text>
+        <text x="48" y="752" class="mono" font-size="10" letter-spacing="1" fill="#4B5C59">Terminal cleaner</text>
+      </g><g class="boot">
+        <path d="M332 710H598L616 728V762H332Z" fill="#FFFFFF" stroke="#B5C6C2"/>
+        <text x="352" y="734" class="body" font-size="16" font-weight="800" fill="#142022">ironsentinel</text>
+        <text x="352" y="752" class="mono" font-size="10" letter-spacing="1" fill="#4B5C59">AppSec CLI</text>
+      </g><g class="boot">
+        <path d="M28 776H294L312 794V828H28Z" fill="#FFFFFF" stroke="#B5C6C2"/>
+        <text x="48" y="800" class="body" font-size="16" font-weight="800" fill="#142022">falcon-dm</text>
+        <text x="48" y="818" class="mono" font-size="10" letter-spacing="1" fill="#4B5C59">Download manager</text>
+      </g><g class="boot">
+        <path d="M332 776H598L616 794V828H332Z" fill="#FFFFFF" stroke="#B5C6C2"/>
+        <text x="352" y="800" class="body" font-size="16" font-weight="800" fill="#142022">deskward</text>
+        <text x="352" y="818" class="mono" font-size="10" letter-spacing="1" fill="#4B5C59">Remote desktop</text>
       </g>
+  <text x="28" y="858" class="mono" font-size="11" letter-spacing="1.5" fill="#0E7490">SWIFT · GO · TYPESCRIPT · PYTHON · RUST</text>
 </svg>

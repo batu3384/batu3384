@@ -13,32 +13,32 @@ const USER = "batu3384";
 const identity = {
   name: "Batuhan Yüksel",
   headline: "SOFTWARE DEVELOPER",
-  tagline: "macOS apps · terminal tools · AppSec · AI workspaces",
+  tagline: "LOCAL-FIRST SOFTWARE · PRIVACY-AWARE TOOLS",
   location: "Istanbul · MIS",
   stack: "Swift · Go · TypeScript · Python · Rust",
   intro:
-    "Software developer in Istanbul. I build local-first macOS apps, terminal tools, and AppSec workflows in Swift, Go, TypeScript, Python, and Rust.",
+    "MIS graduate and software developer in Istanbul. I build local-first macOS apps, terminal tools, and AppSec workflows in Swift, Go, TypeScript, Python, and Rust.",
 };
 
 const flagships = [
   {
     repo: "ScreenTextGrab",
-    role: "macOS OCR",
-    blurb: "On-device OCR for screen, files, and PDFs.",
+    role: "macOS · OCR",
+    blurb: "Capture anything visual as usable text.",
     purpose:
       "Local-first macOS OCR for screen, clipboard, files, and PDFs.",
   },
   {
     repo: "calder",
-    role: "AI workspace",
-    blurb: "Parallel AI coding CLIs in one Electron shell.",
+    role: "AI · WORKSPACE",
+    blurb: "Run parallel coding CLIs in one workspace.",
     purpose:
       "Terminal-centric Electron workspace for parallel AI coding CLI sessions.",
   },
   {
     repo: "frostwall-beam",
-    role: "File transfer",
-    blurb: "Encrypted LAN/internet transfer, receiver approval.",
+    role: "SECURE · TRANSFER",
+    blurb: "Encrypted transfer with receiver approval.",
     purpose:
       "Encrypted LAN and internet file transfer with receiver approval.",
   },
@@ -92,7 +92,6 @@ const palettes = {
     text: "#EEF6F4",
     muted: "#8BA19F",
     trace: "#30494C",
-    shadow: "#000000",
     primary: "#22D3EE",
     secondary: "#3B82F6",
     ink: "#22D3EE",
@@ -105,7 +104,6 @@ const palettes = {
     text: "#142022",
     muted: "#4B5C59",
     trace: "#B5C6C2",
-    shadow: "#9AA8A4",
     primary: "#0E7490",
     secondary: "#1D4ED8",
     ink: "#0E7490",
@@ -113,18 +111,21 @@ const palettes = {
 };
 
 const DESKTOP = {
-  width: 1200,
-  height: 480,
-  boardRight: 1190,
-  cardX: 724,
-  cardW: 452,
-  cardH: 104,
-  cardStep: 118,
-  chipY: 392,
-  chipW: 282,
-  chipH: 64,
-  chipStep: 294,
-  chipX: 24,
+  width: 960,
+  height: 430,
+  board: { x: 12, y: 12, width: 936, height: 406 },
+  identity: { x: 28, y: 28, width: 330, height: 304 },
+  cards: { x: 386, y: 68, width: 546, height: 78, step: 90 },
+  chips: { x: 28, y: 354, width: 214, height: 48, step: 224 },
+};
+
+const MOBILE = {
+  width: 640,
+  height: 900,
+  board: { x: 12, y: 12, width: 616, height: 876 },
+  identity: { x: 28, y: 28, width: 584, height: 192 },
+  cards: { x: 28, y: 244, width: 584, height: 132, step: 150 },
+  chips: { x: 28, y: 710, width: 284, height: 52, stepX: 304, stepY: 66 },
 };
 
 function xml(value) {
@@ -144,32 +145,46 @@ function cut(x, y, w, h) {
 }
 
 function assertLayout() {
+  if (!/^[a-z0-9-]+$/i.test(USER)) throw new Error(`unsafe GitHub username: ${USER}`);
   if (flagships.length !== 3) throw new Error("desktop hero is built for 3 flagships");
   if (also.length !== 4) throw new Error("desktop chip row is built for 4 supporting repos");
-  const lastChipRight = DESKTOP.chipX + (also.length - 1) * DESKTOP.chipStep + DESKTOP.chipW;
-  if (lastChipRight > DESKTOP.boardRight) {
-    throw new Error(`chip row overflows desktop board: ${lastChipRight} > ${DESKTOP.boardRight}`);
+  if (identity.tagline.length > 42) throw new Error("identity tagline is too long for SVG");
+  if (identity.stack.length > 42) throw new Error("identity stack is too long for SVG");
+  for (const item of [...flagships, ...also, ...other, ...academic]) {
+    if (!/^[a-z0-9][a-z0-9-]*$/i.test(item.repo)) {
+      throw new Error(`unsafe repository name: ${item.repo}`);
+    }
+  }
+  const desktopChipRight =
+    DESKTOP.chips.x + (also.length - 1) * DESKTOP.chips.step + DESKTOP.chips.width;
+  if (desktopChipRight > DESKTOP.board.x + DESKTOP.board.width) {
+    throw new Error(`desktop chips overflow board: ${desktopChipRight}`);
+  }
+  const mobileChipRight = MOBILE.chips.x + MOBILE.chips.stepX + MOBILE.chips.width;
+  if (mobileChipRight > MOBILE.board.x + MOBILE.board.width) {
+    throw new Error(`mobile chips overflow board: ${mobileChipRight}`);
   }
   for (const item of flagships) {
-    if (item.role.length > 16) throw new Error(`role too long for SVG: ${item.repo}`);
-    if (item.blurb.length > 56) throw new Error(`blurb too long for SVG card: ${item.repo}`);
+    if (item.role.length > 20) throw new Error(`role too long for SVG: ${item.repo}`);
+    if (item.blurb.length > 52) throw new Error(`blurb too long for SVG card: ${item.repo}`);
+  }
+  for (const item of also) {
+    if (item.role.length > 20) throw new Error(`supporting role too long for SVG: ${item.repo}`);
   }
 }
 
 function defs(p, id) {
   return `<defs>
     <pattern id="${id}-perf" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.15" fill="${p.trace}" opacity=".5"/></pattern>
-    <linearGradient id="${id}-glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${p.board}"/><stop offset=".62" stop-color="${p.board}"/><stop offset="1" stop-color="${p.primary}" stop-opacity=".08"/></linearGradient>
-    <filter id="${id}-shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="3" flood-color="${p.shadow}" flood-opacity=".34"/></filter>
   </defs>
   <style>
     .display{font-family:"Arial Narrow","Avenir Next Condensed",Impact,sans-serif}
     .body{font-family:"Avenir Next",Avenir,Helvetica,sans-serif}
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-    .boot{animation:boot .65s cubic-bezier(.2,.8,.2,1)}
+    .boot{animation:boot .45s cubic-bezier(.2,.8,.2,1)}
     .signal{stroke-dasharray:4 8;animation:signal 7s linear infinite}
     .dial{transform-box:fill-box;transform-origin:center;animation:dial 14s linear infinite}
-    @keyframes boot{from{opacity:.3;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes boot{from{opacity:.3}to{opacity:1}}
     @keyframes signal{to{stroke-dashoffset:-120}}
     @keyframes dial{to{transform:rotate(360deg)}}
     @media(prefers-reduced-motion:reduce){.boot,.signal,.dial{animation:none}}
@@ -179,26 +194,26 @@ function defs(p, id) {
 function desktop(p, id) {
   const cards = flagships
     .map((item, i) => {
-      const y = 28 + i * DESKTOP.cardStep;
+      const y = DESKTOP.cards.y + i * DESKTOP.cards.step;
       const accent = i === 2 ? p.secondary : p.ink;
-      return `<g class="boot" style="animation-delay:${100 + i * 80}ms" filter="url(#${id}-shadow)">
-        <path d="${cut(DESKTOP.cardX, y, DESKTOP.cardW, DESKTOP.cardH)}" fill="${p.module}" stroke="${p.trace}"/>
-        <path d="M${DESKTOP.cardX} ${y + 8}H${760 + i * 48}" stroke="${accent}" stroke-width="4"/>
-        <text x="748" y="${y + 36}" class="mono" font-size="12" letter-spacing="1.6" fill="${accent}">${String(i + 1).padStart(2, "0")}  /  ${xml(item.role.toUpperCase())}</text>
-        <text x="748" y="${y + 64}" class="body" font-size="20" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
-        <text x="748" y="${y + 88}" class="body" font-size="13" fill="${p.muted}">${xml(item.blurb)}</text>
+      return `<g class="boot" style="animation-delay:${100 + i * 80}ms">
+        <path d="${cut(DESKTOP.cards.x, y, DESKTOP.cards.width, DESKTOP.cards.height)}" fill="${p.module}" stroke="${p.trace}"/>
+        <rect x="${DESKTOP.cards.x}" y="${y}" width="6" height="${DESKTOP.cards.height}" fill="${accent}"/>
+        <text x="${DESKTOP.cards.x + 22}" y="${y + 25}" class="mono" font-size="11" letter-spacing="1.4" fill="${accent}">${String(i + 1).padStart(2, "0")}  /  ${xml(item.role)}</text>
+        <text x="${DESKTOP.cards.x + 22}" y="${y + 53}" class="body" font-size="21" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
+        <text x="${DESKTOP.cards.x + 22}" y="${y + 70}" class="body" font-size="12" fill="${p.muted}">${xml(item.blurb)}</text>
       </g>`;
     })
     .join("");
 
   const chips = also
     .map((item, i) => {
-      const x = DESKTOP.chipX + i * DESKTOP.chipStep;
-      return `<g class="boot" style="animation-delay:${220 + i * 40}ms" filter="url(#${id}-shadow)">
-        <path d="${cut(x, DESKTOP.chipY, DESKTOP.chipW, DESKTOP.chipH)}" fill="${p.raised}" stroke="${p.trace}"/>
-        <rect x="${x}" y="${DESKTOP.chipY}" width="5" height="${DESKTOP.chipH}" fill="${i % 2 ? p.secondary : p.ink}"/>
-        <text x="${x + 22}" y="416" class="body" font-size="15" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
-        <text x="${x + 22}" y="438" class="mono" font-size="11" letter-spacing="1.2" fill="${p.muted}">${xml(item.role.toUpperCase())}</text>
+      const x = DESKTOP.chips.x + i * DESKTOP.chips.step;
+      return `<g class="boot" style="animation-delay:${220 + i * 40}ms">
+        <path d="${cut(x, DESKTOP.chips.y, DESKTOP.chips.width, DESKTOP.chips.height)}" fill="${p.raised}" stroke="${p.trace}"/>
+        <rect x="${x}" y="${DESKTOP.chips.y}" width="5" height="${DESKTOP.chips.height}" fill="${i % 2 ? p.secondary : p.ink}"/>
+        <text x="${x + 18}" y="${DESKTOP.chips.y + 21}" class="body" font-size="14" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
+        <text x="${x + 18}" y="${DESKTOP.chips.y + 38}" class="mono" font-size="9" letter-spacing="1" fill="${p.muted}">${xml(item.role)}</text>
       </g>`;
     })
     .join("");
@@ -210,31 +225,29 @@ function desktop(p, id) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${DESKTOP.width}" height="${DESKTOP.height}" viewBox="0 0 ${DESKTOP.width} ${DESKTOP.height}" role="img" aria-label="${alt}" data-mode="${id}">
   ${defs(p, id)}
   <rect width="${DESKTOP.width}" height="${DESKTOP.height}" fill="${p.bg}"/>
-  <rect x="10" y="10" width="1180" height="460" rx="14" fill="url(#${id}-glow)" stroke="${p.trace}"/>
-  <rect x="10" y="10" width="1180" height="460" rx="14" fill="url(#${id}-perf)"/>
-  <path d="M690 56H706V76H724M690 174H706V194H724M690 292H706V312H724" fill="none" stroke="${p.trace}" stroke-width="2"/>
-  <path class="signal" d="M690 56H706V76H724M690 174H706V194H724M690 292H706V312H724" fill="none" stroke="${p.ink}"/>
-  <g class="boot" filter="url(#${id}-shadow)">
-    <path d="${cut(24, 24, 666, 348)}" fill="${p.module}" stroke="${p.trace}"/>
-    <rect x="24" y="24" width="8" height="348" fill="${p.ink}"/>
-    <text x="54" y="58" class="mono" font-size="13" letter-spacing="2.4" fill="${p.ink}">${xml(identity.name.toUpperCase())}</text>
-    <text x="50" y="128" class="display" font-size="52" font-weight="900" letter-spacing="-1" fill="${p.text}">SOFTWARE</text>
-    <text x="50" y="182" class="display" font-size="52" font-weight="900" letter-spacing="-1" fill="${p.text}">DEVELOPER</text>
-    <text x="54" y="228" class="body" font-size="16" fill="${p.muted}">${xml(identity.tagline)}</text>
-    <path d="M54 248H430" stroke="${p.trace}"/>
-    <text x="54" y="276" class="mono" font-size="12" letter-spacing="1.6" fill="${p.text}">${xml(identity.stack.toUpperCase())}</text>
-    <g transform="translate(620 92)">
-      <circle r="40" fill="${p.raised}" stroke="${p.trace}"/>
-      <circle class="dial" r="28" fill="none" stroke="${p.secondary}" stroke-width="4" stroke-dasharray="8 7"/>
-      <circle r="9" fill="${p.secondary}"/>
-      <path d="M0-22V-34" stroke="${p.text}" stroke-width="2"/>
+  <rect x="${DESKTOP.board.x}" y="${DESKTOP.board.y}" width="${DESKTOP.board.width}" height="${DESKTOP.board.height}" rx="14" fill="${p.board}" stroke="${p.trace}"/>
+  <rect x="${DESKTOP.board.x}" y="${DESKTOP.board.y}" width="${DESKTOP.board.width}" height="${DESKTOP.board.height}" rx="14" fill="url(#${id}-perf)"/>
+  <path d="M${DESKTOP.identity.x + DESKTOP.identity.width + 10} 107H374V107H${DESKTOP.cards.x}" fill="none" stroke="${p.trace}" stroke-width="2"/>
+  <path class="signal" d="M${DESKTOP.identity.x + DESKTOP.identity.width + 10} 107H374V107H${DESKTOP.cards.x}" fill="none" stroke="${p.ink}"/>
+  <g class="boot">
+    <path d="${cut(DESKTOP.identity.x, DESKTOP.identity.y, DESKTOP.identity.width, DESKTOP.identity.height)}" fill="${p.module}" stroke="${p.trace}"/>
+    <rect x="${DESKTOP.identity.x}" y="${DESKTOP.identity.y}" width="7" height="${DESKTOP.identity.height}" fill="${p.ink}"/>
+    <text x="50" y="60" class="mono" font-size="11" letter-spacing="2.1" fill="${p.ink}">${xml(identity.name.toUpperCase())}</text>
+    <text x="50" y="130" class="display" font-size="44" font-weight="900" letter-spacing="-1" fill="${p.text}">SOFTWARE</text>
+    <text x="50" y="174" class="display" font-size="44" font-weight="900" letter-spacing="-1" fill="${p.text}">BUILDER</text>
+    <text x="50" y="214" class="body" font-size="12" fill="${p.muted}">${xml(identity.tagline)}</text>
+    <path d="M50 232H330" stroke="${p.trace}"/>
+    <text x="50" y="258" class="mono" font-size="10" letter-spacing="1.2" fill="${p.text}">${xml(identity.stack.toUpperCase())}</text>
+    <g transform="translate(310 300)">
+      <circle r="20" fill="${p.raised}" stroke="${p.trace}"/>
+      <circle class="dial" r="13" fill="none" stroke="${p.secondary}" stroke-width="3" stroke-dasharray="5 5"/>
+      <circle r="4" fill="${p.secondary}"/>
     </g>
-    <g transform="translate(54 308)">
-      <path d="${cut(0, 0, 188, 44)}" fill="${p.raised}" stroke="${p.trace}"/>
-      <text x="16" y="28" class="mono" font-size="12" font-weight="700" fill="${p.ink}">${xml(identity.location.toUpperCase())}</text>
-    </g>
+    <text x="50" y="308" class="mono" font-size="10" letter-spacing="1.2" fill="${p.ink}">${xml(identity.location.toUpperCase())}</text>
   </g>
+  <text x="${DESKTOP.cards.x}" y="48" class="mono" font-size="10" letter-spacing="1.8" fill="${p.muted}">SELECTED SYSTEMS  /  ${String(flagships.length).padStart(2, "0")}</text>
   ${cards}
+  <text x="${DESKTOP.chips.x}" y="344" class="mono" font-size="10" letter-spacing="1.8" fill="${p.muted}">MORE IN THE STACK  /  ${String(also.length).padStart(2, "0")}</text>
   ${chips}
 </svg>`;
 }
@@ -242,14 +255,14 @@ function desktop(p, id) {
 function mobile(p, id) {
   const cards = flagships
     .map((item, i) => {
-      const y = 268 + i * 168;
+      const y = MOBILE.cards.y + i * MOBILE.cards.step;
       const accent = i === 2 ? p.secondary : p.ink;
-      return `<g class="boot" style="animation-delay:${80 + i * 70}ms" filter="url(#${id}-shadow)">
-        <path d="${cut(28, y, 744, 152)}" fill="${p.module}" stroke="${p.trace}"/>
-        <rect x="28" y="${y}" width="8" height="152" fill="${accent}"/>
-        <text x="56" y="${y + 42}" class="mono" font-size="20" letter-spacing="2" fill="${accent}">${String(i + 1).padStart(2, "0")}  /  ${xml(item.role.toUpperCase())}</text>
-        <text x="56" y="${y + 86}" class="body" font-size="32" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
-        <text x="56" y="${y + 124}" class="body" font-size="20" fill="${p.muted}">${xml(item.blurb)}</text>
+      return `<g class="boot" style="animation-delay:${80 + i * 70}ms">
+        <path d="${cut(MOBILE.cards.x, y, MOBILE.cards.width, MOBILE.cards.height)}" fill="${p.module}" stroke="${p.trace}"/>
+        <rect x="${MOBILE.cards.x}" y="${y}" width="8" height="${MOBILE.cards.height}" fill="${accent}"/>
+        <text x="${MOBILE.cards.x + 28}" y="${y + 35}" class="mono" font-size="14" letter-spacing="1.8" fill="${accent}">${String(i + 1).padStart(2, "0")}  /  ${xml(item.role)}</text>
+        <text x="${MOBILE.cards.x + 28}" y="${y + 80}" class="body" font-size="28" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
+        <text x="${MOBILE.cards.x + 28}" y="${y + 112}" class="body" font-size="16" fill="${p.muted}">${xml(item.blurb)}</text>
       </g>`;
     })
     .join("");
@@ -258,12 +271,12 @@ function mobile(p, id) {
     .map((item, i) => {
       const col = i % 2;
       const row = Math.floor(i / 2);
-      const x = 28 + col * 372;
-      const y = 788 + row * 112;
-      return `<g class="boot" filter="url(#${id}-shadow)">
-        <path d="${cut(x, y, 360, 96)}" fill="${p.raised}" stroke="${p.trace}"/>
-        <text x="${x + 24}" y="${y + 42}" class="body" font-size="24" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
-        <text x="${x + 24}" y="${y + 72}" class="mono" font-size="16" fill="${p.muted}">${xml(item.role.toUpperCase())}</text>
+      const x = MOBILE.chips.x + col * MOBILE.chips.stepX;
+      const y = MOBILE.chips.y + row * MOBILE.chips.stepY;
+      return `<g class="boot">
+        <path d="${cut(x, y, MOBILE.chips.width, MOBILE.chips.height)}" fill="${p.raised}" stroke="${p.trace}"/>
+        <text x="${x + 20}" y="${y + 24}" class="body" font-size="16" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
+        <text x="${x + 20}" y="${y + 42}" class="mono" font-size="10" letter-spacing="1" fill="${p.muted}">${xml(item.role)}</text>
       </g>`;
     })
     .join("");
@@ -272,21 +285,24 @@ function mobile(p, id) {
     `${identity.name}, ${identity.headline.toLowerCase()}. ${flagships.map((item) => item.repo).join(", ")}.`,
   );
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1020" viewBox="0 0 800 1020" role="img" aria-label="${alt}" data-mode="${id}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${MOBILE.width}" height="${MOBILE.height}" viewBox="0 0 ${MOBILE.width} ${MOBILE.height}" role="img" aria-label="${alt}" data-mode="${id}">
   ${defs(p, id)}
-  <rect width="800" height="1020" fill="${p.bg}"/>
-  <rect x="12" y="12" width="776" height="996" rx="18" fill="url(#${id}-glow)" stroke="${p.trace}"/>
-  <rect x="12" y="12" width="776" height="996" rx="18" fill="url(#${id}-perf)"/>
-  <g class="boot" filter="url(#${id}-shadow)">
-    <path d="${cut(28, 28, 744, 220)}" fill="${p.module}" stroke="${p.trace}"/>
-    <rect x="28" y="28" width="10" height="220" fill="${p.ink}"/>
-    <text x="58" y="72" class="mono" font-size="18" letter-spacing="2.4" fill="${p.ink}">${xml(identity.name.toUpperCase())}  ·  ISTANBUL</text>
-    <text x="54" y="128" class="display" font-size="44" font-weight="900" fill="${p.text}">SOFTWARE DEVELOPER</text>
-    <text x="58" y="176" class="body" font-size="20" fill="${p.muted}">macOS apps · terminal · AppSec · AI tools</text>
-    <text x="58" y="214" class="mono" font-size="16" fill="${p.text}">SWIFT · GO · TS · PYTHON · RUST</text>
+  <rect width="${MOBILE.width}" height="${MOBILE.height}" fill="${p.bg}"/>
+  <rect x="${MOBILE.board.x}" y="${MOBILE.board.y}" width="${MOBILE.board.width}" height="${MOBILE.board.height}" rx="18" fill="${p.board}" stroke="${p.trace}"/>
+  <rect x="${MOBILE.board.x}" y="${MOBILE.board.y}" width="${MOBILE.board.width}" height="${MOBILE.board.height}" rx="18" fill="url(#${id}-perf)"/>
+  <g class="boot">
+    <path d="${cut(MOBILE.identity.x, MOBILE.identity.y, MOBILE.identity.width, MOBILE.identity.height)}" fill="${p.module}" stroke="${p.trace}"/>
+    <rect x="${MOBILE.identity.x}" y="${MOBILE.identity.y}" width="9" height="${MOBILE.identity.height}" fill="${p.ink}"/>
+    <text x="58" y="66" class="mono" font-size="16" letter-spacing="2.2" fill="${p.ink}">${xml(identity.name.toUpperCase())}  ·  ISTANBUL</text>
+    <text x="54" y="116" class="display" font-size="38" font-weight="900" fill="${p.text}">SOFTWARE</text>
+    <text x="54" y="156" class="display" font-size="38" font-weight="900" fill="${p.text}">BUILDER</text>
+    <text x="58" y="190" class="body" font-size="13" fill="${p.muted}">${xml(identity.tagline)}</text>
   </g>
+  <text x="${MOBILE.cards.x}" y="232" class="mono" font-size="11" letter-spacing="1.8" fill="${p.muted}">SELECTED SYSTEMS  /  ${String(flagships.length).padStart(2, "0")}</text>
   ${cards}
+  <text x="${MOBILE.chips.x}" y="698" class="mono" font-size="11" letter-spacing="1.8" fill="${p.muted}">MORE IN THE STACK  /  ${String(also.length).padStart(2, "0")}</text>
   ${chips}
+  <text x="${MOBILE.chips.x}" y="858" class="mono" font-size="11" letter-spacing="1.5" fill="${p.ink}">${xml(identity.stack.toUpperCase())}</text>
 </svg>`;
 }
 
@@ -315,16 +331,23 @@ function renderReadme() {
   <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="assets/hero-mobile-dark.svg">
   <source media="(max-width: 700px)" srcset="assets/hero-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-  <img alt="${identity.name} — software developer. Selected work: ${flagships.map((item) => item.repo).join(", ")}." src="assets/hero-light.svg" width="100%">
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
+  <img alt="${identity.name} — local-first software developer building macOS apps, terminal tools, and AppSec workflows." src="assets/hero-light.svg" width="100%">
 </picture>
 
 ${identity.intro}
+
+## How I build
+
+- **Local-first products** — desktop tools that keep sensitive work close to the device.
+- **Operator tooling** — focused workflows for terminals, AI coding sessions, and daily maintenance.
+- **Security-aware flows** — explicit approval, evidence, and safer defaults where actions have consequences.
 
 ## Selected work
 
 ${selected}
 
-## Also
+## Supporting work
 
 ${supporting}
 
@@ -342,12 +365,25 @@ ${mdList(academic)}
 
 </details>
 
-<p align="center"><a href="https://www.linkedin.com/in/${USER}">LinkedIn</a> · <a href="mailto:batu3384@gmail.com">Email</a></p>
+## Contact
+
+[LinkedIn](https://www.linkedin.com/in/${USER}) · [Email](mailto:batu3384@gmail.com)
 `;
 }
 
 assertLayout();
 mkdirSync(outDir, { recursive: true });
+function assertSvg(name, svg) {
+  if (!/^<svg\b[\s\S]*<\/svg>$/.test(svg)) throw new Error(`${name} is not a complete SVG`);
+  if ((svg.match(/<svg\b/g) || []).length !== 1) throw new Error(`${name} has invalid SVG nesting`);
+  if (/<script\b|javascript:| on[a-z]+\s*=/i.test(svg)) {
+    throw new Error(`${name} contains executable SVG content`);
+  }
+  if (!svg.includes('role="img"') || !svg.includes("aria-label=")) {
+    throw new Error(`${name} is missing accessible image metadata`);
+  }
+}
+
 const files = {
   "hero-dark.svg": desktop(palettes.dark, "dark"),
   "hero-light.svg": desktop(palettes.light, "light"),
@@ -358,8 +394,12 @@ for (const [name, svg] of Object.entries(files)) {
   if (!svg.includes("SOFTWARE") || !svg.includes("ScreenTextGrab")) {
     throw new Error(`${name} missing identity or flagship`);
   }
-  if (svg.includes("<") === false) throw new Error(`${name} is not SVG`);
+  assertSvg(name, svg);
   writeFileSync(join(outDir, name), svg);
 }
-writeFileSync(join(root, "README.md"), renderReadme());
+const readme = renderReadme();
+for (const required of ["<picture>", "prefers-color-scheme: light", "## How I build", "## Selected work", "## Contact"]) {
+  if (!readme.includes(required)) throw new Error(`README missing ${required}`);
+}
+writeFileSync(join(root, "README.md"), readme);
 console.log("wrote 4 profile SVGs and README.md");
