@@ -14,10 +14,10 @@ const SNAKE = {
   dark: `https://raw.githubusercontent.com/${USER}/${USER}/output/github-snake-dark.svg`,
 };
 const ASSETS = {
-  desktopDark: "board-v14-dark.svg",
-  desktopLight: "board-v14-light.svg",
-  mobileDark: "board-v14-mobile-dark.svg",
-  mobileLight: "board-v14-mobile-light.svg",
+  desktopDark: "board-v15-dark.svg",
+  desktopLight: "board-v15-light.svg",
+  mobileDark: "board-v15-mobile-dark.svg",
+  mobileLight: "board-v15-mobile-light.svg",
 };
 
 const identity = {
@@ -180,8 +180,9 @@ const palettes = {
   },
 };
 
-const DESKTOP = { width: 960, pad: 36, gap: 14, tileH: 100, header: 176 };
-const MOBILE = { width: 400, pad: 22, gap: 12, tileH: 100, header: 196 };
+const DESKTOP = { width: 960, pad: 36, gap: 14, tileH: 100, header: 188 };
+const MOBILE = { width: 400, pad: 22, gap: 12, tileH: 100, header: 208 };
+const WRAP_LIMITS = { narrow: 36, medium: 60, wide: 78 };
 
 function xml(value) {
   return String(value)
@@ -196,7 +197,9 @@ function html(value) {
   return String(value)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;");
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
 
 function repoUrl(name) {
@@ -259,8 +262,8 @@ function caretX(pad, fontSize) {
   return pad + Math.round(identity.role.length * fontSize * 0.56) + 10;
 }
 
-// ponytail: SMIL has no prefers-reduced-motion in GitHub <img> sandbox. Ceiling = always-moving instrument. Upgrade: a static twin SVG if we ever need an off switch.
-function scopePoints(x, y, w, h) {
+// ponytail: SMIL has no prefers-reduced-motion in GitHub <img> sandbox. Ceiling = glow, wave bead, cursor. Upgrade: a static twin SVG if we ever need an off switch.
+function wavePoints(x, y, w, h) {
   const n = 56;
   const pts = [];
   for (let i = 0; i <= n; i++) {
@@ -292,7 +295,7 @@ function cursor(p, x, y) {
 }
 
 function waveRule(p, x, y, w) {
-  const { d, len } = polyline(scopePoints(x, y - 7, w, 14));
+  const { d, len } = polyline(wavePoints(x, y - 7, w, 14));
   const bead = Math.max(28, Math.round(len * 0.1));
   const cycle = bead + len;
   return `<g>
@@ -321,7 +324,7 @@ function assertLayout() {
   for (const item of catalog) {
     if (item.line.length > 62) throw new Error(`board line too long: ${item.repo}`);
   }
-  const probe = polyline(scopePoints(0, 0, 240, 40));
+  const probe = polyline(wavePoints(0, 0, 240, 40));
   if (probe.len < 240) throw new Error("scope path shorter than width — motion bead will look broken");
   if (caretX(36, 15) > 400) throw new Error("role caret would overflow a mobile board");
 }
@@ -331,16 +334,19 @@ function header(p, width, spec) {
   const mobile = width < 500;
   const innerR = width - pad;
   const stack = mobile
-    ? `<text x="${pad}" y="164" class="mono" font-size="11" fill="${p.muted}">${xml(identity.stack)}</text>`
-    : `<text x="${innerR}" y="44" class="mono" font-size="11" text-anchor="end" fill="${p.muted}">${xml(identity.stack)}</text>`;
+    ? `<text x="${pad}" y="166" class="mono" font-size="10" fill="${p.muted}">${xml(identity.stack)}</text>`
+    : `<text x="${innerR}" y="52" class="mono" font-size="10" text-anchor="end" fill="${p.muted}">${xml(identity.stack)}</text>`;
+  const status = `<text x="${innerR - 12}" y="${mobile ? 32 : 34}" class="mono" font-size="10" text-anchor="end" letter-spacing="1" fill="${p.muted}">PUBLIC / LOCAL-FIRST</text>
+    <circle cx="${innerR}" cy="${mobile ? 28 : 30}" r="2.5" fill="${p.accent}"/>`;
   const caret = cursor(p, caretX(pad, 15), mobile ? 102 : 114);
   return `<g>
-    <text x="${pad}" y="42" class="mono" font-size="11" letter-spacing="1.4" fill="${p.accent}">${xml(identity.location)}</text>
+    <text x="${pad}" y="${mobile ? 32 : 34}" class="mono" font-size="11" letter-spacing="1.4" fill="${p.accent}">${xml(identity.location)}</text>
+    ${status}
     ${stack}
-    <text x="${pad}" y="${mobile ? 86 : 98}" class="display" font-size="${mobile ? 30 : 44}" letter-spacing="-0.6" fill="${p.ink}">${xml(identity.name)}</text>
-    <text x="${pad}" y="${mobile ? 116 : 128}" class="sans" font-size="15" fill="${p.ink}">${xml(identity.role)}</text>
+    <text x="${pad}" y="${mobile ? 86 : 94}" class="display" font-size="${mobile ? 30 : 48}" letter-spacing="-0.8" fill="${p.ink}">${xml(identity.name)}</text>
+    <text x="${pad}" y="${mobile ? 116 : 124}" class="sans" font-size="15" fill="${p.ink}">${xml(identity.role)}</text>
     ${caret}
-    <text x="${pad}" y="${mobile ? 140 : 152}" class="sans" font-size="13" fill="${p.muted}">${xml(identity.focus)}</text>
+    <text x="${pad}" y="${mobile ? 140 : 148}" class="sans" font-size="13" fill="${p.muted}">${xml(identity.focus)}</text>
     ${waveRule(p, pad, headerH - 10, innerR - pad)}
   </g>`;
 }
@@ -358,13 +364,23 @@ function tile(item, index, x, y, w, h, p, maxChars, featured) {
   const bar = featured
     ? `<rect x="${x}" y="${y}" width="3" height="${h}" fill="${p.accent}"/>`
     : "";
-  return `<g>
+  return `<g data-featured="${featured}">
     <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${featured ? 12 : 8}" fill="${p.surface}"/>
     ${bar}
     <text x="${x + 18}" y="${y + 26}" class="mono" font-size="11" fill="${p.accent}">${pad2(index)}</text>
     <text x="${x + w - 16}" y="${y + 26}" class="mono" font-size="11" text-anchor="end" fill="${p.muted}">${xml(item.stack)}</text>
     <text x="${x + 18}" y="${y + bodyY}" class="sans" font-size="${nameSize}" font-weight="600" fill="${p.ink}">${xml(item.repo)}</text>
     ${body}
+  </g>`;
+}
+
+function laneHeader(p, lane, index, x, y, w, mobile) {
+  const ruleStart = mobile ? x + 174 : x + 190;
+  return `<g>
+    <text x="${x}" y="${y}" class="mono" font-size="10" letter-spacing="1.4" fill="${p.accent}">${pad2(index)}</text>
+    <text x="${x + 30}" y="${y}" class="sans" font-size="13" font-weight="600" fill="${p.ink}">${xml(lane.label)}</text>
+    <path d="M ${ruleStart} ${y - 4} H ${x + w}" fill="none" stroke="${p.rule}" stroke-width="1"/>
+    <circle cx="${x + w}" cy="${y - 4}" r="2" fill="${p.accent}"/>
   </g>`;
 }
 
@@ -381,52 +397,68 @@ function layoutCatalog(p, spec, startY) {
   let y = startY;
   let index = 1;
   let zig = 0;
+  const laneNodes = [];
   const parts = [];
 
   parts.push(
-    `<text x="${pad}" y="${y}" class="display" font-size="${mobile ? 22 : 26}" fill="${p.ink}">Selected work</text>`,
+    `<text x="${pad}" y="${y}" class="display" font-size="${mobile ? 22 : 28}" fill="${p.ink}">Selected work</text>
+    <text x="${width - pad}" y="${y}" class="mono" font-size="10" text-anchor="end" letter-spacing="1.2" fill="${p.muted}">SYSTEM MAP / PUBLIC</text>`,
   );
   y += mobile ? 28 : 34;
 
-  for (const lane of lanes) {
+  lanes.forEach((lane, laneIndex) => {
     const items = catalog.filter((item) => item.lane === lane.key);
-    parts.push(
-      `<text x="${pad}" y="${y + 12}" class="sans" font-size="13" fill="${p.muted}">${xml(lane.label)}</text>`,
-    );
-    y += 24;
+    const laneY = y + 12;
+    laneNodes.push(laneY - 4);
+    parts.push(laneHeader(p, lane, laneIndex + 1, pad, laneY, inner, mobile));
+    y += mobile ? 28 : 30;
 
     const place = (item, x, w, h, featured) => {
-      const maxChars = w > 600 ? 78 : w > 480 ? 60 : 36;
+      const maxChars = mobile
+        ? WRAP_LIMITS.narrow
+        : w > 600
+          ? WRAP_LIMITS.wide
+          : w > 480
+            ? WRAP_LIMITS.medium
+            : WRAP_LIMITS.narrow;
       parts.push(tile(item, index++, x, y, w, h, p, maxChars, featured));
     };
 
     if (mobile) {
       for (const item of items) {
-        const featured = index === 1;
+        const featured = item.repo === "ScreenTextGrab";
         const h = featured ? 118 : tileH;
         place(item, pad, inner, h, featured);
         y += h + gap;
       }
       y += 10;
-      continue;
+      return;
     }
 
-    if (items.length === 3) {
-      place(items[0], pad, inner, 120, true);
+    const featuredItem = items.find((item) => item.repo === "ScreenTextGrab");
+    const remaining = featuredItem ? items.filter((item) => item !== featuredItem) : items;
+    if (featuredItem) {
+      place(featuredItem, pad, inner, 120, true);
       y += 120 + gap;
+    }
+    if (remaining.length === 2) {
       const [w1, w2] = pairWidths(inner, gap, zig++ % 2 === 0);
-      place(items[1], pad, w1, tileH, false);
-      place(items[2], pad + w1 + gap, w2, tileH, false);
+      place(remaining[0], pad, w1, tileH, false);
+      place(remaining[1], pad + w1 + gap, w2, tileH, false);
       y += tileH + gap;
     } else {
-      const [w1, w2] = pairWidths(inner, gap, zig++ % 2 === 0);
-      place(items[0], pad, w1, tileH, false);
-      if (items[1]) place(items[1], pad + w1 + gap, w2, tileH, false);
-      y += tileH + gap;
+      for (const item of remaining) {
+        place(item, pad, inner, tileH, false);
+        y += tileH + gap;
+      }
     }
     y += 12;
-  }
+  });
 
+  const spineX = mobile ? 10 : 18;
+  const spine = `<path d="M ${spineX} ${laneNodes[0]} V ${laneNodes[laneNodes.length - 1]}" fill="none" stroke="${p.rule}" stroke-width="1"/>
+    ${laneNodes.map((nodeY) => `<circle cx="${spineX}" cy="${nodeY}" r="2.5" fill="${p.accent}"/>`).join("")}`;
+  parts.unshift(`<g aria-hidden="true">${spine}</g>`);
   return { height: y + pad - 10, parts };
 }
 
@@ -438,6 +470,8 @@ function board(p, id, spec) {
     `${identity.name}, ${identity.role}. Selected work: ${catalog.map((item) => item.repo).join(", ")}.`,
   );
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${alt}" data-mode="${id}">
+  <title>${xml(identity.name)} — ${xml(identity.role)}</title>
+  <desc>${xml(identity.intro)} Selected work is organized by platform, terminal, security, tooling, and in-progress lanes.</desc>
   ${defs(p)}
   ${field(p, width, height)}
   ${header(p, width, spec)}
@@ -552,9 +586,9 @@ if (!files[ASSETS.desktopDark].svg.includes("ScreenTextGrab") || !files[ASSETS.d
   throw new Error("board dropped catalog coverage");
 }
 if (files[ASSETS.desktopDark].svg.includes('width="70" height="70"')) {
-  throw new Error("scope widget still on the board");
+  throw new Error("legacy instrument still on the board");
 }
-if (!files[ASSETS.desktopDark].svg.includes('width="888" height="120"')) {
+if (!files[ASSETS.desktopDark].svg.includes('data-featured="true"')) {
   throw new Error("featured macOS card is not full-width");
 }
 
@@ -567,14 +601,15 @@ for (const [name, { svg, palette }] of Object.entries(files)) {
 }
 
 const keep = new Set(Object.keys(files));
+const generatedBoard = /^board-v\d+(?:-mobile)?-(?:dark|light)\.svg$/;
 for (const name of readdirSync(outDir)) {
-  if (name.endsWith(".svg") && !keep.has(name)) unlinkSync(join(outDir, name));
+  if (generatedBoard.test(name) && !keep.has(name)) unlinkSync(join(outDir, name));
 }
 
 const readme = renderReadme();
 for (const required of [
   "<picture>",
-  "board-v14",
+  "board-v15",
   "## Selected work",
   "**macOS**",
   "Project notes",
