@@ -14,10 +14,10 @@ const SNAKE = {
   dark: `https://raw.githubusercontent.com/${USER}/${USER}/output/github-snake-dark.svg`,
 };
 const ASSETS = {
-  desktopDark: "board-v13-dark.svg",
-  desktopLight: "board-v13-light.svg",
-  mobileDark: "board-v13-mobile-dark.svg",
-  mobileLight: "board-v13-mobile-light.svg",
+  desktopDark: "board-v14-dark.svg",
+  desktopLight: "board-v14-light.svg",
+  mobileDark: "board-v14-mobile-dark.svg",
+  mobileLight: "board-v14-mobile-light.svg",
 };
 
 const identity = {
@@ -160,28 +160,28 @@ const lanes = [
   { heading: "In progress", key: "In progress", label: "In progress" },
 ];
 
-// Slate field + one copper accent. Green CTA from the design-system search is rejected — one family only.
+// GitHub canvas tokens + one desaturated copper. Cool slate family, not a warm sticker.
 const palettes = {
   dark: {
-    bg: "#0f172a",
-    surface: "#1b2336",
-    ink: "#f8fafc",
-    muted: "#94a3b8",
-    rule: "#334155",
-    accent: "#e2b657",
+    bg: "#0d1117",
+    surface: "#161b22",
+    ink: "#e6edf3",
+    muted: "#9198a1",
+    rule: "#30363d",
+    accent: "#c9a36b",
   },
   light: {
-    bg: "#f8fafc",
-    surface: "#ffffff",
-    ink: "#0f172a",
-    muted: "#475569",
-    rule: "#cbd5e1",
-    accent: "#b45309",
+    bg: "#ffffff",
+    surface: "#f6f8fa",
+    ink: "#1f2328",
+    muted: "#656d76",
+    rule: "#d0d7de",
+    accent: "#9a6700",
   },
 };
 
-const DESKTOP = { width: 960, pad: 36, gap: 14, tileH: 108, header: 168 };
-const MOBILE = { width: 400, pad: 22, gap: 12, tileH: 108, header: 210 };
+const DESKTOP = { width: 960, pad: 36, gap: 14, tileH: 100, header: 176 };
+const MOBILE = { width: 400, pad: 22, gap: 12, tileH: 100, header: 196 };
 
 function xml(value) {
   return String(value)
@@ -231,12 +231,11 @@ function wrapLines(text, maxChars, maxLines = 2) {
 function defs(p) {
   return `<defs>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="${p.accent}" stop-opacity="0.2"/>
+      <stop offset="0%" stop-color="${p.accent}" stop-opacity="0.16"/>
       <stop offset="100%" stop-color="${p.bg}" stop-opacity="0"/>
     </radialGradient>
     <pattern id="mesh" width="28" height="28" patternUnits="userSpaceOnUse">
       <path d="M 28 0 L 0 0 0 28" fill="none" stroke="${p.rule}" stroke-width="0.7"/>
-      <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="28 0" dur="28s" repeatCount="indefinite"/>
     </pattern>
   </defs>
   <style>
@@ -247,23 +246,17 @@ function defs(p) {
 }
 
 function field(p, w, h) {
-  const left = Math.round(w * 0.2);
-  const right = Math.round(w * 0.78);
-  const midY = Math.round(h * 0.42);
+  const left = Math.round(w * 0.22);
   return `<rect width="${w}" height="${h}" fill="${p.bg}"/>
-  <rect width="${w}" height="${h}" fill="url(#mesh)" fill-opacity="0.4"/>
-  <circle cx="${left}" cy="96" r="180" fill="url(#glow)">
-    <animate attributeName="cx" values="${left};${left + 90};${left}" dur="18s" repeatCount="indefinite"/>
-    <animate attributeName="cy" values="72;168;72" dur="22s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="${right}" cy="${midY}" r="220" fill="url(#glow)">
-    <animate attributeName="cx" values="${right};${right - 80};${right}" dur="24s" repeatCount="indefinite"/>
-    <animate attributeName="cy" values="${midY};${midY + 90};${midY}" dur="20s" repeatCount="indefinite"/>
+  <rect width="${w}" height="${h}" fill="url(#mesh)" fill-opacity="0.35"/>
+  <circle cx="${left}" cy="110" r="190" fill="url(#glow)">
+    <animate attributeName="cx" values="${left};${left + 70};${left}" dur="22s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="90;150;90" dur="26s" repeatCount="indefinite"/>
   </circle>`;
 }
 
 function caretX(pad, fontSize) {
-  return pad + Math.round(identity.role.length * fontSize * 0.58) + 12;
+  return pad + Math.round(identity.role.length * fontSize * 0.56) + 10;
 }
 
 // ponytail: SMIL has no prefers-reduced-motion in GitHub <img> sandbox. Ceiling = always-moving instrument. Upgrade: a static twin SVG if we ever need an off switch.
@@ -292,36 +285,22 @@ function polyline(pts) {
   return { d, len: Math.ceil(len) };
 }
 
-function scope(p, x, y, w, h) {
-  const innerX = x + 8;
-  const innerY = y + 6;
-  const innerW = w - 16;
-  const innerH = h - 12;
-  const { d, len } = polyline(scopePoints(innerX, innerY, innerW, innerH));
-  const bead = Math.max(36, Math.round(len * 0.12));
-  const cycle = bead + len;
-  const mid = y + h / 2;
-  return `<g>
-    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="8" fill="${p.surface}" stroke="${p.rule}"/>
-    <line x1="${innerX}" y1="${mid}" x2="${innerX + innerW}" y2="${mid}" stroke="${p.rule}" stroke-width="1"/>
-    <path d="${d}" fill="none" stroke="${p.accent}" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round"/>
-    <path d="${d}" fill="none" stroke="${p.accent}" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="${bead} ${len}" stroke-dashoffset="0">
-      <animate attributeName="stroke-dashoffset" from="0" to="${-cycle}" dur="2.8s" repeatCount="indefinite"/>
-    </path>
-  </g>`;
-}
-
 function cursor(p, x, y) {
-  return `<rect x="${x}" y="${y}" width="7" height="13" fill="${p.accent}">
+  return `<rect x="${x}" y="${y}" width="2" height="14" fill="${p.accent}">
     <animate attributeName="opacity" values="1;1;0;0" dur="1.15s" repeatCount="indefinite" calcMode="discrete"/>
   </rect>`;
 }
 
-function drawRule(p, x1, x2, y) {
-  const span = x2 - x1;
-  return `<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="${p.rule}" stroke-width="1" stroke-dasharray="${span}" stroke-dashoffset="0">
-    <animate attributeName="stroke-dashoffset" from="${span}" to="0" dur="1.3s" fill="freeze"/>
-  </line>`;
+function waveRule(p, x, y, w) {
+  const { d, len } = polyline(scopePoints(x, y - 7, w, 14));
+  const bead = Math.max(28, Math.round(len * 0.1));
+  const cycle = bead + len;
+  return `<g>
+    <path d="${d}" fill="none" stroke="${p.rule}" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="${d}" fill="none" stroke="${p.accent}" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="${bead} ${len}" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" from="0" to="${-cycle}" dur="3.2s" repeatCount="indefinite"/>
+    </path>
+  </g>`;
 }
 
 function paletteHexes(p) {
@@ -354,72 +333,101 @@ function header(p, width, spec) {
   const stack = mobile
     ? `<text x="${pad}" y="164" class="mono" font-size="11" fill="${p.muted}">${xml(identity.stack)}</text>`
     : `<text x="${innerR}" y="44" class="mono" font-size="11" text-anchor="end" fill="${p.muted}">${xml(identity.stack)}</text>`;
-  const instrument = mobile
-    ? scope(p, pad, 174, width - pad * 2, 26)
-    : scope(p, 640, 70, innerR - 640, 70);
-  const caret = cursor(p, caretX(pad, 15), mobile ? 107 : 111);
+  const caret = cursor(p, caretX(pad, 15), mobile ? 102 : 114);
   return `<g>
-    <text x="${pad}" y="44" class="mono" font-size="11" fill="${p.accent}">${xml(identity.location)}</text>
+    <text x="${pad}" y="42" class="mono" font-size="11" letter-spacing="1.4" fill="${p.accent}">${xml(identity.location)}</text>
     ${stack}
-    <text x="${pad}" y="${mobile ? 88 : 92}" class="display" font-size="${mobile ? 28 : 38}" fill="${p.ink}">${xml(identity.name)}</text>
-    <text x="${pad}" y="${mobile ? 118 : 124}" class="sans" font-size="15" fill="${p.ink}">${xml(identity.role)}</text>
+    <text x="${pad}" y="${mobile ? 86 : 98}" class="display" font-size="${mobile ? 30 : 44}" letter-spacing="-0.6" fill="${p.ink}">${xml(identity.name)}</text>
+    <text x="${pad}" y="${mobile ? 116 : 128}" class="sans" font-size="15" fill="${p.ink}">${xml(identity.role)}</text>
     ${caret}
-    <text x="${pad}" y="${mobile ? 142 : 148}" class="sans" font-size="13" fill="${p.muted}">${xml(identity.focus)}</text>
-    ${instrument}
-    ${drawRule(p, pad, innerR, headerH - 8)}
+    <text x="${pad}" y="${mobile ? 140 : 152}" class="sans" font-size="13" fill="${p.muted}">${xml(identity.focus)}</text>
+    ${waveRule(p, pad, headerH - 10, innerR - pad)}
   </g>`;
 }
 
-function tile(item, index, x, y, w, h, p, maxChars) {
+function tile(item, index, x, y, w, h, p, maxChars, featured) {
   const lines = wrapLines(item.line, maxChars, 2);
+  const nameSize = featured ? 20 : 15;
+  const bodyY = featured ? 64 : 48;
   const body = lines
     .map(
       (ln, i) =>
-        `<text x="${x + 16}" y="${y + 68 + i * 16}" class="sans" font-size="12" fill="${p.muted}">${xml(ln)}</text>`,
+        `<text x="${x + 18}" y="${y + bodyY + 20 + i * 16}" class="sans" font-size="12" fill="${p.muted}">${xml(ln)}</text>`,
     )
     .join("\n    ");
+  const bar = featured
+    ? `<rect x="${x}" y="${y}" width="3" height="${h}" fill="${p.accent}"/>`
+    : "";
   return `<g>
-    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="${p.surface}" stroke="${p.rule}"/>
-    <text x="${x + 16}" y="${y + 28}" class="mono" font-size="11" fill="${p.accent}">${pad2(index)}</text>
-    <text x="${x + w - 16}" y="${y + 28}" class="mono" font-size="11" text-anchor="end" fill="${p.muted}">${xml(item.stack)}</text>
-    <text x="${x + 16}" y="${y + 50}" class="sans" font-size="16" font-weight="600" fill="${p.ink}">${xml(item.repo)}</text>
+    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${featured ? 12 : 8}" fill="${p.surface}"/>
+    ${bar}
+    <text x="${x + 18}" y="${y + 26}" class="mono" font-size="11" fill="${p.accent}">${pad2(index)}</text>
+    <text x="${x + w - 16}" y="${y + 26}" class="mono" font-size="11" text-anchor="end" fill="${p.muted}">${xml(item.stack)}</text>
+    <text x="${x + 18}" y="${y + bodyY}" class="sans" font-size="${nameSize}" font-weight="600" fill="${p.ink}">${xml(item.repo)}</text>
     ${body}
   </g>`;
+}
+
+function pairWidths(inner, gap, leanLeft) {
+  const ratio = leanLeft ? 0.58 : 0.42;
+  const left = Math.round((inner - gap) * ratio);
+  return [left, inner - gap - left];
 }
 
 function layoutCatalog(p, spec, startY) {
   const { width, pad, gap, tileH } = spec;
   const mobile = width < 500;
   const inner = width - pad * 2;
-  const cols = mobile ? 1 : 2;
-  const colW = (inner - gap * (cols - 1)) / cols;
   let y = startY;
   let index = 1;
+  let zig = 0;
   const parts = [];
 
   parts.push(
-    `<text x="${pad}" y="${y}" class="display" font-size="${mobile ? 22 : 24}" fill="${p.ink}">Selected work</text>`,
+    `<text x="${pad}" y="${y}" class="display" font-size="${mobile ? 22 : 26}" fill="${p.ink}">Selected work</text>`,
   );
-  y += mobile ? 22 : 26;
+  y += mobile ? 28 : 34;
 
   for (const lane of lanes) {
     const items = catalog.filter((item) => item.lane === lane.key);
     parts.push(
-      `<text x="${pad}" y="${y + 14}" class="mono" font-size="11" fill="${p.muted}">${xml(lane.label)}</text>`,
+      `<text x="${pad}" y="${y + 12}" class="sans" font-size="13" fill="${p.muted}">${xml(lane.label)}</text>`,
     );
-    y += 26;
-    for (let i = 0; i < items.length; i += cols) {
-      const slice = items.slice(i, i + cols);
-      const span = slice.length === 1 && !mobile ? inner : colW;
-      for (let c = 0; c < slice.length; c++) {
-        const x = pad + c * (colW + gap);
-        parts.push(tile(slice[c], index++, x, y, span, tileH, p, span > 500 ? 72 : 48));
+    y += 24;
+
+    const place = (item, x, w, h, featured) => {
+      const maxChars = w > 600 ? 78 : w > 480 ? 60 : 36;
+      parts.push(tile(item, index++, x, y, w, h, p, maxChars, featured));
+    };
+
+    if (mobile) {
+      for (const item of items) {
+        const featured = index === 1;
+        const h = featured ? 118 : tileH;
+        place(item, pad, inner, h, featured);
+        y += h + gap;
       }
+      y += 10;
+      continue;
+    }
+
+    if (items.length === 3) {
+      place(items[0], pad, inner, 120, true);
+      y += 120 + gap;
+      const [w1, w2] = pairWidths(inner, gap, zig++ % 2 === 0);
+      place(items[1], pad, w1, tileH, false);
+      place(items[2], pad + w1 + gap, w2, tileH, false);
+      y += tileH + gap;
+    } else {
+      const [w1, w2] = pairWidths(inner, gap, zig++ % 2 === 0);
+      place(items[0], pad, w1, tileH, false);
+      if (items[1]) place(items[1], pad + w1 + gap, w2, tileH, false);
       y += tileH + gap;
     }
-    y += 8;
+    y += 12;
   }
-  return { height: y + pad - 8, parts };
+
+  return { height: y + pad - 10, parts };
 }
 
 function board(p, id, spec) {
@@ -437,34 +445,23 @@ function board(p, id, spec) {
 </svg>`;
 }
 
-function mdList() {
-  let n = 1;
+function mdLaneLinks() {
   return lanes
     .map((lane) => {
       const rows = catalog.filter((item) => item.lane === lane.key);
-      const items = rows
-        .map((item) => {
-          const line = `**${pad2(n++)} · [${item.repo}](${repoUrl(item.repo)})** · ${html(item.stack)}  \n${html(item.summary)}`;
-          return line;
-        })
-        .join("\n\n");
-      return `### ${lane.heading}\n\n${items}`;
+      const links = rows.map((item) => `[${item.repo}](${repoUrl(item.repo)})`).join(" · ");
+      return `**${lane.heading}**  \n${links}`;
     })
     .join("\n\n");
 }
 
-function mdSimple(rows) {
+function mdNotes(rows) {
   return rows
     .map((item) => `- **[${item.repo}](${repoUrl(item.repo)})** — ${html(item.summary)}`)
     .join("\n");
 }
 
 function renderReadme() {
-  const statsDark = `https://github-stats-extended.vercel.app/api?username=${USER}&show_icons=true&hide_border=true&theme=github_dark`;
-  const statsLight = `https://github-stats-extended.vercel.app/api?username=${USER}&show_icons=true&hide_border=true&theme=github_light`;
-  const langsDark = `https://github-stats-extended.vercel.app/api/top-langs/?username=${USER}&layout=compact&langs_count=6&hide_border=true&theme=github_dark`;
-  const langsLight = `https://github-stats-extended.vercel.app/api/top-langs/?username=${USER}&layout=compact&langs_count=6&hide_border=true&theme=github_light`;
-
   return `<!-- Generated by scripts/render-profile.mjs. Edit that file, then run: node scripts/render-profile.mjs -->
 <picture>
   <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="assets/${ASSETS.mobileDark}">
@@ -478,19 +475,26 @@ ${html(identity.intro)}
 
 ## Selected work
 
-${mdList()}
+${mdLaneLinks()}
+
+<details>
+<summary>Project notes</summary>
+
+${mdNotes(catalog)}
+
+</details>
 
 <details>
 <summary>Other public repositories</summary>
 
-${mdSimple(other)}
+${mdNotes(other)}
 
 </details>
 
 <details>
 <summary>Academic work</summary>
 
-${mdSimple(academic)}
+${mdNotes(academic)}
 
 </details>
 
@@ -502,17 +506,6 @@ ${mdSimple(academic)}
     <source media="(prefers-color-scheme: dark)" srcset="${SNAKE.dark}">
     <source media="(prefers-color-scheme: light)" srcset="${SNAKE.light}">
     <img alt="GitHub contribution activity" src="${SNAKE.light}" width="100%">
-  </picture>
-</p>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="${statsDark}">
-    <img src="${statsLight}" alt="GitHub profile statistics" height="160">
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="${langsDark}">
-    <img src="${langsLight}" alt="Repository language breakdown" height="160">
   </picture>
 </p>
 
@@ -558,6 +551,12 @@ const files = {
 if (!files[ASSETS.desktopDark].svg.includes("ScreenTextGrab") || !files[ASSETS.desktopDark].svg.includes("duetto")) {
   throw new Error("board dropped catalog coverage");
 }
+if (files[ASSETS.desktopDark].svg.includes('width="70" height="70"')) {
+  throw new Error("scope widget still on the board");
+}
+if (!files[ASSETS.desktopDark].svg.includes('width="888" height="120"')) {
+  throw new Error("featured macOS card is not full-width");
+}
 
 for (const [name, { svg, palette }] of Object.entries(files)) {
   if (!svg.includes("Batuhan") || !svg.includes("Selected work")) {
@@ -575,13 +574,10 @@ for (const name of readdirSync(outDir)) {
 const readme = renderReadme();
 for (const required of [
   "<picture>",
-  "board-v13",
+  "board-v14",
   "## Selected work",
-  "### macOS",
-  "### Terminal & CLI",
-  "### Application security",
-  "### Developer tooling",
-  "### In progress",
+  "**macOS**",
+  "Project notes",
   "deskward",
   "<details>",
   "## Contact",
@@ -589,8 +585,10 @@ for (const required of [
   if (!readme.includes(required)) throw new Error(`README missing ${required}`);
 }
 if (readme.includes("<table")) throw new Error("README still uses HTML tables");
+if (readme.includes("github-stats-extended")) throw new Error("README still has stats widgets");
 if (readme.includes("Calder workspace")) throw new Error("README still has Calder screenshot block");
 if (readme.includes("skillicons.dev")) throw new Error("README still has skill icon widget");
 if (readme.includes("Flagship repos")) throw new Error("README still has pin card section");
+if (readme.includes("### macOS")) throw new Error("README still duplicates the catalog as headings");
 writeFileSync(join(root, "README.md"), readme);
 console.log("wrote 4 profile SVGs and README.md");
