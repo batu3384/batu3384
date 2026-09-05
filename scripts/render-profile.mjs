@@ -14,29 +14,24 @@ const SNAKE = {
   dark: `https://raw.githubusercontent.com/${USER}/${USER}/output/github-snake-dark.svg`,
 };
 const ASSETS = {
-  desktopDark: "hero-v10-dark.svg",
-  desktopLight: "hero-v10-light.svg",
-  mobileDark: "hero-v10-mobile-dark.svg",
-  mobileLight: "hero-v10-mobile-light.svg",
-  workDark: "work-v10-dark.svg",
-  workLight: "work-v10-light.svg",
-  workMobileDark: "work-v10-mobile-dark.svg",
-  workMobileLight: "work-v10-mobile-light.svg",
+  desktopDark: "board-v11-dark.svg",
+  desktopLight: "board-v11-light.svg",
+  mobileDark: "board-v11-mobile-dark.svg",
+  mobileLight: "board-v11-mobile-light.svg",
 };
 
 const identity = {
   name: "Batuhan Yüksel",
-  first: "Batuhan",
-  last: "Yüksel",
   role: "Software developer",
   focus: "macOS applications · CLI tools · application security",
   location: "Istanbul · MIS",
-  stack: ["Swift", "Go", "TypeScript", "Rust", "Python", "C++"],
+  stack: "Swift · Go · TypeScript · Rust · Python · C++",
   intro:
     "MIS graduate in Istanbul. I design and ship local-first software: macOS utilities, terminal tools, and security workflows with evidence you can inspect.",
 };
 
 const catalog = [
+  // `line` = SVG one-liner (layout cap). `summary` = README sentence. Same fact, two lengths.
   {
     repo: "ScreenTextGrab",
     stack: "Swift",
@@ -157,57 +152,36 @@ const academic = [
   },
 ];
 
-const heroRepos = ["ScreenTextGrab", "calder", "ironsentinel", "falcon-dm", "frostwall-beam"];
-
 const lanes = [
-  { heading: "macOS", key: "macOS", label: "MACOS" },
-  { heading: "Terminal & CLI", key: "Terminal", label: "TERMINAL" },
-  { heading: "Application security", key: "AppSec", label: "APPSEC" },
-  { heading: "Developer tooling", key: "Tooling", label: "TOOLING" },
-  { heading: "In progress", key: "In progress", label: "IN PROGRESS" },
+  { heading: "macOS", key: "macOS", label: "macOS" },
+  { heading: "Terminal & CLI", key: "Terminal", label: "Terminal" },
+  { heading: "Application security", key: "AppSec", label: "Application security" },
+  { heading: "Developer tooling", key: "Tooling", label: "Developer tooling" },
+  { heading: "In progress", key: "In progress", label: "In progress" },
 ];
 
-const laneAccent = {
-  macOS: { dark: "#7eb8c9", light: "#2f6f82" },
-  Terminal: { dark: "#e0b15c", light: "#8a5a12" },
-  AppSec: { dark: "#b7c2d0", light: "#445064" },
-  Tooling: { dark: "#9bb384", light: "#4c6238" },
-  "In progress": { dark: "#c4a3d4", light: "#6a4c7c" },
-};
-
+// One accent. GitHub canvas so the board sits on the profile instead of a sticker.
 const palettes = {
   dark: {
-    mode: "dark",
-    bg: "#12100e",
-    surface: "#1c1915",
-    ink: "#f6efe2",
-    muted: "#b3a794",
-    faint: "#3a342c",
-    rule: "#2e2922",
-    copper: "#d4a05a",
-    field: "#c48432",
-    onField: "#1a140c",
-    fieldMuted: "#3d2a12",
+    bg: "#0d1117",
+    surface: "#161b22",
+    ink: "#f0f3f6",
+    muted: "#8b949e",
+    rule: "#30363d",
+    accent: "#d4a05a",
   },
   light: {
-    mode: "light",
-    bg: "#f4efe4",
-    surface: "#fffaf1",
-    ink: "#1a1612",
-    muted: "#6d6458",
-    faint: "#d5cbb8",
-    rule: "#e2d8c6",
-    copper: "#9a5a14",
-    field: "#c48432",
-    onField: "#1a140c",
-    fieldMuted: "#5c3a10",
+    bg: "#ffffff",
+    surface: "#f6f8fa",
+    ink: "#1f2328",
+    muted: "#59636e",
+    rule: "#d0d7de",
+    accent: "#9a5a14",
   },
 };
 
-const HERO = { width: 960, height: 360 };
-const HERO_M = { width: 400, height: 560 };
-const WORK = { width: 960 };
-const WORK_M = { width: 400 };
+const DESKTOP = { width: 960, pad: 36, gap: 14, tileH: 108, header: 168 };
+const MOBILE = { width: 400, pad: 22, gap: 12, tileH: 108, header: 196 };
 
 function xml(value) {
   return String(value)
@@ -218,14 +192,15 @@ function xml(value) {
     .replaceAll("'", "&apos;");
 }
 
-function repoUrl(name) {
-  return `https://github.com/${USER}/${name}`;
+function html(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
 }
 
-function byRepo(name) {
-  const item = catalog.find((row) => row.repo === name);
-  if (!item) throw new Error(`missing project: ${name}`);
-  return item;
+function repoUrl(name) {
+  return `https://github.com/${USER}/${name}`;
 }
 
 function pad2(n) {
@@ -247,43 +222,22 @@ function wrapLines(text, maxChars, maxLines = 2) {
     }
   }
   if (cur) lines.push(cur);
-  if (lines.length <= maxLines) return lines;
-  const clipped = lines.slice(0, maxLines);
-  const last = clipped[maxLines - 1];
-  clipped[maxLines - 1] = `${last.slice(0, Math.max(1, last.length - 1))}…`;
-  return clipped;
+  if (lines.length > maxLines) {
+    throw new Error(`text overflow (${lines.length}/${maxLines}): ${text}`);
+  }
+  return lines;
 }
 
-function defs(p, gid, w, h) {
-  return `<defs>
-    <clipPath id="frame"><rect width="${w}" height="${h}" rx="22"/></clipPath>
-    <pattern id="${gid}" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="0.65" fill="${p.copper}" fill-opacity="0.16"/>
-    </pattern>
-  </defs>
-  <style>
+function defs(p) {
+  return `<style>
     .display{font-family:Georgia,"Times New Roman",Times,serif}
     .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
   </style>`;
 }
 
-function accent(lane, mode) {
-  return laneAccent[lane][mode];
-}
-
-function stackPills(p, x, y) {
-  const widths = { Swift: 58, Go: 40, TypeScript: 92, Rust: 52, Python: 70, "C++": 46 };
-  let cursor = x;
-  return identity.stack
-    .map((lang) => {
-      const w = widths[lang];
-      const node = `<rect x="${cursor}" y="${y - 13}" width="${w}" height="22" rx="11" fill="${p.surface}"/>
-    <text x="${cursor + w / 2}" y="${y + 3}" class="mono" font-size="11" text-anchor="middle" fill="${p.muted}">${xml(lang)}</text>`;
-      cursor += w + 8;
-      return node;
-    })
-    .join("\n    ");
+function paletteHexes(p) {
+  return new Set(Object.values(p).map((v) => v.toLowerCase()));
 }
 
 function assertLayout() {
@@ -293,193 +247,118 @@ function assertLayout() {
       throw new Error(`unsafe repository name: ${item.repo}`);
     }
   }
-  for (const name of heroRepos) byRepo(name);
   for (const lane of lanes) {
     const rows = catalog.filter((item) => item.lane === lane.key);
     if (rows.length === 0) throw new Error(`lane has no projects: ${lane.key}`);
   }
   for (const item of catalog) {
-    if (item.line.length > 64) throw new Error(`board line too long: ${item.repo}`);
+    if (item.line.length > 62) throw new Error(`board line too long: ${item.repo}`);
   }
 }
 
-function heroDesktop(p, id) {
-  const { width: w, height: h } = HERO;
-  const split = 332;
-  const featured = heroRepos.map(byRepo);
-  const alt = xml(`${identity.name}, ${identity.role}. ${featured.map((item) => item.repo).join(", ")}.`);
-  const rows = featured
-    .map((item, i) => {
-      const y = 96 + i * 42;
-      return `<text x="${split + 36}" y="${y}" class="mono" font-size="11" fill="${p.copper}">${pad2(i + 1)}</text>
-    <text x="${split + 64}" y="${y}" class="sans" font-size="15" font-weight="600" fill="${p.ink}">${xml(item.repo)}</text>
-    <text x="${split + 64}" y="${y + 18}" class="sans" font-size="12" fill="${p.muted}">${xml(item.line)}</text>`;
-    })
-    .join("\n    ");
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${alt}" data-mode="${id}">
-  ${defs(p, "g", w, h)}
-  <g clip-path="url(#frame)">
-    <rect width="${w}" height="${h}" fill="${p.bg}"/>
-    <rect width="${w}" height="${h}" fill="url(#g)"/>
-    <rect width="${split}" height="${h}" fill="${p.field}"/>
-    <circle cx="${split}" cy="210" r="150" fill="${p.onField}" fill-opacity="0.08"/>
-    <text x="36" y="48" class="mono" font-size="11" letter-spacing="2.8" fill="${p.fieldMuted}">SOFTWARE</text>
-    <text x="36" y="142" class="display" font-size="44" fill="${p.onField}">${xml(identity.first)}</text>
-    <text x="36" y="194" class="display" font-size="44" fill="${p.onField}">${xml(identity.last)}</text>
-    <text x="36" y="236" class="sans" font-size="15" fill="${p.onField}">${xml(identity.role)}</text>
-    <text x="36" y="328" class="mono" font-size="12" fill="${p.fieldMuted}">${xml(identity.location)}</text>
-    <text x="${split + 36}" y="44" class="sans" font-size="13" fill="${p.ink}">${xml(identity.focus)}</text>
-    <line x1="${split + 36}" y1="64" x2="${w - 28}" y2="64" stroke="${p.rule}" stroke-width="1"/>
-    ${rows}
-    <line x1="${split + 36}" y1="314" x2="${w - 28}" y2="314" stroke="${p.rule}" stroke-width="1"/>
-    ${stackPills(p, split + 36, 332)}
-  </g>
-</svg>`;
-}
-
-function heroMobile(p, id) {
-  const { width: w, height: h } = HERO_M;
-  const band = 168;
-  const featured = heroRepos.map(byRepo);
-  const alt = xml(`${identity.name}. ${featured.map((item) => item.repo).join(", ")}.`);
-  const rows = featured
-    .map((item, i) => {
-      const y = 214 + i * 58;
-      const lines = wrapLines(item.line, 38, 2);
-      const body = lines
-        .map(
-          (ln, li) =>
-            `<text x="28" y="${y + 22 + li * 16}" class="sans" font-size="12" fill="${p.muted}">${xml(ln)}</text>`,
-        )
-        .join("\n    ");
-      return `<text x="28" y="${y}" class="mono" font-size="11" fill="${p.copper}">${pad2(i + 1)}</text>
-    <text x="56" y="${y}" class="sans" font-size="15" font-weight="600" fill="${p.ink}">${xml(item.repo)}</text>
-    <text x="372" y="${y}" class="mono" font-size="11" text-anchor="end" fill="${p.muted}">${xml(item.stack)}</text>
-    ${body}`;
-    })
-    .join("\n    ");
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${alt}" data-mode="${id}">
-  ${defs(p, "g", w, h)}
-  <g clip-path="url(#frame)">
-    <rect width="${w}" height="${h}" fill="${p.bg}"/>
-    <rect width="${w}" height="${h}" fill="url(#g)"/>
-    <rect width="${w}" height="${band}" fill="${p.field}"/>
-    <text x="24" y="36" class="mono" font-size="10" letter-spacing="2.2" fill="${p.fieldMuted}">SOFTWARE</text>
-    <text x="24" y="86" class="display" font-size="32" fill="${p.onField}">${xml(identity.first)}</text>
-    <text x="24" y="124" class="display" font-size="32" fill="${p.onField}">${xml(identity.last)}</text>
-    <text x="24" y="152" class="sans" font-size="13" fill="${p.onField}">${xml(identity.role)} · ${xml(identity.location)}</text>
-    ${rows}
-    <text x="28" y="536" class="mono" font-size="11" fill="${p.muted}">${xml(identity.stack.join(" · "))}</text>
-  </g>
-</svg>`;
+function header(p, width, spec) {
+  const { pad, header: headerH } = spec;
+  const mobile = width < 500;
+  const stack = mobile
+    ? `<text x="${pad}" y="168" class="mono" font-size="11" fill="${p.muted}">${xml(identity.stack)}</text>`
+    : `<text x="${width - pad}" y="44" class="mono" font-size="11" text-anchor="end" fill="${p.muted}">${xml(identity.stack)}</text>`;
+  return `<g>
+    <text x="${pad}" y="44" class="mono" font-size="11" fill="${p.accent}">${xml(identity.location)}</text>
+    ${stack}
+    <text x="${pad}" y="${mobile ? 88 : 92}" class="display" font-size="${mobile ? 28 : 38}" fill="${p.ink}">${xml(identity.name)}</text>
+    <text x="${pad}" y="${mobile ? 118 : 124}" class="sans" font-size="15" fill="${p.ink}">${xml(identity.role)}</text>
+    <text x="${pad}" y="${mobile ? 142 : 148}" class="sans" font-size="13" fill="${p.muted}">${xml(identity.focus)}</text>
+    <line x1="${pad}" y1="${headerH - 8}" x2="${width - pad}" y2="${headerH - 8}" stroke="${p.rule}" stroke-width="1"/>
+  </g>`;
 }
 
 function tile(item, index, x, y, w, h, p, maxChars) {
-  const color = accent(item.lane, p.mode);
-  const clip = `t${index}`;
   const lines = wrapLines(item.line, maxChars, 2);
   const body = lines
     .map(
       (ln, i) =>
-        `<text x="${x + 16}" y="${y + 70 + i * 16}" class="sans" font-size="12" fill="${p.muted}">${xml(ln)}</text>`,
+        `<text x="${x + 16}" y="${y + 68 + i * 16}" class="sans" font-size="12" fill="${p.muted}">${xml(ln)}</text>`,
     )
     .join("\n    ");
   return `<g>
-    <clipPath id="${clip}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14"/></clipPath>
-    <g clip-path="url(#${clip})">
-      <rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${p.surface}"/>
-      <rect x="${x}" y="${y}" width="${w}" height="5" fill="${color}"/>
-    </g>
-    <text x="${x + 16}" y="${y + 32}" class="mono" font-size="11" fill="${color}">${pad2(index)}</text>
-    <text x="${x + w - 16}" y="${y + 32}" class="mono" font-size="11" text-anchor="end" fill="${p.muted}">${xml(item.stack)}</text>
-    <text x="${x + 16}" y="${y + 54}" class="sans" font-size="16" font-weight="600" fill="${p.ink}">${xml(item.repo)}</text>
+    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="${p.surface}" stroke="${p.rule}"/>
+    <text x="${x + 16}" y="${y + 28}" class="mono" font-size="11" fill="${p.accent}">${pad2(index)}</text>
+    <text x="${x + w - 16}" y="${y + 28}" class="mono" font-size="11" text-anchor="end" fill="${p.muted}">${xml(item.stack)}</text>
+    <text x="${x + 16}" y="${y + 50}" class="sans" font-size="16" font-weight="600" fill="${p.ink}">${xml(item.repo)}</text>
     ${body}
   </g>`;
 }
 
-function layoutWork(p, width, mobile) {
-  const pad = mobile ? 20 : 28;
-  const gap = 12;
+function layoutCatalog(p, spec, startY) {
+  const { width, pad, gap, tileH } = spec;
+  const mobile = width < 500;
   const inner = width - pad * 2;
-  let y = mobile ? 86 : 96;
-  let index = 1;
-  const parts = [];
-  const tileH = mobile ? 112 : 118;
   const cols = mobile ? 1 : 2;
   const colW = (inner - gap * (cols - 1)) / cols;
+  let y = startY;
+  let index = 1;
+  const parts = [];
+
+  parts.push(
+    `<text x="${pad}" y="${y}" class="display" font-size="${mobile ? 22 : 24}" fill="${p.ink}">Selected work</text>`,
+  );
+  y += mobile ? 22 : 26;
 
   for (const lane of lanes) {
     const items = catalog.filter((item) => item.lane === lane.key);
-    const color = accent(lane.key, p.mode);
     parts.push(
-      `<text x="${pad}" y="${y}" class="mono" font-size="11" letter-spacing="2" fill="${color}">${lane.label}</text>`,
+      `<text x="${pad}" y="${y + 14}" class="mono" font-size="11" fill="${p.muted}">${xml(lane.label)}</text>`,
     );
-    y += 14;
+    y += 26;
     for (let i = 0; i < items.length; i += cols) {
       const slice = items.slice(i, i + cols);
       const span = slice.length === 1 && !mobile ? inner : colW;
       for (let c = 0; c < slice.length; c++) {
         const x = pad + c * (colW + gap);
-        parts.push(tile(slice[c], index++, x, y, span, tileH, p, span > 500 ? 72 : 44));
+        parts.push(tile(slice[c], index++, x, y, span, tileH, p, span > 500 ? 70 : 42));
       }
       y += tileH + gap;
     }
-    y += 10;
+    y += 8;
   }
-  return { height: y + 8, parts };
+  return { height: y + pad - 8, parts };
 }
 
-function workSvg(p, id, mobile) {
-  const width = mobile ? WORK_M.width : WORK.width;
-  const built = layoutWork(p, width, mobile);
+function board(p, id, spec) {
+  const { width, header: headerH } = spec;
+  const built = layoutCatalog(p, spec, headerH + 28);
   const height = built.height;
-  const pad = mobile ? 20 : 28;
-  const alt = xml(`Selected work by ${identity.name}: ${catalog.map((item) => item.repo).join(", ")}.`);
+  const alt = xml(
+    `${identity.name}, ${identity.role}. Selected work: ${catalog.map((item) => item.repo).join(", ")}.`,
+  );
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${alt}" data-mode="${id}">
-  ${defs(p, "g", width, height)}
-  <g clip-path="url(#frame)">
-    <rect width="${width}" height="${height}" fill="${p.bg}"/>
-    <rect width="${width}" height="${height}" fill="url(#g)"/>
-    <text x="${pad}" y="${mobile ? 42 : 48}" class="display" font-size="${mobile ? 26 : 30}" fill="${p.ink}">Selected work</text>
-    <text x="${width - pad}" y="${mobile ? 42 : 48}" class="mono" font-size="11" text-anchor="end" fill="${p.muted}">${catalog.length} repositories</text>
-    ${built.parts.join("\n    ")}
-  </g>
+  ${defs(p)}
+  <rect width="${width}" height="${height}" fill="${p.bg}"/>
+  ${header(p, width, spec)}
+  ${built.parts.join("\n  ")}
 </svg>`;
 }
 
-function mdTable(items, startIndex) {
-  const cell = (item, n) => `<td valign="top" width="50%">
-<h3>${pad2(n)} · <a href="${repoUrl(item.repo)}">${item.repo}</a></h3>
-<p><sub>${item.stack}</sub><br/>
-${item.summary}</p>
-</td>`;
-  const rows = [];
-  for (let i = 0; i < items.length; i += 2) {
-    const n = startIndex + i;
-    const right = items[i + 1] ? cell(items[i + 1], n + 1) : `<td width="50%"></td>`;
-    rows.push(`<tr>${cell(items[i], n)}${right}</tr>`);
-  }
-  return `<table width="100%">
-${rows.join("\n")}
-</table>`;
+function mdList() {
+  let n = 1;
+  return lanes
+    .map((lane) => {
+      const rows = catalog.filter((item) => item.lane === lane.key);
+      const items = rows
+        .map((item) => {
+          const line = `**${pad2(n++)} · [${item.repo}](${repoUrl(item.repo)})** · ${html(item.stack)}  \n${html(item.summary)}`;
+          return line;
+        })
+        .join("\n\n");
+      return `### ${lane.heading}\n\n${items}`;
+    })
+    .join("\n\n");
 }
 
 function mdSimple(rows) {
   return rows
-    .map((item) => `- **[${item.repo}](${repoUrl(item.repo)})** — ${item.summary}`)
+    .map((item) => `- **[${item.repo}](${repoUrl(item.repo)})** — ${html(item.summary)}`)
     .join("\n");
-}
-
-function picture(sources, alt, fallback) {
-  const tags = sources
-    .map((s) => `  <source media="${s.media}" srcset="assets/${s.src}">`)
-    .join("\n");
-  return `<picture>
-${tags}
-  <img alt="${alt}" src="assets/${fallback}" width="100%">
-</picture>`;
 }
 
 function renderReadme() {
@@ -488,44 +367,20 @@ function renderReadme() {
   const langsDark = `https://github-stats-extended.vercel.app/api/top-langs/?username=${USER}&layout=compact&langs_count=6&hide_border=true&theme=github_dark`;
   const langsLight = `https://github-stats-extended.vercel.app/api/top-langs/?username=${USER}&layout=compact&langs_count=6&hide_border=true&theme=github_light`;
 
-  let n = 1;
-  const laneBlocks = lanes
-    .map((lane) => {
-      const rows = catalog.filter((item) => item.lane === lane.key);
-      const table = mdTable(rows, n);
-      n += rows.length;
-      return `### ${lane.heading}\n\n${table}`;
-    })
-    .join("\n\n");
-
   return `<!-- Generated by scripts/render-profile.mjs. Edit that file, then run: node scripts/render-profile.mjs -->
-${picture(
-  [
-    { media: "(max-width: 700px) and (prefers-color-scheme: dark)", src: ASSETS.mobileDark },
-    { media: "(max-width: 700px)", src: ASSETS.mobileLight },
-    { media: "(prefers-color-scheme: dark)", src: ASSETS.desktopDark },
-    { media: "(prefers-color-scheme: light)", src: ASSETS.desktopLight },
-  ],
-  `${identity.name} — ${identity.role}. Selected repositories: ${heroRepos.join(", ")}.`,
-  ASSETS.desktopLight,
-)}
+<picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="assets/${ASSETS.mobileDark}">
+  <source media="(max-width: 700px)" srcset="assets/${ASSETS.mobileLight}">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/${ASSETS.desktopDark}">
+  <source media="(prefers-color-scheme: light)" srcset="assets/${ASSETS.desktopLight}">
+  <img alt="${html(identity.name)} — ${html(identity.role)}. Selected work: ${catalog.map((item) => item.repo).join(", ")}." src="assets/${ASSETS.desktopLight}" width="100%">
+</picture>
 
-${identity.intro}
-
-${picture(
-  [
-    { media: "(max-width: 700px) and (prefers-color-scheme: dark)", src: ASSETS.workMobileDark },
-    { media: "(max-width: 700px)", src: ASSETS.workMobileLight },
-    { media: "(prefers-color-scheme: dark)", src: ASSETS.workDark },
-    { media: "(prefers-color-scheme: light)", src: ASSETS.workLight },
-  ],
-  `Selected work: ${catalog.map((item) => item.repo).join(", ")}.`,
-  ASSETS.workLight,
-)}
+${html(identity.intro)}
 
 ## Selected work
 
-${laneBlocks}
+${mdList()}
 
 <details>
 <summary>Other public repositories</summary>
@@ -571,7 +426,7 @@ ${mdSimple(academic)}
 `;
 }
 
-function assertSvg(name, svg) {
+function assertSvg(name, svg, p) {
   if (!/^<svg\b[\s\S]*<\/svg>$/.test(svg)) throw new Error(`${name} is not a complete SVG`);
   if ((svg.match(/<svg\b/g) || []).length !== 1) throw new Error(`${name} has invalid SVG nesting`);
   if (/<script\b|javascript:| on[a-z]+\s*=/i.test(svg)) {
@@ -581,35 +436,35 @@ function assertSvg(name, svg) {
     throw new Error(`${name} is missing accessible image metadata`);
   }
   if (svg.includes("undefined")) throw new Error(`${name} leaked undefined into markup`);
+  if (svg.includes("…")) throw new Error(`${name} clipped text with ellipsis`);
+  const allowed = paletteHexes(p);
+  const hexes = svg.match(/#[0-9a-fA-F]{6}/g) ?? [];
+  for (const hex of hexes) {
+    if (!allowed.has(hex.toLowerCase())) {
+      throw new Error(`${name} used off-palette color ${hex}`);
+    }
+  }
 }
 
 assertLayout();
 mkdirSync(outDir, { recursive: true });
 
 const files = {
-  [ASSETS.desktopDark]: heroDesktop(palettes.dark, "dark"),
-  [ASSETS.desktopLight]: heroDesktop(palettes.light, "light"),
-  [ASSETS.mobileDark]: heroMobile(palettes.dark, "mdark"),
-  [ASSETS.mobileLight]: heroMobile(palettes.light, "mlight"),
-  [ASSETS.workDark]: workSvg(palettes.dark, "wdark", false),
-  [ASSETS.workLight]: workSvg(palettes.light, "wlight", false),
-  [ASSETS.workMobileDark]: workSvg(palettes.dark, "wmdark", true),
-  [ASSETS.workMobileLight]: workSvg(palettes.light, "wmlight", true),
+  [ASSETS.desktopDark]: { svg: board(palettes.dark, "dark", DESKTOP), palette: palettes.dark },
+  [ASSETS.desktopLight]: { svg: board(palettes.light, "light", DESKTOP), palette: palettes.light },
+  [ASSETS.mobileDark]: { svg: board(palettes.dark, "mdark", MOBILE), palette: palettes.dark },
+  [ASSETS.mobileLight]: { svg: board(palettes.light, "mlight", MOBILE), palette: palettes.light },
 };
 
-if (!files[ASSETS.mobileDark].includes("frostwall-beam")) {
-  throw new Error("mobile hero dropped a featured repo");
-}
-if (!files[ASSETS.workDark].includes("duetto") || !files[ASSETS.workDark].includes("MACOS")) {
-  throw new Error("work board missing catalog coverage");
+if (!files[ASSETS.desktopDark].svg.includes("ScreenTextGrab") || !files[ASSETS.desktopDark].svg.includes("duetto")) {
+  throw new Error("board dropped catalog coverage");
 }
 
-for (const [name, svg] of Object.entries(files)) {
-  if (!svg.includes("Batuhan") && !svg.includes("Selected work")) {
+for (const [name, { svg, palette }] of Object.entries(files)) {
+  if (!svg.includes("Batuhan") || !svg.includes("Selected work")) {
     throw new Error(`${name} missing identity or selected work`);
   }
-  if (svg.includes("…")) throw new Error(`${name} clipped text with ellipsis`);
-  assertSvg(name, svg);
+  assertSvg(name, svg, palette);
   writeFileSync(join(outDir, name), svg);
 }
 
@@ -621,23 +476,22 @@ for (const name of readdirSync(outDir)) {
 const readme = renderReadme();
 for (const required of [
   "<picture>",
-  "hero-v10",
-  "work-v10",
+  "board-v11",
   "## Selected work",
   "### macOS",
   "### Terminal & CLI",
   "### Application security",
   "### Developer tooling",
   "### In progress",
-  "<table",
   "deskward",
   "<details>",
   "## Contact",
 ]) {
   if (!readme.includes(required)) throw new Error(`README missing ${required}`);
 }
+if (readme.includes("<table")) throw new Error("README still uses HTML tables");
 if (readme.includes("Calder workspace")) throw new Error("README still has Calder screenshot block");
 if (readme.includes("skillicons.dev")) throw new Error("README still has skill icon widget");
 if (readme.includes("Flagship repos")) throw new Error("README still has pin card section");
 writeFileSync(join(root, "README.md"), readme);
-console.log("wrote 8 profile SVGs and README.md");
+console.log("wrote 4 profile SVGs and README.md");
