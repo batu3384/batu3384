@@ -11,8 +11,8 @@ I ship software that stays on your machine — screen capture, parallel AI works
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=swift,go,ts,python,rust,cpp&theme=dark">
-    <img src="https://skillicons.dev/icons?i=swift,go,ts,python,rust,cpp&theme=light" alt="Swift, Go, TypeScript, Python, Rust, C++">
+    <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=swift%2Cgo%2Cts%2Cpython%2Crust%2Ccpp&theme=dark">
+    <img src="https://skillicons.dev/icons?i=swift%2Cgo%2Cts%2Cpython%2Crust%2Ccpp&theme=light" alt="Swift, Go, TypeScript, Python, Rust, C++">
   </picture>
 </p>
 
