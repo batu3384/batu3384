@@ -2,7 +2,7 @@
 // Source of truth for github.com/batu3384 — SVGs + README.md
 // Run: node scripts/render-profile.mjs
 
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, unlinkSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -10,128 +10,194 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "assets");
 const USER = "batu3384";
 const ASSETS = {
-  desktopDark: "hero-workbench-v2-dark.svg",
-  desktopLight: "hero-workbench-v2-light.svg",
-  mobileDark: "hero-workbench-v2-mobile-dark.svg",
-  mobileLight: "hero-workbench-v2-mobile-light.svg",
+  desktopDark: "hero-v3-dark.svg",
+  desktopLight: "hero-v3-light.svg",
+  mobileDark: "hero-v3-mobile-dark.svg",
+  mobileLight: "hero-v3-mobile-light.svg",
+  indexDark: "index-v3-dark.svg",
+  indexLight: "index-v3-light.svg",
+  indexMobileDark: "index-v3-mobile-dark.svg",
+  indexMobileLight: "index-v3-mobile-light.svg",
 };
 
 const identity = {
   name: "Batuhan Yüksel",
-  headline: "SOFTWARE DEVELOPER",
-  tagline: "LOCAL-FIRST SOFTWARE · PRIVACY-AWARE TOOLS",
+  headline: "SOFTWARE BUILDER",
+  tagline: "LOCAL-FIRST APPS AND CLI TOOLS",
   location: "Istanbul · MIS",
-  stack: "Swift · Go · TypeScript · Python · Rust",
+  stack: "Swift · Go · TS · Python · Rust",
   intro:
-    "MIS graduate and software developer in Istanbul. I build local-first macOS apps, terminal tools, and AppSec workflows in Swift, Go, TypeScript, Python, and Rust.",
+    "I ship local-first macOS apps, terminal tools, and AppSec workflows from Istanbul — capture, parallel AI workspaces, private transfer, and evidence-backed review.",
 };
 
 const flagships = [
   {
     repo: "ScreenTextGrab",
-    role: "macOS · OCR",
-    blurb: "Capture anything visual as usable text.",
+    domain: "CAPTURE",
+    stack: "Swift",
+    blurb: "Menu bar OCR for screen, code, tables, PDFs.",
     purpose:
-      "Local-first macOS OCR for screen, clipboard, files, and PDFs.",
+      "Local-first macOS menu bar OCR for screen, code, subtitles, tables, and PDFs.",
   },
   {
     repo: "calder",
-    role: "AI · WORKSPACE",
-    blurb: "Run parallel coding CLIs in one workspace.",
+    domain: "WORKSPACE",
+    stack: "TypeScript",
+    blurb: "Parallel Claude, Codex, Cursor, Antigravity.",
     purpose:
-      "Terminal-centric Electron workspace for parallel AI coding CLI sessions.",
+      "Terminal-centric Electron workspace for parallel Claude Code, Codex, Cursor, and Antigravity sessions.",
   },
   {
     repo: "frostwall-beam",
-    role: "SECURE · TRANSFER",
-    blurb: "Encrypted transfer with receiver approval.",
+    domain: "TRANSFER",
+    stack: "Rust",
+    blurb: "Encrypted transfer with a receiver gate.",
     purpose:
-      "Encrypted LAN and internet file transfer with receiver approval.",
+      "Encrypted LAN and internet file transfer with pairing codes and receiver approval.",
   },
 ];
 
 const also = [
   {
     repo: "sift",
-    role: "Terminal cleaner",
+    domain: "MAINTAIN",
+    stack: "Go",
     purpose:
-      "Review-first terminal cleaner with safer destructive flows on macOS and Windows.",
+      "Review-first terminal cleaner for macOS and Windows. Destructive work is previewed before it runs.",
   },
   {
     repo: "ironsentinel",
-    role: "AppSec CLI",
+    domain: "SECURE",
+    stack: "Go",
     purpose:
-      "Local-first AppSec CLI with HTML, SARIF, and CSV export for findings review.",
+      "Local-first AppSec CLI for guided scans, runtime trust checks, and HTML / SARIF / CSV evidence.",
   },
   {
     repo: "falcon-dm",
-    role: "Download manager",
-    purpose: "Local-only macOS download manager for HTTP, HLS, and YouTube.",
+    domain: "FETCH",
+    stack: "Rust",
+    purpose:
+      "Local-only macOS download manager for HTTP, HLS, and YouTube. No cloud queue.",
   },
   {
     repo: "deskward",
-    role: "Remote desktop",
+    domain: "REMOTE",
+    stack: "Rust",
     purpose:
-      "Self-hosted remote desktop with a Rust core, Flutter client, and E2EE sessions.",
+      "Tailscale-first remote desktop with a Rust core, Flutter client, and E2EE sessions.",
+  },
+];
+
+const shipping = [
+  {
+    repo: "byteback",
+    purpose:
+      "Windows forensic imaging and data recovery with a native C++ engine and an examiner UI.",
+  },
+  {
+    repo: "duetto",
+    purpose:
+      "Chrome extension for Udemy: dual captions, translation, lecture notes, and precision playback.",
+  },
+  {
+    repo: "codebase-audit",
+    purpose:
+      "Evidence-backed whole-repo architecture audit skill for Cursor, Claude Code, Codex, and Antigravity.",
+  },
+  {
+    repo: "agent-atlas",
+    purpose:
+      "Installer and router that gives AI agents open-web search and research tools.",
   },
 ];
 
 const other = [
-  ["agent-atlas", "Open-web search and research router for AI agents"],
-  ["hexloom", "FastAPI studio for encoding, decoding, and validating structured payloads"],
-  ["jobcraft", "Job-search workspace for Turkey with Cursor and Claude Code"],
+  {
+    repo: "hexloom",
+    purpose: "FastAPI studio for encoding, decoding, and validating structured payloads.",
+  },
+  {
+    repo: "jobcraft",
+    purpose: "Local-first job-search workspace for Turkey with Cursor and Claude Code.",
+  },
 ];
 
 const academic = [
-  ["vetvision", "Desktop AI assistant for dog breed recognition"],
-  ["fast-express-kds", "Cargo operations dashboard with branch analytics and forecasting"],
-  ["sisler-bulvari-cafe-system", "Digital ordering prototype for Sisler Bulvarı Sanat Kafe"],
-  ["autonomous-line-following-robot", "Raspberry Pi line-following robot with obstacle stopping"],
+  {
+    repo: "vetvision",
+    purpose:
+      "Desktop AI assistant for dog breed recognition, PDF export, and optional Gemini reports.",
+  },
+  {
+    repo: "fast-express-kds",
+    purpose:
+      "Cargo operations dashboard with branch analytics, personnel scoring, and forecasting.",
+  },
+  {
+    repo: "sisler-bulvari-cafe-system",
+    purpose:
+      "Digital ordering prototype for Sisler Bulvarı Sanat Kafe with menu, orders, and sales views.",
+  },
+  {
+    repo: "autonomous-line-following-robot",
+    purpose:
+      "Raspberry Pi line-following robot with ultrasonic obstacle stop, LEDs, and buzzer alerts.",
+  },
 ];
 
 const palettes = {
   dark: {
-    bg: "#080B0D",
-    board: "#101619",
-    module: "#182125",
-    raised: "#202C31",
-    text: "#EEF6F4",
-    muted: "#8BA19F",
-    trace: "#30494C",
-    primary: "#22D3EE",
-    secondary: "#3B82F6",
+    bg: "#07090B",
+    board: "#0E1417",
+    module: "#151E22",
+    raised: "#1C272C",
+    text: "#F2F7F5",
+    muted: "#8FA3A0",
+    trace: "#2C4246",
     ink: "#22D3EE",
+    secondary: "#60A5FA",
   },
   light: {
-    bg: "#DCE2DE",
-    board: "#EDF1EC",
-    module: "#F8FAF5",
+    bg: "#D7DDD8",
+    board: "#EEF2ED",
+    module: "#F7FAF6",
     raised: "#FFFFFF",
-    text: "#142022",
-    muted: "#4B5C59",
-    trace: "#B5C6C2",
-    primary: "#0E7490",
-    secondary: "#1D4ED8",
+    text: "#122024",
+    muted: "#3F534F",
+    trace: "#B7C6C2",
     ink: "#0E7490",
+    secondary: "#1D4ED8",
   },
 };
 
 const DESKTOP = {
   width: 960,
-  height: 430,
-  board: { x: 12, y: 12, width: 936, height: 406 },
-  identity: { x: 28, y: 28, width: 330, height: 304 },
-  cards: { x: 386, y: 68, width: 546, height: 78, step: 90 },
-  chips: { x: 28, y: 354, width: 214, height: 48, step: 224 },
+  height: 360,
+  board: { x: 12, y: 12, width: 936, height: 336 },
+  identity: { x: 28, y: 28, width: 304, height: 304 },
+  cards: { x: 356, y: 48, width: 576, height: 88, step: 100 },
 };
 
 const MOBILE = {
   width: 640,
-  height: 900,
-  board: { x: 12, y: 12, width: 616, height: 876 },
-  identity: { x: 28, y: 28, width: 584, height: 192 },
-  cards: { x: 28, y: 244, width: 584, height: 132, step: 150 },
-  chips: { x: 28, y: 710, width: 284, height: 52, stepX: 304, stepY: 66 },
+  height: 780,
+  board: { x: 12, y: 12, width: 616, height: 756 },
+  identity: { x: 28, y: 28, width: 584, height: 168 },
+  cards: { x: 28, y: 220, width: 584, height: 164, step: 176 },
+};
+
+const INDEX = {
+  width: 960,
+  height: 148,
+  board: { x: 12, y: 12, width: 936, height: 124 },
+  cell: { x: 28, y: 44, width: 220, height: 76, step: 232 },
+};
+
+const INDEX_MOBILE = {
+  width: 640,
+  height: 320,
+  board: { x: 12, y: 12, width: 616, height: 296 },
+  cell: { x: 28, y: 48, width: 284, height: 116, stepX: 300, stepY: 128 },
 };
 
 function xml(value) {
@@ -139,7 +205,8 @@ function xml(value) {
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;");
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&apos;");
 }
 
 function repoUrl(name) {
@@ -147,53 +214,59 @@ function repoUrl(name) {
 }
 
 function cut(x, y, w, h) {
-  return `M${x} ${y}H${x + w - 18}L${x + w} ${y + 18}V${y + h}H${x}Z`;
+  return `M${x} ${y}H${x + w - 16}L${x + w} ${y + 16}V${y + h}H${x}Z`;
+}
+
+function projects() {
+  return [...flagships, ...also, ...shipping, ...other, ...academic];
 }
 
 function assertLayout() {
   if (!/^[a-z0-9-]+$/i.test(USER)) throw new Error(`unsafe GitHub username: ${USER}`);
-  if (flagships.length !== 3) throw new Error("desktop hero is built for 3 flagships");
-  if (also.length !== 4) throw new Error("desktop chip row is built for 4 supporting repos");
-  if (identity.tagline.length > 42) throw new Error("identity tagline is too long for SVG");
-  if (identity.stack.length > 42) throw new Error("identity stack is too long for SVG");
-  for (const item of [...flagships, ...also, ...other, ...academic]) {
+  if (flagships.length !== 3) throw new Error("hero is built for 3 flagships");
+  if (also.length !== 4) throw new Error("index is built for 4 supporting repos");
+  if (identity.tagline.length > 32) throw new Error("identity tagline is too long for SVG");
+  if (identity.stack.length > 34) throw new Error("identity stack is too long for SVG");
+  for (const item of projects()) {
+    if (!item || typeof item.repo !== "string") {
+      throw new Error("every listed project must be an object with repo");
+    }
     if (!/^[a-z0-9][a-z0-9-]*$/i.test(item.repo)) {
       throw new Error(`unsafe repository name: ${item.repo}`);
     }
   }
-  const desktopChipRight =
-    DESKTOP.chips.x + (also.length - 1) * DESKTOP.chips.step + DESKTOP.chips.width;
-  if (desktopChipRight > DESKTOP.board.x + DESKTOP.board.width) {
-    throw new Error(`desktop chips overflow board: ${desktopChipRight}`);
+  const desktopCardRight = DESKTOP.cards.x + DESKTOP.cards.width;
+  if (desktopCardRight > DESKTOP.board.x + DESKTOP.board.width) {
+    throw new Error(`desktop cards overflow board: ${desktopCardRight}`);
   }
-  const mobileChipRight = MOBILE.chips.x + MOBILE.chips.stepX + MOBILE.chips.width;
-  if (mobileChipRight > MOBILE.board.x + MOBILE.board.width) {
-    throw new Error(`mobile chips overflow board: ${mobileChipRight}`);
+  const indexRight = INDEX.cell.x + (also.length - 1) * INDEX.cell.step + INDEX.cell.width;
+  if (indexRight > INDEX.board.x + INDEX.board.width) {
+    throw new Error(`index cells overflow board: ${indexRight}`);
   }
   for (const item of flagships) {
-    if (item.role.length > 20) throw new Error(`role too long for SVG: ${item.repo}`);
-    if (item.blurb.length > 52) throw new Error(`blurb too long for SVG card: ${item.repo}`);
+    if (item.domain.length > 12) throw new Error(`domain too long: ${item.repo}`);
+    if (item.blurb.length > 48) throw new Error(`blurb too long: ${item.repo}`);
   }
   for (const item of also) {
-    if (item.role.length > 20) throw new Error(`supporting role too long for SVG: ${item.repo}`);
+    if (item.domain.length > 12) throw new Error(`supporting domain too long: ${item.repo}`);
   }
 }
 
 function defs(p, id) {
   return `<defs>
-    <pattern id="${id}-perf" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.15" fill="${p.trace}" opacity=".5"/></pattern>
+    <pattern id="${id}-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="${p.trace}" stroke-width=".6" opacity=".45"/>
+    </pattern>
   </defs>
   <style>
     .display{font-family:"Arial Narrow","Avenir Next Condensed",Impact,sans-serif}
     .body{font-family:"Avenir Next",Avenir,Helvetica,sans-serif}
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-    .boot{animation:boot .45s cubic-bezier(.2,.8,.2,1)}
-    .signal{stroke-dasharray:4 8;animation:signal 7s linear infinite}
-    .dial{transform-box:fill-box;transform-origin:center;animation:dial 14s linear infinite}
-    @keyframes boot{from{opacity:.3}to{opacity:1}}
-    @keyframes signal{to{stroke-dashoffset:-120}}
-    @keyframes dial{to{transform:rotate(360deg)}}
-    @media(prefers-reduced-motion:reduce){.boot,.signal,.dial{animation:none}}
+    .boot{animation:boot .4s ease-out}
+    .scan{stroke-dasharray:5 9;animation:scan 8s linear infinite}
+    @keyframes boot{from{opacity:.25}to{opacity:1}}
+    @keyframes scan{to{stroke-dashoffset:-140}}
+    @media(prefers-reduced-motion:reduce){.boot,.scan{animation:none}}
   </style>`;
 }
 
@@ -202,59 +275,47 @@ function desktop(p, id) {
     .map((item, i) => {
       const y = DESKTOP.cards.y + i * DESKTOP.cards.step;
       const accent = i === 2 ? p.secondary : p.ink;
-      return `<g class="boot" style="animation-delay:${100 + i * 80}ms">
+      const index = String(i + 1).padStart(2, "0");
+      return `<g class="boot">
         <path d="${cut(DESKTOP.cards.x, y, DESKTOP.cards.width, DESKTOP.cards.height)}" fill="${p.module}" stroke="${p.trace}"/>
-        <rect x="${DESKTOP.cards.x}" y="${y}" width="6" height="${DESKTOP.cards.height}" fill="${accent}"/>
-        <text x="${DESKTOP.cards.x + 22}" y="${y + 25}" class="mono" font-size="11" letter-spacing="1.4" fill="${accent}">${String(i + 1).padStart(2, "0")}  /  ${xml(item.role)}</text>
-        <text x="${DESKTOP.cards.x + 22}" y="${y + 53}" class="body" font-size="21" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
-        <text x="${DESKTOP.cards.x + 22}" y="${y + 70}" class="body" font-size="12" fill="${p.muted}">${xml(item.blurb)}</text>
+        <rect x="${DESKTOP.cards.x}" y="${y}" width="7" height="${DESKTOP.cards.height}" fill="${accent}"/>
+        <text x="${DESKTOP.cards.x + 24}" y="${y + 28}" class="mono" font-size="12" letter-spacing="1.6" fill="${accent}">${index}  ${xml(item.domain)}  ·  ${xml(item.stack.toUpperCase())}</text>
+        <text x="${DESKTOP.cards.x + 24}" y="${y + 56}" class="body" font-size="22" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
+        <text x="${DESKTOP.cards.x + 24}" y="${y + 76}" class="body" font-size="13" fill="${p.muted}">${xml(item.blurb)}</text>
       </g>`;
     })
     .join("");
 
-  const chips = also
-    .map((item, i) => {
-      const x = DESKTOP.chips.x + i * DESKTOP.chips.step;
-      return `<g class="boot" style="animation-delay:${220 + i * 40}ms">
-        <path d="${cut(x, DESKTOP.chips.y, DESKTOP.chips.width, DESKTOP.chips.height)}" fill="${p.raised}" stroke="${p.trace}"/>
-        <rect x="${x}" y="${DESKTOP.chips.y}" width="5" height="${DESKTOP.chips.height}" fill="${i % 2 ? p.secondary : p.ink}"/>
-        <text x="${x + 18}" y="${DESKTOP.chips.y + 21}" class="body" font-size="14" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
-        <text x="${x + 18}" y="${DESKTOP.chips.y + 38}" class="mono" font-size="9" letter-spacing="1" fill="${p.muted}">${xml(item.role)}</text>
-      </g>`;
+  const rail = flagships
+    .map((_, i) => {
+      const y = DESKTOP.cards.y + 44 + i * DESKTOP.cards.step;
+      return `M336 ${y}H356`;
     })
     .join("");
 
   const alt = xml(
-    `${identity.name}, ${identity.headline.toLowerCase()}. ${flagships.map((item) => item.repo).join(", ")}.`,
+    `${identity.name}, software builder. Selected work: ${flagships.map((item) => item.repo).join(", ")}.`,
   );
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${DESKTOP.width}" height="${DESKTOP.height}" viewBox="0 0 ${DESKTOP.width} ${DESKTOP.height}" role="img" aria-label="${alt}" data-mode="${id}">
   ${defs(p, id)}
   <rect width="${DESKTOP.width}" height="${DESKTOP.height}" fill="${p.bg}"/>
-  <rect x="${DESKTOP.board.x}" y="${DESKTOP.board.y}" width="${DESKTOP.board.width}" height="${DESKTOP.board.height}" rx="14" fill="${p.board}" stroke="${p.trace}"/>
-  <rect x="${DESKTOP.board.x}" y="${DESKTOP.board.y}" width="${DESKTOP.board.width}" height="${DESKTOP.board.height}" rx="14" fill="url(#${id}-perf)"/>
-  <path d="M${DESKTOP.identity.x + DESKTOP.identity.width + 10} 107H374V107H${DESKTOP.cards.x}" fill="none" stroke="${p.trace}" stroke-width="2"/>
-  <path class="signal" d="M${DESKTOP.identity.x + DESKTOP.identity.width + 10} 107H374V107H${DESKTOP.cards.x}" fill="none" stroke="${p.ink}"/>
+  <rect x="${DESKTOP.board.x}" y="${DESKTOP.board.y}" width="${DESKTOP.board.width}" height="${DESKTOP.board.height}" rx="12" fill="${p.board}" stroke="${p.trace}"/>
+  <rect x="${DESKTOP.board.x}" y="${DESKTOP.board.y}" width="${DESKTOP.board.width}" height="${DESKTOP.board.height}" rx="12" fill="url(#${id}-grid)"/>
+  <path d="${rail}" fill="none" stroke="${p.trace}" stroke-width="2"/>
+  <path class="scan" d="${rail}" fill="none" stroke="${p.ink}" stroke-width="1.5"/>
   <g class="boot">
     <path d="${cut(DESKTOP.identity.x, DESKTOP.identity.y, DESKTOP.identity.width, DESKTOP.identity.height)}" fill="${p.module}" stroke="${p.trace}"/>
     <rect x="${DESKTOP.identity.x}" y="${DESKTOP.identity.y}" width="7" height="${DESKTOP.identity.height}" fill="${p.ink}"/>
-    <text x="50" y="60" class="mono" font-size="11" letter-spacing="2.1" fill="${p.ink}">${xml(identity.name.toUpperCase())}</text>
-    <text x="50" y="130" class="display" font-size="44" font-weight="900" letter-spacing="-1" fill="${p.text}">SOFTWARE</text>
-    <text x="50" y="174" class="display" font-size="44" font-weight="900" letter-spacing="-1" fill="${p.text}">BUILDER</text>
-    <text x="50" y="214" class="body" font-size="12" fill="${p.muted}">${xml(identity.tagline)}</text>
-    <path d="M50 232H330" stroke="${p.trace}"/>
-    <text x="50" y="258" class="mono" font-size="10" letter-spacing="1.2" fill="${p.text}">${xml(identity.stack.toUpperCase())}</text>
-    <g transform="translate(310 300)">
-      <circle r="20" fill="${p.raised}" stroke="${p.trace}"/>
-      <circle class="dial" r="13" fill="none" stroke="${p.secondary}" stroke-width="3" stroke-dasharray="5 5"/>
-      <circle r="4" fill="${p.secondary}"/>
-    </g>
-    <text x="50" y="308" class="mono" font-size="10" letter-spacing="1.2" fill="${p.ink}">${xml(identity.location.toUpperCase())}</text>
+    <text x="50" y="58" class="mono" font-size="12" letter-spacing="2" fill="${p.ink}">${xml(identity.name.toUpperCase())}</text>
+    <text x="48" y="128" class="display" font-size="42" font-weight="900" letter-spacing="-1" fill="${p.text}">SOFTWARE</text>
+    <text x="48" y="174" class="display" font-size="42" font-weight="900" letter-spacing="-1" fill="${p.text}">BUILDER</text>
+    <text x="50" y="214" class="body" font-size="13" fill="${p.muted}">${xml(identity.tagline)}</text>
+    <path d="M50 232H300" stroke="${p.trace}"/>
+    <text x="50" y="258" class="mono" font-size="11" letter-spacing="1.1" fill="${p.text}">${xml(identity.stack.toUpperCase())}</text>
+    <text x="50" y="302" class="mono" font-size="12" letter-spacing="1.4" fill="${p.ink}">${xml(identity.location.toUpperCase())}</text>
   </g>
-  <text x="${DESKTOP.cards.x}" y="48" class="mono" font-size="10" letter-spacing="1.8" fill="${p.muted}">SELECTED SYSTEMS  /  ${String(flagships.length).padStart(2, "0")}</text>
   ${cards}
-  <text x="${DESKTOP.chips.x}" y="344" class="mono" font-size="10" letter-spacing="1.8" fill="${p.muted}">MORE IN THE STACK  /  ${String(also.length).padStart(2, "0")}</text>
-  ${chips}
 </svg>`;
 }
 
@@ -263,58 +324,93 @@ function mobile(p, id) {
     .map((item, i) => {
       const y = MOBILE.cards.y + i * MOBILE.cards.step;
       const accent = i === 2 ? p.secondary : p.ink;
-      return `<g class="boot" style="animation-delay:${80 + i * 70}ms">
+      const index = String(i + 1).padStart(2, "0");
+      return `<g class="boot">
         <path d="${cut(MOBILE.cards.x, y, MOBILE.cards.width, MOBILE.cards.height)}" fill="${p.module}" stroke="${p.trace}"/>
         <rect x="${MOBILE.cards.x}" y="${y}" width="8" height="${MOBILE.cards.height}" fill="${accent}"/>
-        <text x="${MOBILE.cards.x + 28}" y="${y + 35}" class="mono" font-size="14" letter-spacing="1.8" fill="${accent}">${String(i + 1).padStart(2, "0")}  /  ${xml(item.role)}</text>
-        <text x="${MOBILE.cards.x + 28}" y="${y + 80}" class="body" font-size="28" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
-        <text x="${MOBILE.cards.x + 28}" y="${y + 112}" class="body" font-size="16" fill="${p.muted}">${xml(item.blurb)}</text>
-      </g>`;
-    })
-    .join("");
-
-  const chips = also
-    .map((item, i) => {
-      const col = i % 2;
-      const row = Math.floor(i / 2);
-      const x = MOBILE.chips.x + col * MOBILE.chips.stepX;
-      const y = MOBILE.chips.y + row * MOBILE.chips.stepY;
-      return `<g class="boot">
-        <path d="${cut(x, y, MOBILE.chips.width, MOBILE.chips.height)}" fill="${p.raised}" stroke="${p.trace}"/>
-        <text x="${x + 20}" y="${y + 24}" class="body" font-size="16" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
-        <text x="${x + 20}" y="${y + 42}" class="mono" font-size="10" letter-spacing="1" fill="${p.muted}">${xml(item.role)}</text>
+        <text x="56" y="${y + 42}" class="mono" font-size="16" letter-spacing="1.8" fill="${accent}">${index}  ${xml(item.domain)}  ·  ${xml(item.stack.toUpperCase())}</text>
+        <text x="56" y="${y + 92}" class="body" font-size="30" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
+        <text x="56" y="${y + 132}" class="body" font-size="18" fill="${p.muted}">${xml(item.blurb)}</text>
       </g>`;
     })
     .join("");
 
   const alt = xml(
-    `${identity.name}, ${identity.headline.toLowerCase()}. ${flagships.map((item) => item.repo).join(", ")}.`,
+    `${identity.name}, software builder. Selected work: ${flagships.map((item) => item.repo).join(", ")}.`,
   );
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${MOBILE.width}" height="${MOBILE.height}" viewBox="0 0 ${MOBILE.width} ${MOBILE.height}" role="img" aria-label="${alt}" data-mode="${id}">
   ${defs(p, id)}
   <rect width="${MOBILE.width}" height="${MOBILE.height}" fill="${p.bg}"/>
-  <rect x="${MOBILE.board.x}" y="${MOBILE.board.y}" width="${MOBILE.board.width}" height="${MOBILE.board.height}" rx="18" fill="${p.board}" stroke="${p.trace}"/>
-  <rect x="${MOBILE.board.x}" y="${MOBILE.board.y}" width="${MOBILE.board.width}" height="${MOBILE.board.height}" rx="18" fill="url(#${id}-perf)"/>
+  <rect x="${MOBILE.board.x}" y="${MOBILE.board.y}" width="${MOBILE.board.width}" height="${MOBILE.board.height}" rx="16" fill="${p.board}" stroke="${p.trace}"/>
+  <rect x="${MOBILE.board.x}" y="${MOBILE.board.y}" width="${MOBILE.board.width}" height="${MOBILE.board.height}" rx="16" fill="url(#${id}-grid)"/>
   <g class="boot">
     <path d="${cut(MOBILE.identity.x, MOBILE.identity.y, MOBILE.identity.width, MOBILE.identity.height)}" fill="${p.module}" stroke="${p.trace}"/>
-    <rect x="${MOBILE.identity.x}" y="${MOBILE.identity.y}" width="9" height="${MOBILE.identity.height}" fill="${p.ink}"/>
-    <text x="58" y="66" class="mono" font-size="16" letter-spacing="2.2" fill="${p.ink}">${xml(identity.name.toUpperCase())}  ·  ISTANBUL</text>
-    <text x="54" y="116" class="display" font-size="38" font-weight="900" fill="${p.text}">SOFTWARE</text>
-    <text x="54" y="156" class="display" font-size="38" font-weight="900" fill="${p.text}">BUILDER</text>
-    <text x="58" y="190" class="body" font-size="13" fill="${p.muted}">${xml(identity.tagline)}</text>
+    <rect x="${MOBILE.identity.x}" y="${MOBILE.identity.y}" width="8" height="${MOBILE.identity.height}" fill="${p.ink}"/>
+    <text x="56" y="64" class="mono" font-size="16" letter-spacing="2" fill="${p.ink}">${xml(identity.name.toUpperCase())}  ·  ISTANBUL</text>
+    <text x="52" y="114" class="display" font-size="36" font-weight="900" fill="${p.text}">SOFTWARE BUILDER</text>
+    <text x="56" y="154" class="body" font-size="16" fill="${p.muted}">${xml(identity.tagline)}</text>
   </g>
-  <text x="${MOBILE.cards.x}" y="232" class="mono" font-size="11" letter-spacing="1.8" fill="${p.muted}">SELECTED SYSTEMS  /  ${String(flagships.length).padStart(2, "0")}</text>
   ${cards}
-  <text x="${MOBILE.chips.x}" y="698" class="mono" font-size="11" letter-spacing="1.8" fill="${p.muted}">MORE IN THE STACK  /  ${String(also.length).padStart(2, "0")}</text>
-  ${chips}
-  <text x="${MOBILE.chips.x}" y="858" class="mono" font-size="11" letter-spacing="1.5" fill="${p.ink}">${xml(identity.stack.toUpperCase())}</text>
 </svg>`;
 }
 
-function mdList(rows) {
+function indexDesktop(p, id) {
+  const cells = also
+    .map((item, i) => {
+      const x = INDEX.cell.x + i * INDEX.cell.step;
+      const accent = i % 2 ? p.secondary : p.ink;
+      return `<g class="boot">
+        <path d="${cut(x, INDEX.cell.y, INDEX.cell.width, INDEX.cell.height)}" fill="${p.raised}" stroke="${p.trace}"/>
+        <rect x="${x}" y="${INDEX.cell.y}" width="6" height="${INDEX.cell.height}" fill="${accent}"/>
+        <text x="${x + 18}" y="${INDEX.cell.y + 28}" class="mono" font-size="11" letter-spacing="1.4" fill="${accent}">${xml(item.domain)}  ·  ${xml(item.stack.toUpperCase())}</text>
+        <text x="${x + 18}" y="${INDEX.cell.y + 56}" class="body" font-size="18" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
+      </g>`;
+    })
+    .join("");
+
+  const alt = xml(`Supporting work: ${also.map((item) => item.repo).join(", ")}.`);
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${INDEX.width}" height="${INDEX.height}" viewBox="0 0 ${INDEX.width} ${INDEX.height}" role="img" aria-label="${alt}" data-mode="${id}">
+  ${defs(p, id)}
+  <rect width="${INDEX.width}" height="${INDEX.height}" fill="${p.bg}"/>
+  <rect x="${INDEX.board.x}" y="${INDEX.board.y}" width="${INDEX.board.width}" height="${INDEX.board.height}" rx="12" fill="${p.board}" stroke="${p.trace}"/>
+  <text x="28" y="34" class="mono" font-size="11" letter-spacing="1.8" fill="${p.muted}">OPERATOR STACK</text>
+  ${cells}
+</svg>`;
+}
+
+function indexMobile(p, id) {
+  const cells = also
+    .map((item, i) => {
+      const col = i % 2;
+      const row = Math.floor(i / 2);
+      const x = INDEX_MOBILE.cell.x + col * INDEX_MOBILE.cell.stepX;
+      const y = INDEX_MOBILE.cell.y + row * INDEX_MOBILE.cell.stepY;
+      const accent = i % 2 ? p.secondary : p.ink;
+      return `<g class="boot">
+        <path d="${cut(x, y, INDEX_MOBILE.cell.width, INDEX_MOBILE.cell.height)}" fill="${p.raised}" stroke="${p.trace}"/>
+        <rect x="${x}" y="${y}" width="7" height="${INDEX_MOBILE.cell.height}" fill="${accent}"/>
+        <text x="${x + 20}" y="${y + 38}" class="mono" font-size="14" letter-spacing="1.4" fill="${accent}">${xml(item.domain)}  ·  ${xml(item.stack.toUpperCase())}</text>
+        <text x="${x + 20}" y="${y + 80}" class="body" font-size="24" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
+      </g>`;
+    })
+    .join("");
+
+  const alt = xml(`Supporting work: ${also.map((item) => item.repo).join(", ")}.`);
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${INDEX_MOBILE.width}" height="${INDEX_MOBILE.height}" viewBox="0 0 ${INDEX_MOBILE.width} ${INDEX_MOBILE.height}" role="img" aria-label="${alt}" data-mode="${id}">
+  ${defs(p, id)}
+  <rect width="${INDEX_MOBILE.width}" height="${INDEX_MOBILE.height}" fill="${p.bg}"/>
+  <rect x="${INDEX_MOBILE.board.x}" y="${INDEX_MOBILE.board.y}" width="${INDEX_MOBILE.board.width}" height="${INDEX_MOBILE.board.height}" rx="16" fill="${p.board}" stroke="${p.trace}"/>
+  <text x="28" y="36" class="mono" font-size="14" letter-spacing="1.8" fill="${p.muted}">OPERATOR STACK</text>
+  ${cells}
+</svg>`;
+}
+
+function mdItems(rows) {
   return rows
-    .map(([repo, purpose]) => `- [\`${repo}\`](${repoUrl(repo)}) — ${purpose}`)
+    .map((item) => `- **[${item.repo}](${repoUrl(item.repo)})** — ${item.purpose}`)
     .join("\n");
 }
 
@@ -322,15 +418,9 @@ function renderReadme() {
   const selected = flagships
     .map(
       (item) =>
-        `**[${item.repo}](${repoUrl(item.repo)})** — ${item.purpose}`,
+        `**[${item.repo}](${repoUrl(item.repo)})** — ${item.stack}. ${item.purpose}`,
     )
     .join("\n\n");
-  const supporting = also
-    .map(
-      (item) =>
-        `- **[${item.repo}](${repoUrl(item.repo)})** — ${item.purpose}`,
-    )
-    .join("\n");
 
   return `<!-- Generated by scripts/render-profile.mjs. Edit that file, then run: node scripts/render-profile.mjs -->
 <picture>
@@ -338,36 +428,42 @@ function renderReadme() {
   <source media="(max-width: 700px)" srcset="assets/${ASSETS.mobileLight}">
   <source media="(prefers-color-scheme: dark)" srcset="assets/${ASSETS.desktopDark}">
   <source media="(prefers-color-scheme: light)" srcset="assets/${ASSETS.desktopLight}">
-  <img alt="${identity.name} — local-first software developer building macOS apps, terminal tools, and AppSec workflows." src="assets/${ASSETS.desktopLight}" width="100%">
+  <img alt="${identity.name} — local-first software builder. Selected work: ${flagships.map((item) => item.repo).join(", ")}." src="assets/${ASSETS.desktopLight}" width="100%">
 </picture>
 
 ${identity.intro}
-
-## How I build
-
-- **Local-first products** — desktop tools that keep sensitive work close to the device.
-- **Operator tooling** — focused workflows for terminals, AI coding sessions, and daily maintenance.
-- **Security-aware flows** — explicit approval, evidence, and safer defaults where actions have consequences.
 
 ## Selected work
 
 ${selected}
 
-## Supporting work
+<picture>
+  <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="assets/${ASSETS.indexMobileDark}">
+  <source media="(max-width: 700px)" srcset="assets/${ASSETS.indexMobileLight}">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/${ASSETS.indexDark}">
+  <source media="(prefers-color-scheme: light)" srcset="assets/${ASSETS.indexLight}">
+  <img alt="Operator stack: ${also.map((item) => item.repo).join(", ")}." src="assets/${ASSETS.indexLight}" width="100%">
+</picture>
 
-${supporting}
+## Operator stack
+
+${mdItems(also)}
+
+## Also shipping
+
+${mdItems(shipping)}
 
 <details>
 <summary>Other public work</summary>
 
-${mdList(other)}
+${mdItems(other)}
 
 </details>
 
 <details>
 <summary>Academic projects</summary>
 
-${mdList(academic)}
+${mdItems(academic)}
 
 </details>
 
@@ -377,8 +473,6 @@ ${mdList(academic)}
 `;
 }
 
-assertLayout();
-mkdirSync(outDir, { recursive: true });
 function assertSvg(name, svg) {
   if (!/^<svg\b[\s\S]*<\/svg>$/.test(svg)) throw new Error(`${name} is not a complete SVG`);
   if ((svg.match(/<svg\b/g) || []).length !== 1) throw new Error(`${name} has invalid SVG nesting`);
@@ -388,24 +482,52 @@ function assertSvg(name, svg) {
   if (!svg.includes('role="img"') || !svg.includes("aria-label=")) {
     throw new Error(`${name} is missing accessible image metadata`);
   }
+  if (svg.includes("undefined")) throw new Error(`${name} leaked undefined into markup`);
 }
+
+assertLayout();
+mkdirSync(outDir, { recursive: true });
 
 const files = {
   [ASSETS.desktopDark]: desktop(palettes.dark, "dark"),
   [ASSETS.desktopLight]: desktop(palettes.light, "light"),
   [ASSETS.mobileDark]: mobile(palettes.dark, "mdark"),
   [ASSETS.mobileLight]: mobile(palettes.light, "mlight"),
+  [ASSETS.indexDark]: indexDesktop(palettes.dark, "idark"),
+  [ASSETS.indexLight]: indexDesktop(palettes.light, "ilight"),
+  [ASSETS.indexMobileDark]: indexMobile(palettes.dark, "imidark"),
+  [ASSETS.indexMobileLight]: indexMobile(palettes.light, "imilight"),
 };
+
 for (const [name, svg] of Object.entries(files)) {
-  if (!svg.includes("SOFTWARE") || !svg.includes("ScreenTextGrab")) {
+  if (name.startsWith("hero-") && (!svg.includes("SOFTWARE") || !svg.includes("ScreenTextGrab"))) {
     throw new Error(`${name} missing identity or flagship`);
+  }
+  if (name.startsWith("index-") && !svg.includes("sift")) {
+    throw new Error(`${name} missing supporting work`);
   }
   assertSvg(name, svg);
   writeFileSync(join(outDir, name), svg);
 }
+
+const keep = new Set(Object.keys(files));
+for (const name of readdirSync(outDir)) {
+  if (name.endsWith(".svg") && !keep.has(name)) unlinkSync(join(outDir, name));
+}
+
 const readme = renderReadme();
-for (const required of ["<picture>", "prefers-color-scheme: light", "## How I build", "## Selected work", "## Contact"]) {
+for (const required of [
+  "<picture>",
+  "prefers-color-scheme: light",
+  "## Selected work",
+  "## Operator stack",
+  "## Also shipping",
+  "byteback",
+  "duetto",
+  "## Contact",
+]) {
   if (!readme.includes(required)) throw new Error(`README missing ${required}`);
 }
+if (readme.includes("## How I build")) throw new Error("README still has unused philosophy block");
 writeFileSync(join(root, "README.md"), readme);
-console.log("wrote 4 profile SVGs and README.md");
+console.log("wrote 8 profile SVGs and README.md");
