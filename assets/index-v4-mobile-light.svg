@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="360" viewBox="0 0 400 360" role="img" aria-label="Supporting work: sift, ironsentinel, falcon-dm, deskward." data-mode="imilight">
+  <defs>
+    <pattern id="imilight-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#B7C6C2" stroke-width=".6" opacity=".45"/>
+    </pattern>
+  </defs>
+  <style>
+    .display{font-family:"Arial Narrow","Avenir Next Condensed",Impact,sans-serif}
+    .body{font-family:"Avenir Next",Avenir,Helvetica,sans-serif}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    .boot{animation:boot .4s ease-out}
+    .scan{stroke-dasharray:5 9;animation:scan 8s linear infinite}
+    @keyframes boot{from{opacity:.25}to{opacity:1}}
+    @keyframes scan{to{stroke-dashoffset:-140}}
+    @media(prefers-reduced-motion:reduce){.boot,.scan{animation:none}}
+  </style>
+  <rect width="400" height="360" fill="#D7DDD8"/>
+  <rect x="8" y="8" width="384" height="344" rx="16" fill="#EEF2ED" stroke="#B7C6C2"/>
+  <text x="18" y="34" class="mono" font-size="12" letter-spacing="1.4" fill="#3F534F">OPERATOR STACK</text>
+  <g class="boot">
+        <path d="M18 48H178L194 64V184H18Z" fill="#FFFFFF" stroke="#B7C6C2"/>
+        <rect x="18" y="48" width="7" height="136" fill="#0E7490"/>
+        <text x="34" y="90" class="mono" font-size="12" letter-spacing="1" fill="#0E7490">MAINTAIN</text>
+        <text x="34" y="134" class="body" font-size="18" font-weight="800" fill="#122024">sift</text>
+      </g><g class="boot">
+        <path d="M206 48H366L382 64V184H206Z" fill="#FFFFFF" stroke="#B7C6C2"/>
+        <rect x="206" y="48" width="7" height="136" fill="#1D4ED8"/>
+        <text x="222" y="90" class="mono" font-size="12" letter-spacing="1" fill="#1D4ED8">SECURE</text>
+        <text x="222" y="134" class="body" font-size="18" font-weight="800" fill="#122024">ironsentinel</text>
+      </g><g class="boot">
+        <path d="M18 196H178L194 212V332H18Z" fill="#FFFFFF" stroke="#B7C6C2"/>
+        <rect x="18" y="196" width="7" height="136" fill="#0E7490"/>
+        <text x="34" y="238" class="mono" font-size="12" letter-spacing="1" fill="#0E7490">FETCH</text>
+        <text x="34" y="282" class="body" font-size="18" font-weight="800" fill="#122024">falcon-dm</text>
+      </g><g class="boot">
+        <path d="M206 196H366L382 212V332H206Z" fill="#FFFFFF" stroke="#B7C6C2"/>
+        <rect x="206" y="196" width="7" height="136" fill="#1D4ED8"/>
+        <text x="222" y="238" class="mono" font-size="12" letter-spacing="1" fill="#1D4ED8">REMOTE</text>
+        <text x="222" y="282" class="body" font-size="18" font-weight="800" fill="#122024">deskward</text>
+      </g>
+</svg>

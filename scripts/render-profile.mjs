@@ -10,14 +10,14 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "assets");
 const USER = "batu3384";
 const ASSETS = {
-  desktopDark: "hero-v3-dark.svg",
-  desktopLight: "hero-v3-light.svg",
-  mobileDark: "hero-v3-mobile-dark.svg",
-  mobileLight: "hero-v3-mobile-light.svg",
-  indexDark: "index-v3-dark.svg",
-  indexLight: "index-v3-light.svg",
-  indexMobileDark: "index-v3-mobile-dark.svg",
-  indexMobileLight: "index-v3-mobile-light.svg",
+  desktopDark: "hero-v4-dark.svg",
+  desktopLight: "hero-v4-light.svg",
+  mobileDark: "hero-v4-mobile-dark.svg",
+  mobileLight: "hero-v4-mobile-light.svg",
+  indexDark: "index-v4-dark.svg",
+  indexLight: "index-v4-light.svg",
+  indexMobileDark: "index-v4-mobile-dark.svg",
+  indexMobileLight: "index-v4-mobile-light.svg",
 };
 
 const identity = {
@@ -179,11 +179,11 @@ const DESKTOP = {
 };
 
 const MOBILE = {
-  width: 640,
-  height: 780,
-  board: { x: 12, y: 12, width: 616, height: 756 },
-  identity: { x: 28, y: 28, width: 584, height: 168 },
-  cards: { x: 28, y: 220, width: 584, height: 164, step: 176 },
+  width: 400,
+  height: 860,
+  board: { x: 8, y: 8, width: 384, height: 844 },
+  identity: { x: 18, y: 18, width: 364, height: 148 },
+  cards: { x: 18, y: 186, width: 364, height: 198, step: 214 },
 };
 
 const INDEX = {
@@ -194,10 +194,10 @@ const INDEX = {
 };
 
 const INDEX_MOBILE = {
-  width: 640,
-  height: 320,
-  board: { x: 12, y: 12, width: 616, height: 296 },
-  cell: { x: 28, y: 48, width: 284, height: 116, stepX: 300, stepY: 128 },
+  width: 400,
+  height: 360,
+  board: { x: 8, y: 8, width: 384, height: 344 },
+  cell: { x: 18, y: 48, width: 176, height: 136, stepX: 188, stepY: 148 },
 };
 
 function xml(value) {
@@ -328,9 +328,9 @@ function mobile(p, id) {
       return `<g class="boot">
         <path d="${cut(MOBILE.cards.x, y, MOBILE.cards.width, MOBILE.cards.height)}" fill="${p.module}" stroke="${p.trace}"/>
         <rect x="${MOBILE.cards.x}" y="${y}" width="8" height="${MOBILE.cards.height}" fill="${accent}"/>
-        <text x="56" y="${y + 42}" class="mono" font-size="16" letter-spacing="1.8" fill="${accent}">${index}  ${xml(item.domain)}  ·  ${xml(item.stack.toUpperCase())}</text>
-        <text x="56" y="${y + 92}" class="body" font-size="30" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
-        <text x="56" y="${y + 132}" class="body" font-size="18" fill="${p.muted}">${xml(item.blurb)}</text>
+        <text x="40" y="${y + 48}" class="mono" font-size="14" letter-spacing="1.2" fill="${accent}">${index}  ${xml(item.domain)}  ·  ${xml(item.stack.toUpperCase())}</text>
+        <text x="40" y="${y + 104}" class="body" font-size="26" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
+        <text x="40" y="${y + 154}" class="body" font-size="16" fill="${p.muted}">${xml(item.blurb)}</text>
       </g>`;
     })
     .join("");
@@ -347,9 +347,10 @@ function mobile(p, id) {
   <g class="boot">
     <path d="${cut(MOBILE.identity.x, MOBILE.identity.y, MOBILE.identity.width, MOBILE.identity.height)}" fill="${p.module}" stroke="${p.trace}"/>
     <rect x="${MOBILE.identity.x}" y="${MOBILE.identity.y}" width="8" height="${MOBILE.identity.height}" fill="${p.ink}"/>
-    <text x="56" y="64" class="mono" font-size="16" letter-spacing="2" fill="${p.ink}">${xml(identity.name.toUpperCase())}  ·  ISTANBUL</text>
-    <text x="52" y="114" class="display" font-size="36" font-weight="900" fill="${p.text}">SOFTWARE BUILDER</text>
-    <text x="56" y="154" class="body" font-size="16" fill="${p.muted}">${xml(identity.tagline)}</text>
+    <text x="40" y="52" class="mono" font-size="13" letter-spacing="1.4" fill="${p.ink}">${xml(identity.name.toUpperCase())}</text>
+    <text x="36" y="96" class="display" font-size="28" font-weight="900" fill="${p.text}">SOFTWARE</text>
+    <text x="36" y="128" class="display" font-size="28" font-weight="900" fill="${p.text}">BUILDER</text>
+    <text x="40" y="154" class="body" font-size="12" fill="${p.muted}">${xml(identity.tagline)}</text>
   </g>
   ${cards}
 </svg>`;
@@ -391,8 +392,8 @@ function indexMobile(p, id) {
       return `<g class="boot">
         <path d="${cut(x, y, INDEX_MOBILE.cell.width, INDEX_MOBILE.cell.height)}" fill="${p.raised}" stroke="${p.trace}"/>
         <rect x="${x}" y="${y}" width="7" height="${INDEX_MOBILE.cell.height}" fill="${accent}"/>
-        <text x="${x + 20}" y="${y + 38}" class="mono" font-size="14" letter-spacing="1.4" fill="${accent}">${xml(item.domain)}  ·  ${xml(item.stack.toUpperCase())}</text>
-        <text x="${x + 20}" y="${y + 80}" class="body" font-size="24" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
+        <text x="${x + 16}" y="${y + 42}" class="mono" font-size="12" letter-spacing="1" fill="${accent}">${xml(item.domain)}</text>
+        <text x="${x + 16}" y="${y + 86}" class="body" font-size="18" font-weight="800" fill="${p.text}">${xml(item.repo)}</text>
       </g>`;
     })
     .join("");
@@ -403,7 +404,7 @@ function indexMobile(p, id) {
   ${defs(p, id)}
   <rect width="${INDEX_MOBILE.width}" height="${INDEX_MOBILE.height}" fill="${p.bg}"/>
   <rect x="${INDEX_MOBILE.board.x}" y="${INDEX_MOBILE.board.y}" width="${INDEX_MOBILE.board.width}" height="${INDEX_MOBILE.board.height}" rx="16" fill="${p.board}" stroke="${p.trace}"/>
-  <text x="28" y="36" class="mono" font-size="14" letter-spacing="1.8" fill="${p.muted}">OPERATOR STACK</text>
+  <text x="18" y="34" class="mono" font-size="12" letter-spacing="1.4" fill="${p.muted}">OPERATOR STACK</text>
   ${cells}
 </svg>`;
 }
