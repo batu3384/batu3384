@@ -14,10 +14,10 @@ const SNAKE = {
   dark: `https://raw.githubusercontent.com/${USER}/${USER}/output/github-snake-dark.svg`,
 };
 const ASSETS = {
-  desktopDark: "board-v11-dark.svg",
-  desktopLight: "board-v11-light.svg",
-  mobileDark: "board-v11-mobile-dark.svg",
-  mobileLight: "board-v11-mobile-light.svg",
+  desktopDark: "board-v12-dark.svg",
+  desktopLight: "board-v12-light.svg",
+  mobileDark: "board-v12-mobile-dark.svg",
+  mobileLight: "board-v12-mobile-light.svg",
 };
 
 const identity = {
@@ -181,7 +181,7 @@ const palettes = {
 };
 
 const DESKTOP = { width: 960, pad: 36, gap: 14, tileH: 108, header: 168 };
-const MOBILE = { width: 400, pad: 22, gap: 12, tileH: 108, header: 196 };
+const MOBILE = { width: 400, pad: 22, gap: 12, tileH: 108, header: 210 };
 
 function xml(value) {
   return String(value)
@@ -228,12 +228,77 @@ function wrapLines(text, maxChars, maxLines = 2) {
   return lines;
 }
 
-function defs(p) {
+function defs() {
   return `<style>
     .display{font-family:Georgia,"Times New Roman",Times,serif}
     .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
   </style>`;
+}
+
+// ponytail: SMIL has no prefers-reduced-motion in GitHub <img> sandbox. Ceiling = always-moving instrument. Upgrade: a static twin SVG if we ever need an off switch.
+function scopePoints(x, y, w, h) {
+  const n = 56;
+  const pts = [];
+  for (let i = 0; i <= n; i++) {
+    const t = i / n;
+    const env = 0.7 + 0.3 * Math.sin(t * Math.PI);
+    const py =
+      y +
+      h / 2 +
+      Math.sin(t * Math.PI * 4) * (h / 2 - 4) * env +
+      Math.sin(t * Math.PI * 13) * 2;
+    pts.push({ x: +(x + t * w).toFixed(2), y: +py.toFixed(2) });
+  }
+  return pts;
+}
+
+function polyline(pts) {
+  let len = 0;
+  for (let i = 1; i < pts.length; i++) {
+    len += Math.hypot(pts[i].x - pts[i - 1].x, pts[i].y - pts[i - 1].y);
+  }
+  const d = `M ${pts.map((pt) => `${pt.x} ${pt.y}`).join(" L ")}`;
+  return { d, len: Math.ceil(len) };
+}
+
+function scope(p, x, y, w, h) {
+  const innerX = x + 8;
+  const innerY = y + 6;
+  const innerW = w - 16;
+  const innerH = h - 12;
+  const { d, len } = polyline(scopePoints(innerX, innerY, innerW, innerH));
+  const bead = Math.max(36, Math.round(len * 0.12));
+  const cycle = bead + len;
+  const mid = y + h / 2;
+  return `<g>
+    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="8" fill="${p.surface}" stroke="${p.rule}"/>
+    <line x1="${innerX}" y1="${mid}" x2="${innerX + innerW}" y2="${mid}" stroke="${p.rule}" stroke-width="1"/>
+    <path d="${d}" fill="none" stroke="${p.accent}" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="${d}" fill="none" stroke="${p.accent}" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="${bead} ${len}" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" from="0" to="${-cycle}" dur="2.8s" repeatCount="indefinite"/>
+    </path>
+  </g>`;
+}
+
+function cursor(p, x, y) {
+  return `<rect x="${x}" y="${y}" width="7" height="13" fill="${p.accent}">
+    <animate attributeName="opacity" values="1;1;0;0" dur="1.15s" repeatCount="indefinite" calcMode="discrete"/>
+  </rect>`;
+}
+
+function sweep(p, x1, x2, y1, y2) {
+  return `<line x1="${x1}" x2="${x1}" y1="${y1}" y2="${y2}" stroke="${p.accent}" stroke-width="1.2" stroke-opacity="0.28">
+    <animate attributeName="x1" values="${x1};${x2};${x1}" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="${x1};${x2};${x1}" dur="7s" repeatCount="indefinite"/>
+  </line>`;
+}
+
+function drawRule(p, x1, x2, y) {
+  const span = x2 - x1;
+  return `<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="${p.rule}" stroke-width="1" stroke-dasharray="${span}" stroke-dashoffset="0">
+    <animate attributeName="stroke-dashoffset" from="${span}" to="0" dur="1.3s" fill="freeze"/>
+  </line>`;
 }
 
 function paletteHexes(p) {
@@ -254,21 +319,31 @@ function assertLayout() {
   for (const item of catalog) {
     if (item.line.length > 62) throw new Error(`board line too long: ${item.repo}`);
   }
+  const probe = polyline(scopePoints(0, 0, 240, 40));
+  if (probe.len < 240) throw new Error("scope path shorter than width — motion bead will look broken");
 }
 
 function header(p, width, spec) {
   const { pad, header: headerH } = spec;
   const mobile = width < 500;
+  const innerR = width - pad;
   const stack = mobile
-    ? `<text x="${pad}" y="168" class="mono" font-size="11" fill="${p.muted}">${xml(identity.stack)}</text>`
-    : `<text x="${width - pad}" y="44" class="mono" font-size="11" text-anchor="end" fill="${p.muted}">${xml(identity.stack)}</text>`;
+    ? `<text x="${pad}" y="164" class="mono" font-size="11" fill="${p.muted}">${xml(identity.stack)}</text>`
+    : `<text x="${innerR}" y="44" class="mono" font-size="11" text-anchor="end" fill="${p.muted}">${xml(identity.stack)}</text>`;
+  const instrument = mobile
+    ? scope(p, pad, 174, width - pad * 2, 26)
+    : scope(p, 640, 70, innerR - 640, 70);
+  const caret = mobile ? cursor(p, pad + 148, 107) : cursor(p, pad + 168, 111);
   return `<g>
+    ${sweep(p, pad, innerR, 52, headerH - 14)}
     <text x="${pad}" y="44" class="mono" font-size="11" fill="${p.accent}">${xml(identity.location)}</text>
     ${stack}
     <text x="${pad}" y="${mobile ? 88 : 92}" class="display" font-size="${mobile ? 28 : 38}" fill="${p.ink}">${xml(identity.name)}</text>
     <text x="${pad}" y="${mobile ? 118 : 124}" class="sans" font-size="15" fill="${p.ink}">${xml(identity.role)}</text>
+    ${caret}
     <text x="${pad}" y="${mobile ? 142 : 148}" class="sans" font-size="13" fill="${p.muted}">${xml(identity.focus)}</text>
-    <line x1="${pad}" y1="${headerH - 8}" x2="${width - pad}" y2="${headerH - 8}" stroke="${p.rule}" stroke-width="1"/>
+    ${instrument}
+    ${drawRule(p, pad, innerR, headerH - 8)}
   </g>`;
 }
 
@@ -332,7 +407,7 @@ function board(p, id, spec) {
     `${identity.name}, ${identity.role}. Selected work: ${catalog.map((item) => item.repo).join(", ")}.`,
   );
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${alt}" data-mode="${id}">
-  ${defs(p)}
+  ${defs()}
   <rect width="${width}" height="${height}" fill="${p.bg}"/>
   ${header(p, width, spec)}
   ${built.parts.join("\n  ")}
@@ -437,6 +512,7 @@ function assertSvg(name, svg, p) {
   }
   if (svg.includes("undefined")) throw new Error(`${name} leaked undefined into markup`);
   if (svg.includes("…")) throw new Error(`${name} clipped text with ellipsis`);
+  if (!svg.includes("<animate")) throw new Error(`${name} has no SMIL motion`);
   const allowed = paletteHexes(p);
   const hexes = svg.match(/#[0-9a-fA-F]{6}/g) ?? [];
   for (const hex of hexes) {
@@ -476,7 +552,7 @@ for (const name of readdirSync(outDir)) {
 const readme = renderReadme();
 for (const required of [
   "<picture>",
-  "board-v11",
+  "board-v12",
   "## Selected work",
   "### macOS",
   "### Terminal & CLI",
