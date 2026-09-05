@@ -15,14 +15,6 @@ const SNAKE = {
   light: `https://raw.githubusercontent.com/${USER}/${USER}/output/github-snake.svg`,
   dark: `https://raw.githubusercontent.com/${USER}/${USER}/output/github-snake-dark.svg`,
 };
-const DESIRED_PINS = [
-  "calder",
-  "ScreenTextGrab",
-  "sift",
-  "ironsentinel",
-  "falcon-dm",
-  "frostwall-beam",
-];
 const ASSETS = {
   desktopDark: "hero-v8-dark.svg",
   desktopLight: "hero-v8-light.svg",
