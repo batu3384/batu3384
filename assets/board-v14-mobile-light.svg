@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="1684" viewBox="0 0 400 1684" role="img" aria-label="Batuhan Yüksel, Software developer. Selected work: ScreenTextGrab, falcon-dm, frostwall-beam, calder, sift, ironsentinel, byteback, agent-atlas, codebase-audit, deskward, duetto." data-mode="mlight">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9a6700" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="mesh" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#d0d7de" stroke-width="0.7"/>
+    </pattern>
+  </defs>
+  <style>
+    .display{font-family:Georgia,"Times New Roman",Times,serif}
+    .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  </style>
+  <rect width="400" height="1684" fill="#ffffff"/>
+  <rect width="400" height="1684" fill="url(#mesh)" fill-opacity="0.35"/>
+  <circle cx="88" cy="110" r="190" fill="url(#glow)">
+    <animate attributeName="cx" values="88;158;88" dur="22s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="90;150;90" dur="26s" repeatCount="indefinite"/>
+  </circle>
+  <g>
+    <text x="22" y="42" class="mono" font-size="11" letter-spacing="1.4" fill="#9a6700">Istanbul · MIS</text>
+    <text x="22" y="164" class="mono" font-size="11" fill="#656d76">Swift · Go · TypeScript · Rust · Python · C++</text>
+    <text x="22" y="86" class="display" font-size="30" letter-spacing="-0.6" fill="#1f2328">Batuhan Yüksel</text>
+    <text x="22" y="116" class="sans" font-size="15" fill="#1f2328">Software developer</text>
+    <rect x="183" y="102" width="2" height="14" fill="#9a6700">
+    <animate attributeName="opacity" values="1;1;0;0" dur="1.15s" repeatCount="indefinite" calcMode="discrete"/>
+  </rect>
+    <text x="22" y="140" class="sans" font-size="13" fill="#656d76">macOS apps · CLI tools · application security</text>
+    <g>
+    <path d="M 22 186 L 28.36 187.81 L 34.71 188.94 L 41.07 189.03 L 47.43 188.24 L 53.79 187.15 L 60.14 186.45 L 66.5 186.6 L 72.86 187.56 L 79.21 188.84 L 85.57 189.71 L 91.93 189.61 L 98.29 188.4 L 104.64 186.49 L 111 184.59 L 117.36 183.39 L 123.71 183.22 L 130.07 183.9 L 136.43 184.83 L 142.79 185.32 L 149.14 184.96 L 155.5 183.83 L 161.86 182.46 L 168.21 181.58 L 174.57 181.72 L 180.93 182.98 L 187.29 184.92 L 193.64 186.82 L 200 188 L 206.36 188.16 L 212.71 187.52 L 219.07 186.71 L 225.43 186.38 L 231.79 186.92 L 238.14 188.21 L 244.5 189.7 L 250.86 190.64 L 257.21 190.52 L 263.57 189.3 L 269.93 187.43 L 276.29 185.65 L 282.64 184.62 L 289 184.59 L 295.36 185.29 L 301.71 186.09 L 308.07 186.34 L 314.43 185.68 L 320.79 184.27 L 327.14 182.7 L 333.5 181.71 L 339.86 181.78 L 346.21 182.92 L 352.57 184.65 L 358.93 186.23 L 365.29 187.03 L 371.64 186.85 L 378 186" fill="none" stroke="#d0d7de" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M 22 186 L 28.36 187.81 L 34.71 188.94 L 41.07 189.03 L 47.43 188.24 L 53.79 187.15 L 60.14 186.45 L 66.5 186.6 L 72.86 187.56 L 79.21 188.84 L 85.57 189.71 L 91.93 189.61 L 98.29 188.4 L 104.64 186.49 L 111 184.59 L 117.36 183.39 L 123.71 183.22 L 130.07 183.9 L 136.43 184.83 L 142.79 185.32 L 149.14 184.96 L 155.5 183.83 L 161.86 182.46 L 168.21 181.58 L 174.57 181.72 L 180.93 182.98 L 187.29 184.92 L 193.64 186.82 L 200 188 L 206.36 188.16 L 212.71 187.52 L 219.07 186.71 L 225.43 186.38 L 231.79 186.92 L 238.14 188.21 L 244.5 189.7 L 250.86 190.64 L 257.21 190.52 L 263.57 189.3 L 269.93 187.43 L 276.29 185.65 L 282.64 184.62 L 289 184.59 L 295.36 185.29 L 301.71 186.09 L 308.07 186.34 L 314.43 185.68 L 320.79 184.27 L 327.14 182.7 L 333.5 181.71 L 339.86 181.78 L 346.21 182.92 L 352.57 184.65 L 358.93 186.23 L 365.29 187.03 L 371.64 186.85 L 378 186" fill="none" stroke="#9a6700" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="36 362" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" from="0" to="-398" dur="3.2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  </g>
+  <text x="22" y="224" class="display" font-size="22" fill="#1f2328">Selected work</text>
+  <text x="22" y="264" class="sans" font-size="13" fill="#656d76">macOS</text>
+  <g>
+    <rect x="22" y="276" width="356" height="118" rx="12" fill="#f6f8fa"/>
+    <rect x="22" y="276" width="3" height="118" fill="#9a6700"/>
+    <text x="40" y="302" class="mono" font-size="11" fill="#9a6700">01</text>
+    <text x="362" y="302" class="mono" font-size="11" text-anchor="end" fill="#656d76">Swift</text>
+    <text x="40" y="340" class="sans" font-size="20" font-weight="600" fill="#1f2328">ScreenTextGrab</text>
+    <text x="40" y="360" class="sans" font-size="12" fill="#656d76">On-device OCR for screen, PDFs,</text>
+    <text x="40" y="376" class="sans" font-size="12" fill="#656d76">code, and tables.</text>
+  </g>
+  <g>
+    <rect x="22" y="406" width="356" height="100" rx="8" fill="#f6f8fa"/>
+    
+    <text x="40" y="432" class="mono" font-size="11" fill="#9a6700">02</text>
+    <text x="362" y="432" class="mono" font-size="11" text-anchor="end" fill="#656d76">Rust</text>
+    <text x="40" y="454" class="sans" font-size="15" font-weight="600" fill="#1f2328">falcon-dm</text>
+    <text x="40" y="474" class="sans" font-size="12" fill="#656d76">HTTP, HLS, and YouTube downloads —</text>
+    <text x="40" y="490" class="sans" font-size="12" fill="#656d76">local macOS queue.</text>
+  </g>
+  <g>
+    <rect x="22" y="518" width="356" height="100" rx="8" fill="#f6f8fa"/>
+    
+    <text x="40" y="544" class="mono" font-size="11" fill="#9a6700">03</text>
+    <text x="362" y="544" class="mono" font-size="11" text-anchor="end" fill="#656d76">Rust</text>
+    <text x="40" y="566" class="sans" font-size="15" font-weight="600" fill="#1f2328">frostwall-beam</text>
+    <text x="40" y="586" class="sans" font-size="12" fill="#656d76">Encrypted transfer with pairing and</text>
+    <text x="40" y="602" class="sans" font-size="12" fill="#656d76">receiver approval.</text>
+  </g>
+  <text x="22" y="652" class="sans" font-size="13" fill="#656d76">Terminal</text>
+  <g>
+    <rect x="22" y="664" width="356" height="100" rx="8" fill="#f6f8fa"/>
+    
+    <text x="40" y="690" class="mono" font-size="11" fill="#9a6700">04</text>
+    <text x="362" y="690" class="mono" font-size="11" text-anchor="end" fill="#656d76">TypeScript</text>
+    <text x="40" y="712" class="sans" font-size="15" font-weight="600" fill="#1f2328">calder</text>
+    <text x="40" y="732" class="sans" font-size="12" fill="#656d76">Run Claude Code, Codex, Cursor, and</text>
+    <text x="40" y="748" class="sans" font-size="12" fill="#656d76">Antigravity side by side.</text>
+  </g>
+  <g>
+    <rect x="22" y="776" width="356" height="100" rx="8" fill="#f6f8fa"/>
+    
+    <text x="40" y="802" class="mono" font-size="11" fill="#9a6700">05</text>
+    <text x="362" y="802" class="mono" font-size="11" text-anchor="end" fill="#656d76">Go</text>
+    <text x="40" y="824" class="sans" font-size="15" font-weight="600" fill="#1f2328">sift</text>
+    <text x="40" y="844" class="sans" font-size="12" fill="#656d76">Review-first cleaner — preview</text>
+    <text x="40" y="860" class="sans" font-size="12" fill="#656d76">before anything is deleted.</text>
+  </g>
+  <text x="22" y="910" class="sans" font-size="13" fill="#656d76">Application security</text>
+  <g>
+    <rect x="22" y="922" width="356" height="100" rx="8" fill="#f6f8fa"/>
+    
+    <text x="40" y="948" class="mono" font-size="11" fill="#9a6700">06</text>
+    <text x="362" y="948" class="mono" font-size="11" text-anchor="end" fill="#656d76">Go</text>
+    <text x="40" y="970" class="sans" font-size="15" font-weight="600" fill="#1f2328">ironsentinel</text>
+    <text x="40" y="990" class="sans" font-size="12" fill="#656d76">Guided scans, runtime trust checks,</text>
+    <text x="40" y="1006" class="sans" font-size="12" fill="#656d76">and evidence reports.</text>
+  </g>
+  <g>
+    <rect x="22" y="1034" width="356" height="100" rx="8" fill="#f6f8fa"/>
+    
+    <text x="40" y="1060" class="mono" font-size="11" fill="#9a6700">07</text>
+    <text x="362" y="1060" class="mono" font-size="11" text-anchor="end" fill="#656d76">C++</text>
+    <text x="40" y="1082" class="sans" font-size="15" font-weight="600" fill="#1f2328">byteback</text>
+    <text x="40" y="1102" class="sans" font-size="12" fill="#656d76">Windows forensic imaging and</text>
+    <text x="40" y="1118" class="sans" font-size="12" fill="#656d76">recovery, native engine.</text>
+  </g>
+  <text x="22" y="1168" class="sans" font-size="13" fill="#656d76">Developer tooling</text>
+  <g>
+    <rect x="22" y="1180" width="356" height="100" rx="8" fill="#f6f8fa"/>
+    
+    <text x="40" y="1206" class="mono" font-size="11" fill="#9a6700">08</text>
+    <text x="362" y="1206" class="mono" font-size="11" text-anchor="end" fill="#656d76">Python</text>
+    <text x="40" y="1228" class="sans" font-size="15" font-weight="600" fill="#1f2328">agent-atlas</text>
+    <text x="40" y="1248" class="sans" font-size="12" fill="#656d76">Installer and router for agent-safe</text>
+    <text x="40" y="1264" class="sans" font-size="12" fill="#656d76">open-web research.</text>
+  </g>
+  <g>
+    <rect x="22" y="1292" width="356" height="100" rx="8" fill="#f6f8fa"/>
+    
+    <text x="40" y="1318" class="mono" font-size="11" fill="#9a6700">09</text>
+    <text x="362" y="1318" class="mono" font-size="11" text-anchor="end" fill="#656d76">Python</text>
+    <text x="40" y="1340" class="sans" font-size="15" font-weight="600" fill="#1f2328">codebase-audit</text>
+    <text x="40" y="1360" class="sans" font-size="12" fill="#656d76">Whole-repo architecture audit with</text>
+    <text x="40" y="1376" class="sans" font-size="12" fill="#656d76">cited evidence.</text>
+  </g>
+  <text x="22" y="1426" class="sans" font-size="13" fill="#656d76">In progress</text>
+  <g>
+    <rect x="22" y="1438" width="356" height="100" rx="8" fill="#f6f8fa"/>
+    
+    <text x="40" y="1464" class="mono" font-size="11" fill="#9a6700">10</text>
+    <text x="362" y="1464" class="mono" font-size="11" text-anchor="end" fill="#656d76">Rust</text>
+    <text x="40" y="1486" class="sans" font-size="15" font-weight="600" fill="#1f2328">deskward</text>
+    <text x="40" y="1506" class="sans" font-size="12" fill="#656d76">Tailscale remote desktop — Rust</text>
+    <text x="40" y="1522" class="sans" font-size="12" fill="#656d76">core, Flutter client.</text>
+  </g>
+  <g>
+    <rect x="22" y="1550" width="356" height="100" rx="8" fill="#f6f8fa"/>
+    
+    <text x="40" y="1576" class="mono" font-size="11" fill="#9a6700">11</text>
+    <text x="362" y="1576" class="mono" font-size="11" text-anchor="end" fill="#656d76">TypeScript</text>
+    <text x="40" y="1598" class="sans" font-size="15" font-weight="600" fill="#1f2328">duetto</text>
+    <text x="40" y="1618" class="sans" font-size="12" fill="#656d76">Udemy: dual captions, notes,</text>
+    <text x="40" y="1634" class="sans" font-size="12" fill="#656d76">precision playback.</text>
+  </g>
+</svg>
