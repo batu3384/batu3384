@@ -9,6 +9,15 @@
 
 Selected work below — shipped tools that stay on your machine, grouped by where they run.
 
+## Calder workspace
+
+<p align="center">
+  <a href="https://github.com/batu3384/calder">
+    <img src="https://raw.githubusercontent.com/batu3384/calder/main/docs/images/screenshots/workspace-mosaic.png" alt="Calder — parallel Claude Code, Codex, Cursor, and Antigravity sessions in one workspace" width="100%">
+  </a>
+</p>
+<p align="center"><sub>Parallel AI coding CLIs in one Electron shell — browser context, telemetry, and governance.</sub></p>
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=swift%2Cgo%2Cts%2Cpython%2Crust%2Ccpp&theme=dark&perline=6">
@@ -43,6 +52,33 @@ Selected work below — shipped tools that stay on your machine, grouped by wher
 </a>
 </p>
 
+## Shipped tools
+
+<p align="center">
+<a href="https://github.com/batu3384/falcon-dm">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=batu3384&repo=falcon-dm&hide_border=true&theme=github_dark">
+    <img src="https://github-stats-extended.vercel.app/api/pin/?username=batu3384&repo=falcon-dm&hide_border=true&theme=github_light" alt="falcon-dm — Local-only macOS download manager for HTTP, HLS, and YouTube. No cloud queue." width="320">
+  </picture>
+</a>
+</p>
+<p align="center">
+<a href="https://github.com/batu3384/frostwall-beam">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=batu3384&repo=frostwall-beam&hide_border=true&theme=github_dark">
+    <img src="https://github-stats-extended.vercel.app/api/pin/?username=batu3384&repo=frostwall-beam&hide_border=true&theme=github_light" alt="frostwall-beam — Encrypted LAN and internet file transfer with pairing codes and receiver approval." width="320">
+  </picture>
+</a>
+</p>
+<p align="center">
+<a href="https://github.com/batu3384/sift">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/pin/?username=batu3384&repo=sift&hide_border=true&theme=github_dark">
+    <img src="https://github-stats-extended.vercel.app/api/pin/?username=batu3384&repo=sift&hide_border=true&theme=github_light" alt="sift — Review-first terminal cleaner for macOS and Windows. Destructive work is previewed before it runs." width="320">
+  </picture>
+</a>
+</p>
+
 ## Selected work
 
 ### On the Mac
@@ -63,7 +99,6 @@ Selected work below — shipped tools that stay on your machine, grouped by wher
 
 ## Also shipping
 
-- **[sift](https://github.com/batu3384/sift)** — Review-first terminal cleaner for macOS and Windows. Destructive work is previewed before it runs.
 - **[byteback](https://github.com/batu3384/byteback)** — Windows forensic imaging and data recovery with a native C++ engine and an examiner UI.
 - **[agent-atlas](https://github.com/batu3384/agent-atlas)** — Installer and router that gives AI agents open-web search and research tools.
 - **[codebase-audit](https://github.com/batu3384/codebase-audit)** — Evidence-backed whole-repo architecture audit skill for Cursor, Claude Code, Codex, and Antigravity.
@@ -72,6 +107,14 @@ Selected work below — shipped tools that stay on your machine, grouped by wher
 
 - **[deskward](https://github.com/batu3384/deskward)** — Tailscale-first remote desktop with a Rust core and Flutter client. Host agents still in phased rollout.
 - **[duetto](https://github.com/batu3384/duetto)** — Chrome extension for Udemy: dual captions, translation, lecture notes, and precision playback.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg">
+    <img alt="Contribution graph snake animation" src="https://raw.githubusercontent.com/batu3384/batu3384/output/github-snake.svg" width="100%">
+  </picture>
+</p>
 
 <details>
 <summary>GitHub activity</summary>
@@ -86,6 +129,13 @@ Selected work below — shipped tools that stay on your machine, grouped by wher
     <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=batu3384&layout=compact&langs_count=6&hide_border=true&theme=github_light" alt="Top languages for batu3384" height="160">
   </picture>
 </p>
+
+</details>
+
+<details>
+<summary>Profile pins (set in GitHub UI)</summary>
+
+Pin these six repos on your profile sidebar: **calder**, **ScreenTextGrab**, **sift**, **ironsentinel**, **falcon-dm**, **frostwall-beam**.
 
 </details>
 
