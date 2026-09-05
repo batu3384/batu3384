@@ -14,20 +14,20 @@ const SNAKE = {
   dark: `https://raw.githubusercontent.com/${USER}/${USER}/output/github-snake-dark.svg`,
 };
 const ASSETS = {
-  desktopDark: "board-v12-dark.svg",
-  desktopLight: "board-v12-light.svg",
-  mobileDark: "board-v12-mobile-dark.svg",
-  mobileLight: "board-v12-mobile-light.svg",
+  desktopDark: "board-v13-dark.svg",
+  desktopLight: "board-v13-light.svg",
+  mobileDark: "board-v13-mobile-dark.svg",
+  mobileLight: "board-v13-mobile-light.svg",
 };
 
 const identity = {
   name: "Batuhan Yüksel",
   role: "Software developer",
-  focus: "macOS applications · CLI tools · application security",
+  focus: "macOS apps · CLI tools · application security",
   location: "Istanbul · MIS",
   stack: "Swift · Go · TypeScript · Rust · Python · C++",
   intro:
-    "MIS graduate in Istanbul. I design and ship local-first software: macOS utilities, terminal tools, and security workflows with evidence you can inspect.",
+    "MIS graduate in Istanbul. I ship local-first software: macOS apps, CLI tools, and security workflows that keep data and reports on the machine.",
 };
 
 const catalog = [
@@ -38,15 +38,15 @@ const catalog = [
     lane: "macOS",
     line: "On-device OCR for screen, PDFs, code, and tables.",
     summary:
-      "Local-first menu bar OCR with Apple Vision — screen regions, PDFs, code, tables, and subtitles stay on device.",
+      "Menu-bar OCR with Apple Vision. Screen regions, PDFs, code, tables, and subtitles stay on the device.",
   },
   {
     repo: "falcon-dm",
     stack: "Rust",
     lane: "macOS",
-    line: "HTTP, HLS, and YouTube — native macOS, local queue.",
+    line: "HTTP, HLS, and YouTube downloads — local macOS queue.",
     summary:
-      "macOS download manager with multi-thread HTTP, HLS, YouTube, and browser capture — Tauri/Rust, no cloud queue.",
+      "macOS download manager for HTTP, HLS, and YouTube, with browser capture. Tauri and Rust. No cloud queue.",
   },
   {
     repo: "frostwall-beam",
@@ -54,31 +54,31 @@ const catalog = [
     lane: "macOS",
     line: "Encrypted transfer with pairing and receiver approval.",
     summary:
-      "Cross-platform encrypted file transfer on LAN or the internet — pairing codes, receiver approval, no cloud account.",
+      "Encrypted file transfer on a LAN or across the internet. Pairing codes, receiver approval, no cloud account.",
   },
   {
     repo: "calder",
     stack: "TypeScript",
     lane: "Terminal",
-    line: "Parallel Claude Code, Codex, Cursor, and Antigravity.",
+    line: "Run Claude Code, Codex, Cursor, and Antigravity side by side.",
     summary:
-      "Electron workspace for parallel Claude Code, Codex, Cursor, and Antigravity CLI sessions with telemetry and governance in one shell.",
+      "Electron workspace for parallel Claude Code, Codex, Cursor, and Antigravity sessions, with telemetry and governance in one shell.",
   },
   {
     repo: "sift",
     stack: "Go",
     lane: "Terminal",
-    line: "Review-first cleaner — preview before anything destructive.",
+    line: "Review-first cleaner — preview before anything is deleted.",
     summary:
-      "Review-first terminal cleaner for macOS and Windows — typed Go core, preview step before destructive work.",
+      "Review-first terminal cleaner for macOS and Windows. Typed Go core; a preview step sits in front of destructive work.",
   },
   {
     repo: "ironsentinel",
     stack: "Go",
     lane: "AppSec",
-    line: "Guided scans, runtime trust checks, evidence reports.",
+    line: "Guided scans, runtime trust checks, and evidence reports.",
     summary:
-      "Local-first AppSec CLI and TUI for guided scans, runtime trust checks, and HTML / SARIF / CSV evidence exports.",
+      "AppSec CLI and TUI for guided scans, runtime trust checks, and HTML, SARIF, and CSV evidence exports. Local-first.",
   },
   {
     repo: "byteback",
@@ -86,14 +86,14 @@ const catalog = [
     lane: "AppSec",
     line: "Windows forensic imaging and recovery, native engine.",
     summary:
-      "Windows forensic imaging and file recovery with a native engine and an examiner-facing UI.",
+      "Windows forensic imaging and file recovery. Native engine with an examiner UI.",
   },
   {
     repo: "agent-atlas",
     stack: "Python",
     lane: "Tooling",
     line: "Installer and router for agent-safe open-web research.",
-    summary: "Installer and router that gives AI agents controlled open-web search and research tools.",
+    summary: "Installer and router that gives coding agents controlled open-web search and research tools.",
   },
   {
     repo: "codebase-audit",
@@ -101,7 +101,7 @@ const catalog = [
     lane: "Tooling",
     line: "Whole-repo architecture audit with cited evidence.",
     summary:
-      "Whole-repo architecture audit skill for Cursor, Claude Code, Codex, and Antigravity with cited evidence.",
+      "Whole-repo architecture audit for Cursor, Claude Code, Codex, and Antigravity. Findings come with citations.",
   },
   {
     repo: "deskward",
@@ -109,7 +109,7 @@ const catalog = [
     lane: "In progress",
     line: "Tailscale remote desktop — Rust core, Flutter client.",
     summary:
-      "Tailscale-first remote desktop platform with a Rust core and Flutter client; host agents in phased rollout.",
+      "Tailscale remote desktop with a Rust core and a Flutter client. Host agents are still rolling out.",
   },
   {
     repo: "duetto",
@@ -117,18 +117,18 @@ const catalog = [
     lane: "In progress",
     line: "Udemy: dual captions, notes, precision playback.",
     summary:
-      "Chrome extension for Udemy with dual captions, translation, notes, and precision playback controls.",
+      "Chrome extension for Udemy: dual captions, translation, notes, and precise playback controls.",
   },
 ];
 
 const other = [
   {
     repo: "hexloom",
-    summary: "FastAPI studio for encoding, decoding, and validating structured payloads.",
+    summary: "FastAPI studio to encode, decode, and validate structured payloads.",
   },
   {
     repo: "jobcraft",
-    summary: "Local-first job-search workspace for Turkey with Cursor and Claude Code.",
+    summary: "Local job-search workspace for Turkey, built for Cursor and Claude Code.",
   },
 ];
 
@@ -136,7 +136,7 @@ const academic = [
   {
     repo: "vetvision",
     summary:
-      "Desktop assistant for dog breed recognition, PDF export, and optional Gemini-backed reports.",
+      "Desktop app for dog-breed recognition, PDF export, and optional Gemini reports.",
   },
   {
     repo: "fast-express-kds",
@@ -148,7 +148,7 @@ const academic = [
   },
   {
     repo: "autonomous-line-following-robot",
-    summary: "Raspberry Pi line-following robot with obstacle stop, LEDs, and buzzer alerts.",
+    summary: "Raspberry Pi line-following robot that stops on obstacles, with LED and buzzer alerts.",
   },
 ];
 
@@ -160,23 +160,23 @@ const lanes = [
   { heading: "In progress", key: "In progress", label: "In progress" },
 ];
 
-// One accent. GitHub canvas so the board sits on the profile instead of a sticker.
+// Slate field + one copper accent. Green CTA from the design-system search is rejected — one family only.
 const palettes = {
   dark: {
-    bg: "#0d1117",
-    surface: "#161b22",
-    ink: "#f0f3f6",
-    muted: "#8b949e",
-    rule: "#30363d",
-    accent: "#d4a05a",
+    bg: "#0f172a",
+    surface: "#1b2336",
+    ink: "#f8fafc",
+    muted: "#94a3b8",
+    rule: "#334155",
+    accent: "#e2b657",
   },
   light: {
-    bg: "#ffffff",
-    surface: "#f6f8fa",
-    ink: "#1f2328",
-    muted: "#59636e",
-    rule: "#d0d7de",
-    accent: "#9a5a14",
+    bg: "#f8fafc",
+    surface: "#ffffff",
+    ink: "#0f172a",
+    muted: "#475569",
+    rule: "#cbd5e1",
+    accent: "#b45309",
   },
 };
 
@@ -228,12 +228,42 @@ function wrapLines(text, maxChars, maxLines = 2) {
   return lines;
 }
 
-function defs() {
-  return `<style>
+function defs(p) {
+  return `<defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${p.accent}" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="${p.bg}" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="mesh" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="${p.rule}" stroke-width="0.7"/>
+      <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="28 0" dur="28s" repeatCount="indefinite"/>
+    </pattern>
+  </defs>
+  <style>
     .display{font-family:Georgia,"Times New Roman",Times,serif}
     .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
     .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
   </style>`;
+}
+
+function field(p, w, h) {
+  const left = Math.round(w * 0.2);
+  const right = Math.round(w * 0.78);
+  const midY = Math.round(h * 0.42);
+  return `<rect width="${w}" height="${h}" fill="${p.bg}"/>
+  <rect width="${w}" height="${h}" fill="url(#mesh)" fill-opacity="0.4"/>
+  <circle cx="${left}" cy="96" r="180" fill="url(#glow)">
+    <animate attributeName="cx" values="${left};${left + 90};${left}" dur="18s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="72;168;72" dur="22s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="${right}" cy="${midY}" r="220" fill="url(#glow)">
+    <animate attributeName="cx" values="${right};${right - 80};${right}" dur="24s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="${midY};${midY + 90};${midY}" dur="20s" repeatCount="indefinite"/>
+  </circle>`;
+}
+
+function caretX(pad, fontSize) {
+  return pad + Math.round(identity.role.length * fontSize * 0.58) + 12;
 }
 
 // ponytail: SMIL has no prefers-reduced-motion in GitHub <img> sandbox. Ceiling = always-moving instrument. Upgrade: a static twin SVG if we ever need an off switch.
@@ -287,13 +317,6 @@ function cursor(p, x, y) {
   </rect>`;
 }
 
-function sweep(p, x1, x2, y1, y2) {
-  return `<line x1="${x1}" x2="${x1}" y1="${y1}" y2="${y2}" stroke="${p.accent}" stroke-width="1.2" stroke-opacity="0.28">
-    <animate attributeName="x1" values="${x1};${x2};${x1}" dur="7s" repeatCount="indefinite"/>
-    <animate attributeName="x2" values="${x1};${x2};${x1}" dur="7s" repeatCount="indefinite"/>
-  </line>`;
-}
-
 function drawRule(p, x1, x2, y) {
   const span = x2 - x1;
   return `<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="${p.rule}" stroke-width="1" stroke-dasharray="${span}" stroke-dashoffset="0">
@@ -321,6 +344,7 @@ function assertLayout() {
   }
   const probe = polyline(scopePoints(0, 0, 240, 40));
   if (probe.len < 240) throw new Error("scope path shorter than width — motion bead will look broken");
+  if (caretX(36, 15) > 400) throw new Error("role caret would overflow a mobile board");
 }
 
 function header(p, width, spec) {
@@ -333,9 +357,8 @@ function header(p, width, spec) {
   const instrument = mobile
     ? scope(p, pad, 174, width - pad * 2, 26)
     : scope(p, 640, 70, innerR - 640, 70);
-  const caret = mobile ? cursor(p, pad + 148, 107) : cursor(p, pad + 168, 111);
+  const caret = cursor(p, caretX(pad, 15), mobile ? 107 : 111);
   return `<g>
-    ${sweep(p, pad, innerR, 52, headerH - 14)}
     <text x="${pad}" y="44" class="mono" font-size="11" fill="${p.accent}">${xml(identity.location)}</text>
     ${stack}
     <text x="${pad}" y="${mobile ? 88 : 92}" class="display" font-size="${mobile ? 28 : 38}" fill="${p.ink}">${xml(identity.name)}</text>
@@ -390,7 +413,7 @@ function layoutCatalog(p, spec, startY) {
       const span = slice.length === 1 && !mobile ? inner : colW;
       for (let c = 0; c < slice.length; c++) {
         const x = pad + c * (colW + gap);
-        parts.push(tile(slice[c], index++, x, y, span, tileH, p, span > 500 ? 70 : 42));
+        parts.push(tile(slice[c], index++, x, y, span, tileH, p, span > 500 ? 72 : 48));
       }
       y += tileH + gap;
     }
@@ -407,8 +430,8 @@ function board(p, id, spec) {
     `${identity.name}, ${identity.role}. Selected work: ${catalog.map((item) => item.repo).join(", ")}.`,
   );
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${alt}" data-mode="${id}">
-  ${defs()}
-  <rect width="${width}" height="${height}" fill="${p.bg}"/>
+  ${defs(p)}
+  ${field(p, width, height)}
   ${header(p, width, spec)}
   ${built.parts.join("\n  ")}
 </svg>`;
@@ -552,7 +575,7 @@ for (const name of readdirSync(outDir)) {
 const readme = renderReadme();
 for (const required of [
   "<picture>",
-  "board-v12",
+  "board-v13",
   "## Selected work",
   "### macOS",
   "### Terminal & CLI",
