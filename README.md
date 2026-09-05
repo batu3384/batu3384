@@ -133,13 +133,6 @@ Selected work below — shipped tools that stay on your machine, grouped by wher
 </details>
 
 <details>
-<summary>Profile pins (set in GitHub UI)</summary>
-
-Pin these six repos on your profile sidebar: **calder**, **ScreenTextGrab**, **sift**, **ironsentinel**, **falcon-dm**, **frostwall-beam**.
-
-</details>
-
-<details>
 <summary>Other public work</summary>
 
 - **[hexloom](https://github.com/batu3384/hexloom)** — FastAPI studio for encoding, decoding, and validating structured payloads.

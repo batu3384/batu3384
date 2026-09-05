@@ -544,13 +544,6 @@ ${mdItems(building)}
 </details>
 
 <details>
-<summary>Profile pins (set in GitHub UI)</summary>
-
-Pin these six repos on your profile sidebar: **${DESIRED_PINS.join("**, **")}**.
-
-</details>
-
-<details>
 <summary>Other public work</summary>
 
 ${mdItems(other)}
@@ -618,7 +611,6 @@ for (const required of [
   "deskward",
   SNAKE.light,
   "GitHub activity",
-  "Profile pins",
   "## Contact",
 ]) {
   if (!readme.includes(required)) throw new Error(`README missing ${required}`);
