@@ -11,10 +11,10 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "assets");
 const USER = "batu3384";
 const ASSETS = {
-  desktopDark: "board-v17-dark.svg",
-  desktopLight: "board-v17-light.svg",
-  mobileDark: "board-v17-mobile-dark.svg",
-  mobileLight: "board-v17-mobile-light.svg",
+  desktopDark: "board-v18-dark.svg",
+  desktopLight: "board-v18-light.svg",
+  mobileDark: "board-v18-mobile-dark.svg",
+  mobileLight: "board-v18-mobile-light.svg",
 };
 
 function loadData() {
@@ -108,7 +108,7 @@ const catalog = [
   {
     repo: "duetto",
     stack: "TypeScript",
-    lane: "Early",
+    lane: "Archive",
     line: "Dual-caption Udemy player — translation, notes.",
     summary:
       "Chrome extension for Udemy: dual captions with Gemini translation, a term-lock glossary, timestamped notes, and precision playback controls.",
@@ -174,7 +174,6 @@ const lanes = [
   { heading: "Application security", key: "AppSec", label: "Application security" },
   { heading: "Terminal & systems", key: "Terminal", label: "Terminal & systems" },
   { heading: "Developer tooling", key: "Tooling", label: "Developer tooling" },
-  { heading: "Early stage", key: "Early", label: "Early stage" },
   { heading: "Earlier work", key: "Archive", label: "Earlier work" },
 ];
 
@@ -783,7 +782,7 @@ for (const name of readdirSync(outDir)) {
 const readme = renderReadme();
 for (const required of [
   "<picture>",
-  "board-v17",
+  "board-v18",
   "## Selected work",
   "### macOS",
   "pi-gateway",
