@@ -47,7 +47,7 @@ const catalog = [
     line: "Production DNS and home-lab gateway on Raspberry Pi.",
     heroLine: "AdGuard + Unbound DNS-over-TLS, Caddy TLS proxy, Grafana monitoring, CrowdSec, encrypted backups — one pipeline.",
     summary:
-      "Production DNS and home-lab gateway on Raspberry Pi. AdGuard and Unbound with DNS-over-TLS, Caddy reverse proxy, Grafana monitoring, CrowdSec, and encrypted 3-2-1 backups — deployed by a single make pipeline.",
+      "Production DNS and home-lab gateway on Raspberry Pi. AdGuard and Unbound with DNS-over-TLS, Caddy reverse proxy, Grafana monitoring, CrowdSec, and encrypted 3-2-1 backups. Everything deploys through a single make pipeline.",
   },
   {
     repo: "riflo",
@@ -55,7 +55,7 @@ const catalog = [
     lane: "macOS",
     line: "E2E encrypted remote desktop — QUIC, hardware video.",
     summary:
-      "Personal remote desktop for macOS, iOS, and Windows. QUIC transport with end-to-end encryption, hardware HEVC/H.264 video, concurrent multi-session fan-out, zero-config LAN discovery — no cloud account or subscription.",
+      "Personal remote desktop for macOS, iOS, and Windows. QUIC transport with end-to-end encryption, hardware HEVC/H.264 video, concurrent multi-session fan-out, zero-config LAN discovery. Devices connect directly; no cloud account or subscription is required.",
   },
   {
     repo: "falcon-dm",
@@ -63,7 +63,7 @@ const catalog = [
     lane: "macOS",
     line: "Multi-connection downloads, byte-exact crash resume.",
     summary:
-      "Tauri download manager with a Rust engine: multi-connection byte ranges, byte-exact resume after crashes, HLS segment assembly, and a paired Chrome extension. No cloud queue, no telemetry.",
+      "Tauri download manager with a Rust engine: multi-connection byte ranges, byte-exact resume after crashes, HLS segment assembly, and a paired Chrome extension. The queue is local and there is no telemetry.",
   },
   {
     repo: "ScreenTextGrab",
@@ -79,7 +79,7 @@ const catalog = [
     lane: "AppSec",
     line: "C++17 forensic engine — NTFS, FAT, ext4, RAID.",
     summary:
-      "Windows forensic imaging and data recovery. C++17 engine covers NTFS, FAT/exFAT, and ext4 metadata recovery, signature carving, and virtual RAID — strictly read-only on source media.",
+      "Windows forensic imaging and data recovery. C++17 engine covers NTFS, FAT/exFAT, and ext4 metadata recovery, signature carving, and virtual RAID. The engine never writes to source media.",
   },
   {
     repo: "calder",
@@ -87,7 +87,7 @@ const catalog = [
     lane: "Terminal",
     line: "Parallel AI CLI sessions in one governed workspace.",
     summary:
-      "Electron workspace for parallel AI coding CLIs — Claude Code, Codex, Cursor, Antigravity. PTY-backed terminals, provider-aware launch and resume, session telemetry, and governance in one shell.",
+      "Electron workspace for parallel AI coding CLIs: Claude Code, Codex, Cursor, Antigravity. PTY-backed terminals, provider-aware launch and resume, session telemetry, and governance in one shell.",
   },
   {
     repo: "agent-atlas",
@@ -95,7 +95,7 @@ const catalog = [
     lane: "Tooling",
     line: "Open-web research capability layer for agents.",
     summary:
-      "Capability layer that installs, health-checks, and routes open-web research tools for coding agents — ten channels, doctor diagnostics, end-to-end smoke tests.",
+      "Capability layer that installs, health-checks, and routes open-web research tools for coding agents: ten channels, doctor diagnostics, and end-to-end smoke tests.",
   },
   {
     repo: "codebase-audit",
@@ -103,7 +103,7 @@ const catalog = [
     lane: "Tooling",
     line: "Evidence-backed whole-repo audits for agents.",
     summary:
-      "Agent Skill for whole-repo architecture audits. Phased review with measured, path:line-cited findings and drift detection — no auto-fixes by design.",
+      "Agent Skill for whole-repo architecture audits. Phased review with measured, path:line-cited findings and drift detection, with no auto-fixes by design.",
   },
   {
     repo: "duetto",
@@ -119,7 +119,7 @@ const catalog = [
     lane: "Archive",
     line: "E2E encrypted transfer — SPAKE2, NAT traversal.",
     summary:
-      "End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval — no cloud account.",
+      "End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval. No cloud account is required.",
   },
   {
     repo: "ironsentinel",
@@ -127,7 +127,7 @@ const catalog = [
     lane: "Archive",
     line: "Guided AppSec missions, evidence-grade reports.",
     summary:
-      "Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.",
+      "Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence, with no hosted control plane.",
   },
   {
     repo: "sift",
@@ -135,18 +135,18 @@ const catalog = [
     lane: "Archive",
     line: "Review-first terminal cleaner, dry-run by default.",
     summary:
-      "Review-first terminal cleaner for macOS and Windows. Typed Go core, dry-run by default, permission preflight, and audit history — destructive runs need explicit flags.",
+      "Review-first terminal cleaner for macOS and Windows. Typed Go core, dry-run by default, permission preflight, and audit history. Destructive runs need explicit flags.",
   },
 ];
 
 const other = [
   {
     repo: "hexloom",
-    summary: "FastAPI text-transformation studio — eleven encode/decode/validate methods, batch workflows, live deployment with OpenAPI docs.",
+    summary: "FastAPI text-transformation studio with eleven encode/decode/validate methods, batch workflows, and a live deployment with OpenAPI docs.",
   },
   {
     repo: "jobcraft",
-    summary: "Local-first job-search workspace for Turkey — multi-portal search, fit scoring, LaTeX CV and cover-letter pipeline, application tracking.",
+    summary: "Local-first job-search workspace for Turkey: multi-portal search, fit scoring, a LaTeX CV and cover-letter pipeline, and application tracking.",
   },
 ];
 
@@ -663,7 +663,7 @@ function mdLaneSections() {
     .map((lane) => {
       const rows = catalog.filter((item) => item.lane === lane.key);
       const lines = rows
-        .map((item) => `- **[${item.repo}](${repoUrl(item.repo)})** — ${html(item.summary)}`)
+        .map((item) => `- **[${item.repo}](${repoUrl(item.repo)})**: ${html(item.summary)}`)
         .join("\n");
       return `### ${lane.heading}\n\n${lines}`;
     })
@@ -672,7 +672,7 @@ function mdLaneSections() {
 
 function mdNotes(rows) {
   return rows
-    .map((item) => `- **[${item.repo}](${repoUrl(item.repo)})** — ${html(item.summary)}`)
+    .map((item) => `- **[${item.repo}](${repoUrl(item.repo)})**: ${html(item.summary)}`)
     .join("\n");
 }
 
@@ -687,10 +687,10 @@ function renderReadme() {
   <source media="(max-width: 700px)" srcset="assets/${ASSETS.mobileLight}">
   <source media="(prefers-color-scheme: dark)" srcset="assets/${ASSETS.desktopDark}">
   <source media="(prefers-color-scheme: light)" srcset="assets/${ASSETS.desktopLight}">
-  <img alt="${html(identity.name)} — ${html(identity.role)}. Selected work: ${catalog.map((item) => item.repo).join(", ")}." src="assets/${ASSETS.desktopLight}" width="100%">
+  <img alt="${html(identity.name)}, ${html(identity.role)}. Selected work: ${catalog.map((item) => item.repo).join(", ")}." src="assets/${ASSETS.desktopLight}" width="100%">
 </picture>
 
-Software developer in Istanbul. I build local-first software — macOS apps, terminal tools, and security workflows that keep data on the machine — plus the self-hosted infrastructure to run it on. Every project below is public and documented in its own repository.
+Software developer in Istanbul. I build local-first software: macOS apps, terminal tools, and security workflows that keep data on the machine, plus the self-hosted infrastructure to run it on. Every project is public and documented in its own repository.
 
 ## Selected work
 
@@ -714,7 +714,7 @@ ${mdNotes(academic)}
 
 ${fmtInt(data.contributions.total)} contributions across ${data.contributions.activeDays} active days in the last 12 months · longest streak ${data.contributions.longestStreak} days. Recent pushes: ${recent}.
 
-<sub>Board and this section are regenerated daily from the GitHub GraphQL API — last run ${generatedStamp()}.</sub>
+<sub>Board and this section are regenerated daily from the GitHub GraphQL API, last run ${generatedStamp()}.</sub>
 
 ## Contact
 
