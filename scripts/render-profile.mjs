@@ -50,36 +50,12 @@ const catalog = [
       "Production DNS and home-lab gateway on Raspberry Pi. AdGuard and Unbound with DNS-over-TLS, Caddy reverse proxy, Grafana monitoring, CrowdSec, and encrypted 3-2-1 backups — deployed by a single make pipeline.",
   },
   {
-    repo: "byteback",
-    stack: "C++",
-    lane: "AppSec",
-    line: "C++17 forensic engine — NTFS, FAT, ext4, RAID.",
-    summary:
-      "Windows forensic imaging and data recovery. C++17 engine covers NTFS, FAT/exFAT, and ext4 metadata recovery, signature carving, and virtual RAID — strictly read-only on source media.",
-  },
-  {
-    repo: "ironsentinel",
-    stack: "Go",
-    lane: "AppSec",
-    line: "Guided AppSec missions, evidence-grade reports.",
-    summary:
-      "Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.",
-  },
-  {
     repo: "riflo",
     stack: "Rust",
     lane: "macOS",
     line: "E2E encrypted remote desktop — QUIC, hardware video.",
     summary:
       "Personal remote desktop for macOS, iOS, and Windows. QUIC transport with end-to-end encryption, hardware HEVC/H.264 video, concurrent multi-session fan-out, zero-config LAN discovery — no cloud account or subscription.",
-  },
-  {
-    repo: "frostwall-beam",
-    stack: "Rust",
-    lane: "macOS",
-    line: "E2E encrypted transfer — SPAKE2, NAT traversal.",
-    summary:
-      "End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval — no cloud account.",
   },
   {
     repo: "falcon-dm",
@@ -96,6 +72,30 @@ const catalog = [
     line: "Menu-bar OCR — Apple Vision, fully on-device.",
     summary:
       "Notarized macOS menu-bar OCR app. Apple Vision runs on-device; modes for screen regions, subtitles, code, and tables, with automation through the `stg` CLI, URL scheme, and Shortcuts.",
+  },
+  {
+    repo: "frostwall-beam",
+    stack: "Rust",
+    lane: "macOS",
+    line: "E2E encrypted transfer — SPAKE2, NAT traversal.",
+    summary:
+      "End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval — no cloud account.",
+  },
+  {
+    repo: "byteback",
+    stack: "C++",
+    lane: "AppSec",
+    line: "C++17 forensic engine — NTFS, FAT, ext4, RAID.",
+    summary:
+      "Windows forensic imaging and data recovery. C++17 engine covers NTFS, FAT/exFAT, and ext4 metadata recovery, signature carving, and virtual RAID — strictly read-only on source media.",
+  },
+  {
+    repo: "ironsentinel",
+    stack: "Go",
+    lane: "AppSec",
+    line: "Guided AppSec missions, evidence-grade reports.",
+    summary:
+      "Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.",
   },
   {
     repo: "calder",
@@ -170,8 +170,8 @@ const academic = [
 ];
 
 const lanes = [
-  { heading: "Application security", key: "AppSec", label: "Application security" },
   { heading: "macOS", key: "macOS", label: "macOS" },
+  { heading: "Application security", key: "AppSec", label: "Application security" },
   { heading: "Terminal & systems", key: "Terminal", label: "Terminal & systems" },
   { heading: "Developer tooling", key: "Tooling", label: "Developer tooling" },
   { heading: "Early stage", key: "Early", label: "Early stage" },
