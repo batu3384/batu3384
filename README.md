@@ -4,7 +4,7 @@
   <source media="(max-width: 700px)" srcset="assets/board-v17-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/board-v17-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/board-v17-light.svg">
-  <img alt="Batuhan Yüksel — Software developer. Selected work: pi-gateway, riflo, falcon-dm, ScreenTextGrab, frostwall-beam, byteback, ironsentinel, calder, sift, agent-atlas, codebase-audit, duetto." src="assets/board-v17-light.svg" width="100%">
+  <img alt="Batuhan Yüksel — Software developer. Selected work: pi-gateway, riflo, falcon-dm, ScreenTextGrab, byteback, calder, agent-atlas, codebase-audit, duetto, frostwall-beam, ironsentinel, sift." src="assets/board-v17-light.svg" width="100%">
 </picture>
 
 Software developer in Istanbul. I build local-first software — macOS apps, terminal tools, and security workflows that keep data on the machine — plus the self-hosted infrastructure to run it on. Every project below is public and documented in its own repository.
@@ -16,18 +16,15 @@ Software developer in Istanbul. I build local-first software — macOS apps, ter
 - **[riflo](https://github.com/batu3384/riflo)** — Personal remote desktop for macOS, iOS, and Windows. QUIC transport with end-to-end encryption, hardware HEVC/H.264 video, concurrent multi-session fan-out, zero-config LAN discovery — no cloud account or subscription.
 - **[falcon-dm](https://github.com/batu3384/falcon-dm)** — Tauri download manager with a Rust engine: multi-connection byte ranges, byte-exact resume after crashes, HLS segment assembly, and a paired Chrome extension. No cloud queue, no telemetry.
 - **[ScreenTextGrab](https://github.com/batu3384/ScreenTextGrab)** — Notarized macOS menu-bar OCR app. Apple Vision runs on-device; modes for screen regions, subtitles, code, and tables, with automation through the `stg` CLI, URL scheme, and Shortcuts.
-- **[frostwall-beam](https://github.com/batu3384/frostwall-beam)** — End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval — no cloud account.
 
 ### Application security
 
 - **[byteback](https://github.com/batu3384/byteback)** — Windows forensic imaging and data recovery. C++17 engine covers NTFS, FAT/exFAT, and ext4 metadata recovery, signature carving, and virtual RAID — strictly read-only on source media.
-- **[ironsentinel](https://github.com/batu3384/ironsentinel)** — Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.
 
 ### Terminal & systems
 
 - **[pi-gateway](https://github.com/batu3384/pi-gateway)** — Production DNS and home-lab gateway on Raspberry Pi. AdGuard and Unbound with DNS-over-TLS, Caddy reverse proxy, Grafana monitoring, CrowdSec, and encrypted 3-2-1 backups — deployed by a single make pipeline.
 - **[calder](https://github.com/batu3384/calder)** — Electron workspace for parallel AI coding CLIs — Claude Code, Codex, Cursor, Antigravity. PTY-backed terminals, provider-aware launch and resume, session telemetry, and governance in one shell.
-- **[sift](https://github.com/batu3384/sift)** — Review-first terminal cleaner for macOS and Windows. Typed Go core, dry-run by default, permission preflight, and audit history — destructive runs need explicit flags.
 
 ### Developer tooling
 
@@ -37,6 +34,12 @@ Software developer in Istanbul. I build local-first software — macOS apps, ter
 ### Early stage
 
 - **[duetto](https://github.com/batu3384/duetto)** — Chrome extension for Udemy: dual captions with Gemini translation, a term-lock glossary, timestamped notes, and precision playback controls.
+
+### Earlier work
+
+- **[frostwall-beam](https://github.com/batu3384/frostwall-beam)** — End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval — no cloud account.
+- **[ironsentinel](https://github.com/batu3384/ironsentinel)** — Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.
+- **[sift](https://github.com/batu3384/sift)** — Review-first terminal cleaner for macOS and Windows. Typed Go core, dry-run by default, permission preflight, and audit history — destructive runs need explicit flags.
 
 <details>
 <summary>Other public repositories</summary>

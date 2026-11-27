@@ -74,14 +74,6 @@ const catalog = [
       "Notarized macOS menu-bar OCR app. Apple Vision runs on-device; modes for screen regions, subtitles, code, and tables, with automation through the `stg` CLI, URL scheme, and Shortcuts.",
   },
   {
-    repo: "frostwall-beam",
-    stack: "Rust",
-    lane: "macOS",
-    line: "E2E encrypted transfer — SPAKE2, NAT traversal.",
-    summary:
-      "End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval — no cloud account.",
-  },
-  {
     repo: "byteback",
     stack: "C++",
     lane: "AppSec",
@@ -90,28 +82,12 @@ const catalog = [
       "Windows forensic imaging and data recovery. C++17 engine covers NTFS, FAT/exFAT, and ext4 metadata recovery, signature carving, and virtual RAID — strictly read-only on source media.",
   },
   {
-    repo: "ironsentinel",
-    stack: "Go",
-    lane: "AppSec",
-    line: "Guided AppSec missions, evidence-grade reports.",
-    summary:
-      "Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.",
-  },
-  {
     repo: "calder",
     stack: "TypeScript",
     lane: "Terminal",
     line: "Parallel AI CLI sessions in one governed workspace.",
     summary:
       "Electron workspace for parallel AI coding CLIs — Claude Code, Codex, Cursor, Antigravity. PTY-backed terminals, provider-aware launch and resume, session telemetry, and governance in one shell.",
-  },
-  {
-    repo: "sift",
-    stack: "Go",
-    lane: "Terminal",
-    line: "Review-first terminal cleaner, dry-run by default.",
-    summary:
-      "Review-first terminal cleaner for macOS and Windows. Typed Go core, dry-run by default, permission preflight, and audit history — destructive runs need explicit flags.",
   },
   {
     repo: "agent-atlas",
@@ -136,6 +112,30 @@ const catalog = [
     line: "Dual-caption Udemy player — translation, notes.",
     summary:
       "Chrome extension for Udemy: dual captions with Gemini translation, a term-lock glossary, timestamped notes, and precision playback controls.",
+  },
+  {
+    repo: "frostwall-beam",
+    stack: "Rust",
+    lane: "Archive",
+    line: "E2E encrypted transfer — SPAKE2, NAT traversal.",
+    summary:
+      "End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval — no cloud account.",
+  },
+  {
+    repo: "ironsentinel",
+    stack: "Go",
+    lane: "Archive",
+    line: "Guided AppSec missions, evidence-grade reports.",
+    summary:
+      "Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.",
+  },
+  {
+    repo: "sift",
+    stack: "Go",
+    lane: "Archive",
+    line: "Review-first terminal cleaner, dry-run by default.",
+    summary:
+      "Review-first terminal cleaner for macOS and Windows. Typed Go core, dry-run by default, permission preflight, and audit history — destructive runs need explicit flags.",
   },
 ];
 
@@ -175,6 +175,7 @@ const lanes = [
   { heading: "Terminal & systems", key: "Terminal", label: "Terminal & systems" },
   { heading: "Developer tooling", key: "Tooling", label: "Developer tooling" },
   { heading: "Early stage", key: "Early", label: "Early stage" },
+  { heading: "Earlier work", key: "Archive", label: "Earlier work" },
 ];
 
 // Modern SaaS palette: deep blue-tinted dark, single cyan accent, thin borders.
