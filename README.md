@@ -4,7 +4,7 @@
   <source media="(max-width: 700px)" srcset="assets/board-v17-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/board-v17-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/board-v17-light.svg">
-  <img alt="Batuhan Yüksel — Software developer. Selected work: pi-gateway, byteback, ironsentinel, frostwall-beam, falcon-dm, ScreenTextGrab, calder, sift, agent-atlas, codebase-audit, deskward, duetto." src="assets/board-v17-light.svg" width="100%">
+  <img alt="Batuhan Yüksel — Software developer. Selected work: pi-gateway, byteback, ironsentinel, riflo, frostwall-beam, falcon-dm, ScreenTextGrab, calder, sift, agent-atlas, codebase-audit, deskward, duetto." src="assets/board-v17-light.svg" width="100%">
 </picture>
 
 Software developer in Istanbul. I build local-first software — macOS apps, terminal tools, and security workflows that keep data on the machine — plus the self-hosted infrastructure to run it on. Every project below is public and documented in its own repository.
@@ -18,6 +18,7 @@ Software developer in Istanbul. I build local-first software — macOS apps, ter
 
 ### macOS
 
+- **[riflo](https://github.com/batu3384/riflo)** — Personal remote desktop for macOS, iOS, and Windows. QUIC transport with end-to-end encryption, hardware HEVC/H.264 video, concurrent multi-session fan-out, zero-config LAN discovery — no cloud account or subscription.
 - **[frostwall-beam](https://github.com/batu3384/frostwall-beam)** — End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval — no cloud account.
 - **[falcon-dm](https://github.com/batu3384/falcon-dm)** — Tauri download manager with a Rust engine: multi-connection byte ranges, byte-exact resume after crashes, HLS segment assembly, and a paired Chrome extension. No cloud queue, no telemetry.
 - **[ScreenTextGrab](https://github.com/batu3384/ScreenTextGrab)** — Notarized macOS menu-bar OCR app. Apple Vision runs on-device; modes for screen regions, subtitles, code, and tables, with automation through the `stg` CLI, URL scheme, and Shortcuts.

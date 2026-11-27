@@ -66,6 +66,14 @@ const catalog = [
       "Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.",
   },
   {
+    repo: "riflo",
+    stack: "Rust",
+    lane: "macOS",
+    line: "E2E encrypted remote desktop — QUIC, hardware video.",
+    summary:
+      "Personal remote desktop for macOS, iOS, and Windows. QUIC transport with end-to-end encryption, hardware HEVC/H.264 video, concurrent multi-session fan-out, zero-config LAN discovery — no cloud account or subscription.",
+  },
+  {
     repo: "frostwall-beam",
     stack: "Rust",
     lane: "macOS",
