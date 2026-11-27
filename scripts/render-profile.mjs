@@ -1,24 +1,30 @@
 #!/usr/bin/env node
 // Source of truth for github.com/batu3384 — SVGs + README.md
+// Data: data/profile.json (refresh with scripts/fetch-profile-data.mjs)
 // Run: node scripts/render-profile.mjs
 
-import { mkdirSync, readdirSync, unlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "assets");
 const USER = "batu3384";
-const SNAKE = {
-  light: `https://raw.githubusercontent.com/${USER}/${USER}/output/github-snake.svg`,
-  dark: `https://raw.githubusercontent.com/${USER}/${USER}/output/github-snake-dark.svg`,
-};
 const ASSETS = {
-  desktopDark: "board-v15-dark.svg",
-  desktopLight: "board-v15-light.svg",
-  mobileDark: "board-v15-mobile-dark.svg",
-  mobileLight: "board-v15-mobile-light.svg",
+  desktopDark: "board-v16-dark.svg",
+  desktopLight: "board-v16-light.svg",
+  mobileDark: "board-v16-mobile-dark.svg",
+  mobileLight: "board-v16-mobile-light.svg",
 };
+
+function loadData() {
+  try {
+    return JSON.parse(readFileSync(join(root, "data/profile.json"), "utf8"));
+  } catch {
+    throw new Error("data/profile.json missing — run: node scripts/fetch-profile-data.mjs");
+  }
+}
+const data = loadData();
 
 const identity = {
   name: "Batuhan Yüksel",
@@ -73,6 +79,14 @@ const catalog = [
       "Review-first terminal cleaner for macOS and Windows. Typed Go core; a preview step sits in front of destructive work.",
   },
   {
+    repo: "pi-gateway",
+    stack: "Shell",
+    lane: "Terminal",
+    line: "Production DNS and home-lab gateway on Raspberry Pi.",
+    summary:
+      "Production DNS and home-lab gateway on Raspberry Pi. AdGuard and Unbound, Caddy TLS, monitoring, encrypted backup — one deploy pipeline.",
+  },
+  {
     repo: "ironsentinel",
     stack: "Go",
     lane: "AppSec",
@@ -106,15 +120,15 @@ const catalog = [
   {
     repo: "deskward",
     stack: "Rust",
-    lane: "In progress",
+    lane: "Early",
     line: "Tailscale remote desktop — Rust core, Flutter client.",
     summary:
-      "Tailscale remote desktop with a Rust core and a Flutter client. Host agents are still rolling out.",
+      "Tailscale remote desktop with a Rust core and a Flutter client. Early stage; host agents are still rolling out.",
   },
   {
     repo: "duetto",
     stack: "TypeScript",
-    lane: "In progress",
+    lane: "Early",
     line: "Udemy: dual captions, notes, precision playback.",
     summary:
       "Chrome extension for Udemy: dual captions, translation, notes, and precise playback controls.",
@@ -154,10 +168,10 @@ const academic = [
 
 const lanes = [
   { heading: "macOS", key: "macOS", label: "macOS" },
-  { heading: "Terminal & CLI", key: "Terminal", label: "Terminal" },
+  { heading: "Terminal & systems", key: "Terminal", label: "Terminal & systems" },
   { heading: "Application security", key: "AppSec", label: "Application security" },
   { heading: "Developer tooling", key: "Tooling", label: "Developer tooling" },
-  { heading: "In progress", key: "In progress", label: "In progress" },
+  { heading: "Early stage", key: "Early", label: "Early stage" },
 ];
 
 // GitHub canvas tokens + one desaturated copper. Cool slate family, not a warm sticker.
@@ -182,7 +196,7 @@ const palettes = {
 
 const DESKTOP = { width: 960, pad: 36, gap: 14, tileH: 100, header: 188 };
 const MOBILE = { width: 400, pad: 22, gap: 12, tileH: 100, header: 208 };
-const WRAP_LIMITS = { narrow: 36, medium: 60, wide: 78 };
+const WRAP_LIMITS = { narrow: 33, medium: 60, wide: 78 };
 
 function xml(value) {
   return String(value)
@@ -210,6 +224,10 @@ function pad2(n) {
   return String(n).padStart(2, "0");
 }
 
+function fmtInt(n) {
+  return n.toLocaleString("en-US");
+}
+
 function wrapLines(text, maxChars, maxLines = 2) {
   const words = String(text).split(/\s+/);
   const lines = [];
@@ -230,6 +248,75 @@ function wrapLines(text, maxChars, maxLines = 2) {
   }
   return lines;
 }
+
+// ---- live-data helpers ---------------------------------------------------
+
+function utcDate(iso) {
+  return iso.slice(0, 10);
+}
+
+function generatedStamp() {
+  const d = new Date(data.generatedAt);
+  const y = d.getUTCFullYear();
+  const m = pad2(d.getUTCMonth() + 1);
+  const day = pad2(d.getUTCDate());
+  const hh = pad2(d.getUTCHours());
+  const mm = pad2(d.getUTCMinutes());
+  return `${y}-${m}-${day} ${hh}:${mm} UTC`;
+}
+
+function relativePush(iso) {
+  const then = new Date(iso).getTime();
+  const now = new Date(data.generatedAt).getTime();
+  const days = Math.floor((now - then) / 86400000);
+  if (days <= 0) return "today";
+  if (days === 1) return "1d ago";
+  if (days < 7) return `${days}d ago`;
+  if (days < 30) return `${Math.floor(days / 7)}w ago`;
+  return `${Math.floor(days / 30)}mo ago`;
+}
+
+function contributionLevels() {
+  const counts = data.contributions.days
+    .map((d) => d.count)
+    .filter((c) => c > 0)
+    .sort((a, b) => a - b);
+  const pick = (q) => counts[Math.min(counts.length - 1, Math.floor(counts.length * q))];
+  return [pick(0.4), pick(0.7), pick(0.9)];
+}
+
+function heatLevel(count, thresholds) {
+  if (count === 0) return 0;
+  if (count <= thresholds[0]) return 1;
+  if (count <= thresholds[1]) return 2;
+  if (count <= thresholds[2]) return 3;
+  return 4;
+}
+
+const LEVEL_OPACITY = [0, 0.3, 0.55, 0.8, 1];
+
+function heatWeeks(maxColumns) {
+  const days = data.contributions.days;
+  const first = new Date(days[0].date + "T00:00:00Z");
+  const offset = first.getUTCDay();
+  const columns = [];
+  let col = [];
+  for (let i = 0; i < offset; i++) col.push(null);
+  for (const day of days) {
+    col.push(day);
+    if (col.length === 7) {
+      columns.push(col);
+      col = [];
+    }
+  }
+  if (col.length) {
+    while (col.length < 7) col.push(null);
+    columns.push(col);
+  }
+  return columns.slice(-maxColumns);
+}
+
+// ---- svg primitives ------------------------------------------------------
 
 function defs(p) {
   return `<defs>
@@ -327,6 +414,8 @@ function assertLayout() {
   const probe = polyline(wavePoints(0, 0, 240, 40));
   if (probe.len < 240) throw new Error("scope path shorter than width — motion bead will look broken");
   if (caretX(36, 15) > 400) throw new Error("role caret would overflow a mobile board");
+  if (!data.contributions?.days?.length) throw new Error("profile data has no contribution days");
+  if (!data.recent?.length) throw new Error("profile data has no recent repositories");
 }
 
 function header(p, width, spec) {
@@ -349,6 +438,42 @@ function header(p, width, spec) {
     <text x="${pad}" y="${mobile ? 140 : 148}" class="sans" font-size="13" fill="${p.muted}">${xml(identity.focus)}</text>
     ${waveRule(p, pad, headerH - 10, innerR - pad)}
   </g>`;
+}
+
+// Typographic signal row: proof numbers, no cards. Editorial, not a stats widget.
+function signalBar(p, width, spec, y) {
+  const { pad } = spec;
+  const mobile = width < 500;
+  const inner = width - pad * 2;
+  const metrics = [
+    { value: fmtInt(data.contributions.total), label: "contributions · 12mo" },
+    { value: fmtInt(data.contributions.activeDays), label: "active days" },
+    { value: fmtInt(data.contributions.longestStreak), label: "longest streak · days" },
+    { value: fmtInt(data.publicRepos), label: "public repos" },
+  ];
+  const parts = [];
+  const ruleY = y;
+  const baseY = y + (mobile ? 34 : 36);
+  parts.push(`<path d="M ${pad} ${ruleY} H ${width - pad}" fill="none" stroke="${p.rule}" stroke-width="1"/>`);
+  if (mobile) {
+    const colW = Math.floor(inner / 2);
+    metrics.forEach((m, i) => {
+      const cx = pad + (i % 2) * colW;
+      const ry = baseY + Math.floor(i / 2) * 34;
+      parts.push(`<text x="${cx}" y="${ry}" class="display" font-size="17" fill="${p.ink}">${xml(m.value)}</text>
+      <text x="${cx + Math.round(String(m.value).length * 10.5) + 8}" y="${ry}" class="mono" font-size="8" letter-spacing="0.6" fill="${p.muted}">${xml(m.label.toUpperCase())}</text>`);
+    });
+    parts.push(`<path d="M ${pad} ${baseY + 34 + 12} H ${width - pad}" fill="none" stroke="${p.rule}" stroke-width="1"/>`);
+    return { height: baseY + 34 + 12 + 14 - y, parts };
+  }
+  const colW = Math.floor(inner / metrics.length);
+  metrics.forEach((m, i) => {
+    const cx = pad + i * colW;
+    parts.push(`<text x="${cx}" y="${baseY}" class="display" font-size="24" fill="${p.ink}">${xml(m.value)}</text>
+    <text x="${cx}" y="${baseY + 17}" class="mono" font-size="9" letter-spacing="1.1" fill="${p.muted}">${xml(m.label.toUpperCase())}</text>`);
+  });
+  parts.push(`<path d="M ${pad} ${baseY + 30} H ${width - pad}" fill="none" stroke="${p.rule}" stroke-width="1"/>`);
+  return { height: baseY + 30 + 14 - y, parts };
 }
 
 function tile(item, index, x, y, w, h, p, maxChars, featured) {
@@ -446,6 +571,10 @@ function layoutCatalog(p, spec, startY) {
       place(remaining[0], pad, w1, tileH, false);
       place(remaining[1], pad + w1 + gap, w2, tileH, false);
       y += tileH + gap;
+    } else if (remaining.length === 3) {
+      const w = Math.floor((inner - gap * 2) / 3);
+      remaining.forEach((item, i) => place(item, pad + i * (w + gap), w, tileH, false));
+      y += tileH + gap;
     } else {
       for (const item of remaining) {
         place(item, pad, inner, tileH, false);
@@ -459,23 +588,128 @@ function layoutCatalog(p, spec, startY) {
   const spine = `<path d="M ${spineX} ${laneNodes[0]} V ${laneNodes[laneNodes.length - 1]}" fill="none" stroke="${p.rule}" stroke-width="1"/>
     ${laneNodes.map((nodeY) => `<circle cx="${spineX}" cy="${nodeY}" r="2.5" fill="${p.accent}"/>`).join("")}`;
   parts.unshift(`<g aria-hidden="true">${spine}</g>`);
-  return { height: y + pad - 10, parts };
+  return { height: y + pad - 10, parts, endY: y };
+}
+
+// Contribution heatmap in the board's own palette — copper opacity ramp, no GitHub green.
+function activity(p, width, spec, startY) {
+  const { pad } = spec;
+  const mobile = width < 500;
+  const inner = width - pad * 2;
+  const parts = [];
+  let y = startY + 6;
+
+  parts.push(`<text x="${pad}" y="${y}" class="display" font-size="${mobile ? 20 : 26}" fill="${p.ink}">Activity</text>
+  <text x="${width - pad}" y="${y}" class="mono" font-size="10" text-anchor="end" letter-spacing="1.2" fill="${p.muted}">${mobile ? "LAST 26 WEEKS" : "LAST 12 MONTHS"} / GRAPHQL</text>`);
+  y += mobile ? 24 : 30;
+
+  const maxCols = mobile ? 26 : 53;
+  const step = mobile ? 13 : 16;
+  const cell = mobile ? 10 : 13;
+  const weeks = heatWeeks(maxCols);
+  const gridW = weeks.length * step - (step - cell);
+  const gx = pad + Math.max(0, Math.floor((inner - gridW) / 2));
+  const thresholds = contributionLevels();
+
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const labelParts = [];
+  let lastMonth = -1;
+  let lastLabelX = -Infinity;
+  weeks.forEach((week, ci) => {
+    const first = week.find((d) => d);
+    if (!first) return;
+    const month = +first.date.slice(5, 7) - 1;
+    const lx = gx + ci * step;
+    if (month !== lastMonth && lx - lastLabelX >= 24) {
+      lastMonth = month;
+      lastLabelX = lx;
+      labelParts.push(`<text x="${lx}" y="${y}" class="mono" font-size="8" fill="${p.muted}">${MONTHS[month]}</text>`);
+    }
+  });
+  parts.push(`<g>${labelParts.join("")}</g>`);
+  y += 8;
+
+  const cells = [];
+  weeks.forEach((week, ci) => {
+    week.forEach((day, ri) => {
+      if (!day) return;
+      const level = heatLevel(day.count, thresholds);
+      const fill = level === 0 ? p.surface : p.accent;
+      const opacity = level === 0 ? "" : ` fill-opacity="${LEVEL_OPACITY[level]}"`;
+      cells.push(
+        `<rect x="${gx + ci * step}" y="${y + ri * step}" width="${cell}" height="${cell}" rx="2" fill="${fill}"${opacity}/>`,
+      );
+    });
+  });
+  parts.push(`<g data-heatmap="contributions">${cells.join("\n    ")}</g>`);
+  y += 7 * step + 10;
+
+  const legendCells = [0, 1, 2, 3, 4]
+    .map((level, i) => {
+      const fill = level === 0 ? p.surface : p.accent;
+      const opacity = level === 0 ? "" : ` fill-opacity="${LEVEL_OPACITY[level]}"`;
+      return `<rect x="${pad + 30 + i * 12}" y="${y - 8}" width="9" height="9" rx="2" fill="${fill}"${opacity}/>`;
+    })
+    .join("");
+  parts.push(`<g>
+    <text x="${pad}" y="${y}" class="mono" font-size="9" fill="${p.muted}">less</text>
+    ${legendCells}
+    <text x="${pad + 30 + 5 * 12 + 6}" y="${y}" class="mono" font-size="9" fill="${p.muted}">more</text>
+    <text x="${width - pad}" y="${y}" class="mono" font-size="10" text-anchor="end" fill="${p.muted}">${xml(fmtInt(data.contributions.total))} contributions in the last year</text>
+  </g>`);
+  y += mobile ? 22 : 26;
+
+  parts.push(`<text x="${pad}" y="${y}" class="mono" font-size="10" letter-spacing="1.2" fill="${p.accent}">ACTIVE NOW</text>`);
+  y += 18;
+  const recent = data.recent.slice(0, mobile ? 3 : 4);
+  if (mobile) {
+    recent.forEach((r, i) => {
+      parts.push(`<text x="${pad}" y="${y + i * 18}" class="sans" font-size="12" font-weight="600" fill="${p.ink}">${xml(r.name)}</text>
+      <text x="${width - pad}" y="${y + i * 18}" class="mono" font-size="10" text-anchor="end" fill="${p.muted}">${xml((r.language ?? "") + " · " + relativePush(r.pushedAt))}</text>`);
+    });
+    y += recent.length * 18 + 6;
+  } else {
+    const colW = Math.floor(inner / recent.length);
+    recent.forEach((r, i) => {
+      const cx = pad + i * colW;
+      parts.push(`<text x="${cx}" y="${y}" class="sans" font-size="12" font-weight="600" fill="${p.ink}">${xml(r.name)}</text>
+      <text x="${cx}" y="${y + 15}" class="mono" font-size="9" fill="${p.muted}">${xml((r.language ?? "") + " · pushed " + relativePush(r.pushedAt))}</text>`);
+    });
+    y += 36;
+  }
+
+  y += 8;
+  const footerNote = mobile
+    ? `generated ${xml(generatedStamp())} · github graphql · daily`
+    : `generated ${xml(generatedStamp())} · data: github graphql · refreshed daily by actions`;
+  const footerSrc = mobile
+    ? ""
+    : `<text x="${width - pad}" y="${y + 16}" class="mono" font-size="9" text-anchor="end" fill="${p.muted}">src: ${xml(USER)}/${xml(USER)}</text>`;
+  parts.push(`<path d="M ${pad} ${y} H ${width - pad}" fill="none" stroke="${p.rule}" stroke-width="1"/>
+  <text x="${pad}" y="${y + 16}" class="mono" font-size="9" fill="${p.muted}">${footerNote}</text>
+  ${footerSrc}`);
+  return { height: y + 16 + 18, parts };
 }
 
 function board(p, id, spec) {
   const { width, header: headerH } = spec;
-  const built = layoutCatalog(p, spec, headerH + 28);
-  const height = built.height;
+  const mobile = width < 500;
+  const signal = signalBar(p, width, spec, headerH + 6);
+  const built = layoutCatalog(p, spec, headerH + 6 + signal.height + (mobile ? 18 : 26));
+  const act = activity(p, width, spec, built.height + 8);
+  const height = act.height + spec.pad - 6;
   const alt = xml(
-    `${identity.name}, ${identity.role}. Selected work: ${catalog.map((item) => item.repo).join(", ")}.`,
+    `${identity.name}, ${identity.role}. Selected work: ${catalog.map((item) => item.repo).join(", ")}. ${data.contributions.total} contributions in the last year.`,
   );
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${alt}" data-mode="${id}">
   <title>${xml(identity.name)} — ${xml(identity.role)}</title>
-  <desc>${xml(identity.intro)} Selected work is organized by platform, terminal, security, tooling, and in-progress lanes.</desc>
+  <desc>${xml(identity.intro)} Selected work is organized by platform, terminal, security, tooling, and early-stage lanes, followed by a live contribution heatmap.</desc>
   ${defs(p)}
   ${field(p, width, height)}
   ${header(p, width, spec)}
+  ${signal.parts.join("\n  ")}
   ${built.parts.join("\n  ")}
+  ${act.parts.join("\n  ")}
 </svg>`;
 }
 
@@ -496,6 +730,10 @@ function mdNotes(rows) {
 }
 
 function renderReadme() {
+  const recent = data.recent
+    .slice(0, 4)
+    .map((r) => `[${r.name}](${repoUrl(r.name)})`)
+    .join(" · ");
   return `<!-- Generated by scripts/render-profile.mjs. Edit that file, then run: node scripts/render-profile.mjs -->
 <picture>
   <source media="(max-width: 700px) and (prefers-color-scheme: dark)" srcset="assets/${ASSETS.mobileDark}">
@@ -532,18 +770,11 @@ ${mdNotes(academic)}
 
 </details>
 
-<details>
-<summary>Activity</summary>
+## Activity
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="${SNAKE.dark}">
-    <source media="(prefers-color-scheme: light)" srcset="${SNAKE.light}">
-    <img alt="GitHub contribution activity" src="${SNAKE.light}" width="100%">
-  </picture>
-</p>
+${fmtInt(data.contributions.total)} contributions across ${data.contributions.activeDays} active days in the last 12 months · longest streak ${data.contributions.longestStreak} days. Recent pushes: ${recent}.
 
-</details>
+<sub>Board and this section are regenerated daily from the GitHub GraphQL API — last run ${generatedStamp()}.</sub>
 
 ## Contact
 
@@ -563,6 +794,8 @@ function assertSvg(name, svg, p) {
   if (svg.includes("undefined")) throw new Error(`${name} leaked undefined into markup`);
   if (svg.includes("…")) throw new Error(`${name} clipped text with ellipsis`);
   if (!svg.includes("<animate")) throw new Error(`${name} has no SMIL motion`);
+  if (!svg.includes('data-heatmap="contributions"')) throw new Error(`${name} is missing the heatmap`);
+  if (!svg.includes("ACTIVE NOW")) throw new Error(`${name} is missing the active-now strip`);
   const allowed = paletteHexes(p);
   const hexes = svg.match(/#[0-9a-fA-F]{6}/g) ?? [];
   for (const hex of hexes) {
@@ -585,8 +818,8 @@ const files = {
 if (!files[ASSETS.desktopDark].svg.includes("ScreenTextGrab") || !files[ASSETS.desktopDark].svg.includes("duetto")) {
   throw new Error("board dropped catalog coverage");
 }
-if (files[ASSETS.desktopDark].svg.includes('width="70" height="70"')) {
-  throw new Error("legacy instrument still on the board");
+if (!files[ASSETS.desktopDark].svg.includes("pi-gateway")) {
+  throw new Error("board dropped pi-gateway coverage");
 }
 if (!files[ASSETS.desktopDark].svg.includes('data-featured="true"')) {
   throw new Error("featured macOS card is not full-width");
@@ -609,21 +842,22 @@ for (const name of readdirSync(outDir)) {
 const readme = renderReadme();
 for (const required of [
   "<picture>",
-  "board-v15",
+  "board-v16",
   "## Selected work",
   "**macOS**",
   "Project notes",
+  "pi-gateway",
   "deskward",
   "<details>",
+  "## Activity",
   "## Contact",
 ]) {
   if (!readme.includes(required)) throw new Error(`README missing ${required}`);
 }
 if (readme.includes("<table")) throw new Error("README still uses HTML tables");
 if (readme.includes("github-stats-extended")) throw new Error("README still has stats widgets");
-if (readme.includes("Calder workspace")) throw new Error("README still has Calder screenshot block");
+if (readme.includes("github-snake")) throw new Error("README still has the snake widget");
 if (readme.includes("skillicons.dev")) throw new Error("README still has skill icon widget");
-if (readme.includes("Flagship repos")) throw new Error("README still has pin card section");
 if (readme.includes("### macOS")) throw new Error("README still duplicates the catalog as headings");
 writeFileSync(join(root, "README.md"), readme);
 console.log("wrote 4 profile SVGs and README.md");

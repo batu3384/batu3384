@@ -1,0 +1,394 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="2223" viewBox="0 0 400 2223" role="img" aria-label="Batuhan Yüksel, Software developer. Selected work: ScreenTextGrab, falcon-dm, frostwall-beam, calder, sift, pi-gateway, ironsentinel, byteback, agent-atlas, codebase-audit, deskward, duetto. 2080 contributions in the last year." data-mode="mdark">
+  <title>Batuhan Yüksel — Software developer</title>
+  <desc>MIS graduate in Istanbul. I ship local-first software: macOS apps, CLI tools, and security workflows that keep data and reports on the machine. Selected work is organized by platform, terminal, security, tooling, and early-stage lanes, followed by a live contribution heatmap.</desc>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c9a36b" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="mesh" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#30363d" stroke-width="0.7"/>
+    </pattern>
+  </defs>
+  <style>
+    .display{font-family:Georgia,"Times New Roman",Times,serif}
+    .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  </style>
+  <rect width="400" height="2223" fill="#0d1117"/>
+  <rect width="400" height="2223" fill="url(#mesh)" fill-opacity="0.35"/>
+  <circle cx="88" cy="110" r="190" fill="url(#glow)">
+    <animate attributeName="cx" values="88;158;88" dur="22s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="90;150;90" dur="26s" repeatCount="indefinite"/>
+  </circle>
+  <g>
+    <text x="22" y="32" class="mono" font-size="11" letter-spacing="1.4" fill="#c9a36b">Istanbul · MIS</text>
+    <text x="366" y="32" class="mono" font-size="10" text-anchor="end" letter-spacing="1" fill="#9198a1">PUBLIC / LOCAL-FIRST</text>
+    <circle cx="378" cy="28" r="2.5" fill="#c9a36b"/>
+    <text x="22" y="166" class="mono" font-size="10" fill="#9198a1">Swift · Go · TypeScript · Rust · Python · C++</text>
+    <text x="22" y="86" class="display" font-size="30" letter-spacing="-0.8" fill="#e6edf3">Batuhan Yüksel</text>
+    <text x="22" y="116" class="sans" font-size="15" fill="#e6edf3">Software developer</text>
+    <rect x="183" y="102" width="2" height="14" fill="#c9a36b">
+    <animate attributeName="opacity" values="1;1;0;0" dur="1.15s" repeatCount="indefinite" calcMode="discrete"/>
+  </rect>
+    <text x="22" y="140" class="sans" font-size="13" fill="#9198a1">macOS apps · CLI tools · application security</text>
+    <g>
+    <path d="M 22 198 L 28.36 199.81 L 34.71 200.94 L 41.07 201.03 L 47.43 200.24 L 53.79 199.15 L 60.14 198.45 L 66.5 198.6 L 72.86 199.56 L 79.21 200.84 L 85.57 201.71 L 91.93 201.61 L 98.29 200.4 L 104.64 198.49 L 111 196.59 L 117.36 195.39 L 123.71 195.22 L 130.07 195.9 L 136.43 196.83 L 142.79 197.32 L 149.14 196.96 L 155.5 195.83 L 161.86 194.46 L 168.21 193.58 L 174.57 193.72 L 180.93 194.98 L 187.29 196.92 L 193.64 198.82 L 200 200 L 206.36 200.16 L 212.71 199.52 L 219.07 198.71 L 225.43 198.38 L 231.79 198.92 L 238.14 200.21 L 244.5 201.7 L 250.86 202.64 L 257.21 202.52 L 263.57 201.3 L 269.93 199.43 L 276.29 197.65 L 282.64 196.62 L 289 196.59 L 295.36 197.29 L 301.71 198.09 L 308.07 198.34 L 314.43 197.68 L 320.79 196.27 L 327.14 194.7 L 333.5 193.71 L 339.86 193.78 L 346.21 194.92 L 352.57 196.65 L 358.93 198.23 L 365.29 199.03 L 371.64 198.85 L 378 198" fill="none" stroke="#30363d" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M 22 198 L 28.36 199.81 L 34.71 200.94 L 41.07 201.03 L 47.43 200.24 L 53.79 199.15 L 60.14 198.45 L 66.5 198.6 L 72.86 199.56 L 79.21 200.84 L 85.57 201.71 L 91.93 201.61 L 98.29 200.4 L 104.64 198.49 L 111 196.59 L 117.36 195.39 L 123.71 195.22 L 130.07 195.9 L 136.43 196.83 L 142.79 197.32 L 149.14 196.96 L 155.5 195.83 L 161.86 194.46 L 168.21 193.58 L 174.57 193.72 L 180.93 194.98 L 187.29 196.92 L 193.64 198.82 L 200 200 L 206.36 200.16 L 212.71 199.52 L 219.07 198.71 L 225.43 198.38 L 231.79 198.92 L 238.14 200.21 L 244.5 201.7 L 250.86 202.64 L 257.21 202.52 L 263.57 201.3 L 269.93 199.43 L 276.29 197.65 L 282.64 196.62 L 289 196.59 L 295.36 197.29 L 301.71 198.09 L 308.07 198.34 L 314.43 197.68 L 320.79 196.27 L 327.14 194.7 L 333.5 193.71 L 339.86 193.78 L 346.21 194.92 L 352.57 196.65 L 358.93 198.23 L 365.29 199.03 L 371.64 198.85 L 378 198" fill="none" stroke="#c9a36b" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="36 362" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" from="0" to="-398" dur="3.2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  </g>
+  <path d="M 22 214 H 378" fill="none" stroke="#30363d" stroke-width="1"/>
+  <text x="22" y="248" class="display" font-size="17" fill="#e6edf3">2,080</text>
+      <text x="83" y="248" class="mono" font-size="8" letter-spacing="0.6" fill="#9198a1">CONTRIBUTIONS · 12MO</text>
+  <text x="200" y="248" class="display" font-size="17" fill="#e6edf3">138</text>
+      <text x="240" y="248" class="mono" font-size="8" letter-spacing="0.6" fill="#9198a1">ACTIVE DAYS</text>
+  <text x="22" y="282" class="display" font-size="17" fill="#e6edf3">23</text>
+      <text x="51" y="282" class="mono" font-size="8" letter-spacing="0.6" fill="#9198a1">LONGEST STREAK · DAYS</text>
+  <text x="200" y="282" class="display" font-size="17" fill="#e6edf3">19</text>
+      <text x="229" y="282" class="mono" font-size="8" letter-spacing="0.6" fill="#9198a1">PUBLIC REPOS</text>
+  <path d="M 22 294 H 378" fill="none" stroke="#30363d" stroke-width="1"/>
+  <g aria-hidden="true"><path d="M 10 362 V 1652" fill="none" stroke="#30363d" stroke-width="1"/>
+    <circle cx="10" cy="362" r="2.5" fill="#c9a36b"/><circle cx="10" cy="754" r="2.5" fill="#c9a36b"/><circle cx="10" cy="1128" r="2.5" fill="#c9a36b"/><circle cx="10" cy="1390" r="2.5" fill="#c9a36b"/><circle cx="10" cy="1652" r="2.5" fill="#c9a36b"/></g>
+  <text x="22" y="326" class="display" font-size="22" fill="#e6edf3">Selected work</text>
+    <text x="378" y="326" class="mono" font-size="10" text-anchor="end" letter-spacing="1.2" fill="#9198a1">SYSTEM MAP / PUBLIC</text>
+  <g>
+    <text x="22" y="366" class="mono" font-size="10" letter-spacing="1.4" fill="#c9a36b">01</text>
+    <text x="52" y="366" class="sans" font-size="13" font-weight="600" fill="#e6edf3">macOS</text>
+    <path d="M 196 362 H 378" fill="none" stroke="#30363d" stroke-width="1"/>
+    <circle cx="378" cy="362" r="2" fill="#c9a36b"/>
+  </g>
+  <g data-featured="true">
+    <rect x="22" y="382" width="356" height="118" rx="12" fill="#161b22"/>
+    <rect x="22" y="382" width="3" height="118" fill="#c9a36b"/>
+    <text x="40" y="408" class="mono" font-size="11" fill="#c9a36b">01</text>
+    <text x="362" y="408" class="mono" font-size="11" text-anchor="end" fill="#9198a1">Swift</text>
+    <text x="40" y="446" class="sans" font-size="20" font-weight="600" fill="#e6edf3">ScreenTextGrab</text>
+    <text x="40" y="466" class="sans" font-size="12" fill="#9198a1">On-device OCR for screen, PDFs,</text>
+    <text x="40" y="482" class="sans" font-size="12" fill="#9198a1">code, and tables.</text>
+  </g>
+  <g data-featured="false">
+    <rect x="22" y="512" width="356" height="100" rx="8" fill="#161b22"/>
+    
+    <text x="40" y="538" class="mono" font-size="11" fill="#c9a36b">02</text>
+    <text x="362" y="538" class="mono" font-size="11" text-anchor="end" fill="#9198a1">Rust</text>
+    <text x="40" y="560" class="sans" font-size="15" font-weight="600" fill="#e6edf3">falcon-dm</text>
+    <text x="40" y="580" class="sans" font-size="12" fill="#9198a1">HTTP, HLS, and YouTube downloads</text>
+    <text x="40" y="596" class="sans" font-size="12" fill="#9198a1">— local macOS queue.</text>
+  </g>
+  <g data-featured="false">
+    <rect x="22" y="624" width="356" height="100" rx="8" fill="#161b22"/>
+    
+    <text x="40" y="650" class="mono" font-size="11" fill="#c9a36b">03</text>
+    <text x="362" y="650" class="mono" font-size="11" text-anchor="end" fill="#9198a1">Rust</text>
+    <text x="40" y="672" class="sans" font-size="15" font-weight="600" fill="#e6edf3">frostwall-beam</text>
+    <text x="40" y="692" class="sans" font-size="12" fill="#9198a1">Encrypted transfer with pairing</text>
+    <text x="40" y="708" class="sans" font-size="12" fill="#9198a1">and receiver approval.</text>
+  </g>
+  <g>
+    <text x="22" y="758" class="mono" font-size="10" letter-spacing="1.4" fill="#c9a36b">02</text>
+    <text x="52" y="758" class="sans" font-size="13" font-weight="600" fill="#e6edf3">Terminal &amp; systems</text>
+    <path d="M 196 754 H 378" fill="none" stroke="#30363d" stroke-width="1"/>
+    <circle cx="378" cy="754" r="2" fill="#c9a36b"/>
+  </g>
+  <g data-featured="false">
+    <rect x="22" y="774" width="356" height="100" rx="8" fill="#161b22"/>
+    
+    <text x="40" y="800" class="mono" font-size="11" fill="#c9a36b">04</text>
+    <text x="362" y="800" class="mono" font-size="11" text-anchor="end" fill="#9198a1">TypeScript</text>
+    <text x="40" y="822" class="sans" font-size="15" font-weight="600" fill="#e6edf3">calder</text>
+    <text x="40" y="842" class="sans" font-size="12" fill="#9198a1">Run Claude Code, Codex, Cursor,</text>
+    <text x="40" y="858" class="sans" font-size="12" fill="#9198a1">and Antigravity side by side.</text>
+  </g>
+  <g data-featured="false">
+    <rect x="22" y="886" width="356" height="100" rx="8" fill="#161b22"/>
+    
+    <text x="40" y="912" class="mono" font-size="11" fill="#c9a36b">05</text>
+    <text x="362" y="912" class="mono" font-size="11" text-anchor="end" fill="#9198a1">Go</text>
+    <text x="40" y="934" class="sans" font-size="15" font-weight="600" fill="#e6edf3">sift</text>
+    <text x="40" y="954" class="sans" font-size="12" fill="#9198a1">Review-first cleaner — preview</text>
+    <text x="40" y="970" class="sans" font-size="12" fill="#9198a1">before anything is deleted.</text>
+  </g>
+  <g data-featured="false">
+    <rect x="22" y="998" width="356" height="100" rx="8" fill="#161b22"/>
+    
+    <text x="40" y="1024" class="mono" font-size="11" fill="#c9a36b">06</text>
+    <text x="362" y="1024" class="mono" font-size="11" text-anchor="end" fill="#9198a1">Shell</text>
+    <text x="40" y="1046" class="sans" font-size="15" font-weight="600" fill="#e6edf3">pi-gateway</text>
+    <text x="40" y="1066" class="sans" font-size="12" fill="#9198a1">Production DNS and home-lab</text>
+    <text x="40" y="1082" class="sans" font-size="12" fill="#9198a1">gateway on Raspberry Pi.</text>
+  </g>
+  <g>
+    <text x="22" y="1132" class="mono" font-size="10" letter-spacing="1.4" fill="#c9a36b">03</text>
+    <text x="52" y="1132" class="sans" font-size="13" font-weight="600" fill="#e6edf3">Application security</text>
+    <path d="M 196 1128 H 378" fill="none" stroke="#30363d" stroke-width="1"/>
+    <circle cx="378" cy="1128" r="2" fill="#c9a36b"/>
+  </g>
+  <g data-featured="false">
+    <rect x="22" y="1148" width="356" height="100" rx="8" fill="#161b22"/>
+    
+    <text x="40" y="1174" class="mono" font-size="11" fill="#c9a36b">07</text>
+    <text x="362" y="1174" class="mono" font-size="11" text-anchor="end" fill="#9198a1">Go</text>
+    <text x="40" y="1196" class="sans" font-size="15" font-weight="600" fill="#e6edf3">ironsentinel</text>
+    <text x="40" y="1216" class="sans" font-size="12" fill="#9198a1">Guided scans, runtime trust</text>
+    <text x="40" y="1232" class="sans" font-size="12" fill="#9198a1">checks, and evidence reports.</text>
+  </g>
+  <g data-featured="false">
+    <rect x="22" y="1260" width="356" height="100" rx="8" fill="#161b22"/>
+    
+    <text x="40" y="1286" class="mono" font-size="11" fill="#c9a36b">08</text>
+    <text x="362" y="1286" class="mono" font-size="11" text-anchor="end" fill="#9198a1">C++</text>
+    <text x="40" y="1308" class="sans" font-size="15" font-weight="600" fill="#e6edf3">byteback</text>
+    <text x="40" y="1328" class="sans" font-size="12" fill="#9198a1">Windows forensic imaging and</text>
+    <text x="40" y="1344" class="sans" font-size="12" fill="#9198a1">recovery, native engine.</text>
+  </g>
+  <g>
+    <text x="22" y="1394" class="mono" font-size="10" letter-spacing="1.4" fill="#c9a36b">04</text>
+    <text x="52" y="1394" class="sans" font-size="13" font-weight="600" fill="#e6edf3">Developer tooling</text>
+    <path d="M 196 1390 H 378" fill="none" stroke="#30363d" stroke-width="1"/>
+    <circle cx="378" cy="1390" r="2" fill="#c9a36b"/>
+  </g>
+  <g data-featured="false">
+    <rect x="22" y="1410" width="356" height="100" rx="8" fill="#161b22"/>
+    
+    <text x="40" y="1436" class="mono" font-size="11" fill="#c9a36b">09</text>
+    <text x="362" y="1436" class="mono" font-size="11" text-anchor="end" fill="#9198a1">Python</text>
+    <text x="40" y="1458" class="sans" font-size="15" font-weight="600" fill="#e6edf3">agent-atlas</text>
+    <text x="40" y="1478" class="sans" font-size="12" fill="#9198a1">Installer and router for</text>
+    <text x="40" y="1494" class="sans" font-size="12" fill="#9198a1">agent-safe open-web research.</text>
+  </g>
+  <g data-featured="false">
+    <rect x="22" y="1522" width="356" height="100" rx="8" fill="#161b22"/>
+    
+    <text x="40" y="1548" class="mono" font-size="11" fill="#c9a36b">10</text>
+    <text x="362" y="1548" class="mono" font-size="11" text-anchor="end" fill="#9198a1">Python</text>
+    <text x="40" y="1570" class="sans" font-size="15" font-weight="600" fill="#e6edf3">codebase-audit</text>
+    <text x="40" y="1590" class="sans" font-size="12" fill="#9198a1">Whole-repo architecture audit</text>
+    <text x="40" y="1606" class="sans" font-size="12" fill="#9198a1">with cited evidence.</text>
+  </g>
+  <g>
+    <text x="22" y="1656" class="mono" font-size="10" letter-spacing="1.4" fill="#c9a36b">05</text>
+    <text x="52" y="1656" class="sans" font-size="13" font-weight="600" fill="#e6edf3">Early stage</text>
+    <path d="M 196 1652 H 378" fill="none" stroke="#30363d" stroke-width="1"/>
+    <circle cx="378" cy="1652" r="2" fill="#c9a36b"/>
+  </g>
+  <g data-featured="false">
+    <rect x="22" y="1672" width="356" height="100" rx="8" fill="#161b22"/>
+    
+    <text x="40" y="1698" class="mono" font-size="11" fill="#c9a36b">11</text>
+    <text x="362" y="1698" class="mono" font-size="11" text-anchor="end" fill="#9198a1">Rust</text>
+    <text x="40" y="1720" class="sans" font-size="15" font-weight="600" fill="#e6edf3">deskward</text>
+    <text x="40" y="1740" class="sans" font-size="12" fill="#9198a1">Tailscale remote desktop — Rust</text>
+    <text x="40" y="1756" class="sans" font-size="12" fill="#9198a1">core, Flutter client.</text>
+  </g>
+  <g data-featured="false">
+    <rect x="22" y="1784" width="356" height="100" rx="8" fill="#161b22"/>
+    
+    <text x="40" y="1810" class="mono" font-size="11" fill="#c9a36b">12</text>
+    <text x="362" y="1810" class="mono" font-size="11" text-anchor="end" fill="#9198a1">TypeScript</text>
+    <text x="40" y="1832" class="sans" font-size="15" font-weight="600" fill="#e6edf3">duetto</text>
+    <text x="40" y="1852" class="sans" font-size="12" fill="#9198a1">Udemy: dual captions, notes,</text>
+    <text x="40" y="1868" class="sans" font-size="12" fill="#9198a1">precision playback.</text>
+  </g>
+  <text x="22" y="1932" class="display" font-size="20" fill="#e6edf3">Activity</text>
+  <text x="378" y="1932" class="mono" font-size="10" text-anchor="end" letter-spacing="1.2" fill="#9198a1">LAST 26 WEEKS / GRAPHQL</text>
+  <g><text x="32" y="1956" class="mono" font-size="8" fill="#9198a1">May</text><text x="58" y="1956" class="mono" font-size="8" fill="#9198a1">Jun</text><text x="97" y="1956" class="mono" font-size="8" fill="#9198a1">Jul</text><text x="149" y="1956" class="mono" font-size="8" fill="#9198a1">Aug</text><text x="214" y="1956" class="mono" font-size="8" fill="#9198a1">Sep</text><text x="266" y="1956" class="mono" font-size="8" fill="#9198a1">Oct</text><text x="318" y="1956" class="mono" font-size="8" fill="#9198a1">Nov</text></g>
+  <g data-heatmap="contributions"><rect x="32" y="1964" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="32" y="1977" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="1"/>
+    <rect x="32" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="32" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="32" y="2016" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="32" y="2029" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="32" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="45" y="1964" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="45" y="1977" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="45" y="1990" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="45" y="2003" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="45" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="45" y="2029" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="45" y="2042" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="58" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="58" y="1977" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="58" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="58" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="58" y="2016" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="58" y="2029" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="58" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="71" y="1964" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="71" y="1977" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="71" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="71" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="71" y="2016" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="71" y="2029" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="71" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="84" y="1964" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="84" y="1977" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="84" y="1990" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="84" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="84" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="84" y="2029" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="84" y="2042" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="97" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="97" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="97" y="1990" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="97" y="2003" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="97" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="97" y="2029" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="97" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="110" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="110" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="110" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="110" y="2003" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="110" y="2016" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="110" y="2029" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="110" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="123" y="1964" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="123" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="123" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="123" y="2003" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="123" y="2016" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="123" y="2029" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="123" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="136" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="136" y="1977" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="136" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="136" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="136" y="2016" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="1"/>
+    <rect x="136" y="2029" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="136" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="149" y="1964" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="149" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="149" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="149" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="149" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="149" y="2029" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="149" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="162" y="1964" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="162" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="162" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="162" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="162" y="2016" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="162" y="2029" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="162" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="175" y="1964" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="1"/>
+    <rect x="175" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="175" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="175" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="175" y="2016" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="1"/>
+    <rect x="175" y="2029" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="175" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="188" y="1964" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="188" y="1977" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="188" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="188" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="188" y="2016" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="188" y="2029" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="188" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="201" y="1964" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="201" y="1977" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="201" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="201" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="201" y="2016" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="201" y="2029" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="201" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="214" y="1964" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="214" y="1977" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="214" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="214" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="214" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="214" y="2029" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="214" y="2042" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="227" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="227" y="1977" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="227" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="227" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="227" y="2016" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="227" y="2029" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="227" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="240" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="240" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="240" y="1990" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="240" y="2003" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="240" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="240" y="2029" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="240" y="2042" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="253" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="253" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="253" y="1990" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="253" y="2003" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="253" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="253" y="2029" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="253" y="2042" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="266" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="266" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="266" y="1990" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="266" y="2003" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="266" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="266" y="2029" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="266" y="2042" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="279" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="279" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="279" y="1990" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="279" y="2003" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="279" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="279" y="2029" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="279" y="2042" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="292" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="292" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="292" y="1990" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="292" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="292" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="292" y="2029" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="292" y="2042" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="305" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="305" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="305" y="1990" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="305" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="305" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="305" y="2029" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="305" y="2042" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="318" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="318" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="318" y="1990" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="318" y="2003" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="318" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="318" y="2029" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="318" y="2042" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="331" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="331" y="1977" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="331" y="1990" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="331" y="2003" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="331" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="331" y="2029" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="331" y="2042" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="344" y="1964" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="344" y="1977" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="344" y="1990" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="344" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="344" y="2016" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="344" y="2029" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.3"/>
+    <rect x="344" y="2042" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.8"/>
+    <rect x="357" y="1964" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="1"/>
+    <rect x="357" y="1977" width="10" height="10" rx="2" fill="#161b22"/>
+    <rect x="357" y="1990" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="357" y="2003" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="0.55"/>
+    <rect x="357" y="2016" width="10" height="10" rx="2" fill="#c9a36b" fill-opacity="1"/>
+    <rect x="357" y="2029" width="10" height="10" rx="2" fill="#161b22"/></g>
+  <g>
+    <text x="22" y="2065" class="mono" font-size="9" fill="#9198a1">less</text>
+    <rect x="52" y="2057" width="9" height="9" rx="2" fill="#161b22"/><rect x="64" y="2057" width="9" height="9" rx="2" fill="#c9a36b" fill-opacity="0.3"/><rect x="76" y="2057" width="9" height="9" rx="2" fill="#c9a36b" fill-opacity="0.55"/><rect x="88" y="2057" width="9" height="9" rx="2" fill="#c9a36b" fill-opacity="0.8"/><rect x="100" y="2057" width="9" height="9" rx="2" fill="#c9a36b" fill-opacity="1"/>
+    <text x="118" y="2065" class="mono" font-size="9" fill="#9198a1">more</text>
+    <text x="378" y="2065" class="mono" font-size="10" text-anchor="end" fill="#9198a1">2,080 contributions in the last year</text>
+  </g>
+  <text x="22" y="2087" class="mono" font-size="10" letter-spacing="1.2" fill="#c9a36b">ACTIVE NOW</text>
+  <text x="22" y="2105" class="sans" font-size="12" font-weight="600" fill="#e6edf3">frostwall-beam</text>
+      <text x="378" y="2105" class="mono" font-size="10" text-anchor="end" fill="#9198a1">Rust · today</text>
+  <text x="22" y="2123" class="sans" font-size="12" font-weight="600" fill="#e6edf3">calder</text>
+      <text x="378" y="2123" class="mono" font-size="10" text-anchor="end" fill="#9198a1">TypeScript · today</text>
+  <text x="22" y="2141" class="sans" font-size="12" font-weight="600" fill="#e6edf3">byteback</text>
+      <text x="378" y="2141" class="mono" font-size="10" text-anchor="end" fill="#9198a1">C++ · today</text>
+  <path d="M 22 2173 H 378" fill="none" stroke="#30363d" stroke-width="1"/>
+  <text x="22" y="2189" class="mono" font-size="9" fill="#9198a1">generated 2026-11-27 13:00 UTC · github graphql · daily</text>
+  
+</svg>
