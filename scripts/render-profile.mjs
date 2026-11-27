@@ -130,14 +130,6 @@ const catalog = [
       "Agent Skill for whole-repo architecture audits. Phased review with measured, path:line-cited findings and drift detection — no auto-fixes by design.",
   },
   {
-    repo: "deskward",
-    stack: "Rust",
-    lane: "Early",
-    line: "Self-hosted remote desktop — Rust core, Flutter UI.",
-    summary:
-      "Self-hosted remote desktop platform. Rust core with ID and relay servers, Flutter client, Tailscale connectivity. Early stage; host agents are still rolling out.",
-  },
-  {
     repo: "duetto",
     stack: "TypeScript",
     lane: "Early",
@@ -794,7 +786,6 @@ for (const required of [
   "## Selected work",
   "### macOS",
   "pi-gateway",
-  "deskward",
   "<details>",
   "## Activity",
   "## Contact",

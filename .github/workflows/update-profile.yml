@@ -34,8 +34,8 @@ jobs:
             echo "no changes — profile already current"
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "batu"
+          git config user.email "batu3384@gmail.com"
           git add README.md assets data
           git commit -m "chore: refresh profile board data [skip ci]"
           git push

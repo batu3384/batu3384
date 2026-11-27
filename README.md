@@ -4,7 +4,7 @@
   <source media="(max-width: 700px)" srcset="assets/board-v17-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/board-v17-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/board-v17-light.svg">
-  <img alt="Batuhan Yüksel — Software developer. Selected work: pi-gateway, byteback, ironsentinel, riflo, frostwall-beam, falcon-dm, ScreenTextGrab, calder, sift, agent-atlas, codebase-audit, deskward, duetto." src="assets/board-v17-light.svg" width="100%">
+  <img alt="Batuhan Yüksel — Software developer. Selected work: pi-gateway, byteback, ironsentinel, riflo, frostwall-beam, falcon-dm, ScreenTextGrab, calder, sift, agent-atlas, codebase-audit, duetto." src="assets/board-v17-light.svg" width="100%">
 </picture>
 
 Software developer in Istanbul. I build local-first software — macOS apps, terminal tools, and security workflows that keep data on the machine — plus the self-hosted infrastructure to run it on. Every project below is public and documented in its own repository.
@@ -36,7 +36,6 @@ Software developer in Istanbul. I build local-first software — macOS apps, ter
 
 ### Early stage
 
-- **[deskward](https://github.com/batu3384/deskward)** — Self-hosted remote desktop platform. Rust core with ID and relay servers, Flutter client, Tailscale connectivity. Early stage; host agents are still rolling out.
 - **[duetto](https://github.com/batu3384/duetto)** — Chrome extension for Udemy: dual captions with Gemini translation, a term-lock glossary, timestamped notes, and precision playback controls.
 
 <details>
