@@ -4,29 +4,29 @@
   <source media="(max-width: 700px)" srcset="assets/board-v17-mobile-light.svg">
   <source media="(prefers-color-scheme: dark)" srcset="assets/board-v17-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/board-v17-light.svg">
-  <img alt="Batuhan Yüksel — Software developer. Selected work: pi-gateway, ScreenTextGrab, falcon-dm, frostwall-beam, calder, sift, ironsentinel, byteback, agent-atlas, codebase-audit, deskward, duetto." src="assets/board-v17-light.svg" width="100%">
+  <img alt="Batuhan Yüksel — Software developer. Selected work: pi-gateway, byteback, ironsentinel, frostwall-beam, falcon-dm, ScreenTextGrab, calder, sift, agent-atlas, codebase-audit, deskward, duetto." src="assets/board-v17-light.svg" width="100%">
 </picture>
 
 Software developer in Istanbul. I build local-first software — macOS apps, terminal tools, and security workflows that keep data on the machine — plus the self-hosted infrastructure to run it on. Every project below is public and documented in its own repository.
 
 ## Selected work
 
+### Application security
+
+- **[byteback](https://github.com/batu3384/byteback)** — Windows forensic imaging and data recovery. C++17 engine covers NTFS, FAT/exFAT, and ext4 metadata recovery, signature carving, and virtual RAID — strictly read-only on source media.
+- **[ironsentinel](https://github.com/batu3384/ironsentinel)** — Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.
+
 ### macOS
 
-- **[ScreenTextGrab](https://github.com/batu3384/ScreenTextGrab)** — Notarized macOS menu-bar OCR app. Apple Vision runs on-device; modes for screen regions, subtitles, code, and tables, with automation through the `stg` CLI, URL scheme, and Shortcuts.
-- **[falcon-dm](https://github.com/batu3384/falcon-dm)** — Tauri download manager with a Rust engine: multi-connection byte ranges, byte-exact resume after crashes, HLS segment assembly, and a paired Chrome extension. No cloud queue, no telemetry.
 - **[frostwall-beam](https://github.com/batu3384/frostwall-beam)** — End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval — no cloud account.
+- **[falcon-dm](https://github.com/batu3384/falcon-dm)** — Tauri download manager with a Rust engine: multi-connection byte ranges, byte-exact resume after crashes, HLS segment assembly, and a paired Chrome extension. No cloud queue, no telemetry.
+- **[ScreenTextGrab](https://github.com/batu3384/ScreenTextGrab)** — Notarized macOS menu-bar OCR app. Apple Vision runs on-device; modes for screen regions, subtitles, code, and tables, with automation through the `stg` CLI, URL scheme, and Shortcuts.
 
 ### Terminal & systems
 
 - **[pi-gateway](https://github.com/batu3384/pi-gateway)** — Production DNS and home-lab gateway on Raspberry Pi. AdGuard and Unbound with DNS-over-TLS, Caddy reverse proxy, Grafana monitoring, CrowdSec, and encrypted 3-2-1 backups — deployed by a single make pipeline.
 - **[calder](https://github.com/batu3384/calder)** — Electron workspace for parallel AI coding CLIs — Claude Code, Codex, Cursor, Antigravity. PTY-backed terminals, provider-aware launch and resume, session telemetry, and governance in one shell.
 - **[sift](https://github.com/batu3384/sift)** — Review-first terminal cleaner for macOS and Windows. Typed Go core, dry-run by default, permission preflight, and audit history — destructive runs need explicit flags.
-
-### Application security
-
-- **[ironsentinel](https://github.com/batu3384/ironsentinel)** — Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.
-- **[byteback](https://github.com/batu3384/byteback)** — Windows forensic imaging and data recovery. C++17 engine covers NTFS, FAT/exFAT, and ext4 metadata recovery, signature carving, and virtual RAID — strictly read-only on source media.
 
 ### Developer tooling
 

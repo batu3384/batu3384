@@ -50,12 +50,28 @@ const catalog = [
       "Production DNS and home-lab gateway on Raspberry Pi. AdGuard and Unbound with DNS-over-TLS, Caddy reverse proxy, Grafana monitoring, CrowdSec, and encrypted 3-2-1 backups — deployed by a single make pipeline.",
   },
   {
-    repo: "ScreenTextGrab",
-    stack: "Swift",
-    lane: "macOS",
-    line: "Menu-bar OCR — Apple Vision, fully on-device.",
+    repo: "byteback",
+    stack: "C++",
+    lane: "AppSec",
+    line: "C++17 forensic engine — NTFS, FAT, ext4, RAID.",
     summary:
-      "Notarized macOS menu-bar OCR app. Apple Vision runs on-device; modes for screen regions, subtitles, code, and tables, with automation through the `stg` CLI, URL scheme, and Shortcuts.",
+      "Windows forensic imaging and data recovery. C++17 engine covers NTFS, FAT/exFAT, and ext4 metadata recovery, signature carving, and virtual RAID — strictly read-only on source media.",
+  },
+  {
+    repo: "ironsentinel",
+    stack: "Go",
+    lane: "AppSec",
+    line: "Guided AppSec missions, evidence-grade reports.",
+    summary:
+      "Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.",
+  },
+  {
+    repo: "frostwall-beam",
+    stack: "Rust",
+    lane: "macOS",
+    line: "E2E encrypted transfer — SPAKE2, NAT traversal.",
+    summary:
+      "End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval — no cloud account.",
   },
   {
     repo: "falcon-dm",
@@ -66,12 +82,12 @@ const catalog = [
       "Tauri download manager with a Rust engine: multi-connection byte ranges, byte-exact resume after crashes, HLS segment assembly, and a paired Chrome extension. No cloud queue, no telemetry.",
   },
   {
-    repo: "frostwall-beam",
-    stack: "Rust",
+    repo: "ScreenTextGrab",
+    stack: "Swift",
     lane: "macOS",
-    line: "E2E encrypted transfer — SPAKE2, NAT traversal.",
+    line: "Menu-bar OCR — Apple Vision, fully on-device.",
     summary:
-      "End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval — no cloud account.",
+      "Notarized macOS menu-bar OCR app. Apple Vision runs on-device; modes for screen regions, subtitles, code, and tables, with automation through the `stg` CLI, URL scheme, and Shortcuts.",
   },
   {
     repo: "calder",
@@ -88,22 +104,6 @@ const catalog = [
     line: "Review-first terminal cleaner, dry-run by default.",
     summary:
       "Review-first terminal cleaner for macOS and Windows. Typed Go core, dry-run by default, permission preflight, and audit history — destructive runs need explicit flags.",
-  },
-  {
-    repo: "ironsentinel",
-    stack: "Go",
-    lane: "AppSec",
-    line: "Guided AppSec missions, evidence-grade reports.",
-    summary:
-      "Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.",
-  },
-  {
-    repo: "byteback",
-    stack: "C++",
-    lane: "AppSec",
-    line: "C++17 forensic engine — NTFS, FAT, ext4, RAID.",
-    summary:
-      "Windows forensic imaging and data recovery. C++17 engine covers NTFS, FAT/exFAT, and ext4 metadata recovery, signature carving, and virtual RAID — strictly read-only on source media.",
   },
   {
     repo: "agent-atlas",
@@ -170,9 +170,9 @@ const academic = [
 ];
 
 const lanes = [
+  { heading: "Application security", key: "AppSec", label: "Application security" },
   { heading: "macOS", key: "macOS", label: "macOS" },
   { heading: "Terminal & systems", key: "Terminal", label: "Terminal & systems" },
-  { heading: "Application security", key: "AppSec", label: "Application security" },
   { heading: "Developer tooling", key: "Tooling", label: "Developer tooling" },
   { heading: "Early stage", key: "Early", label: "Early stage" },
 ];
