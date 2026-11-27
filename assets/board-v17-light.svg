@@ -57,8 +57,8 @@
     <text x="58" y="334" class="mono" font-size="10" letter-spacing="1.4" fill="#0e7490">FEATURED / PRODUCTION</text>
     <text x="904" y="334" class="mono" font-size="11" text-anchor="end" fill="#5a6a7e">Shell</text>
     <text x="58" y="362" class="sans" font-size="22" font-weight="700" letter-spacing="-0.4" fill="#0c1222">pi-gateway</text>
-    <text x="58" y="382" class="sans" font-size="12.5" fill="#5a6a7e">AdGuard + Unbound DNS, Caddy TLS, Grafana monitoring, CrowdSec, encrypted Restic backup — one</text>
-    <text x="58" y="399" class="sans" font-size="12.5" fill="#5a6a7e">deploy pipeline.</text>
+    <text x="58" y="382" class="sans" font-size="12.5" fill="#5a6a7e">AdGuard + Unbound DNS-over-TLS, Caddy TLS proxy, Grafana monitoring, CrowdSec, encrypted backups</text>
+    <text x="58" y="399" class="sans" font-size="12.5" fill="#5a6a7e">— one pipeline.</text>
     <text x="58" y="436" class="mono" font-size="10" fill="#5a6a7e">adguard · unbound · caddy · grafana · crowdsec · tailscale · restic</text>
   </g>
   <g>
@@ -68,21 +68,21 @@
   <g>
     <text x="36" y="518" class="mono" font-size="10" fill="#0e7490">02</text>
     <text x="66" y="518" class="sans" font-size="13.5" font-weight="600" fill="#0c1222">ScreenTextGrab</text>
-    <text x="232" y="518" class="sans" font-size="12" fill="#5a6a7e">On-device OCR for screen, PDFs, code, and tables.</text>
+    <text x="232" y="518" class="sans" font-size="12" fill="#5a6a7e">Menu-bar OCR — Apple Vision, fully on-device.</text>
     <text x="924" y="518" class="mono" font-size="10" text-anchor="end" fill="#5a6a7e">Swift</text>
   </g>
   <path d="M 36 532 H 924" fill="none" stroke="#d5dde6" stroke-width="1" stroke-opacity="0.5"/>
   <g>
     <text x="36" y="552" class="mono" font-size="10" fill="#0e7490">03</text>
     <text x="66" y="552" class="sans" font-size="13.5" font-weight="600" fill="#0c1222">falcon-dm</text>
-    <text x="232" y="552" class="sans" font-size="12" fill="#5a6a7e">HTTP, HLS, and YouTube downloads — local macOS queue.</text>
+    <text x="232" y="552" class="sans" font-size="12" fill="#5a6a7e">Multi-connection downloads, byte-exact crash resume.</text>
     <text x="924" y="552" class="mono" font-size="10" text-anchor="end" fill="#5a6a7e">Rust</text>
   </g>
   <path d="M 36 566 H 924" fill="none" stroke="#d5dde6" stroke-width="1" stroke-opacity="0.5"/>
   <g>
     <text x="36" y="586" class="mono" font-size="10" fill="#0e7490">04</text>
     <text x="66" y="586" class="sans" font-size="13.5" font-weight="600" fill="#0c1222">frostwall-beam</text>
-    <text x="232" y="586" class="sans" font-size="12" fill="#5a6a7e">Encrypted transfer with pairing and receiver approval.</text>
+    <text x="232" y="586" class="sans" font-size="12" fill="#5a6a7e">E2E encrypted transfer — SPAKE2, NAT traversal.</text>
     <text x="924" y="586" class="mono" font-size="10" text-anchor="end" fill="#5a6a7e">Rust</text>
   </g>
   <g>
@@ -92,14 +92,14 @@
   <g>
     <text x="36" y="664" class="mono" font-size="10" fill="#0e7490">05</text>
     <text x="66" y="664" class="sans" font-size="13.5" font-weight="600" fill="#0c1222">calder</text>
-    <text x="232" y="664" class="sans" font-size="12" fill="#5a6a7e">Claude Code, Codex, Cursor, Antigravity side by side.</text>
+    <text x="232" y="664" class="sans" font-size="12" fill="#5a6a7e">Parallel AI CLI sessions in one governed workspace.</text>
     <text x="924" y="664" class="mono" font-size="10" text-anchor="end" fill="#5a6a7e">TypeScript</text>
   </g>
   <path d="M 36 678 H 924" fill="none" stroke="#d5dde6" stroke-width="1" stroke-opacity="0.5"/>
   <g>
     <text x="36" y="698" class="mono" font-size="10" fill="#0e7490">06</text>
     <text x="66" y="698" class="sans" font-size="13.5" font-weight="600" fill="#0c1222">sift</text>
-    <text x="232" y="698" class="sans" font-size="12" fill="#5a6a7e">Review-first cleaner — preview before deletion.</text>
+    <text x="232" y="698" class="sans" font-size="12" fill="#5a6a7e">Review-first terminal cleaner, dry-run by default.</text>
     <text x="924" y="698" class="mono" font-size="10" text-anchor="end" fill="#5a6a7e">Go</text>
   </g>
   <g>
@@ -109,14 +109,14 @@
   <g>
     <text x="36" y="776" class="mono" font-size="10" fill="#0e7490">07</text>
     <text x="66" y="776" class="sans" font-size="13.5" font-weight="600" fill="#0c1222">ironsentinel</text>
-    <text x="232" y="776" class="sans" font-size="12" fill="#5a6a7e">Guided scans, runtime trust checks, evidence reports.</text>
+    <text x="232" y="776" class="sans" font-size="12" fill="#5a6a7e">Guided AppSec missions, evidence-grade reports.</text>
     <text x="924" y="776" class="mono" font-size="10" text-anchor="end" fill="#5a6a7e">Go</text>
   </g>
   <path d="M 36 790 H 924" fill="none" stroke="#d5dde6" stroke-width="1" stroke-opacity="0.5"/>
   <g>
     <text x="36" y="810" class="mono" font-size="10" fill="#0e7490">08</text>
     <text x="66" y="810" class="sans" font-size="13.5" font-weight="600" fill="#0c1222">byteback</text>
-    <text x="232" y="810" class="sans" font-size="12" fill="#5a6a7e">Windows forensic imaging and recovery, native engine.</text>
+    <text x="232" y="810" class="sans" font-size="12" fill="#5a6a7e">C++17 forensic engine — NTFS, FAT, ext4, RAID.</text>
     <text x="924" y="810" class="mono" font-size="10" text-anchor="end" fill="#5a6a7e">C++</text>
   </g>
   <g>
@@ -126,14 +126,14 @@
   <g>
     <text x="36" y="888" class="mono" font-size="10" fill="#0e7490">09</text>
     <text x="66" y="888" class="sans" font-size="13.5" font-weight="600" fill="#0c1222">agent-atlas</text>
-    <text x="232" y="888" class="sans" font-size="12" fill="#5a6a7e">Installer and router for agent-safe open-web research.</text>
+    <text x="232" y="888" class="sans" font-size="12" fill="#5a6a7e">Open-web research capability layer for agents.</text>
     <text x="924" y="888" class="mono" font-size="10" text-anchor="end" fill="#5a6a7e">Python</text>
   </g>
   <path d="M 36 902 H 924" fill="none" stroke="#d5dde6" stroke-width="1" stroke-opacity="0.5"/>
   <g>
     <text x="36" y="922" class="mono" font-size="10" fill="#0e7490">10</text>
     <text x="66" y="922" class="sans" font-size="13.5" font-weight="600" fill="#0c1222">codebase-audit</text>
-    <text x="232" y="922" class="sans" font-size="12" fill="#5a6a7e">Whole-repo architecture audit with cited evidence.</text>
+    <text x="232" y="922" class="sans" font-size="12" fill="#5a6a7e">Evidence-backed whole-repo audits for agents.</text>
     <text x="924" y="922" class="mono" font-size="10" text-anchor="end" fill="#5a6a7e">Python</text>
   </g>
   <g>
@@ -143,14 +143,14 @@
   <g>
     <text x="36" y="1000" class="mono" font-size="10" fill="#0e7490">11</text>
     <text x="66" y="1000" class="sans" font-size="13.5" font-weight="600" fill="#0c1222">deskward</text>
-    <text x="232" y="1000" class="sans" font-size="12" fill="#5a6a7e">Tailscale remote desktop — Rust core, Flutter client.</text>
+    <text x="232" y="1000" class="sans" font-size="12" fill="#5a6a7e">Self-hosted remote desktop — Rust core, Flutter UI.</text>
     <text x="924" y="1000" class="mono" font-size="10" text-anchor="end" fill="#5a6a7e">Rust</text>
   </g>
   <path d="M 36 1014 H 924" fill="none" stroke="#d5dde6" stroke-width="1" stroke-opacity="0.5"/>
   <g>
     <text x="36" y="1034" class="mono" font-size="10" fill="#0e7490">12</text>
     <text x="66" y="1034" class="sans" font-size="13.5" font-weight="600" fill="#0c1222">duetto</text>
-    <text x="232" y="1034" class="sans" font-size="12" fill="#5a6a7e">Udemy: dual captions, notes, precision playback.</text>
+    <text x="232" y="1034" class="sans" font-size="12" fill="#5a6a7e">Dual-caption Udemy player — translation, notes.</text>
     <text x="924" y="1034" class="mono" font-size="10" text-anchor="end" fill="#5a6a7e">TypeScript</text>
   </g>
   <text x="36" y="1108" class="sans" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#0c1222">Activity</text>

@@ -7,55 +7,49 @@
   <img alt="Batuhan Yüksel — Software developer. Selected work: pi-gateway, ScreenTextGrab, falcon-dm, frostwall-beam, calder, sift, ironsentinel, byteback, agent-atlas, codebase-audit, deskward, duetto." src="assets/board-v17-light.svg" width="100%">
 </picture>
 
-MIS graduate in Istanbul. I ship local-first software: macOS apps, CLI tools, and security workflows that keep data and reports on the machine.
+Software developer in Istanbul. I build local-first software — macOS apps, terminal tools, and security workflows that keep data on the machine — plus the self-hosted infrastructure to run it on. Every project below is public and documented in its own repository.
 
 ## Selected work
 
-**macOS**  
-[ScreenTextGrab](https://github.com/batu3384/ScreenTextGrab) · [falcon-dm](https://github.com/batu3384/falcon-dm) · [frostwall-beam](https://github.com/batu3384/frostwall-beam)
+### macOS
 
-**Terminal & systems**  
-[pi-gateway](https://github.com/batu3384/pi-gateway) · [calder](https://github.com/batu3384/calder) · [sift](https://github.com/batu3384/sift)
+- **[ScreenTextGrab](https://github.com/batu3384/ScreenTextGrab)** — Notarized macOS menu-bar OCR app. Apple Vision runs on-device; modes for screen regions, subtitles, code, and tables, with automation through the `stg` CLI, URL scheme, and Shortcuts.
+- **[falcon-dm](https://github.com/batu3384/falcon-dm)** — Tauri download manager with a Rust engine: multi-connection byte ranges, byte-exact resume after crashes, HLS segment assembly, and a paired Chrome extension. No cloud queue, no telemetry.
+- **[frostwall-beam](https://github.com/batu3384/frostwall-beam)** — End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval — no cloud account.
 
-**Application security**  
-[ironsentinel](https://github.com/batu3384/ironsentinel) · [byteback](https://github.com/batu3384/byteback)
+### Terminal & systems
 
-**Developer tooling**  
-[agent-atlas](https://github.com/batu3384/agent-atlas) · [codebase-audit](https://github.com/batu3384/codebase-audit)
+- **[pi-gateway](https://github.com/batu3384/pi-gateway)** — Production DNS and home-lab gateway on Raspberry Pi. AdGuard and Unbound with DNS-over-TLS, Caddy reverse proxy, Grafana monitoring, CrowdSec, and encrypted 3-2-1 backups — deployed by a single make pipeline.
+- **[calder](https://github.com/batu3384/calder)** — Electron workspace for parallel AI coding CLIs — Claude Code, Codex, Cursor, Antigravity. PTY-backed terminals, provider-aware launch and resume, session telemetry, and governance in one shell.
+- **[sift](https://github.com/batu3384/sift)** — Review-first terminal cleaner for macOS and Windows. Typed Go core, dry-run by default, permission preflight, and audit history — destructive runs need explicit flags.
 
-**Early stage**  
-[deskward](https://github.com/batu3384/deskward) · [duetto](https://github.com/batu3384/duetto)
+### Application security
 
-<details>
-<summary>Project notes</summary>
+- **[ironsentinel](https://github.com/batu3384/ironsentinel)** — Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.
+- **[byteback](https://github.com/batu3384/byteback)** — Windows forensic imaging and data recovery. C++17 engine covers NTFS, FAT/exFAT, and ext4 metadata recovery, signature carving, and virtual RAID — strictly read-only on source media.
 
-- **[pi-gateway](https://github.com/batu3384/pi-gateway)** — Production DNS and home-lab gateway on Raspberry Pi. AdGuard and Unbound, Caddy TLS, monitoring, encrypted backup — one deploy pipeline.
-- **[ScreenTextGrab](https://github.com/batu3384/ScreenTextGrab)** — Menu-bar OCR with Apple Vision. Screen regions, PDFs, code, tables, and subtitles stay on the device.
-- **[falcon-dm](https://github.com/batu3384/falcon-dm)** — macOS download manager for HTTP, HLS, and YouTube, with browser capture. Tauri and Rust. No cloud queue.
-- **[frostwall-beam](https://github.com/batu3384/frostwall-beam)** — Encrypted file transfer on a LAN or across the internet. Pairing codes, receiver approval, no cloud account.
-- **[calder](https://github.com/batu3384/calder)** — Electron workspace for parallel Claude Code, Codex, Cursor, and Antigravity sessions, with telemetry and governance in one shell.
-- **[sift](https://github.com/batu3384/sift)** — Review-first terminal cleaner for macOS and Windows. Typed Go core; a preview step sits in front of destructive work.
-- **[ironsentinel](https://github.com/batu3384/ironsentinel)** — AppSec CLI and TUI for guided scans, runtime trust checks, and HTML, SARIF, and CSV evidence exports. Local-first.
-- **[byteback](https://github.com/batu3384/byteback)** — Windows forensic imaging and file recovery. Native engine with an examiner UI.
-- **[agent-atlas](https://github.com/batu3384/agent-atlas)** — Installer and router that gives coding agents controlled open-web search and research tools.
-- **[codebase-audit](https://github.com/batu3384/codebase-audit)** — Whole-repo architecture audit for Cursor, Claude Code, Codex, and Antigravity. Findings come with citations.
-- **[deskward](https://github.com/batu3384/deskward)** — Tailscale remote desktop with a Rust core and a Flutter client. Early stage; host agents are still rolling out.
-- **[duetto](https://github.com/batu3384/duetto)** — Chrome extension for Udemy: dual captions, translation, notes, and precise playback controls.
+### Developer tooling
 
-</details>
+- **[agent-atlas](https://github.com/batu3384/agent-atlas)** — Capability layer that installs, health-checks, and routes open-web research tools for coding agents — ten channels, doctor diagnostics, end-to-end smoke tests.
+- **[codebase-audit](https://github.com/batu3384/codebase-audit)** — Agent Skill for whole-repo architecture audits. Phased review with measured, path:line-cited findings and drift detection — no auto-fixes by design.
+
+### Early stage
+
+- **[deskward](https://github.com/batu3384/deskward)** — Self-hosted remote desktop platform. Rust core with ID and relay servers, Flutter client, Tailscale connectivity. Early stage; host agents are still rolling out.
+- **[duetto](https://github.com/batu3384/duetto)** — Chrome extension for Udemy: dual captions with Gemini translation, a term-lock glossary, timestamped notes, and precision playback controls.
 
 <details>
 <summary>Other public repositories</summary>
 
-- **[hexloom](https://github.com/batu3384/hexloom)** — FastAPI studio to encode, decode, and validate structured payloads.
-- **[jobcraft](https://github.com/batu3384/jobcraft)** — Local job-search workspace for Turkey, built for Cursor and Claude Code.
+- **[hexloom](https://github.com/batu3384/hexloom)** — FastAPI text-transformation studio — eleven encode/decode/validate methods, batch workflows, live deployment with OpenAPI docs.
+- **[jobcraft](https://github.com/batu3384/jobcraft)** — Local-first job-search workspace for Turkey — multi-portal search, fit scoring, LaTeX CV and cover-letter pipeline, application tracking.
 
 </details>
 
 <details>
 <summary>Academic work</summary>
 
-- **[vetvision](https://github.com/batu3384/vetvision)** — Desktop app for dog-breed recognition, PDF export, and optional Gemini reports.
+- **[vetvision](https://github.com/batu3384/vetvision)** — Desktop app for dog-breed recognition with PDF export and optional Gemini reports.
 - **[fast-express-kds](https://github.com/batu3384/fast-express-kds)** — Cargo operations dashboard with branch analytics, personnel scoring, and forecasting.
 - **[sisler-bulvari-cafe-system](https://github.com/batu3384/sisler-bulvari-cafe-system)** — Digital ordering prototype for Sisler Bulvarı Sanat Kafe.
 - **[autonomous-line-following-robot](https://github.com/batu3384/autonomous-line-following-robot)** — Raspberry Pi line-following robot that stops on obstacles, with LED and buzzer alerts.

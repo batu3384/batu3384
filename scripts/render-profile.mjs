@@ -45,115 +45,115 @@ const catalog = [
     stack: "Shell",
     lane: "Terminal",
     line: "Production DNS and home-lab gateway on Raspberry Pi.",
-    heroLine: "AdGuard + Unbound DNS, Caddy TLS, Grafana monitoring, CrowdSec, encrypted Restic backup — one deploy pipeline.",
+    heroLine: "AdGuard + Unbound DNS-over-TLS, Caddy TLS proxy, Grafana monitoring, CrowdSec, encrypted backups — one pipeline.",
     summary:
-      "Production DNS and home-lab gateway on Raspberry Pi. AdGuard and Unbound, Caddy TLS, monitoring, encrypted backup — one deploy pipeline.",
+      "Production DNS and home-lab gateway on Raspberry Pi. AdGuard and Unbound with DNS-over-TLS, Caddy reverse proxy, Grafana monitoring, CrowdSec, and encrypted 3-2-1 backups — deployed by a single make pipeline.",
   },
   {
     repo: "ScreenTextGrab",
     stack: "Swift",
     lane: "macOS",
-    line: "On-device OCR for screen, PDFs, code, and tables.",
+    line: "Menu-bar OCR — Apple Vision, fully on-device.",
     summary:
-      "Menu-bar OCR with Apple Vision. Screen regions, PDFs, code, tables, and subtitles stay on the device.",
+      "Notarized macOS menu-bar OCR app. Apple Vision runs on-device; modes for screen regions, subtitles, code, and tables, with automation through the `stg` CLI, URL scheme, and Shortcuts.",
   },
   {
     repo: "falcon-dm",
     stack: "Rust",
     lane: "macOS",
-    line: "HTTP, HLS, and YouTube downloads — local macOS queue.",
+    line: "Multi-connection downloads, byte-exact crash resume.",
     summary:
-      "macOS download manager for HTTP, HLS, and YouTube, with browser capture. Tauri and Rust. No cloud queue.",
+      "Tauri download manager with a Rust engine: multi-connection byte ranges, byte-exact resume after crashes, HLS segment assembly, and a paired Chrome extension. No cloud queue, no telemetry.",
   },
   {
     repo: "frostwall-beam",
     stack: "Rust",
     lane: "macOS",
-    line: "Encrypted transfer with pairing and receiver approval.",
+    line: "E2E encrypted transfer — SPAKE2, NAT traversal.",
     summary:
-      "Encrypted file transfer on a LAN or across the internet. Pairing codes, receiver approval, no cloud account.",
+      "End-to-end encrypted file transfer for LAN and internet. SPAKE2 pairing, XChaCha20-Poly1305 chunks, iroh NAT traversal, explicit receiver approval — no cloud account.",
   },
   {
     repo: "calder",
     stack: "TypeScript",
     lane: "Terminal",
-    line: "Claude Code, Codex, Cursor, Antigravity side by side.",
+    line: "Parallel AI CLI sessions in one governed workspace.",
     summary:
-      "Electron workspace for parallel Claude Code, Codex, Cursor, and Antigravity sessions, with telemetry and governance in one shell.",
+      "Electron workspace for parallel AI coding CLIs — Claude Code, Codex, Cursor, Antigravity. PTY-backed terminals, provider-aware launch and resume, session telemetry, and governance in one shell.",
   },
   {
     repo: "sift",
     stack: "Go",
     lane: "Terminal",
-    line: "Review-first cleaner — preview before deletion.",
+    line: "Review-first terminal cleaner, dry-run by default.",
     summary:
-      "Review-first terminal cleaner for macOS and Windows. Typed Go core; a preview step sits in front of destructive work.",
+      "Review-first terminal cleaner for macOS and Windows. Typed Go core, dry-run by default, permission preflight, and audit history — destructive runs need explicit flags.",
   },
   {
     repo: "ironsentinel",
     stack: "Go",
     lane: "AppSec",
-    line: "Guided scans, runtime trust checks, evidence reports.",
+    line: "Guided AppSec missions, evidence-grade reports.",
     summary:
-      "AppSec CLI and TUI for guided scans, runtime trust checks, and HTML, SARIF, and CSV evidence exports. Local-first.",
+      "Local-first AppSec command center. Guided scan missions normalize findings into one model and export SARIF, CSV, and HTML evidence — no hosted control plane.",
   },
   {
     repo: "byteback",
     stack: "C++",
     lane: "AppSec",
-    line: "Windows forensic imaging and recovery, native engine.",
+    line: "C++17 forensic engine — NTFS, FAT, ext4, RAID.",
     summary:
-      "Windows forensic imaging and file recovery. Native engine with an examiner UI.",
+      "Windows forensic imaging and data recovery. C++17 engine covers NTFS, FAT/exFAT, and ext4 metadata recovery, signature carving, and virtual RAID — strictly read-only on source media.",
   },
   {
     repo: "agent-atlas",
     stack: "Python",
     lane: "Tooling",
-    line: "Installer and router for agent-safe open-web research.",
-    summary: "Installer and router that gives coding agents controlled open-web search and research tools.",
+    line: "Open-web research capability layer for agents.",
+    summary:
+      "Capability layer that installs, health-checks, and routes open-web research tools for coding agents — ten channels, doctor diagnostics, end-to-end smoke tests.",
   },
   {
     repo: "codebase-audit",
     stack: "Python",
     lane: "Tooling",
-    line: "Whole-repo architecture audit with cited evidence.",
+    line: "Evidence-backed whole-repo audits for agents.",
     summary:
-      "Whole-repo architecture audit for Cursor, Claude Code, Codex, and Antigravity. Findings come with citations.",
+      "Agent Skill for whole-repo architecture audits. Phased review with measured, path:line-cited findings and drift detection — no auto-fixes by design.",
   },
   {
     repo: "deskward",
     stack: "Rust",
     lane: "Early",
-    line: "Tailscale remote desktop — Rust core, Flutter client.",
+    line: "Self-hosted remote desktop — Rust core, Flutter UI.",
     summary:
-      "Tailscale remote desktop with a Rust core and a Flutter client. Early stage; host agents are still rolling out.",
+      "Self-hosted remote desktop platform. Rust core with ID and relay servers, Flutter client, Tailscale connectivity. Early stage; host agents are still rolling out.",
   },
   {
     repo: "duetto",
     stack: "TypeScript",
     lane: "Early",
-    line: "Udemy: dual captions, notes, precision playback.",
+    line: "Dual-caption Udemy player — translation, notes.",
     summary:
-      "Chrome extension for Udemy: dual captions, translation, notes, and precise playback controls.",
+      "Chrome extension for Udemy: dual captions with Gemini translation, a term-lock glossary, timestamped notes, and precision playback controls.",
   },
 ];
 
 const other = [
   {
     repo: "hexloom",
-    summary: "FastAPI studio to encode, decode, and validate structured payloads.",
+    summary: "FastAPI text-transformation studio — eleven encode/decode/validate methods, batch workflows, live deployment with OpenAPI docs.",
   },
   {
     repo: "jobcraft",
-    summary: "Local job-search workspace for Turkey, built for Cursor and Claude Code.",
+    summary: "Local-first job-search workspace for Turkey — multi-portal search, fit scoring, LaTeX CV and cover-letter pipeline, application tracking.",
   },
 ];
 
 const academic = [
   {
     repo: "vetvision",
-    summary:
-      "Desktop app for dog-breed recognition, PDF export, and optional Gemini reports.",
+    summary: "Desktop app for dog-breed recognition with PDF export and optional Gemini reports.",
   },
   {
     repo: "fast-express-kds",
@@ -658,12 +658,14 @@ function board(p, id, spec) {
 </svg>`;
 }
 
-function mdLaneLinks() {
+function mdLaneSections() {
   return lanes
     .map((lane) => {
       const rows = catalog.filter((item) => item.lane === lane.key);
-      const links = rows.map((item) => `[${item.repo}](${repoUrl(item.repo)})`).join(" · ");
-      return `**${lane.heading}**  \n${links}`;
+      const lines = rows
+        .map((item) => `- **[${item.repo}](${repoUrl(item.repo)})** — ${html(item.summary)}`)
+        .join("\n");
+      return `### ${lane.heading}\n\n${lines}`;
     })
     .join("\n\n");
 }
@@ -688,18 +690,11 @@ function renderReadme() {
   <img alt="${html(identity.name)} — ${html(identity.role)}. Selected work: ${catalog.map((item) => item.repo).join(", ")}." src="assets/${ASSETS.desktopLight}" width="100%">
 </picture>
 
-${html(identity.intro)}
+Software developer in Istanbul. I build local-first software — macOS apps, terminal tools, and security workflows that keep data on the machine — plus the self-hosted infrastructure to run it on. Every project below is public and documented in its own repository.
 
 ## Selected work
 
-${mdLaneLinks()}
-
-<details>
-<summary>Project notes</summary>
-
-${mdNotes(catalog)}
-
-</details>
+${mdLaneSections()}
 
 <details>
 <summary>Other public repositories</summary>
@@ -789,8 +784,7 @@ for (const required of [
   "<picture>",
   "board-v17",
   "## Selected work",
-  "**macOS**",
-  "Project notes",
+  "### macOS",
   "pi-gateway",
   "deskward",
   "<details>",
@@ -803,6 +797,5 @@ if (readme.includes("<table")) throw new Error("README still uses HTML tables");
 if (readme.includes("github-stats-extended")) throw new Error("README still has stats widgets");
 if (readme.includes("github-snake")) throw new Error("README still has the snake widget");
 if (readme.includes("skillicons.dev")) throw new Error("README still has skill icon widget");
-if (readme.includes("### macOS")) throw new Error("README still duplicates the catalog as headings");
 writeFileSync(join(root, "README.md"), readme);
 console.log("wrote 4 profile SVGs and README.md");
