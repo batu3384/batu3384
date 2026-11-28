@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-27T15:13:39.556Z",
+  "generatedAt": "2026-11-28T13:18:33.123Z",
   "contributions": {
-    "total": 2267,
-    "activeDays": 139,
+    "total": 2455,
+    "activeDays": 141,
     "longestStreak": 23,
     "bestDay": {
-      "date": "2026-11-26",
-      "count": 141
+      "date": "2026-11-28",
+      "count": 157
     },
     "days": [
       {
@@ -887,11 +887,11 @@
       },
       {
         "date": "2026-06-30",
-        "count": 0
+        "count": 1
       },
       {
         "date": "2026-07-01",
-        "count": 3
+        "count": 2
       },
       {
         "date": "2026-07-02",
@@ -1071,11 +1071,11 @@
       },
       {
         "date": "2026-08-15",
-        "count": 11
+        "count": 12
       },
       {
         "date": "2026-08-16",
-        "count": 54
+        "count": 53
       },
       {
         "date": "2026-08-17",
@@ -1487,7 +1487,11 @@
       },
       {
         "date": "2026-11-27",
-        "count": 28
+        "count": 59
+      },
+      {
+        "date": "2026-11-28",
+        "count": 157
       }
     ]
   },
@@ -1495,33 +1499,38 @@
   "languages": [
     {
       "name": "TypeScript",
-      "share": 29
+      "share": 27.1
     },
     {
       "name": "Go",
-      "share": 20.7
+      "share": 19.1
     },
     {
       "name": "C++",
-      "share": 14.8
+      "share": 13.8
     },
     {
       "name": "Rust",
-      "share": 9.1
+      "share": 13.3
     },
     {
       "name": "Swift",
-      "share": 8.6
+      "share": 8.2
     },
     {
       "name": "Other",
-      "share": 17.8
+      "share": 18.6
     }
   ],
   "recent": [
     {
       "name": "riflo",
-      "pushedAt": "2026-11-27T15:08:44Z",
+      "pushedAt": "2026-11-28T13:16:33Z",
+      "language": "Rust"
+    },
+    {
+      "name": "falcon-dm",
+      "pushedAt": "2026-11-28T13:08:51Z",
       "language": "Rust"
     },
     {
@@ -1533,11 +1542,6 @@
       "name": "calder",
       "pushedAt": "2026-11-26T18:42:26Z",
       "language": "TypeScript"
-    },
-    {
-      "name": "byteback",
-      "pushedAt": "2026-11-26T18:39:29Z",
-      "language": "C++"
     }
   ]
 }

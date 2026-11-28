@@ -58,9 +58,9 @@ Software developer in Istanbul. I build local-first software: macOS apps, termin
 
 ## Activity
 
-2,267 contributions across 139 active days in the last 12 months · longest streak 23 days. Recent pushes: [riflo](https://github.com/batu3384/riflo) · [frostwall-beam](https://github.com/batu3384/frostwall-beam) · [calder](https://github.com/batu3384/calder) · [byteback](https://github.com/batu3384/byteback).
+2,455 contributions across 141 active days in the last 12 months · longest streak 23 days. Recent pushes: [riflo](https://github.com/batu3384/riflo) · [falcon-dm](https://github.com/batu3384/falcon-dm) · [frostwall-beam](https://github.com/batu3384/frostwall-beam) · [calder](https://github.com/batu3384/calder).
 
-<sub>Board and this section are regenerated daily from the GitHub GraphQL API, last run 2026-11-27 15:13 UTC.</sub>
+<sub>Board and this section are regenerated daily from the GitHub GraphQL API, last run 2026-11-28 13:18 UTC.</sub>
 
 ## Contact
 
